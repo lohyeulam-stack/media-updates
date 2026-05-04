@@ -213,6 +213,7 @@ function UpdateTableView({ updates }: { updates: MediaUpdate[] }) {
 
 function MasonryGroup({ items, groupIndex }: { items: MediaUpdate[]; groupIndex: number }) {
   // Editorial row-based layout: max 2 cards per row, varied proportions for rhythm
+  // Uses inline gridColumn style (NOT Tailwind dynamic classes) to avoid CSS purge issues
   const rowPatterns: Array<[number, number?]> = [
     [8, 4],
     [6, 6],
@@ -248,14 +249,20 @@ function MasonryGroup({ items, groupIndex }: { items: MediaUpdate[]; groupIndex:
       {rows.map((row, rowIdx) => (
         <div
           key={row.items[0].id}
-          className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-0 animate-fade-up"
-          style={{ animationDelay: `${Math.min(groupIndex, 4) * 40 + rowIdx * 30 + 80}ms` }}
+          className="grid gap-x-6 gap-y-0 animate-fade-up"
+          style={{
+            gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
+            animationDelay: `${Math.min(groupIndex, 4) * 40 + rowIdx * 30 + 80}ms`,
+          }}
         >
           {row.items.map((item, colIdx) => {
             const span = row.spans[colIdx]
             const size = span >= 7 ? "large" : "small"
             return (
-              <div key={item.id} className={`md:col-span-${span}`}>
+              <div
+                key={item.id}
+                style={{ gridColumn: `span ${span} / span ${span}` }}
+              >
                 <StudioUpdateCard update={item} size={size} />
               </div>
             )
@@ -265,7 +272,6 @@ function MasonryGroup({ items, groupIndex }: { items: MediaUpdate[]; groupIndex:
     </div>
   )
 }
-
 function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
   const searchParams = useSearchParams()
   const platformParam = searchParams.get("platform")
