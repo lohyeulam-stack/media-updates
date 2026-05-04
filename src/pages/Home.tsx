@@ -217,8 +217,8 @@ export function Home() {
   };
 
   const t = {
-    cn: { title: 'Intelligence created at moments where change becomes inevitable.', search: '搜索更新...' },
-    en: { title: 'Intelligence created at moments where change becomes inevitable.', search: 'SEARCH ARCHIVE...' },
+    cn: { title: 'TopTou 产品团队 · 广告平台追踪', search: '搜索标题、摘要或标签...' },
+    en: { title: 'TopTou Product Team · Ad Platform Tracker', search: 'Search title, summary or tags...' },
   }[locale];
 
   // BI metrics from real data
@@ -251,13 +251,13 @@ export function Home() {
         >
           <div className="section-label mb-8">
             <span className="w-8 h-px bg-brand-black" />
-            Ambition / Intelligence
+            {locale === 'cn' ? '多媒体平台更新追踪' : 'Multimedia Platform Update Tracker'}
           </div>
           <h1 className="swiss-h1 mb-8">
-            Making the <span className="italic-accent">new</span> possible.
+            Media <span className="italic-accent">Updates</span>
           </h1>
           <p className="text-xl lg:text-3xl font-light tracking-tight max-w-2xl leading-[1.2] text-brand-black/60">
-            {t.title} {platforms}+ Platforms. One source of truth.
+            {t.title} · {platforms} Platforms
           </p>
         </motion.div>
         <div className="absolute -right-20 -top-20 w-[40vw] h-[40vw] bg-brand-blue blur-[120px] opacity-[0.07] rounded-full pointer-events-none" />
@@ -507,37 +507,38 @@ export function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-blue text-white px-6 lg:px-12 py-24 lg:py-32">
+      <footer className="bg-brand-black text-white px-6 lg:px-12 py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           <h2 className="text-5xl lg:text-7xl font-bold tracking-tighter leading-none">
-            Build Your<br />New Future<br />With Us
+            TopTou<br />Media<br />Updates
           </h2>
           <div className="flex flex-col justify-between">
-            <p className="text-lg lg:text-xl font-light opacity-80 max-w-md">
-              MediaStudio is a global intelligence collective helping organizations navigate growth, reinvention, and change.
+            <p className="text-lg lg:text-xl font-light opacity-60 max-w-md">
+              {locale === 'cn'
+                ? '多媒体平台广告更新追踪系统，覆盖 20+ 平台官方信息源，每周一自动采集，MiniMax AI 生成中文摘要。'
+                : 'Multi-platform ad update tracking system covering 20+ official sources, auto-collected weekly with MiniMax AI summaries.'}
             </p>
             <div className="grid grid-cols-2 gap-8 mt-12">
               <div className="space-y-3">
-                <div className="text-[10px] uppercase tracking-widest opacity-40 font-bold">Visit</div>
-                <div className="text-sm font-medium">26 Broadway, 10th Floor<br />New York, NY 10004</div>
+                <div className="text-[10px] uppercase tracking-widest opacity-40 font-bold">{locale === 'cn' ? '线上' : 'Live'}</div>
+                <div className="text-sm font-medium">media-updates.vercel.app</div>
               </div>
               <div className="space-y-3">
-                <div className="text-[10px] uppercase tracking-widest opacity-40 font-bold">Contact</div>
-                <div className="text-sm font-medium underline decoration-white/20">hello@mediastudio.ag</div>
+                <div className="text-[10px] uppercase tracking-widest opacity-40 font-bold">GitHub</div>
+                <div className="text-sm font-medium">lohyeulam-stack/media-updates</div>
               </div>
             </div>
           </div>
         </div>
         <div className="border-t border-white/10 pt-10">
-          <h1 className="text-[18vw] font-bold tracking-[-0.06em] leading-none mb-8">MediaStudio</h1>
+          <h1 className="text-[18vw] font-bold tracking-[-0.06em] leading-none mb-8">MediaUpdates</h1>
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4 text-[10px] uppercase font-bold tracking-widest opacity-40">
             <div className="flex gap-6">
-              <span>Instagram</span>
-              <span>TikTok</span>
+              <span>TopTou</span>
+              <span>MiniMax</span>
               <span>GitHub</span>
-              <span>LinkedIn</span>
             </div>
-            <span>© 2026 Media Studio Partners Inc.</span>
+            <span>© 2026 TopTou Product Team</span>
           </div>
         </div>
       </footer>
