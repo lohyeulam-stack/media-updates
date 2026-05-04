@@ -212,36 +212,60 @@ function UpdateTableView({ updates }: { updates: MediaUpdate[] }) {
 }
 
 function MasonryGroup({ items, groupIndex }: { items: MediaUpdate[]; groupIndex: number }) {
-  // Fluid layout: vary col span based on index and whether item has an image
-  const getColSpan = (idx: number, item: MediaUpdate) => {
-    if (item.imageUrl) {
-      // Items with images: alternate large/medium
-      const pattern = [8, 4, 6, 6, 4, 8, 12]
-      return pattern[idx % pattern.length]
+  // Editorial row-based layout: max 2 cards per row, varied proportions for rhythm
+  const rowPatterns: Array<[number, number?]> = [
+    [8, 4],
+    [6, 6],
+    [4, 8],
+    [12],
+    [7, 5],
+    [8, 4],
+    [5, 7],
+    [6, 6],
+    [12],
+    [4, 8],
+  ]
+
+  type Row = { items: MediaUpdate[]; spans: number[] }
+  const rows: Row[] = []
+  let i = 0
+  let patternIdx = groupIndex % rowPatterns.length
+
+  while (i < items.length) {
+    const pattern = rowPatterns[patternIdx % rowPatterns.length]
+    patternIdx++
+    if (pattern.length === 1 || !items[i + 1]) {
+      rows.push({ items: [items[i]], spans: [12] })
+      i += 1
+    } else {
+      rows.push({ items: [items[i], items[i + 1]], spans: [pattern[0], pattern[1]!] })
+      i += 2
     }
-    // Items without images: more compact
-    const pattern = [8, 4, 4, 4, 8, 6, 6, 4, 8]
-    return pattern[idx % pattern.length]
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-0">
-      {items.map((item, idx) => {
-        const span = getColSpan(idx, item)
-        const size = span >= 7 ? "large" : "small"
-        return (
-          <div
-            key={item.id}
-            className={`md:col-span-${span} animate-fade-up`}
-            style={{ animationDelay: `${Math.min(groupIndex, 4) * 40 + idx * 20 + 80}ms` }}
-          >
-            <StudioUpdateCard update={item} size={size} />
-          </div>
-        )
-      })}
+    <div className="flex flex-col">
+      {rows.map((row, rowIdx) => (
+        <div
+          key={row.items[0].id}
+          className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-0 animate-fade-up"
+          style={{ animationDelay: `${Math.min(groupIndex, 4) * 40 + rowIdx * 30 + 80}ms` }}
+        >
+          {row.items.map((item, colIdx) => {
+            const span = row.spans[colIdx]
+            const size = span >= 7 ? "large" : "small"
+            return (
+              <div key={item.id} className={`md:col-span-${span}`}>
+                <StudioUpdateCard update={item} size={size} />
+              </div>
+            )
+          })}
+        </div>
+      ))}
     </div>
   )
 }
+
 function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
   const searchParams = useSearchParams()
   const platformParam = searchParams.get("platform")
