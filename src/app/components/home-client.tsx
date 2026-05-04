@@ -96,12 +96,15 @@ function StudioUpdateCard({ update, size = "small" }: { update: MediaUpdate; siz
 
   return (
     <article className="group flex flex-col border-t border-brand-black dark:border-white/10 pt-6 pb-8 h-full">
-      {isLarge && (
-        <div className="aspect-[16/10] bg-brand-gray dark:bg-white/5 mb-6 overflow-hidden relative">
-          <div className="absolute inset-0 opacity-10 blur-xl scale-110 group-hover:scale-125 transition-transform duration-1000" style={{ backgroundColor: platformMeta?.color }} />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[8vw] font-bold tracking-tighter opacity-[0.04] uppercase select-none">{platformMeta?.label}</span>
-          </div>
+      {isLarge && update.imageUrl && (
+        <div className="aspect-[16/10] mb-6 overflow-hidden relative bg-brand-gray dark:bg-white/5">
+          <img
+            src={update.imageUrl}
+            alt={update.title}
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+            onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
+          />
         </div>
       )}
       <div className="flex flex-col gap-4 flex-1">
@@ -209,42 +212,36 @@ function UpdateTableView({ updates }: { updates: MediaUpdate[] }) {
 }
 
 function MasonryGroup({ items, groupIndex }: { items: MediaUpdate[]; groupIndex: number }) {
-  const rows: Array<[MediaUpdate, MediaUpdate?, MediaUpdate?]> = []
-  let i = 0
-  while (i < items.length) {
-    const triple: [MediaUpdate, MediaUpdate?, MediaUpdate?] = [items[i]]
-    if (items[i + 1]) triple[1] = items[i + 1]
-    if (items[i + 2]) triple[2] = items[i + 2]
-    rows.push(triple)
-    i += 3
+  // Fluid layout: vary col span based on index and whether item has an image
+  const getColSpan = (idx: number, item: MediaUpdate) => {
+    if (item.imageUrl) {
+      // Items with images: alternate large/medium
+      const pattern = [8, 4, 6, 6, 4, 8, 12]
+      return pattern[idx % pattern.length]
+    }
+    // Items without images: more compact
+    const pattern = [8, 4, 4, 4, 8, 6, 6, 4, 8]
+    return pattern[idx % pattern.length]
   }
 
   return (
-    <div className="space-y-4">
-      {rows.map((row, rowIdx) => {
-        const [first, second, third] = row
-        const delay = `${Math.min(groupIndex, 4) * 40 + rowIdx * 30 + 80}ms`
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-0">
+      {items.map((item, idx) => {
+        const span = getColSpan(idx, item)
+        const size = span >= 7 ? "large" : "small"
         return (
           <div
-            key={`${first.id}-row`}
-            className="grid grid-cols-1 md:grid-cols-12 gap-4 animate-fade-up"
-            style={{ animationDelay: delay }}
+            key={item.id}
+            className={`md:col-span-${span} animate-fade-up`}
+            style={{ animationDelay: `${Math.min(groupIndex, 4) * 40 + idx * 20 + 80}ms` }}
           >
-            <div className="md:col-span-8">
-              <StudioUpdateCard update={first} size="large" />
-            </div>
-            <div className="md:col-span-4 flex flex-col gap-4">
-              {second && <StudioUpdateCard update={second} size="small" />}
-              {third && <StudioUpdateCard update={third} size="small" />}
-              {second && !third && <div className="flex-1 border border-dashed border-border/40 hidden md:block" />}
-            </div>
+            <StudioUpdateCard update={item} size={size} />
           </div>
         )
       })}
     </div>
   )
 }
-
 function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
   const searchParams = useSearchParams()
   const platformParam = searchParams.get("platform")

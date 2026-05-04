@@ -24,6 +24,7 @@ export interface MediaUpdate {
   importance: "high" | "medium" | "low"
   source: string
   sourceUrl: string
+  imageUrl?: string | null
   tags: string[]
   fetchedAt: string
 }
