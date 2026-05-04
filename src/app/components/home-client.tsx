@@ -3,13 +3,10 @@
 import { Suspense, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { BarChart3, ChevronLeft, ChevronRight, ExternalLink, FileText, LayoutGrid, List, Menu, Rss, Search, SlidersHorizontal, X } from "lucide-react"
+import { BarChart3, ChevronLeft, ChevronRight, ExternalLink, LayoutGrid, List, Search, SlidersHorizontal, X } from "lucide-react"
 import { Sidebar } from "./sidebar"
 import { TrendChart } from "./trend-chart"
-import { ThemeToggle } from "./theme-toggle"
-import { LocaleToggle } from "./locale"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
+import { SwissHeader, SwissFooter } from "./page-layout"
 import { CATEGORY_LABELS, PLATFORM_META, type Category, type MediaUpdate, type Platform } from "@/lib/types"
 
 interface HomeClientProps {
@@ -19,21 +16,14 @@ interface HomeClientProps {
 }
 
 const CATEGORY_FILTERS: (Category | "all")[] = [
-  "all",
-  "ad-product",
-  "api-change",
-  "policy",
-  "creative",
-  "measurement",
-  "targeting",
-  "automation",
-  "other",
+  "all", "ad-product", "api-change", "policy", "creative",
+  "measurement", "targeting", "automation", "other",
 ]
 
 const IMPORTANCE_META = {
   high: {
     label: "Priority",
-    className: "border-red-200 bg-red-50 text-red-700 dark:border-red-800 dark:bg-red-950 dark:text-red-400",
+    className: "bg-brand-blue text-white border-brand-blue",
   },
   medium: {
     label: "Info",
@@ -45,234 +35,160 @@ const IMPORTANCE_META = {
   },
 }
 
-function Sparkline({ values }: { values: number[]; color?: string }) {
-  const safeValues = values.length > 1 ? values : [0, values[0] ?? 0]
-  const min = Math.min(...safeValues)
-  const max = Math.max(...safeValues)
-  const range = max - min || 1
-  const points = safeValues.map((value, index) => {
-    const x = (index / (safeValues.length - 1)) * 100
-    const y = 28 - ((value - min) / range) * 24
-    return `${x},${y}`
-  })
-
-  return (
-    <svg className="h-8 w-full overflow-visible" viewBox="0 0 100 32" preserveAspectRatio="none" aria-hidden="true">
-      <polyline
-        points={points.join(" ")}
-        fill="none"
-        stroke="currentColor"
-        className="text-foreground"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        vectorEffect="non-scaling-stroke"
-      />
-    </svg>
-  )
-}
-
-function MetricCard({
-  label,
-  value,
-  trend,
-  helper,
-}: {
-  label: string
-  value: string | number
-  trend: number[]
-  helper?: string
-}) {
-  return (
-    <div className="flex h-[120px] flex-col justify-between py-4">
-      <span className="text-xs font-medium text-muted-foreground">{label}</span>
-      <div className="flex items-baseline gap-2">
-        <span className="text-xl font-semibold leading-none tracking-tight text-foreground tabular-nums sm:text-2xl">{value}</span>
-        {helper && (
-          <span className="text-xs text-muted-foreground/50">{helper}</span>
-        )}
-      </div>
-      <div>
-        <Sparkline values={trend} />
-      </div>
-    </div>
-  )
-}
-
-function getRecentDateCounts(updates: MediaUpdate[]) {
-  const counts = new Map<string, number>()
-  for (const update of updates) {
-    const date = update.date || "unknown"
-    counts.set(date, (counts.get(date) || 0) + 1)
-  }
-
-  return Array.from(counts.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .slice(-8)
-    .map(([, count]) => count)
-}
-
-function getRecentWeekCounts(updates: MediaUpdate[]) {
-  const counts = new Map<string, number>()
-  for (const update of updates) {
-    const week = update.week || update.date?.slice(0, 7) || "unknown"
-    counts.set(week, (counts.get(week) || 0) + 1)
-  }
-
-  return Array.from(counts.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .slice(-8)
-    .map(([, count]) => count)
-}
-
-function getCompletionTrend(updates: MediaUpdate[]) {
-  const byDate = new Map<string, { complete: number; total: number }>()
-  for (const update of updates) {
-    const date = update.date || "unknown"
-    const bucket = byDate.get(date) || { complete: 0, total: 0 }
-    bucket.total += 1
-    if (update.summary?.trim()) bucket.complete += 1
-    byDate.set(date, bucket)
-  }
-
-  return Array.from(byDate.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .slice(-8)
-    .map(([, bucket]) => Math.round((bucket.complete / bucket.total) * 100))
-}
-
-function getPlatformTrend(updates: MediaUpdate[]) {
-  const byDate = new Map<string, Set<Platform>>()
-  for (const update of updates) {
-    const date = update.date || "unknown"
-    const bucket = byDate.get(date) || new Set<Platform>()
-    bucket.add(update.platform)
-    byDate.set(date, bucket)
-  }
-
-  return Array.from(byDate.entries())
-    .sort(([a], [b]) => a.localeCompare(b))
-    .slice(-8)
-    .map(([, bucket]) => bucket.size)
-}
-
 function categoryLabel(category: Category | "all") {
   if (category === "all") return "All"
   return CATEGORY_LABELS[category] || category
 }
 
-function UpdateDashboardCard({ update }: { update: MediaUpdate }) {
-  const platformMeta = PLATFORM_META[update.platform]
-  const importanceMeta = IMPORTANCE_META[update.importance]
+function BiStatStrip({
+  totalUpdates,
+  totalCompletionRate,
+  totalPlatforms,
+  thisWeekCount,
+  currentWeek,
+  totalPriority,
+}: {
+  totalUpdates: number
+  totalCompletionRate: number
+  totalPlatforms: number
+  thisWeekCount: number
+  currentWeek: string
+  totalPriority: number
+}) {
+  const stats = [
+    { label: "Total Updates", value: totalUpdates, sub: "All time", accent: false },
+    { label: "Completion", value: `${totalCompletionRate}%`, sub: "With summary", accent: false },
+    { label: "Platforms", value: totalPlatforms, sub: "Sources", accent: false },
+    { label: "This Week", value: thisWeekCount, sub: currentWeek, accent: false },
+    { label: "Priority", value: totalPriority, sub: "High importance", accent: true },
+  ]
 
   return (
-    <article className="group rounded-xl border bg-card p-5 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:shadow-[0_18px_44px_rgba(15,23,42,0.1)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+    <section className="border-b border-brand-black dark:border-white/10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+        {stats.map((s) => (
+          <div
+            key={s.label}
+            className={`px-6 lg:px-8 py-6 lg:py-8 border-r border-brand-black dark:border-white/10 last:border-r-0 ${
+              s.accent ? "bg-brand-blue text-white" : "bg-background"
+            }`}
+          >
+            <p className={`text-[10px] font-bold uppercase tracking-[0.12em] mb-3 ${s.accent ? "text-white/70" : "text-muted-foreground"}`}>
+              {s.label}
+            </p>
+            <p className={`text-5xl lg:text-6xl font-bold tracking-tighter leading-none tabular-nums ${s.accent ? "text-white" : "text-foreground"}`}>
+              {s.value}
+            </p>
+            <p className={`mt-2 text-xs ${s.accent ? "text-white/60" : "text-muted-foreground"}`}>
+              {s.sub}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function StudioUpdateCard({ update, size = "small" }: { update: MediaUpdate; size?: "large" | "small" }) {
+  const platformMeta = PLATFORM_META[update.platform]
+  const importanceMeta = IMPORTANCE_META[update.importance]
+  const isLarge = size === "large"
+
+  return (
+    <article className="group flex flex-col border border-brand-black dark:border-white/10 bg-card hover:bg-muted/30 transition-colors duration-200 h-full">
+      <div className={`p-5 ${isLarge ? "lg:p-8" : ""} flex flex-col gap-4 flex-1`}>
         <div className="flex flex-wrap items-center gap-2">
           <span
-            className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full border"
             style={{
-              borderColor: `${platformMeta?.color || "#64748b"}30`,
-              backgroundColor: `${platformMeta?.color || "#64748b"}12`,
+              borderColor: `${platformMeta?.color || "#64748b"}40`,
+              backgroundColor: `${platformMeta?.color || "#64748b"}15`,
               color: platformMeta?.color || "#475569",
             }}
           >
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: platformMeta?.color || "#64748b" }} />
             {platformMeta?.label || update.platform}
           </span>
-          <span className={`inline-flex rounded-full border px-2.5 py-1 text-xs font-semibold ${importanceMeta.className}`}>
+          <span className={`inline-flex text-[10px] font-bold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full border ${importanceMeta.className}`}>
             {importanceMeta.label}
           </span>
-          <span className="inline-flex rounded-full border bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+          <span className="inline-flex text-[10px] font-medium px-2.5 py-1 rounded-full border border-border bg-muted text-muted-foreground">
             {CATEGORY_LABELS[update.category] || update.category}
           </span>
+          <time className="ml-auto text-[10px] font-medium tabular-nums text-muted-foreground">{update.date}</time>
         </div>
-        <time className="shrink-0 text-xs font-medium tabular-nums text-muted-foreground">{update.date}</time>
-      </div>
-
-      <div className="mt-4">
-        <a
-          href={update.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-start gap-2 text-base font-semibold leading-snug text-foreground transition-colors hover:text-blue-600"
-        >
-          <span>{update.title}</span>
-          <ExternalLink className="mt-0.5 h-3.5 w-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
-        </a>
-        {update.titleOriginal && update.titleOriginal !== update.title && (
-          <p className="mt-1 text-xs italic leading-relaxed text-muted-foreground">{update.titleOriginal}</p>
-        )}
-      </div>
-
-      <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">
-        {update.summary || "Pending summary."}
-      </p>
-
-      <div className="mt-4 flex flex-col gap-3 border-t pt-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-wrap gap-1.5">
-          {update.tags.slice(0, 4).map((tag) => (
-            <span key={tag} className="rounded-md bg-muted px-2 py-1 text-[11px] font-medium text-muted-foreground">
-              {tag}
-            </span>
-          ))}
+        <div>
+          <a
+            href={update.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-start gap-2 font-bold leading-snug text-foreground transition-colors hover:text-brand-blue ${
+              isLarge ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"
+            }`}
+          >
+            <span>{update.title}</span>
+            <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
+          </a>
+          {update.titleOriginal && update.titleOriginal !== update.title && (
+            <p className="mt-1.5 italic-accent text-sm text-muted-foreground">{update.titleOriginal}</p>
+          )}
         </div>
-        <span className="text-xs font-medium text-muted-foreground">{update.source}</span>
+        <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground flex-1">
+          {update.summary || "Pending summary."}
+        </p>
+        <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
+          <div className="flex flex-wrap gap-1.5">
+            {update.tags.slice(0, isLarge ? 6 : 3).map((tag) => (
+              <span key={tag} className="text-[10px] font-medium px-2 py-0.5 bg-muted text-muted-foreground rounded-sm">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60">{update.source}</span>
+        </div>
       </div>
     </article>
   )
 }
 
 function UpdateTableView({ updates }: { updates: MediaUpdate[] }) {
-  const gridCols = "grid-cols-[1fr_auto] sm:grid-cols-[140px_1fr_auto_80px]"
-
   return (
-    <div className="border-y" role="table">
-      <div role="row" className={`hidden sm:grid ${gridCols} gap-3 px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground border-b bg-muted/30`}>
+    <div className="border-y border-brand-black dark:border-white/10" role="table">
+      <div
+        role="row"
+        className="hidden sm:grid sm:grid-cols-[140px_1fr_auto_80px] gap-3 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground border-b border-brand-black dark:border-white/10 bg-muted/20"
+      >
         <div role="columnheader">Platform</div>
         <div role="columnheader">Title</div>
         <div role="columnheader">Category</div>
         <div role="columnheader">Date</div>
       </div>
-
       <div>
         {updates.map((update) => {
           const platformMeta = PLATFORM_META[update.platform]
-
           return (
             <div
               key={update.id}
               role="row"
-              className="grid grid-cols-[1fr_auto] sm:grid-cols-[140px_1fr_auto_80px] gap-2 sm:gap-3 px-3 sm:px-4 h-10 border-b border-border/60 last:border-0 items-center transition-colors hover:bg-muted/30"
+              className="grid grid-cols-[1fr_auto] sm:grid-cols-[140px_1fr_auto_80px] gap-2 sm:gap-3 px-3 sm:px-4 h-10 border-b border-border/60 last:border-0 items-center transition-colors hover:bg-muted/20"
             >
-              {/* 平台 + 分类 */}
               <div role="cell" className="flex items-center gap-1.5 overflow-hidden">
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: platformMeta?.color }} />
                 <span className="text-[11px] font-medium text-foreground truncate shrink-0">{platformMeta?.label || update.platform}</span>
-                <span className="text-[10px] text-muted-foreground/60 truncate shrink-0">
-                  {CATEGORY_LABELS[update.category] || update.category}
-                </span>
-                <span className={`shrink-0 text-[9px] px-1 py-px rounded ${IMPORTANCE_META[update.importance].className} opacity-60`}>
-                  {IMPORTANCE_META[update.importance].label}
-                </span>
               </div>
-
-              {/* 标题 */}
               <div role="cell" className="min-w-0">
                 <a
                   href={update.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] font-medium text-foreground hover:text-blue-600 transition-colors line-clamp-1 leading-snug"
+                  className="text-[13px] font-medium text-foreground hover:text-brand-blue transition-colors line-clamp-1 leading-snug"
                 >
                   {update.title}
                 </a>
               </div>
-
-              {/* 分类（仅桌面端显示在平台旁） */}
-              <div role="cell" className="hidden sm:block" />
-
-              {/* 日期 */}
+              <div role="cell" className="hidden sm:block text-[10px] text-muted-foreground">
+                {CATEGORY_LABELS[update.category] || update.category}
+              </div>
               <div role="cell" className="hidden sm:flex items-center justify-end">
                 <span className="text-[11px] tabular-nums text-muted-foreground">{update.date}</span>
               </div>
@@ -280,6 +196,43 @@ function UpdateTableView({ updates }: { updates: MediaUpdate[] }) {
           )
         })}
       </div>
+    </div>
+  )
+}
+
+function MasonryGroup({ items, groupIndex }: { items: MediaUpdate[]; groupIndex: number }) {
+  const rows: Array<[MediaUpdate, MediaUpdate?, MediaUpdate?]> = []
+  let i = 0
+  while (i < items.length) {
+    const triple: [MediaUpdate, MediaUpdate?, MediaUpdate?] = [items[i]]
+    if (items[i + 1]) triple[1] = items[i + 1]
+    if (items[i + 2]) triple[2] = items[i + 2]
+    rows.push(triple)
+    i += 3
+  }
+
+  return (
+    <div className="space-y-4">
+      {rows.map((row, rowIdx) => {
+        const [first, second, third] = row
+        const delay = `${Math.min(groupIndex, 4) * 40 + rowIdx * 30 + 80}ms`
+        return (
+          <div
+            key={`${first.id}-row`}
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 animate-fade-up"
+            style={{ animationDelay: delay }}
+          >
+            <div className="md:col-span-8">
+              <StudioUpdateCard update={first} size="large" />
+            </div>
+            <div className="md:col-span-4 flex flex-col gap-4">
+              {second && <StudioUpdateCard update={second} size="small" />}
+              {third && <StudioUpdateCard update={third} size="small" />}
+              {second && !third && <div className="flex-1 border border-dashed border-border/40 hidden md:block" />}
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -298,33 +251,28 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
   const [currentWeekIndex, setCurrentWeekIndex] = useState(0)
   const [tablePage, setTablePage] = useState(1)
 
-  // 找到第一个在 updates.json 中实际有数据的周，避免最新周文件损坏导致首页空白
   const fallbackWeekIndex = useMemo(() => {
     return weeks.findIndex((week) => updates.some((u) => u.week === week))
   }, [weeks, updates])
 
-  const safeWeekIndex = fallbackWeekIndex >= 0 ? Math.max(currentWeekIndex, fallbackWeekIndex === 0 ? currentWeekIndex : fallbackWeekIndex) : currentWeekIndex
+  const safeWeekIndex = fallbackWeekIndex >= 0
+    ? Math.max(currentWeekIndex, fallbackWeekIndex === 0 ? currentWeekIndex : fallbackWeekIndex)
+    : currentWeekIndex
   const currentWeek = weeks[safeWeekIndex] || weeks[0]
 
-  // 确保 currentWeekIndex 不越界
   useEffect(() => {
-    if (currentWeekIndex >= weeks.length) {
-      setCurrentWeekIndex(0)
-    }
+    if (currentWeekIndex >= weeks.length) setCurrentWeekIndex(0)
   }, [weeks, currentWeekIndex])
 
-  // 筛选条件变化时重置表格页码
   useEffect(() => {
     setTablePage(1)
   }, [currentWeekIndex, platform, category, query])
 
-  // 先按周过滤（ALL 时不过滤）
   const weekFiltered = useMemo(() => {
     if (platform === "all") return updates
     return updates.filter((u) => u.week === currentWeek)
   }, [updates, currentWeek, platform])
 
-  // 再按 platform/category/query 过滤
   const filtered = useMemo(() => {
     let result = weekFiltered
     if (platform !== "all") result = result.filter((u) => u.platform === platform)
@@ -340,12 +288,9 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
     return result
   }, [weekFiltered, platform, query, category])
 
-  // updates 变化时确保 tablePage 不越界
   useEffect(() => {
     const maxPage = Math.ceil(filtered.length / 10)
-    if (tablePage > maxPage && maxPage > 0) {
-      setTablePage(maxPage)
-    }
+    if (tablePage > maxPage && maxPage > 0) setTablePage(maxPage)
   }, [filtered.length, tablePage])
 
   const grouped = useMemo(() => {
@@ -358,7 +303,6 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
     return Object.entries(groups).sort(([a], [b]) => b.localeCompare(a))
   }, [filtered])
 
-  // 表格分页
   const itemsPerPage = 10
   const totalPages = Math.ceil(filtered.length / itemsPerPage)
   const paginatedTableData = useMemo(() => {
@@ -366,229 +310,144 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
     return filtered.slice(startIndex, startIndex + itemsPerPage)
   }, [filtered, tablePage])
 
-  // BI 指标：全量汇总数据
   const totalUpdates = updates.length
   const totalCompleted = updates.filter((u) => u.summary?.trim()).length
   const totalCompletionRate = totalUpdates ? Math.round((totalCompleted / totalUpdates) * 100) : 0
   const totalPlatforms = new Set(updates.map((u) => u.platform)).size
   const totalPriority = updates.filter((u) => u.importance === "high").length
 
-  // Sparkline 趋势：所有周（从旧到新）
-  const weeklyTrend = useMemo(() => {
-    return [...weeks].reverse().map(week => updates.filter(u => u.week === week).length)
-  }, [updates, weeks])
-
-  const weeklyCompletionTrend = useMemo(() => {
-    return [...weeks].reverse().map(week => {
-      const weekUpdates = updates.filter(u => u.week === week)
-      if (weekUpdates.length === 0) return 0
-      const completed = weekUpdates.filter(u => u.summary?.trim()).length
-      return Math.round((completed / weekUpdates.length) * 100)
-    })
-  }, [updates, weeks])
-
-  const weeklyPlatformTrend = useMemo(() => {
-    return [...weeks].reverse().map(week => {
-      const weekUpdates = updates.filter(u => u.week === week)
-      return new Set(weekUpdates.map(u => u.platform)).size
-    })
-  }, [updates, weeks])
-
-  const weeklyPriorityTrend = useMemo(() => {
-    return [...weeks].reverse().map(week => updates.filter(u => u.week === week && u.importance === "high").length)
-  }, [updates, weeks])
-
   return (
-    <div className="flex min-h-screen bg-background text-foreground">
-      {/* 桌面端侧边栏 */}
-      <div className="hidden lg:flex">
-        <Sidebar updates={updates} months={months} weeks={weeks} selectedPlatform={platform} onSelect={setPlatform} />
-      </div>
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <SwissHeader onMenuOpen={() => setSidebarOpen(true)} />
 
-      {/* 移动端抽屉侧边栏 */}
-      {sidebarOpen && (
-        <>
-          <div className="fixed inset-0 z-40 bg-black/40 lg:hidden" onClick={() => setSidebarOpen(false)} />
-          <div className="fixed left-0 top-0 z-50 h-full w-56 lg:hidden">
-            <Sidebar updates={updates} months={months} weeks={weeks} selectedPlatform={platform} onSelect={(p) => { setPlatform(p); setSidebarOpen(false) }} />
+      <Sidebar
+        updates={updates}
+        months={months}
+        weeks={weeks}
+        selectedPlatform={platform}
+        onSelect={(p) => setPlatform(p)}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
+
+      <main className="flex-1">
+        <section className="px-6 lg:px-12 pt-16 pb-20 border-b border-brand-black dark:border-white/10 relative overflow-hidden">
+          <div className="relative z-10 max-w-4xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
+              多媒体平台更新追踪
+            </p>
+            <h1 className="swiss-h1 text-foreground mb-6">
+              Media<br />
+              <span className="italic-accent text-muted-foreground">Updates</span>
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
+              覆盖 {totalPlatforms} 个广告平台 · {totalUpdates} 条更新记录 · TopTou 产品团队
+            </p>
           </div>
-        </>
-      )}
+          <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" aria-hidden="true">
+            <div
+              className="absolute right-24 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full"
+              style={{
+                background: "radial-gradient(ellipse, rgba(0,26,255,0.15) 0%, transparent 70%)",
+                filter: "blur(60px)",
+              }}
+            />
+          </div>
+        </section>
 
-      <div className="min-w-0 flex-1">
-        <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur lg:hidden">
-          <div className="space-y-3 px-4 py-3">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setSidebarOpen(true)}
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg border bg-card text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                  aria-label="Open menu"
-                >
-                  <Menu className="h-4 w-4" />
+        <BiStatStrip
+          totalUpdates={totalUpdates}
+          totalCompletionRate={totalCompletionRate}
+          totalPlatforms={totalPlatforms}
+          thisWeekCount={weekFiltered.length}
+          currentWeek={currentWeek || ""}
+          totalPriority={totalPriority}
+        />
+
+        <section className="px-6 lg:px-12 py-6 border-b border-brand-black dark:border-white/10">
+          <div className="flex flex-col gap-4">
+            <div className="relative">
+              <Search className="pointer-events-none absolute left-0 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+              <input
+                type="text"
+                placeholder="搜索更新、摘要或标签..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="w-full pl-6 pr-8 py-2 border-0 border-b border-brand-black dark:border-white/20 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-brand-blue transition-colors"
+              />
+              {query && (
+                <button onClick={() => setQuery("")} className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
+                  <X className="h-4 w-4" />
                 </button>
-                <div>
-                  <h1 className="text-lg font-semibold tracking-normal text-foreground">Media Updates</h1>
-                  <p className="text-xs font-medium text-muted-foreground">{filtered.length} visible updates</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <LocaleToggle />
-                <ThemeToggle />
-                <Link href="/log">
-                  <Badge variant="outline" className="text-xs">Log</Badge>
-                </Link>
-                {months.length > 0 && (
-                  <Link href={`/report/${months[0]}`}>
-                    <Badge variant="outline" className="border-blue-200 text-xs text-blue-600">
-                      {months[0]}
-                    </Badge>
-                  </Link>
-                )}
-              </div>
+              )}
             </div>
-            <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 scrollbar-none">
-              <button
-                onClick={() => setPlatform("all")}
-                className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                  platform === "all" ? "bg-foreground text-background" : "bg-muted text-muted-foreground"
-                }`}
-              >
-                All
-              </button>
-              {Object.entries(PLATFORM_META).map(([key, meta]) => {
-                const count = updates.filter((u) => u.platform === key).length
-                if (count === 0) return null
-                return (
+            <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex flex-wrap gap-2 flex-1">
+                {CATEGORY_FILTERS.map((filter) => (
                   <button
-                    key={key}
-                    onClick={() => setPlatform(key as Platform)}
-                    className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                      platform === key ? "bg-foreground text-background" : "bg-muted text-muted-foreground"
+                    key={filter}
+                    onClick={() => setCategory(filter)}
+                    className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] rounded-full border transition-all ${
+                      category === filter
+                        ? "bg-brand-black text-white border-brand-black dark:bg-white dark:text-black dark:border-white"
+                        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
                     }`}
                   >
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: meta.color }} />
-                    {meta.label}
+                    {categoryLabel(filter)}
                   </button>
-                )
-              })}
-            </div>
-          </div>
-        </header>
-
-        <main className="mx-auto max-w-7xl space-y-4 p-4 sm:space-y-6 sm:p-6 lg:p-8">
-          <div className="hidden animate-fade-up items-center justify-between gap-6 lg:flex">
-            <div>
-              <p className="text-sm font-semibold text-blue-600">广告平台追踪</p>
-              <h2 className="mt-1 text-3xl font-semibold tracking-normal text-foreground">Media Updates</h2>
-              <p className="mt-2 text-sm text-muted-foreground">TopTou 产品团队 · 20+ 平台更新追踪</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <Link href="/feed.xml" target="_blank" aria-label="RSS feed">
-                <button className="inline-flex h-9 w-9 items-center justify-center rounded-lg border bg-card text-muted-foreground shadow-sm transition-colors hover:border-border hover:text-foreground">
-                  <Rss className="h-4 w-4" aria-hidden="true" />
-                </button>
-              </Link>
-              <Link href="/log" aria-label="Open log">
-                <button className="inline-flex h-9 w-9 items-center justify-center rounded-lg border bg-card text-muted-foreground shadow-sm transition-colors hover:border-border hover:text-foreground">
-                  <FileText className="h-4 w-4" aria-hidden="true" />
-                </button>
-              </Link>
-              <LocaleToggle />
-              <ThemeToggle />
-            </div>
-          </div>
-
-          <section className="animate-fade-up grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 xl:grid-cols-5" style={{ animationDelay: "50ms" }}>
-            <MetricCard label="Total Updates" value={totalUpdates} trend={weeklyTrend} helper="All time" />
-            <MetricCard label="Completion" value={`${totalCompletionRate}%`} trend={weeklyCompletionTrend} helper={`${totalCompleted}/${totalUpdates}`} />
-            <MetricCard label="Platforms" value={totalPlatforms} trend={weeklyPlatformTrend} helper="Sources" />
-            <MetricCard label="This Week" value={weekFiltered.length} trend={weeklyTrend} helper={currentWeek} />
-            <MetricCard label="Priority" value={totalPriority} trend={weeklyPriorityTrend} helper="High" />
-          </section>
-
-          <section className="animate-fade-up rounded-xl border bg-card p-3 shadow-[0_10px_30px_rgba(15,23,42,0.05)] sm:p-4" style={{ animationDelay: "90ms" }}>
-            <div className="flex flex-col gap-3">
-              <div className="relative">
-                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
-                <Input
-                  placeholder="搜索更新、摘要或标签..."
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  className="h-10 rounded-lg border bg-muted pl-9 text-sm text-foreground placeholder:text-muted-foreground focus-visible:border-blue-300 focus-visible:ring-blue-100"
-                />
+                ))}
               </div>
-              <div className="flex items-center gap-2">
-                <div className="-mx-1 flex flex-1 gap-1.5 overflow-x-auto px-1 pb-0.5 scrollbar-none">
-                  {CATEGORY_FILTERS.map((filter) => (
-                    <button
-                      key={filter}
-                      onClick={() => setCategory(filter)}
-                      className={`shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
-                        category === filter
-                          ? "bg-foreground text-background shadow-sm"
-                          : "bg-muted text-muted-foreground hover:bg-accent hover:text-foreground"
-                      }`}
-                    >
-                      {categoryLabel(filter)}
-                    </button>
-                  ))}
-                </div>
+              <div className="flex gap-2 shrink-0">
                 <button
                   onClick={() => setShowTrend(!showTrend)}
-                  className={`shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-lg border transition-all ${
-                    showTrend ? "border-foreground bg-foreground text-background" : "bg-card text-muted-foreground hover:border-border hover:text-foreground"
+                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
+                    showTrend
+                      ? "border-brand-black bg-brand-black text-white dark:border-white dark:bg-white dark:text-black"
+                      : "border-border text-muted-foreground hover:border-foreground"
                   }`}
                   title="Toggle trend chart"
                 >
-                  {showTrend ? <SlidersHorizontal className="h-4 w-4" aria-hidden="true" /> : <BarChart3 className="h-4 w-4" aria-hidden="true" />}
+                  {showTrend ? <SlidersHorizontal className="h-3.5 w-3.5" /> : <BarChart3 className="h-3.5 w-3.5" />}
                 </button>
                 <button
                   onClick={() => setViewMode(viewMode === "card" ? "table" : "card")}
-                  className={`shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-lg border transition-all ${
-                    viewMode === "table" ? "border-foreground bg-foreground text-background" : "bg-card text-muted-foreground hover:border-border hover:text-foreground"
+                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
+                    viewMode === "table"
+                      ? "border-brand-black bg-brand-black text-white dark:border-white dark:bg-white dark:text-black"
+                      : "border-border text-muted-foreground hover:border-foreground"
                   }`}
                   aria-label={viewMode === "card" ? "Switch to table view" : "Switch to card view"}
                   aria-pressed={viewMode === "table"}
                 >
-                  {viewMode === "card" ? <List className="h-4 w-4" aria-hidden="true" /> : <LayoutGrid className="h-4 w-4" aria-hidden="true" />}
+                  {viewMode === "card" ? <List className="h-3.5 w-3.5" /> : <LayoutGrid className="h-3.5 w-3.5" />}
                 </button>
               </div>
             </div>
-          </section>
-
-          {showTrend && (
-            <section className="animate-fade-up rounded-xl border bg-card p-4 shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
-              <TrendChart updates={weekFiltered} />
-            </section>
-          )}
-
-          <div className="flex items-center justify-between gap-3 text-xs font-medium text-muted-foreground">
-            <span>{filtered.length} updates</span>
-            <div className="h-px flex-1 bg-border" />
-            <span>{viewMode === "card" ? `${grouped.length} days` : "table view"}</span>
           </div>
+        </section>
 
+        {showTrend && (
+          <section className="px-6 lg:px-12 py-6 border-b border-brand-black dark:border-white/10">
+            <TrendChart updates={weekFiltered} />
+          </section>
+        )}
+
+        <div className="flex items-center justify-between gap-3 px-6 lg:px-12 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground border-b border-brand-black dark:border-white/10">
+          <span>{filtered.length} updates</span>
+          <span>{viewMode === "card" ? `${grouped.length} days` : "table view"}</span>
+        </div>
+
+        <div className="px-6 lg:px-12 py-8">
           {viewMode === "card" ? (
-            <div className="space-y-8">
+            <div className="space-y-12">
               {grouped.map(([date, items], groupIndex) => (
                 <section key={date} className="animate-fade-up" style={{ animationDelay: `${Math.min(groupIndex, 4) * 40 + 80}ms` }}>
-                  <div className="mb-4 flex items-center gap-3">
-                    <h2 className="text-sm font-semibold text-foreground">{date}</h2>
-                    <div className="h-px flex-1 bg-border" />
-                    <Badge variant="secondary" className="bg-card text-xs text-muted-foreground shadow-sm">{items.length}</Badge>
+                  <div className="flex items-center gap-4 mb-6">
+                    <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-foreground">{date}</h2>
+                    <div className="h-px flex-1 bg-brand-black/10 dark:bg-white/10" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{items.length}</span>
                   </div>
-                  <div className="grid gap-4 lg:grid-cols-2">
-                    {items.map((update, itemIndex) => (
-                      <div
-                        key={update.id}
-                        className="animate-fade-up"
-                        style={{ animationDelay: `${Math.min(groupIndex, 4) * 40 + Math.min(itemIndex, 4) * 30 + 100}ms` }}
-                      >
-                        <UpdateDashboardCard update={update} />
-                      </div>
-                    ))}
-                  </div>
+                  <MasonryGroup items={items} groupIndex={groupIndex} />
                 </section>
               ))}
             </div>
@@ -596,23 +455,21 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
             <div className="animate-fade-up space-y-3">
               <UpdateTableView updates={platform === "all" ? filtered : paginatedTableData} />
               {platform !== "all" && totalPages > 1 && (
-                <div className="flex items-center justify-center gap-3">
+                <div className="flex items-center justify-center gap-4 py-4">
                   <button
                     onClick={() => setTablePage(tablePage - 1)}
                     disabled={tablePage === 1}
-                    className="inline-flex h-8 items-center gap-1 rounded-lg border bg-card px-3 text-xs font-medium text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
                   >
-                    <ChevronLeft className="h-3 w-3" />
-                    Prev
+                    <ChevronLeft className="h-3 w-3" /> Prev
                   </button>
-                  <span className="text-xs tabular-nums text-muted-foreground">{tablePage} / {totalPages}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider tabular-nums text-muted-foreground">{tablePage} / {totalPages}</span>
                   <button
                     onClick={() => setTablePage(tablePage + 1)}
                     disabled={tablePage >= totalPages}
-                    className="inline-flex h-8 items-center gap-1 rounded-lg border bg-card px-3 text-xs font-medium text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-50"
+                    className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
                   >
-                    Next
-                    <ChevronRight className="h-3 w-3" />
+                    Next <ChevronRight className="h-3 w-3" />
                   </button>
                 </div>
               )}
@@ -620,36 +477,35 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
           )}
 
           {filtered.length === 0 && (
-            <div className="animate-fade-up rounded-xl border border-dashed bg-card py-24 text-center text-muted-foreground">
-              <p className="text-lg font-semibold text-foreground">No updates found</p>
-              <p className="mt-1 text-sm">Try adjusting your filters or search terms.</p>
+            <div className="animate-fade-up border border-dashed border-brand-black/20 dark:border-white/10 py-24 text-center">
+              <p className="text-2xl font-bold tracking-tight text-foreground">No updates found</p>
+              <p className="mt-2 text-sm text-muted-foreground">Try adjusting your filters or search terms.</p>
             </div>
           )}
 
-          {/* 周翻页 — 最下方（仅平台筛选时显示） */}
           {platform !== "all" && (
-            <div className="flex items-center justify-center gap-3 py-4">
+            <div className="flex items-center justify-center gap-4 py-8">
               <button
                 onClick={() => setCurrentWeekIndex(currentWeekIndex + 1)}
                 disabled={currentWeekIndex >= weeks.length - 1}
-                className="inline-flex h-8 items-center gap-1 rounded-lg border bg-card px-3 text-xs font-medium text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
               >
-                <ChevronLeft className="h-3 w-3" />
-                Previous Week
+                <ChevronLeft className="h-3 w-3" /> Previous Week
               </button>
-              <span className="text-sm font-medium text-muted-foreground">{currentWeek}</span>
+              <span className="text-sm font-bold text-muted-foreground">{currentWeek}</span>
               <button
                 onClick={() => setCurrentWeekIndex(currentWeekIndex - 1)}
                 disabled={currentWeekIndex === 0}
-                className="inline-flex h-8 items-center gap-1 rounded-lg border bg-card px-3 text-xs font-medium text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
               >
-                Next Week
-                <ChevronRight className="h-3 w-3" />
+                Next Week <ChevronRight className="h-3 w-3" />
               </button>
             </div>
           )}
-        </main>
-      </div>
+        </div>
+      </main>
+
+      <SwissFooter months={months} />
     </div>
   )
 }
