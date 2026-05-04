@@ -93,75 +93,98 @@ function StudioUpdateCard({ update, size = "small" }: { update: MediaUpdate; siz
   const platformMeta = PLATFORM_META[update.platform]
   const importanceMeta = IMPORTANCE_META[update.importance]
   const isLarge = size === "large"
+  const hasImage = isLarge && !!update.imageUrl
+
+  // Shared tag header
+  const tagRow = (
+    <div className="flex flex-wrap items-center gap-2">
+      <span
+        className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full border"
+        style={{
+          borderColor: `${platformMeta?.color || "#64748b"}40`,
+          backgroundColor: `${platformMeta?.color || "#64748b"}15`,
+          color: platformMeta?.color || "#475569",
+        }}
+      >
+        <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: platformMeta?.color || "#64748b" }} />
+        {platformMeta?.label || update.platform}
+      </span>
+      <span className={`inline-flex text-[10px] font-bold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full border ${importanceMeta.className}`}>
+        {importanceMeta.label}
+      </span>
+      <span className="inline-flex text-[10px] font-medium px-2.5 py-1 rounded-full border border-border bg-muted text-muted-foreground">
+        {CATEGORY_LABELS[update.category] || update.category}
+      </span>
+      <time className="ml-auto text-[10px] font-medium tabular-nums text-muted-foreground">{update.date}</time>
+    </div>
+  )
+
+  // Text content block
+  const textContent = (
+    <div className="flex flex-col gap-4 flex-1 min-w-0">
+      {tagRow}
+      <div>
+        <a
+          href={update.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-start gap-2 font-bold leading-snug text-foreground transition-colors hover:text-brand-blue ${
+            isLarge ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"
+          }`}
+        >
+          <span>{update.title}</span>
+          <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
+        </a>
+        {update.titleOriginal && update.titleOriginal !== update.title && (
+          <p className="mt-1.5 italic-accent text-sm text-muted-foreground">{update.titleOriginal}</p>
+        )}
+      </div>
+      <p className={`text-sm leading-relaxed text-muted-foreground flex-1 ${hasImage ? "line-clamp-4" : "line-clamp-3"}`}>
+        {update.summary || "Pending summary."}
+      </p>
+      <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
+        <div className="flex flex-wrap gap-1.5">
+          {update.tags.slice(0, isLarge ? 6 : 3).map((tag) => (
+            <span key={tag} className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground/50">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60">{update.source}</span>
+      </div>
+    </div>
+  )
 
   return (
-    <article className="group flex flex-col border-t border-brand-black dark:border-white/10 pt-6 pb-8 h-full">
-      {isLarge && update.imageUrl && (
-        <div className="aspect-[16/10] mb-6 overflow-hidden relative bg-brand-gray dark:bg-white/5">
-          <img
-            src={update.imageUrl}
-            alt={update.title}
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            loading="lazy"
-            onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none' }}
-          />
+    <article className="group border-t border-brand-black dark:border-white/10 pt-6 pb-8 h-full">
+      {hasImage ? (
+        // Side-by-side: text left (~60%), image right (~40%)
+        <div className="flex gap-6 lg:gap-10 h-full">
+          <div className="flex flex-col flex-1 min-w-0">
+            {textContent}
+          </div>
+          <div
+            className="hidden md:block shrink-0 overflow-hidden bg-brand-gray dark:bg-white/5"
+            style={{ width: "38%", maxHeight: "320px" }}
+          >
+            <img
+              src={update.imageUrl!}
+              alt={update.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+              onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = "none" }}
+            />
+          </div>
+        </div>
+      ) : (
+        // No image: simple vertical stack
+        <div className="flex flex-col h-full">
+          {textContent}
         </div>
       )}
-      <div className="flex flex-col gap-4 flex-1">
-        <div className="flex flex-wrap items-center gap-2">
-          <span
-            className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full border"
-            style={{
-              borderColor: `${platformMeta?.color || "#64748b"}40`,
-              backgroundColor: `${platformMeta?.color || "#64748b"}15`,
-              color: platformMeta?.color || "#475569",
-            }}
-          >
-            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: platformMeta?.color || "#64748b" }} />
-            {platformMeta?.label || update.platform}
-          </span>
-          <span className={`inline-flex text-[10px] font-bold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full border ${importanceMeta.className}`}>
-            {importanceMeta.label}
-          </span>
-          <span className="inline-flex text-[10px] font-medium px-2.5 py-1 rounded-full border border-border bg-muted text-muted-foreground">
-            {CATEGORY_LABELS[update.category] || update.category}
-          </span>
-          <time className="ml-auto text-[10px] font-medium tabular-nums text-muted-foreground">{update.date}</time>
-        </div>
-        <div>
-          <a
-            href={update.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-start gap-2 font-bold leading-snug text-foreground transition-colors hover:text-brand-blue ${
-              isLarge ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"
-            }`}
-          >
-            <span>{update.title}</span>
-            <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
-          </a>
-          {update.titleOriginal && update.titleOriginal !== update.title && (
-            <p className="mt-1.5 italic-accent text-sm text-muted-foreground">{update.titleOriginal}</p>
-          )}
-        </div>
-        <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground flex-1">
-          {update.summary || "Pending summary."}
-        </p>
-        <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
-          <div className="flex flex-wrap gap-1.5">
-            {update.tags.slice(0, isLarge ? 6 : 3).map((tag) => (
-              <span key={tag} className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground/50">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60">{update.source}</span>
-        </div>
-      </div>
     </article>
   )
 }
-
 function UpdateTableView({ updates }: { updates: MediaUpdate[] }) {
   return (
     <div className="border-y border-brand-black dark:border-white/10" role="table">
