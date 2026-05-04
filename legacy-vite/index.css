@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-display: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-brand-blue: #001AFF;
+  --color-brand-black: #000000;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gray: #FBFBFB;
+  --color-brand-red: #FF0000;
+  --color-brand-yellow: #FFFC00;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-brand-white text-brand-black selection:bg-brand-blue selection:text-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-sans font-bold tracking-tight leading-[0.9];
+  }
+}
+
+@layer components {
+  .swiss-h1 {
+    @apply text-[12vw] lg:text-[10vw] font-bold tracking-[-0.05em] leading-[0.85] uppercase;
+  }
+
+  .swiss-h2 {
+    @apply text-5xl lg:text-7xl font-bold tracking-tight leading-[0.9];
+  }
+
+  .italic-accent {
+    font-family: 'Playfair Display', serif;
+    @apply italic lowercase font-medium tracking-tight;
+  }
+
+  .swiss-button {
+    @apply px-8 py-3 bg-brand-blue text-white font-sans font-bold text-xs uppercase tracking-widest rounded-full hover:bg-black transition-all duration-300;
+  }
+
+  .section-label {
+    @apply text-[10px] uppercase tracking-[0.4em] font-bold flex items-center gap-4;
+  }
+
+  .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply text-5xl lg:text-7xl font-bold tracking-tighter;
+  }
+
+  .platform-dot {
+    @apply w-2 h-2 rounded-full shrink-0;
+  }
+
+  .importance-high {
+    @apply bg-brand-red/10 text-brand-red border border-brand-red/20;
+  }
+
+  .importance-medium {
+    @apply bg-brand-blue/10 text-brand-blue border border-brand-blue/20;
+  }
+
+  .importance-low {
+    @apply bg-emerald-500/10 text-emerald-600 border border-emerald-500/20;
+  }
+}
+
+/* Dark mode */
+.dark {
+  --color-brand-white: #0a0a0a;
+  --color-brand-gray: #1a1a1a;
+  --color-brand-black: #f5f5f5;
+}
+
+.dark body {
+  @apply bg-neutral-950 text-neutral-100;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #001AFF;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Line clamp */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Markdown body */
+.markdown-body {
+  & h1 {
+    @apply text-6xl lg:text-7xl font-bold tracking-tighter mb-8;
+  }
+  & h2 {
+    font-family: 'Playfair Display', serif;
+    @apply text-4xl italic font-medium tracking-tight mt-14 mb-6;
+  }
+  & h3 {
+    @apply text-xs uppercase font-bold tracking-widest text-brand-blue mt-8 mb-4;
+  }
+  & p {
+    @apply text-lg lg:text-xl font-light leading-snug text-brand-black/70 mb-6;
+  }
+  & ul {
+    @apply space-y-3 mb-6;
+    & li {
+      @apply text-lg font-light leading-snug text-brand-black/70;
+    }
+  }
+  & blockquote {
+    @apply border-l-0 pl-0 py-8 text-3xl lg:text-4xl font-serif italic text-brand-blue leading-tight my-10;
+  }
+  & table {
+    @apply w-full border-t border-brand-black my-10;
+  }
+  & th {
+    @apply text-left py-3 text-[10px] uppercase tracking-widest opacity-40 font-bold border-b border-brand-black/10;
+  }
+  & td {
+    @apply py-4 text-lg border-b border-brand-black/5;
+  }
+  & strong {
+    @apply font-bold text-brand-black;
+  }
+}
+
+/* Hide scrollbar but allow scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

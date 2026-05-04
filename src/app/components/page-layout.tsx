@@ -25,7 +25,7 @@ export function PageLayout({ updates, months, weeks, children }: PageLayoutProps
     if (platform === "all") {
       router.push("/")
     } else {
-      router.push(`/?platform=${platform}`)
+      router.push(`/platform/${platform}`)
     }
   }
 
@@ -54,13 +54,13 @@ export function PageLayout({ updates, months, weeks, children }: PageLayoutProps
 
 export function SwissHeader({ onMenuOpen }: { onMenuOpen: () => void }) {
   return (
-    <header className="sticky top-0 z-30 h-16 border-b border-brand-black dark:border-white/10 bg-background/95 backdrop-blur-md flex items-center">
+    <header className="sticky top-0 z-30 h-20 border-b border-brand-black dark:border-white/10 bg-background/95 backdrop-blur-md flex items-center">
       <div className="flex items-center justify-between w-full px-6 lg:px-12">
         <Link href="/" className="flex items-center gap-3 group">
           <span className="inline-flex items-center justify-center h-7 px-2 bg-brand-black text-white text-xs font-bold tracking-widest rounded-sm group-hover:bg-brand-blue transition-colors">
             [Media]
           </span>
-          <span className="text-sm font-bold tracking-tight text-foreground group-hover:text-brand-blue transition-colors">
+          <span className="text-base font-bold tracking-tight text-foreground group-hover:text-brand-blue transition-colors">
             Updates
           </span>
         </Link>

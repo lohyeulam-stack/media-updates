@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Media Updates — TopTou</title>
+    <link>https://media-updates.vercel.app</link>
+    <description>多媒体平台广告更新追踪 — TikTok, Meta, Google, Snapchat, YouTube and more</description>
+    <language>zh-cn</language>
+    <lastBuildDate>2026-05-04T00:00:00+08:00</lastBuildDate>
+    <atom:link href="https://media-updates.vercel.app/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Media Updates — Weekly Feed</title>
+      <link>https://media-updates.vercel.app</link>
+      <description>广告平台更新追踪，每周一更新</description>
+    </item>
+  </channel>
+</rss>

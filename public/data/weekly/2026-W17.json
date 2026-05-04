@@ -1,0 +1,242 @@
+[
+  {
+    "id": "tiktok-2026-04-24-001",
+    "date": "2026-04-24",
+    "week": "2026-W17",
+    "platform": "tiktok",
+    "title": "互动组件扩展至升级版Smart+网页和电商目录广告，驱动用户参与",
+    "titleOriginal": "Interaction add-ons support expanded to Upgraded Smart+ Web Campaigns and E-commerce Catalog Ads",
+    "summary": "升级版Smart+网页广告和电商目录广告现已支持互动组件管理。广告投放团队可通过 /smart_plus/ad/create/ 和 /smart_plus/ad/update/ 接口的 interactive_add_on_list 参数启用互动组件，帮助提升广告互动率。",
+    "category": "campaign-management",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "interaction-addon",
+      "e-commerce",
+      "campaign"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "youtube-2026-04-24-001",
+    "date": "2026-04-24",
+    "week": "2026-W17",
+    "platform": "youtube",
+    "title": "跟着YouTube教程和播放列表学最新排舞",
+    "titleOriginal": "Learn the latest line dance routines with YouTube tutorials and playlists",
+    "summary": "YouTube正在庆祝排舞热潮，在Stagecoach音乐节期间推出定制版YouTube标志。排舞视频观看量激增，803Fresh的《Boots on the Ground》获得超7000万观看量。YouTube成为分享新一代艺术家歌曲和舞蹈的关键平台，观众会在网上学习后再到公共场合实践。对广告投放团队而言，排舞相关内容的流行趋势可作为季节性营销参考，尤其适合与乡村音乐、时装品牌或娱乐相关的广告投放。",
+    "category": "culture-trends",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/culture-and-trends/line-dancing-trends-youtube/",
+    "tags": [
+      "排舞",
+      "音乐节",
+      "乡村音乐",
+      "文化趋势",
+      "教程内容"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "mintegral-2026-04-24-001",
+    "date": "2026-04-24",
+    "week": "2026-W17",
+    "platform": "mintegral",
+    "title": "非游戏营销人员如何重写用户获取规则",
+    "titleOriginal": "How Non-Gaming Marketers Are Rewriting The Rules Of User Acquisition",
+    "summary": "本文探讨非游戏类广告主在用户获取（UA）领域的新策略和方法。分析非游戏品牌如何利用移动广告平台实现增长突破，包括垂直电商、健康健身、生活方式等领域的成功案例。为非游戏类应用的投放团队提供用户获取思路和策略参考。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/non-gaming-rewriting-rules-of-user-acquisition",
+    "tags": [
+      "用户获取",
+      "非游戏应用",
+      "移动营销",
+      "策略"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "google-2026-04-23-001",
+    "date": "2026-04-23",
+    "week": "2026-W17",
+    "platform": "google",
+    "title": "简化 Google Ads API v24 中的关键词预测指标",
+    "titleOriginal": "Simplifying Keyword Forecast Metrics in Google Ads API v24",
+    "summary": "Google Ads API v24 统一了预测基础设施，更新了 GenerateKeywordForecastMetrics 方法。核心变更：1) 预测指标与竞价策略对齐，Manual CPC/Maximize Clicks 提供点击/平均CPC/成本，Maximize Conversions 提供转化/平均CPA/成本；2) 简化请求参数，CampaignToForecast.geo_modifiers 替换为 geo_target_constants，ForecastAdGroup.biddable_keywords 替换为 keywords；3) 移除多个字段包括 keyword_plan_network、negative_keywords、max_cpc_bid_micros 等。v23 版本将于 2027 年 2 月停用。建议开发者检查集成兼容性并参考最新文档。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/simplifying-keyword-forecast-metrics-in.html",
+    "tags": [
+      "google_ads_api",
+      "keyword_forecast",
+      "v24",
+      "bidding_strategy"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-22-001",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "meta",
+    "title": "Meta AI 商业助手全球扩展，支持更多语言",
+    "titleOriginal": "Meta AI business assistant Expands Globally, More Languages",
+    "summary": "Meta 正在将 Meta AI 商业助手 beta 测试扩展至全球主要市场的广告主和代理商，支持更多语言。这意味着各类规模的广告主都能使用 AI 助手来优化广告活动管理和策略制定，是 Meta AI 功能全球化的重要一步。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-ai-business-assistant-expands-globally-with-more-languages",
+    "tags": [
+      "AI助手",
+      "全球化",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "google-2026-04-22-002",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "google",
+    "title": "宣布 Google Ads API v24 发布",
+    "titleOriginal": "Announcing v24 of the Google Ads API",
+    "summary": "Google Ads API v24 正式发布，主要新功能：1) 新增 CartDataSalesView 资源支持购物转化数据，支持按产品维度分析销售数据，新增 all_* 非竞价指标如 all_cost_of_goods_sold_micros；2) 简化视频内容排除设置；3) ReachPlanService 新增 YouTube Select Lineups 支持。重要变更：AudienceInsightsService.topic_audience_combinations 移至公共命名空间，ReachPlanService.ListPlannableProducts 的 youtube_select_lineups 字段调整，ContentCreatorInsightsService 移除 is_brand_connect_creator 字段，广告资源视图移除 click_type 维度，VideoResponsiveAdInfo 现为可变状态。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/announcing-v24-of-google-ads-api.html",
+    "tags": [
+      "google_ads_api",
+      "v24",
+      "cart_data",
+      "release_notes"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "line-2026-04-22-001",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "line",
+    "title": "【2026年1～3月】LINE迷你应用功能更新汇总",
+    "titleOriginal": "【2026年1～3月】LINEミニアプリのアップデートまとめ",
+    "summary": "汇总2026年第一季度（1月至3月）LINE迷你应用的各项功能更新，包括性能优化、新增API接口、用户体验改进等内容。帮助广告投放团队了解迷你应用生态的最新动态，评估是否可作为广告落地页或转化渠道使用。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-research/service-information/lite-update-2026/",
+    "tags": [
+      "LINE迷你应用",
+      "功能更新",
+      "小程序"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-21-001",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "tiktok",
+    "title": "TikTok Product Preview：2026年Q2品牌新功能前瞻",
+    "titleOriginal": "TikTok Product Preview: What's new for brands in Q2 2026",
+    "summary": "TikTok发布2026年第二季度产品更新预览，涵盖最新的产品创新功能，旨在帮助品牌和代理商在TikTok上推动业务增长。本季度重点可能包括AI驱动创意工具升级、效果广告优化及商务功能增强。建议广告投放团队关注本季度产品路线图，以便及时调整投放策略和利用新功能。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-product-preview",
+    "tags": [
+      "Q2 2026",
+      "产品更新",
+      "新功能",
+      "品牌解决方案"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-21-002",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "meta",
+    "title": "The Media Image 如何利用 Meta 协作者系统提升洞察与绩效",
+    "titleOriginal": "How The Media Image boosted insights and performance with a Meta co-pilot system",
+    "summary": "全球领先独立获客营销机构 The Media Image 构建了 Meta 协作者多智能体系统，显著提升了运营效率并为客户带来更好的广告效果。此案例展示了 AI 协作者系统在广告投放中的实际应用价值，为其他代理商提供了可借鉴的实践方案。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-media-image-agency-copilot-success-story",
+    "tags": [
+      "AI协作者",
+      "代理案例",
+      "运营效率"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "youtube-2026-04-21-002",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "youtube",
+    "title": "YouTube将面容检测技术扩展至娱乐行业",
+    "titleOriginal": "Expanding likeness detection to the entertainment industry",
+    "summary": "YouTube将其AI面容检测技术扩展至娱乐行业，涵盖人才经纪公司、管理公司和名人。该技术类似Content ID，可检测AI生成的内容（如深度伪造），并赋予权利人发现并申请移除的权力。已获得CAA、UTA、WME和Untitled Management等主要经纪公司支持。这意味着YouTube在AI内容管理和版权保护方面迈出重要一步，可能影响未来名人代言类广告的内容合规性管理。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-likeness-detection-ai-protection/",
+    "tags": [
+      "AI面容检测",
+      "深度伪造",
+      "内容保护",
+      "版权管理",
+      "娱乐行业"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "youtube-2026-04-20-003",
+    "date": "2026-04-20",
+    "week": "2026-W17",
+    "platform": "youtube",
+    "title": "First We Feast推出全新系列《Slice Joint》",
+    "titleOriginal": "First We Feast debuts new series 'Slice Joint' on YouTube",
+    "summary": "知名工作室First We Feast在YouTube推出全新访谈系列《Slice Joint》，由主持人Speedy Morman邀请文化名人边吃纽约披萨边聊天。首期嘉宾为《怪奇物语》演员Gaten Matarazzo。该系列加入Hot Ones和Pro Moves行列，进一步丰富YouTube原创内容矩阵。对广告投放团队而言，可关注此类娱乐IP的合作品牌机会，以及披萨/食品品牌的植入合作空间。",
+    "category": "creative",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/first-we-feast-slice-joint-premiere/",
+    "tags": [
+      "原创内容",
+      "访谈节目",
+      "First We Feast",
+      "娱乐营销",
+      "YouTube Originals"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "mintegral-2026-04-20-002",
+    "date": "2026-04-20",
+    "week": "2026-W17",
+    "platform": "mintegral",
+    "title": "Mintegral 续期 SOC 认证，拥抱认可的数据标准",
+    "titleOriginal": "Mintegral Renews SOC Certifications, Embracing Recognized Data Standards",
+    "summary": "Mintegral 平台正式续期 SOC 2 Type I 和 SOC 2 Type II 认证，同时获得 SOC 3 证书，表明平台在数据安全、隐私保护和合规性方面达到行业最高标准。认证由国际知名审计机构进行评估，确保 Mintegral 的安全控制措施持续有效。",
+    "category": "policy",
+    "importance": "high",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/soc-certification",
+    "tags": [
+      "SOC认证",
+      "数据安全",
+      "合规",
+      "隐私保护"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  }
+]

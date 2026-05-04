@@ -69,14 +69,14 @@ function BiStatStrip({
         {stats.map((s) => (
           <div
             key={s.label}
-            className={`px-6 lg:px-8 py-6 lg:py-8 border-r border-brand-black dark:border-white/10 last:border-r-0 ${
+            className={`px-6 lg:px-10 py-10 lg:py-14 border-r border-brand-black dark:border-white/10 last:border-r-0 ${
               s.accent ? "bg-brand-blue text-white" : "bg-background"
             }`}
           >
             <p className={`text-[10px] font-bold uppercase tracking-[0.12em] mb-3 ${s.accent ? "text-white/70" : "text-muted-foreground"}`}>
               {s.label}
             </p>
-            <p className={`text-5xl lg:text-6xl font-bold tracking-tighter leading-none tabular-nums ${s.accent ? "text-white" : "text-foreground"}`}>
+            <p className={`text-5xl lg:text-7xl font-bold tracking-tighter leading-none tabular-nums ${s.accent ? "text-white" : "text-foreground"}`}>
               {s.value}
             </p>
             <p className={`mt-2 text-xs ${s.accent ? "text-white/60" : "text-muted-foreground"}`}>
@@ -95,8 +95,16 @@ function StudioUpdateCard({ update, size = "small" }: { update: MediaUpdate; siz
   const isLarge = size === "large"
 
   return (
-    <article className="group flex flex-col border border-brand-black dark:border-white/10 bg-card hover:bg-muted/30 transition-colors duration-200 h-full">
-      <div className={`p-5 ${isLarge ? "lg:p-8" : ""} flex flex-col gap-4 flex-1`}>
+    <article className="group flex flex-col border-t border-brand-black dark:border-white/10 pt-6 pb-8 h-full">
+      {isLarge && (
+        <div className="aspect-[16/10] bg-brand-gray dark:bg-white/5 mb-6 overflow-hidden relative">
+          <div className="absolute inset-0 opacity-10 blur-xl scale-110 group-hover:scale-125 transition-transform duration-1000" style={{ backgroundColor: platformMeta?.color }} />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-[8vw] font-bold tracking-tighter opacity-[0.04] uppercase select-none">{platformMeta?.label}</span>
+          </div>
+        </div>
+      )}
+      <div className="flex flex-col gap-4 flex-1">
         <div className="flex flex-wrap items-center gap-2">
           <span
             className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full border"
@@ -139,7 +147,7 @@ function StudioUpdateCard({ update, size = "small" }: { update: MediaUpdate; siz
         <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
           <div className="flex flex-wrap gap-1.5">
             {update.tags.slice(0, isLarge ? 6 : 3).map((tag) => (
-              <span key={tag} className="text-[10px] font-medium px-2 py-0.5 bg-muted text-muted-foreground rounded-sm">
+              <span key={tag} className="text-[9px] font-bold uppercase tracking-wider text-muted-foreground/50">
                 {tag}
               </span>
             ))}
@@ -331,8 +339,8 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
       />
 
       <main className="flex-1">
-        <section className="px-6 lg:px-12 pt-16 pb-20 border-b border-brand-black dark:border-white/10 relative overflow-hidden">
-          <div className="relative z-10 max-w-4xl">
+        <section className="px-6 lg:px-12 pt-24 pb-32 lg:pt-32 lg:pb-40 border-b border-brand-black dark:border-white/10 relative overflow-hidden">
+          <div className="relative z-10 animate-fade-up">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-6">
               多媒体平台更新追踪
             </p>
@@ -443,7 +451,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
               {grouped.map(([date, items], groupIndex) => (
                 <section key={date} className="animate-fade-up" style={{ animationDelay: `${Math.min(groupIndex, 4) * 40 + 80}ms` }}>
                   <div className="flex items-center gap-4 mb-6">
-                    <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-foreground">{date}</h2>
+                    <h2 className="text-lg font-bold tracking-tight text-foreground">{date}</h2>
                     <div className="h-px flex-1 bg-brand-black/10 dark:bg-white/10" />
                     <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{items.length}</span>
                   </div>

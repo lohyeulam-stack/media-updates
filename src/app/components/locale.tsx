@@ -24,7 +24,7 @@ export function LocaleToggle() {
   return (
     <button
       onClick={() => setLocale(locale === "zh" ? "en" : "zh")}
-      className="px-2 py-1 rounded-md text-xs font-medium hover:bg-muted transition-colors text-muted-foreground hover:text-foreground cursor-pointer"
+      className="px-3 py-1.5 rounded-full border border-brand-black dark:border-white/20 text-[10px] font-bold uppercase tracking-widest text-foreground hover:bg-brand-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer"
       title="Switch language"
     >
       {locale === "zh" ? "EN" : "中"}
