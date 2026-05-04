@@ -1,0 +1,144 @@
+[
+  {
+    "id": "meta-2026-03-13-002",
+    "date": "2026-03-13",
+    "week": "2026-W11",
+    "platform": "meta",
+    "title": "汽车型号广告过渡至Comscore Markets",
+    "titleOriginal": "Transitioning to Comscore Markets for automotive model ads",
+    "summary": "Meta宣布从2026年6月22日起停止使用Nielsen指定市场区域(DMA)进行汽车型号广告定向，改用Comscore Markets®作为替代方案。Comscore Markets于2025年8月推出。届时仍使用Nielsen DMA的汽车型号广告活动将被暂停，需更新为Comscore Markets定向。广告投放团队应立即检查现有汽车广告的定向设置，确保在截止日期前完成迁移。",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/03/13/transitioning-to-comscore-markets-for-automotive-model-ads/",
+    "tags": [
+      "Comscore Markets",
+      "Nielsen DMA",
+      "汽车广告",
+      "定向",
+      "数据迁移"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "mintegral-2026-03-13-003",
+    "date": "2026-03-13",
+    "week": "2026-W11",
+    "platform": "mintegral",
+    "title": "为什么目标ROAS广告活动难以规模化",
+    "titleOriginal": "Why Target ROAS Campaigns Can Struggle To Scale",
+    "summary": "分析广告主在使用Target ROAS竞价策略时经常遇到的规模化瓶颈问题。内容深入探讨了预算限制、出价竞争、素材质量等因素如何影响ROAScampaign的扩展能力，并为营销团队提供突破增长天花板的实用建议。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/why-roas-campaigns-can-struggle-to-scale",
+    "tags": [
+      "Target ROAS",
+      "规模化",
+      "竞价策略",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-12-004",
+    "date": "2026-03-12",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "社交如何驱动电信决策",
+    "titleOriginal": "How Social Drives Telco Decisions",
+    "summary": "Snapchat与Alter Agents联合研究，深入分析影响Snapchatters电信决策的关键因素，以及Snapchat在其购买旅程中的独特作用。为电信运营商提供用户获取和品牌定位的策略参考。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/how-social-drives-telco-decisions",
+    "tags": [
+      "电信行业",
+      "消费者决策",
+      "品牌策略",
+      "行业研究"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-11-005",
+    "date": "2026-03-11",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "独立代理商聚焦：January Digital",
+    "titleOriginal": "Indy Agency Spotlight: January Digital",
+    "summary": "深入介绍January Digital如何帮助客户在2026年实现增长，核心策略包括AI应用、统一归因测量、媒体多元化组合以及全漏斗营销方法论。为代理商和品牌主提供前沿数字营销实践参考。",
+    "category": "automation",
+    "importance": "low",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/agency-spotlight-january-digital",
+    "tags": [
+      "代理商",
+      "AI营销",
+      "归因测量",
+      "行业洞察"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-11-006",
+    "date": "2026-03-11",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "超越点击的效果：归因数据揭示真实社交影响力",
+    "titleOriginal": "Performance Beyond Clicks: What Attribution Data Reveals About Real Social Impact",
+    "summary": "探讨当消费者旅程横跨多个平台、格式和场景时，营销者面临的核心问题：哪些渠道真正推动了实际业务成果。分享归因数据分析方法，帮助广告主建立更科学的效果衡量体系。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/performance-beyond-clicks-attribution-data-publicis",
+    "tags": [
+      "归因分析",
+      "效果衡量",
+      "跨平台营销",
+      "数据分析"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-10-007",
+    "date": "2026-03-10",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "社交平台和创作者如何影响你的电视观看选择",
+    "titleOriginal": "How platforms and creators influence what you watch on TV",
+    "summary": "Snapchat与Omnicom Media及Ipsos合作研究，揭示社交平台和创作者在影响用户电视观看决策中的角色。为内容发行商和娱乐品牌提供跨屏营销策略建议。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/social-effect-tv",
+    "tags": [
+      "娱乐行业",
+      "内容营销",
+      "创作者经济",
+      "跨屏营销"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "linkedin-2026-03-12-002",
+    "date": "2026-03-12",
+    "week": "2026-W11",
+    "platform": "linkedin",
+    "title": "2026年如何在LinkedIn上提升AI可见性",
+    "titleOriginal": "How to Leverage LinkedIn for AI Visibility in 2026",
+    "summary": "随着AI搜索的兴起，B2B营销人员需要调整LinkedIn内容策略以适应新的发现机制。文章提供可操作的技巧，指导如何创建具有教育性、原创性和可信度的内容，以提升在AI搜索结果中的可见性。这是B2B营销人员在AI驱动搜索时代获取有机流量的重要指南。",
+    "category": "content-marketing",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/how-to-leverage-linkedin-for-ai-visibility-in-2026",
+    "tags": [
+      "AI搜索",
+      "内容策略",
+      "SEO",
+      "有机流量",
+      "2026趋势"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  }
+]

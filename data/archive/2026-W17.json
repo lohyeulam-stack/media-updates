@@ -1,0 +1,124 @@
+[
+  {
+    "id": "google-2026-04-23-001",
+    "date": "2026-04-23",
+    "week": "2026-W17",
+    "platform": "google",
+    "title": "简化 Google Ads API v24 中的关键词预测指标",
+    "titleOriginal": "Simplifying Keyword Forecast Metrics in Google Ads API v24",
+    "summary": "Google Ads API v24 统一了预测基础设施，对关键词预测功能进行重大调整。主要变更：1) 预测指标与竞价策略对齐，Manual CPC/Maximize Clicks 提供点击/平均CPC/成本，Maximize Conversions 提供转化/平均CPA/成本，不再提供跨指标数据；2) 简化请求参数，用 geo_target_constants 替换 geo_modifiers，keywords 替换 biddable_keywords，移除 keyword_plan_network、negative_keywords、max_cpc_bid_micros、CriterionBidModifier 等字段。v23 将于2027年2月停用，广告技术团队需尽快升级代码以兼容新参数集。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/simplifying-keyword-forecast-metrics-in.html",
+    "tags": [
+      "google_ads_api",
+      "关键词优化",
+      "预测指标",
+      "竞价策略",
+      "API v24"
+    ],
+    "fetchedAt": "2026-04-25T22:11:09.357819"
+  },
+  {
+    "id": "meta-2026-04-22-001",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "meta",
+    "title": "Meta AI 业务助手全球扩展，支持更多语言",
+    "titleOriginal": "Meta AI business assistant Expands Globally, More Languages",
+    "summary": "Meta AI 业务助手 Beta 版正在向全球主要市场的广告主和代理商全面开放，新增支持多种语言。这是 Meta 推动 AI 赋能中小企业的重要举措，广告投放团队可直接在广告管理平台内使用 AI 助手进行创意建议、受众分析和账户优化等任务，降低使用门槛，提升广告运营效率。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-ai-business-assistant-expands-globally-with-more-languages",
+    "tags": [
+      "AI助手",
+      "全球化",
+      "自动化",
+      "广告投放"
+    ],
+    "fetchedAt": "2026-04-25T22:11:09.357819"
+  },
+  {
+    "id": "google-2026-04-22-002",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "google",
+    "title": "Google Ads API v24 版本发布公告",
+    "titleOriginal": "Announcing v24 of the Google Ads API",
+    "summary": "Google Ads API v24 正式发布，引入多项重要新功能：1) 购物车数据转化追踪支持，新增 CartDataSalesView 资源支持按实际购买产品细分，新增 all_ 系列非竞价指标（如 all_cost_of_goods_sold_micros）；2) ShoppingPerformanceView 支持 conversion_attribution_event_type 分段。重大变更：移除 campaign_budget 的 ad_sub_network_type 分段，移除 ad_group_asset/campaign_asset/customer_asset 的 click_type 分段，ContentCreatorInsightsService 移除 is_brand_connect_creator 字段，ReachPlanService.ListPlannableProducts 移除 youtube_select_lineups 字段。开发者需查看完整变更日志并升级客户端库。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/announcing-v24-of-google-ads-api.html",
+    "tags": [
+      "google_ads_api",
+      "API v24",
+      "购物车数据",
+      "转化追踪",
+      "新功能发布"
+    ],
+    "fetchedAt": "2026-04-25T22:11:09.357819"
+  },
+  {
+    "id": "tiktok-2026-04-21-001",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "tiktok",
+    "title": "TikTok产品预览：2026年Q2品牌新功能",
+    "titleOriginal": "TikTok Product Preview: What's new for brands in Q2 2026",
+    "summary": "TikTok发布2026年第二季度产品更新预览，介绍帮助品牌和代理商在TikTok上推动业务影响的新产品创新。本季度重点关注提升营销工作流效率和广告投放智能化，预计将涉及广告创意、投放优化、测量分析等核心产品的功能升级。对广告投放团队而言，需关注新功能的落地时间表和迁移策略。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-product-preview",
+    "tags": [
+      "TikTok",
+      "产品预览",
+      "Q2 2026",
+      "广告产品"
+    ],
+    "fetchedAt": "2026-04-25T22:11:09.357819"
+  },
+  {
+    "id": "meta-2026-04-21-002",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "meta",
+    "title": "The Media Image 如何利用 Meta AI 副驾驶系统提升洞察与绩效",
+    "titleOriginal": "How The Media Image boosted insights and performance with a Meta co-pilot system",
+    "summary": "全球独立收购营销机构 The Media Image 构建了一套 Meta AI 副驾驶多智能体系统，显著提升了运营效率和客户广告绩效。该案例展示了如何通过 AI 自动化简化广告优化流程、加速洞察生成，为广告投放团队提供了利用 AI 工具提升效率的实践参考。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-media-image-agency-copilot-success-story",
+    "tags": [
+      "AI副驾驶",
+      "案例研究",
+      "自动化",
+      "广告代理"
+    ],
+    "fetchedAt": "2026-04-25T22:11:09.357819"
+  },
+  {
+    "id": "google-2026-04-21-001",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "google",
+    "title": "通过Demand Gen第8次更新在YouTube上更快完成转化",
+    "titleOriginal": "Convert faster on YouTube with Demand Gen Drop #8.",
+    "summary": "Google Ads推出Demand Gen广告系列的第8次更新，重点优化YouTube平台的转化能力。新功能包括更智能的创意优化、改进的受众匹配算法以及增强的视频插播广告投放策略，旨在帮助广告主在用户发现和研究阶段更早触达目标人群，缩短从兴趣到转化的路径。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/demand-gen-drop-april-2026/",
+    "tags": [
+      "Demand Gen",
+      "YouTube",
+      "视频广告",
+      "转化优化"
+    ],
+    "fetchedAt": "2026-04-25T22:11:09.357819"
+  }
+]

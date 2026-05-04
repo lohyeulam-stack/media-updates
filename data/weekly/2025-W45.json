@@ -1,0 +1,41 @@
+[
+  {
+    "id": "pinterest-2025-11-05-001",
+    "date": "2025-11-05",
+    "week": "2025-W45",
+    "platform": "pinterest",
+    "title": "Epsilon受众现已登陆Pinterest",
+    "titleOriginal": "Epsilon audiences are now available on Pinterest",
+    "summary": "Pinterest宣布Epsilon受众群体功能正式上线，广告主可直接在Pinterest平台访问Epsilon强大的消费者数据能力，实现更精准的受众定向。这一整合将帮助广告投放团队利用Epsilon的人口统计和行为数据，提升广告投放的精准度和效果转化。",
+    "category": "targeting",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/epsilon-audiences-are-now-available-on-pinterest/",
+    "tags": [
+      "受众定向",
+      "数据整合",
+      "广告投放"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  },
+  {
+    "id": "pinterest-2025-11-03-001",
+    "date": "2025-11-03",
+    "week": "2025-W45",
+    "platform": "pinterest",
+    "title": "Pinterest节日季编辑：为节日购物带来精准化体验",
+    "titleOriginal": "Pinterest's Festive Season Edit brings precision to festive shopping",
+    "summary": "Pinterest发布节日季编辑内容，帮助广告主把握节日购物趋势。该编辑整合了节日装饰、礼物选购、派对策划等热门品类趋势，为广告投放团队提供节日营销方向。内容涵盖Ads、Creators、Trends三大类别，建议广告主结合节日趋势更新素材并优化投放策略。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-holiday-edit-brings-precision-to-festive-shopping/",
+    "tags": [
+      "节日营销",
+      "趋势",
+      "广告产品",
+      "创作者"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  }
+]

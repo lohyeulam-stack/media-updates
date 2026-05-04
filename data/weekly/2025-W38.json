@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pinterest-2025-09-17-002",
+    "date": "2025-09-17",
+    "week": "2025-W38",
+    "platform": "pinterest",
+    "title": "被遗弃购物车的真实问题",
+    "titleOriginal": "Choices, choices: The real problem behind abandoned carts",
+    "summary": "深入分析用户在Pinterest上购物时放弃购物车的原因。研究发现用户并非不愿购买，而是面临选择困难或决策信息不足。广告主应优化产品信息展示和结账流程，提供更清晰的购买指引以提升转化率。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/the-real-problem-behind-abandoned-carts/",
+    "tags": [
+      "购物车放弃",
+      "转化优化",
+      "用户行为",
+      "购物体验"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  }
+]

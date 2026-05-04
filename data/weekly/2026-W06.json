@@ -1,0 +1,102 @@
+[
+  {
+    "id": "tiktok-2026-02-02-001",
+    "date": "2026-02-02",
+    "week": "2026-W06",
+    "platform": "tiktok",
+    "title": "Ebiquity x TikTok 2026研究：高价付费回报——高影响力广告格式如何带来更低的业务成本",
+    "titleOriginal": "Ebiquity x TikTok 2026 Research",
+    "summary": "该研究探讨了高影响力广告格式如何为广告主带来更低业务成本。研究基于实际投放数据，分析了TikTok优质广告位的投资回报表现，为品牌优化2026年广告预算分配提供数据支撑。对于追求高效投放的广告团队，建议关注高影响力格式的CPA优势。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-ebiquity",
+    "tags": [
+      "研究",
+      "广告效果",
+      "ROI",
+      "高影响力格式"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "tiktok-2026-02-02-001",
+    "date": "2026-02-02",
+    "week": "2026-W06",
+    "platform": "tiktok",
+    "title": "Ebiquity x TikTok 2026研究：高端付费回报",
+    "titleOriginal": "Ebiquity x TikTok 2026 Research",
+    "summary": "基于2026年最新研究，揭示高影响力广告格式如何帮助品牌实现更低成本的业务成果。该研究为广告投放团队提供了关于广告格式投资回报的重要参考数据，指导优化广告预算分配策略。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "TikTok Ads Blog (AU)",
+    "sourceUrl": "https://ads.tiktok.com/business/en-AU/blog/tiktok-ebiquity",
+    "tags": [
+      "研究报告",
+      "广告效果",
+      "投资回报率",
+      "高影响力格式"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "meta-2026-02-06-001",
+    "date": "2026-02-06",
+    "week": "2026-W06",
+    "platform": "meta",
+    "title": "Instagram OAuth授权新增enable_fb_login参数支持",
+    "titleOriginal": "Added support for the enable_fb_login parameter in Instagram OAuth authorization requests",
+    "summary": "在Instagram OAuth授权请求中新增enable_fb_login参数支持，开发者可控制Instagram登录页面是否显示Facebook登录选项。该参数默认值为true。对于同时管理Facebook和Instagram账户的广告投放团队，可通过此参数优化跨平台登录流程，提升授权效率和用户体验。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Instagram Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/instagram-platform/changelog",
+    "tags": [
+      "oauth",
+      "facebook-login",
+      "instagram-login",
+      "authentication"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-05-006",
+    "date": "2026-02-05",
+    "week": "2026-W06",
+    "platform": "linkedin",
+    "title": "数据驱动决策：LinkedIn上的报告、ROI与智能实验",
+    "titleOriginal": "Data Meets Decision-Making: Reporting, ROI and Smart Experimentation on LinkedIn",
+    "summary": "探讨B2B营销如何通过数据驱动决策，最大化LinkedIn广告ROI。内容涵盖报告方法论、ROI计算模型和A/B测试最佳实践。对广告投放团队的启示：建立科学的测试框架和归因体系，系统化提升投放效率和投资回报率。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/measurement/b2b-marketing-measurement-evaluate-maximize",
+    "tags": [
+      "ROI分析",
+      "A/B测试",
+      "数据驱动",
+      "营销归因"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-03-007",
+    "date": "2026-02-03",
+    "week": "2026-W06",
+    "platform": "linkedin",
+    "title": "LinkedIn携手营销合作伙伴推出B2B归因与分析解决方案",
+    "titleOriginal": "LinkedIn Introduces B2B Attribution & Analytics with Marketing Partners",
+    "summary": "LinkedIn宣布与营销合作伙伴共同推出B2B归因与分析解决方案，帮助广告主更好地追踪和衡量LinkedIn渠道的业务贡献。对广告投放团队的启示：新工具将提升跨渠道归因能力，建议关注并测试新功能，优化预算分配决策。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/measurement/linkedin-introduces-b2b-attribution-and-analytics-with-marketing-partners",
+    "tags": [
+      "B2B归因",
+      "分析工具",
+      "营销合作伙伴",
+      "效果衡量"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  }
+]

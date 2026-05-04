@@ -1,0 +1,43 @@
+[
+  {
+    "id": "meta-2025-12-18-002",
+    "date": "2025-12-18",
+    "week": "2025-W51",
+    "platform": "meta",
+    "title": "2025年安全与诚信亮点回顾",
+    "titleOriginal": "Safety and Integrity Highlights from 2025",
+    "summary": "Meta发布2025年度安全与诚信工作回顾，涵盖负责任媒体建设的四大关键支柱进展。此内容偏内部治理总结，对广告投放团队的直接影响有限。",
+    "category": "policy",
+    "importance": "low",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/safety-and-integrity-highlights-from-2025",
+    "tags": [
+      "安全",
+      "诚信",
+      "平台治理",
+      "年度回顾"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "meta-2025-12-17-003",
+    "date": "2025-12-17",
+    "week": "2025-W51",
+    "platform": "meta",
+    "title": "2025年Cyber 5购物季：哪些策略有效、发生了什么变化及如何把握Q5",
+    "titleOriginal": "Cyber 5 2025: What worked, what changed and how to win Q5",
+    "summary": "Meta分析2025年最大购物周末的表现，提供关键趋势洞察和策略建议，帮助广告主在Q5（圣诞购物季）制定有效的广告策略，抓住年末销售机遇。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/cyber-5-2025-what-worked",
+    "tags": [
+      "Cyber 5",
+      "购物季",
+      "Q5",
+      "节日营销",
+      "策略建议"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  }
+]

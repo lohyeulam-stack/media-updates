@@ -1,0 +1,62 @@
+[
+  {
+    "id": "meta-2025-10-23-003",
+    "date": "2025-10-23",
+    "week": "2025-W43",
+    "platform": "meta",
+    "title": "Handover Protocol正式停用，全面迁移至Conversation Routing",
+    "titleOriginal": "Handover Protocol no longer supported, migrated to Conversation Routing",
+    "summary": "Meta正式停止支持Instagram的Handover Protocol，所有企业已迁移至Conversation Routing。Conversation Routing与大多数Handover Protocol API和功能向后兼容，预计不会造成业务中断。这是Instagram消息平台架构的重要更新。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/conversation-routing",
+    "tags": [
+      "handover-protocol",
+      "conversation-routing",
+      "instagram",
+      "deprecation"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-21-004",
+    "date": "2025-10-21",
+    "week": "2025-W43",
+    "platform": "meta",
+    "title": "Instagram Moderate Conversations API正式发布",
+    "titleOriginal": "Instagram Moderate Conversations API available",
+    "summary": "Instagram Moderate Conversations API正式可用，允许企业通过API阻止用户、解除阻止、将对话移至垃圾邮件文件夹，替代此前仅能在Instagram应用或Meta Business Suite中完成的管理操作。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/moderating-conversations",
+    "tags": [
+      "moderate-conversations",
+      "instagram",
+      "api",
+      "spam-filtering"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "pinterest-2025-10-20-001",
+    "date": "2025-10-20",
+    "week": "2025-W43",
+    "platform": "pinterest",
+    "title": "你的3步黑五网一攻略",
+    "titleOriginal": "Your 3-step Black Friday and Cyber Monday playbook",
+    "summary": "Pinterest官方发布的黑五网一营销攻略，提供三步走策略帮助广告主在年末大促季抓住购物机遇。涵盖素材准备、受众定向和预算分配的实战建议，适合所有希望在2025年末购物季提升业绩的广告投放团队参考。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/black-friday-cyber-monday-playbook/",
+    "tags": [
+      "黑五网一",
+      "节假日营销",
+      "购物季",
+      "广告策略"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  }
+]

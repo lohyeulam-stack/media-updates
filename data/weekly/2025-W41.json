@@ -1,0 +1,42 @@
+[
+  {
+    "id": "meta-2025-10-06-006",
+    "date": "2025-10-06",
+    "week": "2025-W41",
+    "platform": "meta",
+    "title": "Conversations API和Webhooks支持reply_to字段",
+    "titleOriginal": "reply_to available in Conversations API and Webhooks",
+    "summary": "reply_to字段现已在Conversations API中可用，当消息为回复时返回且非空，并可标识是否为自回复。同时，reply_to对象也将出现在Message和Echo webhooks的message对象中，包含被回复消息的mid和is_self_reply布尔字段。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/messages/",
+    "tags": [
+      "conversations-api",
+      "webhook",
+      "reply-to",
+      "message-reply"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "pinterest-2025-10-08-003",
+    "date": "2025-10-08",
+    "week": "2025-W41",
+    "platform": "pinterest",
+    "title": "玩转万圣节季节性营销",
+    "titleOriginal": "Scare up spooky seasonal success",
+    "summary": "Pinterest发布的万圣节季节性营销洞察，分析秋季热门趋势和用户搜索行为。帮助广告主把握万圣节前后的流量高峰，提供创意方向和投放策略建议，适合消费品和娱乐类品牌参考。",
+    "category": "creative",
+    "importance": "low",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/scare-up-spooky-seasonal-success/",
+    "tags": [
+      "万圣节",
+      "季节性营销",
+      "创意策略",
+      "趋势洞察"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  }
+]

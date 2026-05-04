@@ -1,0 +1,123 @@
+[
+  {
+    "id": "meta-2026-03-18-003",
+    "date": "2026-03-18",
+    "week": "2026-W12",
+    "platform": "meta",
+    "title": "Manus x Meta for Business：企业AI代理新时代",
+    "titleOriginal": "Manus x Meta for Businesses",
+    "summary": "Meta宣布与Manus公司合作，在其应用家族（包括Facebook、Instagram、WhatsApp等）中推出Manus自主AI代理的Beta测试。这是首个深度集成到Meta广告和商务工具的企业级AI代理服务，能够帮助企业自动完成复杂的多步骤业务流程，如广告素材生成与优化、跨平台活动管理等。广告投放团队将获得更强大的自动化工作流程支持，提升运营效率。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/manus-joins-meta-accelerating-ai-innovation-for-businesses",
+    "tags": [
+      "Manus",
+      "AI代理",
+      "自动化",
+      "企业工具",
+      "Beta测试"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-17-003",
+    "date": "2026-03-17",
+    "week": "2026-W12",
+    "platform": "snapchat",
+    "title": "社交影响力：科技产品购买的新路径",
+    "titleOriginal": "The Social Effect: The New Tech Path to Purchase",
+    "summary": "Snapchat与Alter Agents合作研究，揭示家人朋友、社交渠道和创作者如何影响Snapchatters的科技产品购买决策。为科技品牌提供关键洞察，指导其在社交平台的营销布局和KOL合作策略。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/the-new-tech-path-to-purchase",
+    "tags": [
+      "科技行业",
+      "购买决策",
+      "社交影响",
+      "创作者营销"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "mintegral-2026-03-17-002",
+    "date": "2026-03-17",
+    "week": "2026-W12",
+    "platform": "mintegral",
+    "title": "掌握目标ROAS：Mintegral高级指南",
+    "titleOriginal": "Master Target ROAS With Mintegral's Advanced Guide",
+    "summary": "Mintegral发布的Target ROAS（目标广告支出回报率）深度操作指南，帮助广告主理解并有效运用该竞价策略。指南涵盖ROAS设置逻辑、优化技巧及常见问题解决方案，旨在帮助营销团队提升广告投放效率和投资回报。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/mastering-target-roas",
+    "tags": [
+      "Target ROAS",
+      "自动化竞价",
+      "广告优化",
+      "投放策略"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "pinterest-2026-03-19-001",
+    "date": "2026-03-19",
+    "week": "2026-W12",
+    "platform": "pinterest",
+    "title": "将 Pinterest Performance+ 广告系列设为新默认选项",
+    "titleOriginal": "Make Pinterest Performance+ campaigns your new default",
+    "summary": "本文介绍了 Pinterest Performance+ 广告系列的最新最佳实践。Performance+ 是 Pinterest 的自动化广告解决方案，可帮助广告主简化投放流程、优化广告表现。指南涵盖如何将 Performance+ 设为新的默认广告系列类型，以及相关配置建议和效果提升技巧。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-performance-plus-campaigns/",
+    "tags": [
+      "Performance+",
+      "自动化投放",
+      "广告系列优化",
+      "最佳实践"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "pinterest-2026-03-17-005",
+    "date": "2026-03-17",
+    "week": "2026-W12",
+    "platform": "pinterest",
+    "title": "Pinterest春季趋势报告2026：个性化正当时",
+    "titleOriginal": "Pinterest Spring Trend Report 2026: Personalization is in bloom",
+    "summary": "Pinterest发布2026年春季趋势报告，指出个性化将成为今年春季的核心主题。用户在穿搭、家居、美妆等领域的搜索更趋个性化，风格混搭和定制化需求显著增长。报告为广告主提供春季营销选品和创意方向指引。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/spring-trend-report-2026/",
+    "tags": [
+      "趋势报告",
+      "春季",
+      "个性化",
+      "营销洞察"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "linkedin-2026-03-18-003",
+    "date": "2026-03-18",
+    "week": "2026-W12",
+    "platform": "linkedin",
+    "title": "B2B营销人员如何利用视频再营销提升转化",
+    "titleOriginal": "How B2B Marketers Can Use Video Retargeting to Boost Campaign Conversions",
+    "summary": "文章揭示B2B营销人员如何利用视频再营销策略，在漫长的非线性购买旅程中提升熟悉度、信任度和最终转化率。视频内容能够有效触达在不同决策阶段的潜在客户，是培养客户关系和推动转化的高级广告技巧。",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/how-b2b-marketers-can-use-video-retargeting-to-boost-campaign-conversions2",
+    "tags": [
+      "视频再营销",
+      "转化优化",
+      "B2B买家旅程",
+      "广告策略"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  }
+]

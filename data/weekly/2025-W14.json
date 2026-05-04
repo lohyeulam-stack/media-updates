@@ -1,0 +1,40 @@
+[
+  {
+    "id": "applovin-2025-03-31-001",
+    "date": "2025-03-31",
+    "week": "2025-W14",
+    "platform": "applovin",
+    "title": "效果广告：我们如何创造价值与处理数据",
+    "titleOriginal": "Performance Advertising: How we drive value and handle data",
+    "summary": "AppLovin CEO Adam Foroughi阐述公司效果广告的核心价值观与数据处理方式。强调公司通过技术创新为广告主和用户创造双向价值，承诺负责任的数据使用，在隐私保护与广告效果之间寻求平衡。此文为广告投放团队提供了理解AppLovin平台理念的重要参考。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/how-we-drive-value-and-handle-data/",
+    "tags": [
+      "效果广告",
+      "数据隐私",
+      "平台理念"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  },
+  {
+    "id": "applovin-2025-03-31-002",
+    "date": "2025-03-31",
+    "week": "2025-W14",
+    "platform": "applovin",
+    "title": "电商数据实践深度剖析",
+    "titleOriginal": "Examination of e-commerce data practices",
+    "summary": "AppLovin对电商行业数据实践的全面审视，分析当前电商广告投放中的数据采集、使用及隐私合规问题。旨在帮助广告主理解行业最佳实践，在数据利用与合规要求间找到平衡点，提升广告投放效率。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/examination-of-e-commerce-data-practices/",
+    "tags": [
+      "电商数据",
+      "隐私合规",
+      "数据实践"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  }
+]

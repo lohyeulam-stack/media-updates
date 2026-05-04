@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dv360-2025-01-28-001",
+    "date": "2025-01-28",
+    "week": "2025-W05",
+    "platform": "dv360",
+    "title": "Ads Decoded播客第一期：营销人员如何利用分析和AI获得更好效果",
+    "titleOriginal": "The first episode of the Ads Decoded podcast dives into how marketers can leverage analytics and AI for better results.",
+    "summary": "Google Ads & Commerce推出全新播客系列，第一期深入探讨营销人员如何利用分析和人工智能技术提升营销效果。播客邀请行业专家分享AI驱动营销策略的最佳实践，帮助广告主优化广告投放和提升投资回报率。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Marketing Platform Blog",
+    "sourceUrl": "https://blog.google/products/marketingplatform/",
+    "tags": [
+      "播客",
+      "AI",
+      "营销分析",
+      "Google Ads",
+      "行业洞察"
+    ],
+    "fetchedAt": "2026-04-28T18:08:05.744673"
+  },
+  {
+    "id": "applovin-2025-01-31-001",
+    "date": "2025-01-31",
+    "week": "2025-W05",
+    "platform": "applovin",
+    "title": "什么是可玩广告？",
+    "titleOriginal": "What is a playable ad?",
+    "summary": "介绍可玩广告的定义和特点，帮助广告主理解这种交互式广告形式如何提升用户参与度和转化效果。可玩广告允许用户在下载应用前先体验游戏或应用的核心功能。",
+    "category": "creative",
+    "importance": "low",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/what-is-a-playable-ad/",
+    "tags": [
+      "可玩广告",
+      "创意形式",
+      "互动广告"
+    ],
+    "fetchedAt": "2026-04-28T18:08:05.744673"
+  }
+]

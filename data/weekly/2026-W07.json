@@ -1,0 +1,142 @@
+[
+  {
+    "id": "line-2026-02-12-002",
+    "date": "2026-02-12",
+    "week": "2026-W07",
+    "platform": "line",
+    "title": "【认证账号】LINE官方账号账号名称设置规则与更名注意事项",
+    "titleOriginal": "【認証済アカウント】LINE公式アカウントのアカウント名設定ルールと名称変更に関するお知らせ",
+    "summary": "LINE官方明确了认证账号的账号名称设置规则，包含名称可用字符、长度限制以及品牌一致性要求。账号名称变更流程和审批标准也有所更新，运营者需严格遵守命名规范以确保账号通过认证或维持认证状态。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/guideline/quality/20260212-01/",
+    "tags": [
+      "LINE官方账号",
+      "认证账号",
+      "账号命名规则",
+      "账号管理"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "meta-2026-02-13-001",
+    "date": "2026-02-13",
+    "week": "2026-W07",
+    "platform": "meta",
+    "title": "ASC和AAC弃用 - MAPI V25.0",
+    "titleOriginal": "ASC and AAC deprecation MAPI V25.0",
+    "summary": "自动化统一（Automation Unification）推动App、Sales和Leads广告系列默认采用最优的自动化优先 Advantage+ 设置，使广告主和合作伙伴能够简化访问Meta最新且性能最佳的自动化产品。V25.0版本将执行传统API的分阶段弃用和向自动化统一/Advantage+的新迁移。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/02/13/asc-and-aac-deprecation-mapi-v25/",
+    "tags": [
+      "Advantage+",
+      "自动化",
+      "API弃用",
+      "MAPI V25.0"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-12-002",
+    "date": "2026-02-12",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "2026年B2B营销六大洞察：AI影响新浪潮",
+    "titleOriginal": "6 B2B Marketing Insights for 2026: The Next Wave of AI Impact ...",
+    "summary": "B2B营销人员已不再纠结于是否使用AI，而是关注如何更好地使用AI。最新研究揭示关键聚焦领域以实现差异化竞争。洞察涵盖AI在营销中的应用趋势、数据驱动决策、创意与AI的结合等。对广告投放团队的启示：AI辅助投放和优化将成为2026年核心竞争力。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/trends-tips/big-insight-ai-b2b-marketing-skills-data-creativity",
+    "tags": [
+      "AI营销",
+      "B2B营销",
+      "营销趋势",
+      "数据分析"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-11-003",
+    "date": "2026-02-11",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "借助Factors.ai报告洞察优化2026年市场进入策略",
+    "titleOriginal": "Refine Your 2026 Go-to-Market Strategy with Insights from the ...",
+    "summary": "LinkedIn营销合作伙伴Factors.ai分析了超过100家B2B公司Q3季度以来的表现数据，提供GTM策略优化建议。涵盖受众定位、归因分析和信号识别。对广告投放团队的启示：可参考同行表现数据优化投放策略，关注LinkedIn提供的B2B归因和分析工具。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/research-and-insights/refine-your-go-to-market-strategy-with-insights-from-the-factors-ai-linkedin-benchmark-report",
+    "tags": [
+      "GTM策略",
+      "B2B归因",
+      "数据分析",
+      "市场进入策略"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-10-004",
+    "date": "2026-02-10",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "发布：优化AI搜索内容指南",
+    "titleOriginal": "Introducing a Guide to Optimizing Your Owned Content for AI Di...",
+    "summary": "LinkedIn发布新指南《如何优化自有内容以适应AI搜索》，详细阐述提升AI搜索可见性的具体策略，包括内容结构优化、原创性提升和可信度建设。对广告投放团队的启示：内容SEO策略需考虑AI搜索场景，优化内容以适应新兴的AI发现渠道。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/introducing-a-guide-to-optimizing-your-owned-content-for-ai-discovery",
+    "tags": [
+      "AI搜索",
+      "内容优化",
+      "SEO",
+      "内容营销"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-09-005",
+    "date": "2026-02-09",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "有效B2B视频品牌建设的三大原则",
+    "titleOriginal": "Three Principles for Effective B2B Video Brand Building",
+    "summary": "Adobe的Amanda Fetterly分享LinkedIn视频营销三大原则：真实性、一致性、参与性。视频在LinkedIn上的共鸣度超过其他任何格式。对广告投放团队的启示：投资高质量视频广告内容，建立品牌真实形象，遵循三大原则可提升视频广告效果。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/customer-stories/b2b-video-brand-building/b2b-video-brand-building",
+    "tags": [
+      "视频广告",
+      "B2B品牌建设",
+      "创意策略",
+      "广告效果"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "line-2026-02-12-002",
+    "date": "2026-02-12",
+    "week": "2026-W07",
+    "platform": "line",
+    "title": "【认证账号】LINE官方账号账号名称设置规则及名称变更须知",
+    "titleOriginal": "【認証済アカウント】LINE公式アカウントのアカウント名設定ルールと名称変更に…",
+    "summary": "LINE官方明确认证账号的账号名称设置规则及名称变更流程。广告主和运营团队需遵守相关命名规范，确保官方账号名称符合平台要求，避免因违规导致账号功能受限。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-official-account/guideline/official-account-name/",
+    "tags": [
+      "LINE官方账号",
+      "账号管理",
+      "认证账号",
+      "规则变更"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  }
+]

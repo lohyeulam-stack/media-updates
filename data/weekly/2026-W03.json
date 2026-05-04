@@ -1,0 +1,123 @@
+[
+  {
+    "id": "meta-2026-01-14-001",
+    "date": "2026-01-14",
+    "week": "2026-W03",
+    "platform": "meta",
+    "title": "Threads广告一周年——现已覆盖全球所有用户和市场",
+    "titleOriginal": "Ads on Threads: One Year In – Now Reaching All Users and Markets Globally",
+    "summary": "Threads广告正式扩展至全球所有用户和市场，为广告主提供一个快速增长的对话平台触达目标受众。广告投放团队应抓住这一新渠道机会，考虑将Threads纳入跨平台营销策略，特别针对追求年轻用户群体和实时互动效果的品牌。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/ads-on-threads-one-year-in",
+    "tags": [
+      "Threads",
+      "广告扩展",
+      "全球投放",
+      "新渠道"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "line-2026-01-13-001",
+    "date": "2026-01-13",
+    "week": "2026-W03",
+    "platform": "line",
+    "title": "LINEを起点にした行政管理・マーケティング活用事例",
+    "titleOriginal": "コロナ禍、地震対応からデジタルクーポン、おこめ券まで。LINEを起点にした行政管理・地域活性の活用事例",
+    "summary": "本文缺失，仅能从目录列表提取标题。无法提供详细内容摘要，但可确认该文介绍了LINE在行政服务领域的多种应用场景，包括灾害应对、公共服务数字化等。实际影响需阅读原文后补充。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/",
+    "tags": [
+      "LINE公式アカウント",
+      "LINE 公的個人認証サービス",
+      "行政連携",
+      "活用事例"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "pinterest-2026-01-12-001",
+    "date": "2026-01-12",
+    "week": "2026-W03",
+    "platform": "pinterest",
+    "title": "Z世代如何夺回他们的审美主导权",
+    "titleOriginal": "How Gen Z is taking back their taste",
+    "summary": "Pinterest发布Z世代消费者趋势洞察，揭示这一代用户在AI生成内容泛滥的时代背景下，更加注重真实性和个人审美表达。广告投放团队应关注Z世代对原创内容和个性化推荐的需求上升趋势，在创意策略上强调真实感和独特性，以更好地与该群体建立连接。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/how-gen-z-is-taking-back-their-taste-from-ai/",
+    "tags": [
+      "Z世代",
+      "消费者洞察",
+      "趋势",
+      "创意策略"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "pinterest-2026-01-15-004",
+    "date": "2026-01-15",
+    "week": "2026-W03",
+    "platform": "pinterest",
+    "title": "抢占先机：您的2026年营销 playbook",
+    "titleOriginal": "Win the moment before it happens: Your 2026 marketing playbook",
+    "summary": "Pinterest发布2026年品牌营销时刻指南，帮助广告主提前规划全年关键营销节点。报告梳理了情人节、母亲节、毕业季、父亲节、美国国庆等重要时刻的用户行为趋势和内容偏好，为品牌提供精准的投放时机建议和创意方向指导。建议广告投放团队据此提前制定季度营销计划，在关键节点实现最大化营销效果。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-brand-moments-guide-2026/",
+    "tags": [
+      "2026营销策略",
+      "品牌营销",
+      "营销日历",
+      "季节性营销"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "line-2026-01-13-001",
+    "date": "2026-01-13",
+    "week": "2026-W03",
+    "platform": "line",
+    "title": "LINEを起点にした行政サービス活用事例｜災害対応からデジタルクーポンまで",
+    "titleOriginal": "コロナ禍災害対応からデジタルクーポン、おこめ券まで。LINEを起点にした行政サービス活用事例",
+    "summary": "本文未能获取详细摘要。该文章介绍了LINE在行政服务领域的多种应用场景，包括疫情应对、自然灾害响应、数字优惠券发放等实际问题解决案例。涉及LINE官方账号与JPKI（公的个人认证服务）的结合使用。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-official-account/technique/line-jpki/",
+    "tags": [
+      "LINE公式アカウント",
+      "JPKI",
+      "行政連携",
+      "事例"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "line-2026-01-13-003",
+    "date": "2026-01-13",
+    "week": "2026-W03",
+    "platform": "line",
+    "title": "广告数据授受的正确理解｜为用户提供可信赖的广告运用",
+    "titleOriginal": "広告データの授受を正しく理解する｜ユーザーに信頼される広告運用のために",
+    "summary": "该文章旨在帮助广告主正确理解LINE雅虎广告平台上的广告数据授受规范。包括搜索广告、展示广告（运用型）和展示广告（预约型）的数据管理要求。强调了透明、合规的数据使用对于维护用户信任的重要性，对广告投放团队的合规运营具有指导意义。",
+    "category": "policy",
+    "importance": "high",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/ly-ads/guideline/handling-data/",
+    "tags": [
+      "LINE雅虎广告",
+      "数据合规",
+      "广告政策",
+      "搜索广告",
+      "展示广告"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  }
+]

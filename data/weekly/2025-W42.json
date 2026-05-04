@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pinterest-2025-10-16-002",
+    "date": "2025-10-16",
+    "week": "2025-W42",
+    "platform": "pinterest",
+    "title": "Pinterest学院新上线：Q4效果最大化工具",
+    "titleOriginal": "New on Pinterest Academy: Tools to maximize your Q4 performance",
+    "summary": "Pinterest Academy推出全新学习资源，旨在帮助广告主优化Q4营销表现。新工具涵盖广告投放优化、受众触达和创意策略等核心模块，为年末营销冲刺提供系统化学习支持。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-academy-updates-september-2025/",
+    "tags": [
+      "Pinterest学院",
+      "Q4营销",
+      "学习资源",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "pinterest-2025-10-16-001",
+    "date": "2025-10-16",
+    "week": "2025-W42",
+    "platform": "pinterest",
+    "title": "Pinterest推出新工具让用户更好地控制AI生成内容",
+    "titleOriginal": "Pinterest rolls out new tools to give users more control over GenAI content",
+    "summary": "Pinterest推出新工具增强用户对AI生成内容的控制权，包括AI编辑内容的标签透明度提升、用户可重新编辑或移除AI生成背景的工具，以及在搜索结果中明确标注AI生成图像。这些更新旨在提升平台信任度，为广告主提供更清晰的AI内容使用规范环境。",
+    "category": "product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-rolls-out-new-tools-to-give-users-more-control-over-gen-ai-content/",
+    "tags": [
+      "AI工具",
+      "用户控制",
+      "内容透明度",
+      "信任安全"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  }
+]

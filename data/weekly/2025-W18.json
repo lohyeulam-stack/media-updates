@@ -1,0 +1,41 @@
+[
+  {
+    "id": "pinterest-2025-04-30-001",
+    "date": "2025-04-30",
+    "week": "2025-W18",
+    "platform": "pinterest",
+    "title": "Pinterest推出Gen AI标签：在透明度方面迈出新步伐",
+    "titleOriginal": "Introducing Gen AI Labels: Pinterest is taking a new step in transparency",
+    "summary": "Pinterest宣布为AI生成的内容推出标签功能，这是平台在透明度方面的重要更新。此举旨在帮助用户识别由AI生成或增强的图像，提升平台内容信任度。对于广告投放团队而言，这意味着需要关注AI生成内容与真实图片的区分，确保广告素材的合规性与真实性。同时，这一透明度措施可能影响用户对广告内容的信任度和互动行为。",
+    "category": "product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/introducing-gen-ai-labels/",
+    "tags": [
+      "AI透明度",
+      "内容标签",
+      "平台信任",
+      "产品更新"
+    ],
+    "fetchedAt": "2026-04-28T18:37:24.449000"
+  },
+  {
+    "id": "tiktok-2025-05-01-001",
+    "date": "2025-05-01",
+    "week": "2025-W18",
+    "platform": "tiktok",
+    "title": "专业预览：TikTok Ads Manager全新独立广告预览工具、可分享链接和批量预览功能",
+    "titleOriginal": "Preview like a pro: New standalone Ad Preview Tool, shareable URLs, and Bulk Preview in TikTok Ads Manager",
+    "summary": "TikTok Ads Manager推出全新独立广告预览工具，支持可分享URL和批量预览功能。广告主可在正式投放前通过链接或二维码便捷预览广告效果，支持团队协作审阅，提升广告上线前质量把控能力。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok What's New",
+    "sourceUrl": "https://ads.tiktok.com/i18n/?refer=from_help_create",
+    "tags": [
+      "广告预览",
+      "协作工具",
+      "Ads Manager更新"
+    ],
+    "fetchedAt": "2026-04-28T18:47:07.035865"
+  }
+]

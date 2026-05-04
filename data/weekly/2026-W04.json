@@ -1,0 +1,82 @@
+[
+  {
+    "id": "tiktok-2026-01-22-001",
+    "date": "2026-01-22",
+    "week": "2026-W04",
+    "platform": "tiktok",
+    "title": "还在使用Custom Identity？迁移到TikTok F.I.R.S.T. presence",
+    "titleOriginal": "Still using Custom Identity? Transition to a TikTok F.I.R.S.T. presence",
+    "summary": "本文是Custom Identity向F.I.R.S.T.迁移的分步指南。F.I.R.S.T.是TikTok推出的统一付费和有机内容的解决方案，帮助广告主更好地整合营销存在。迁移后可实现更统一的品牌呈现和更好的业务效果。建议广告投放团队尽快完成迁移，避免Custom Identity功能在未来被弃用后影响广告投放。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/custom-identity-transition",
+    "tags": [
+      "identity",
+      "F.I.R.S.T.",
+      "migration",
+      "transition",
+      "unified-presence"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "tiktok-2026-01-21-002",
+    "date": "2026-01-21",
+    "week": "2026-W04",
+    "platform": "tiktok",
+    "title": "TikTok Market Scope：品牌用户规模分析解决方案",
+    "titleOriginal": "Introducing TikTok Market Scope",
+    "summary": "Market Scope是TikTok推出的第一方数据分析平台，帮助广告主识别、理解和激活不同漏斗阶段的用户群体。该工具提供用户规模洞察，支持品牌在TikTok全漏斗进行精准营销策略制定。对于广告投放团队，这意味着可以更精准地了解目标用户规模，优化投放预算分配和策略规划。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/market-scope-brand-consideration-ads",
+    "tags": [
+      "analytics",
+      "audience",
+      "market-scope",
+      "funnel",
+      "data-insights"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "pinterest-2026-01-23-003",
+    "date": "2026-01-23",
+    "week": "2026-W04",
+    "platform": "pinterest",
+    "title": "Pinterest Media Planner让活动规划更便捷",
+    "titleOriginal": "Campaign planning just got easier with Pinterest Media Planner",
+    "summary": "Pinterest推出全新Media Planner工具，为广告投放团队提供更便捷的活动规划体验。该工具整合了平台受众数据、趋势洞察和投放预算规划功能，支持团队在单一界面完成从策略制定到排期安排的完整流程。Media Planner的推出旨在提升营销团队的协作效率，缩短活动准备周期。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/campaign-planning-just-got-easier-with-media-planner/",
+    "tags": [
+      "Media Planner",
+      "活动规划",
+      "营销工具",
+      "效率提升"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "vivo-2026-01-21-001",
+    "date": "2026-01-21",
+    "week": "2026-W04",
+    "platform": "vivo",
+    "title": "平台更新通知",
+    "titleOriginal": "Platform Update Notice",
+    "summary": "vivo开发者平台发布重要更新通知。具体更新内容未在页面摘要中详细说明，建议前往原文链接查看完整更新详情。",
+    "category": "other",
+    "importance": "medium",
+    "source": "vivo Developer",
+    "sourceUrl": "https://developer.vivo.com/",
+    "tags": [
+      "平台更新",
+      "通知公告"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pinterest-2025-05-05-001",
+    "date": "2025-05-05",
+    "week": "2025-W19",
+    "platform": "pinterest",
+    "title": "Pinterest推出全新视觉搜索功能，打造更个性化的发现体验",
+    "titleOriginal": "Introducing new visual search features for a more personalized discovery experience",
+    "summary": "Pinterest发布新一代视觉搜索功能，旨在提升用户发现灵感的个性化体验。这些新功能将帮助用户更精准地通过图片搜索找到相关内容，为广告主提供更精准的投放机会。该更新强化了Pinterest作为灵感发现平台的核心定位，对创意策略和用户触达方式产生积极影响。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/introducing-new-visual-search-features/",
+    "tags": [
+      "视觉搜索",
+      "产品更新",
+      "用户体验",
+      "AI功能"
+    ],
+    "fetchedAt": "2026-04-28T18:47:07.035865"
+  },
+  {
+    "id": "applovin-2025-05-07-001",
+    "date": "2025-05-07",
+    "week": "2025-W19",
+    "platform": "applovin",
+    "title": "为什么追求TikTok？经济扩张的愿景",
+    "titleOriginal": "Why pursue TikTok? A vision for economic expansion",
+    "summary": "AppLovin CEO探讨公司为何积极追求TikTok平台的战略考量。文章阐述了对经济扩张的愿景，分析了TikTok作为广告渠道的独特机遇，可能涉及平台整合、商业化策略等重要信息，对广告投放团队了解平台选择和预算分配具有参考价值。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/why-pursue-tiktok/",
+    "tags": [
+      "TikTok",
+      "平台战略",
+      "经济扩张",
+      "移动广告"
+    ],
+    "fetchedAt": "2026-04-28T18:47:07.035865"
+  }
+]

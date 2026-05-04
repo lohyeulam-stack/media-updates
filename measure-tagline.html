@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<body style="margin:0;background:#000;">
+<div id="root" style="width:320px;height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+  <div style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+    <p id="tagline" style="font-size:clamp(13px, 2.2vw, 18px);font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(148,163,184,0.75);margin-top:clamp(16px, 2.5vh, 32px);font-family:-apple-system,BlinkMacSystemFont,sans-serif;">TopTou ¡¤ Product Intelligence</p>
+  </div>
+</div>
+<script>
+  const el = document.getElementById('tagline');
+  const rect = el.getBoundingClientRect();
+  const info = document.createElement('pre');
+  info.id = 'info';
+  info.textContent = JSON.stringify({
+    width: rect.width,
+    scrollWidth: el.scrollWidth,
+    clientWidth: el.clientWidth,
+    lines: el.getClientRects().length,
+    text: el.textContent
+  }, null, 2);
+  document.body.appendChild(info);
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "meta-2026-02-18-001",
+    "date": "2026-02-18",
+    "week": "2026-W08",
+    "platform": "meta",
+    "title": "Graph API v25.0 和 Marketing API v25.0 正式发布",
+    "titleOriginal": "Introducing Graph API v25.0 and Marketing API v25.0",
+    "summary": "Meta 发布 Graph API v25.0 和 Marketing API v25.0 版本。主要更新包括：Graph API 将引入 Page Viewer Metric（页面浏览量指标），计划于 2026 年 6 月底前上线，用于替代旧版 reach（覆盖）指标，为广告主提供更精准的内容表现衡量方式。详细变更请参阅官方 changelog。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/02/18/introducing-graph-api-v25-and-marketing-api-v25/",
+    "tags": [
+      "Graph API",
+      "Marketing API",
+      "v25.0",
+      "Page Viewer Metric"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "line-2026-02-17-001",
+    "date": "2026-02-17",
+    "week": "2026-W08",
+    "platform": "line",
+    "title": "表现方式不同，传达效果也不同——融入DE&I视角的「替换用语集」",
+    "titleOriginal": "表現によって伝わり方は変わる－DE&Iの視点を取り入れた「置き換えフレーズ集」",
+    "summary": "LINE官方发布DE&I（多元化与包容性）视角的替换用语指南，帮助广告主和运营者在创作内容时避免歧视性或偏见性表达，改用更具包容性的用语。指南提供具体替换示例，如将「老年人」替换为「65岁以上人群」等，提升品牌形象和社会责任感知。",
+    "category": "creative",
+    "importance": "low",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/guideline/quality/20260217-01/",
+    "tags": [
+      "DE&I",
+      "创意表达",
+      "品牌形象",
+      "包容性用语"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "mintegral-2026-02-17-001",
+    "date": "2026-02-17",
+    "week": "2026-W08",
+    "platform": "mintegral",
+    "title": "突破学习阶段：四条助您扩展AppGrowth广告系列的技巧",
+    "titleOriginal": "Overcoming The Learning Phase: Four Tips To Scale AppGrowth Campaigns",
+    "summary": "本文为广告投放团队提供四条实用建议，帮助突破AppGrowth平台的机器学习阶段瓶颈。文章聚焦于如何加速学习期优化过程、提升广告系列规模化能力，以及减少冷启动阶段的成本损耗。对于需要快速起量且追求稳定ROAS的广告主具有直接指导价值。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/overcoming-the-learning-phase-four-scaling-tips",
+    "tags": [
+      "学习阶段",
+      "AppGrowth",
+      "规模化投放",
+      "广告优化",
+      "自动化"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "meta-2026-02-18-001",
+    "date": "2026-02-18",
+    "week": "2026-W08",
+    "platform": "meta",
+    "title": "Graph API v25.0 正式发布",
+    "titleOriginal": "Graph API v25.0 Released",
+    "summary": "Meta 发布 Graph API v25.0 版本（2026年2月18日），Marketing API v25.0 同时发布。该版本为当前最新稳定版本，将作为未来主要支持版本。开发者可通过升级指南升级到新版本。v24.0 将于2026年10月6日到期，v23.0 将于2026年6月9日到期。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Facebook Marketing API Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/graph-api/changelog",
+    "tags": [
+      "Graph API",
+      "API版本升级",
+      "v25.0"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "line-2026-02-17-001",
+    "date": "2026-02-17",
+    "week": "2026-W08",
+    "platform": "line",
+    "title": "表达方式不同，传达效果也不同——融入DE&I视角的「替换短语集」",
+    "titleOriginal": "表現によって伝わり方は変わる－DE&Iの視点を取り入れた「置き換えフレーズ集」",
+    "summary": "LINE官方发布DE&I（多元共融）替换短语集，帮助广告主和运营者在创作营销内容时，使用更包容、更易于理解的表达方式。强调了表达选择对信息传达效果的重要影响，是广告投放团队优化创意文案的参考资源。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/other/guideline/deandi_phrase/",
+    "tags": [
+      "DE&I",
+      "创意文案",
+      "内容质量",
+      "广告合规"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  }
+]

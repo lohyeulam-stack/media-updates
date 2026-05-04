@@ -1,0 +1,63 @@
+[
+  {
+    "id": "meta-2026-01-08-002",
+    "date": "2026-01-08",
+    "week": "2026-W02",
+    "platform": "meta",
+    "title": "Kepler如何帮助easyJet发现其Meta广告的真实影响力",
+    "titleOriginal": "How Kepler helped easyJet discover the true impact of their ads on Meta technologies",
+    "summary": "独立代理公司Kepler与easyJet及其分析合作伙伴route1.io合作，帮助easyJet精准衡量Meta平台上广告的真实影响，恢复了优化预算以推动增长的信心。该案例为广告主提供了效果归因和预算优化的参考思路。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-ad-measurement-kepler-easyjet",
+    "tags": [
+      "效果衡量",
+      "案例研究",
+      "归因分析",
+      "预算优化"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "meta-2026-01-08-001",
+    "date": "2026-01-08",
+    "week": "2026-W02",
+    "platform": "meta",
+    "title": "Ads Insights Async API 增强错误提示功能",
+    "titleOriginal": "Enhanced Error Messaging for Ads Insights Async API",
+    "summary": "Meta 正在增强 Ads Insights Async API GET {AD_REPORT_RUN_ID} 端点的错误报告功能，旨在提升开发者体验的透明度，并帮助开发者构建更稳定、更有韧性的应用程序。该增强功能将在 Graph API V25.0 版本中推出。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/01/08/enhanced-error-messaging-for-ads-insights-async-api/",
+    "tags": [
+      "API",
+      "开发者工具",
+      "错误报告",
+      "Ads Insights",
+      "Graph API"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "line-2026-01-07-002",
+    "date": "2026-01-07",
+    "week": "2026-W02",
+    "platform": "line",
+    "title": "フライパン×AIで日常の料理がもっと楽しく～バナソニック「Bistroアシスタント」活用事例",
+    "titleOriginal": "調理家電×AIで日常の料理がもっと楽しく～バナソニック「Bistroアシスタン…」",
+    "summary": "本文未能获取详细摘要。该文章介绍了家电厂商如何利用LINE官方账号与AI技术结合，提升用户日常烹饪体验的营销案例。",
+    "category": "ad-product",
+    "importance": "low",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-official-account/technique/panasonic/",
+    "tags": [
+      "LINE公式アカウント",
+      "AI",
+      "事例",
+      "营销活用"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  }
+]

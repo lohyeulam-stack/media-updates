@@ -1,0 +1,123 @@
+[
+  {
+    "id": "tiktok-2026-03-05-004",
+    "date": "2026-03-05",
+    "week": "2026-W10",
+    "platform": "tiktok",
+    "title": "TikTok与Samba：为电影公司带来可衡量的票房增长",
+    "titleOriginal": "TikTok and Samba: Driving measurable box office growth for studios",
+    "summary": "TikTok与Samba合作发布元分析研究，展示了TikTok平台对电影票房增长的可衡量影响。该研究为电影公司和内容发行商提供了数据支持，证明TikTok已成为电影宣发的重要渠道。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/samba-meta-analysis-box-office",
+    "tags": [
+      "效果营销",
+      "电影营销",
+      "案例研究",
+      "归因分析"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "meta-2026-03-03-004",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "meta",
+    "title": "简化社交优先世界的广告衡量",
+    "titleOriginal": "Simplifying Ad Measurement for a Social-First World",
+    "summary": "Meta宣布对广告测量和归因模型进行重大更新，特别是针对点击归因的变革。主要变更：1）将8天点击窗口期缩短至1天，减少归因偏差；2）推出增强版Meta Pixel以更准确地追踪转化路径；3）新增\"跨设备归因\"报告，帮助理解移动端到PC端的多触点转化；4）移除部分旧版归因模型以简化报告。这些变化将影响广告投放团队的转化追踪方式和效果评估逻辑，需及时调整归因预期。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/click-attribution",
+    "tags": [
+      "归因模型",
+      "点击归因",
+      "Meta Pixel",
+      "转化追踪",
+      "测量更新"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-03-008",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "snapchat",
+    "title": "社交在电影发现中的角色",
+    "titleOriginal": "The Role of Social in Movie Discovery",
+    "summary": "Snapchat与OM及Ipsos联合发布研究，解析驱动用户观影行为的因素，以及创作者对观影决策的影响。为电影宣发方提供社交平台营销策略指导。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/movies-blog",
+    "tags": [
+      "娱乐行业",
+      "电影营销",
+      "创作者营销",
+      "消费者行为"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "mintegral-2026-03-03-004",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "mintegral",
+    "title": "为什么Mintegral是全球领先的移动广告平台",
+    "titleOriginal": "Why Mintegral Is The Leading Mobile Ad Platform Globally",
+    "summary": "Mintegral平台自助广告服务（Self-Serve Ad Platform）的入门指南，介绍其作为全球领先移动广告平台的核心优势与能力。内容涵盖平台功能、投放工具、数据分析等方面，帮助广告主全面了解Mintegral的服务体系。",
+    "category": "ad-product",
+    "importance": "low",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/self-serve-ad-platform-primer",
+    "tags": [
+      "平台介绍",
+      "自助投放",
+      "移动广告",
+      "产品功能"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "x-2026-03-05-001",
+    "date": "2026-03-05",
+    "week": "2026-W10",
+    "platform": "x",
+    "title": "X 允许广告主使用任何创意广告格式",
+    "titleOriginal": "X Enables Advertisers to Use Any Creative Ad Format",
+    "summary": "X 宣布扩展广告创意支持的比例范围，广告主可直接在 X 上复用现有社交媒体创意内容，无需重新调整格式。这一变更简化了跨平台创意复用流程，广告团队可将 Instagram、TikTok 等平台的竖版视频（9:16、4:5等）直接用于 X 广告投放，降低了创意制作成本和人力投入。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "X Business Blog",
+    "sourceUrl": "https://business.x.com/en/blog/x-expands-aspect-ratio-support-for-ad-creatives-replacement",
+    "tags": [
+      "ad-format",
+      "creative",
+      "aspect-ratio",
+      "video"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "linkedin-2026-03-03-001",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "linkedin",
+    "title": "释放LinkedIn视频广告的力量，打造品牌影响力",
+    "titleOriginal": "Unlock the Power of LinkedIn's Video Ads to Build Your Brand",
+    "summary": "LinkedIn推出视频广告完整指南，帮助B2B广告主利用视频格式建立品牌。介绍主要广告形式（如引流视频、品牌 awareness 广告）、经过验证的投放策略，以及与合作伙伴解决方案的整合方法。视频广告在LinkedIn平台上的互动率远超其他格式，是B2B营销人员提升品牌认知和用户信任的重要工具。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/linkedin-ads/unlock-the-power-of-linkedin-video-ads-to-build-your-brand",
+    "tags": [
+      "视频广告",
+      "品牌建设",
+      "B2B营销",
+      "广告格式"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  }
+]

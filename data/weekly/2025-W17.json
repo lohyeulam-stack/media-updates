@@ -1,0 +1,23 @@
+[
+  {
+    "id": "google-2025-04-27-001",
+    "date": "2025-04-27",
+    "week": "2025-W17",
+    "platform": "google",
+    "title": "Albertsons Media Collective 通过 Google Commerce Media Suite 将零售信号引入 YouTube",
+    "titleOriginal": "Albertsons Media Collective brings retail signals to YouTube with Google's Commerce Media Suite.",
+    "summary": "Albertsons Media Collective 与 Google Commerce Media Suite 合作，将零售购买数据信号引入 YouTube 广告投放。广告主可利用真实购买行为数据优化 targeting，提升广告相关性和转化效果，为电商和零售广告主提供更精准的投放能力。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://ads.google.com/home/",
+    "tags": [
+      "retail media",
+      "YouTube",
+      "commerce media",
+      "零售信号",
+      "数据驱动投放"
+    ],
+    "fetchedAt": "2026-04-28T18:37:24.449000"
+  }
+]

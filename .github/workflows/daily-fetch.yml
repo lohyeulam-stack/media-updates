@@ -2,24 +2,79 @@ name: Weekly & Monthly Media Updates
 
 on:
   schedule:
-    # Every Monday at 06:00 CST (22:00 UTC)
-    - cron: '0 22 * * 0'
+    - cron: '0 22 * * 0'       # UTC Sun 22:00 = CST Mon 06:00 (weekly)
+    - cron: '0 22 28-31 * *'   # UTC 28-31st = check if last day of month
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'weekly'
+        type: choice
+        options:
+          - weekly
+          - monthly
+          - both
+
+permissions:
+  contents: write
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.14'
-      - run: pip install requests beautifulsoup4 playwright
-      - run: py -m playwright install chromium
-      - env:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Install Playwright browsers
+        run: python -m playwright install chromium --with-deps
+
+      - name: Determine mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+          elif [ "$(date +%u)" = "7" ]; then
+            # Sunday = weekly trigger
+            # Check if also last day of month
+            tomorrow=$(date -d "+1 day" +%d)
+            if [ "$tomorrow" = "01" ]; then
+              echo "mode=both" >> $GITHUB_OUTPUT
+            else
+              echo "mode=weekly" >> $GITHUB_OUTPUT
+            fi
+          else
+            # 28-31st cron: only run monthly if it's the last day
+            tomorrow=$(date -d "+1 day" +%d)
+            if [ "$tomorrow" = "01" ]; then
+              echo "mode=monthly" >> $GITHUB_OUTPUT
+            else
+              echo "mode=skip" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Run fetch script
+        if: steps.mode.outputs.mode != 'skip'
+        env:
           MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
-        run: py scripts/fetch_updates.py --mode=weekly
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'chore: media updates'
-          branch: main
+        run: python scripts/fetch_updates.py --mode=${{ steps.mode.outputs.mode }}
+
+      - name: Commit and push updates
+        if: steps.mode.outputs.mode != 'skip'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: media updates $(date -u +%Y-%m-%d) [${{ steps.mode.outputs.mode }}]"
+            git push
+          fi

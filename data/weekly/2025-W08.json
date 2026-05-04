@@ -1,0 +1,42 @@
+[
+  {
+    "id": "tiktok-2025-02-20-001",
+    "date": "2025-02-20",
+    "week": "2025-W08",
+    "platform": "tiktok",
+    "title": "TikTok直播最佳实践",
+    "titleOriginal": "TikTok Live Best Practices",
+    "summary": "本指南详细介绍了TikTok Live如何帮助创作者和品牌与受众建立实时连接、提升互动率并推动销售。涵盖成功的直播格式、准备工作技巧以及经过验证的最佳实践。对于广告投放团队而言，TikTok Live是品牌与用户建立深度互动、积累粉丝资产的重要渠道，建议结合品牌营销活动灵活运用直播形式获取增量流量。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok Ads Blog (AU)",
+    "sourceUrl": "https://ads.tiktok.com/business/en-AU/blog/tiktok-live-best-practice",
+    "tags": [
+      "TikTok Live",
+      "直播营销",
+      "最佳实践",
+      "实时互动"
+    ],
+    "fetchedAt": "2026-04-28T18:18:36.712287"
+  },
+  {
+    "id": "applovin-2025-02-18-002",
+    "date": "2025-02-18",
+    "week": "2025-W08",
+    "platform": "applovin",
+    "title": "在不确定的社交媒体环境中保障用户获取的未来",
+    "titleOriginal": "Future-proofing UA in an uncertain social media landscape",
+    "summary": "分析当前社交媒体平台的不确定性对用户获取（UA）策略的影响，提供多元化渠道、预算分配优化和长期可持续增长方案，帮助广告主应对市场波动风险。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/future-proofing-ua-in-an-uncertain-social-media-landscape/",
+    "tags": [
+      "用户获取",
+      "社交媒体",
+      "风险管理",
+      "预算优化"
+    ],
+    "fetchedAt": "2026-04-28T18:18:36.712287"
+  }
+]

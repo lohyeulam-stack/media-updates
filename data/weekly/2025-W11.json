@@ -1,0 +1,40 @@
+[
+  {
+    "id": "applovin-2025-03-13-004",
+    "date": "2025-03-13",
+    "week": "2025-W11",
+    "platform": "applovin",
+    "title": "预算有限情况下的用户获取十大技巧",
+    "titleOriginal": "10 tips for user acquisition on a budget",
+    "summary": "为预算受限的移动应用开发者提供10条实用的用户获取策略。涵盖创意优化、投放渠道选择、出价策略调整、A/B测试方法等实战技巧，帮助小团队在有限预算下最大化ROI，实现高效增长。",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/10-tips-for-user-acquisition-on-a-budget/",
+    "tags": [
+      "用户获取",
+      "预算优化",
+      "增长策略"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  },
+  {
+    "id": "applovin-2025-03-13-005",
+    "date": "2025-03-13",
+    "week": "2025-W11",
+    "platform": "applovin",
+    "title": "应用技术健康如何影响LTV及应对方案",
+    "titleOriginal": "How app technical health impacts LTV—and what to do about it",
+    "summary": "深入分析应用技术健康状况（如崩溃率、加载速度、内存占用）与用户生命周期价值(LTV)的关联。提供具体的应用性能优化建议，帮助广告主识别高价值用户，提升整体广告回报率。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/mobile-app-performance-issues-affect-ltv/",
+    "tags": [
+      "LTV优化",
+      "应用性能",
+      "用户质量"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  }
+]
