@@ -1,0 +1,202 @@
+[
+  {
+    "id": "google-2026-04-17-003",
+    "date": "2026-04-17",
+    "week": "2026-W16",
+    "platform": "google",
+    "title": "Google Ads API 多因素身份验证要求",
+    "titleOriginal": "Multi-factor authentication requirement for the Google Ads API",
+    "summary": "为提升 Google Ads 账户安全性，Google Ads API 将强制要求用户使用多因素身份验证 (MFA/2SV)。变更生效后，通过用户认证流程生成新 OAuth 2.0 刷新令牌时，除用户名密码外还需验证第二因素。若用户未启用两步验证，系统将提示添加两步验证方式。该安全更新将于 2026 年 4 月 21 日起逐步推出，短期内覆盖所有用户。",
+    "category": "policy",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/multi-factor-authentication-requirement.html",
+    "tags": [
+      "security",
+      "mfa",
+      "oauth",
+      "authentication"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "google-2026-04-16-004",
+    "date": "2026-04-16",
+    "week": "2026-W16",
+    "platform": "google",
+    "title": "Ads DevCast E3：优化广告工作流程",
+    "titleOriginal": "Ads DevCast E3: Improving your Advertising Workflows",
+    "summary": "Google Ads 开发者社区线上活动，邀请开发者和广告技术团队参与讨论 API 工作流程优化。提供 Discord、YouTube Live、LinkedIn Live 等多平台参与方式。适合希望了解 Google Ads API 最佳实践和新功能的开发者参与。",
+    "category": "other",
+    "importance": "low",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/ads-devcast-e3-improving-your.html",
+    "tags": [
+      "community",
+      "event",
+      "workflow",
+      "developer"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-15-003",
+    "date": "2026-04-15",
+    "week": "2026-W16",
+    "platform": "meta",
+    "title": "打破技术壁垒，帮助各类规模企业从广告中获得更多收益",
+    "titleOriginal": "Removing Technical Barriers to Help Businesses of All Sizes Get More From Their Ads",
+    "summary": "Meta 宣布更新 Meta Pixel 和转化 API，使企业更容易维护良好的连接状态和最新配置以提升广告效果。这些更新降低了技术门槛，帮助中小型企业更好地实现像素和 API 的正确设置，从而改善广告归因和优化效果。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/pixel-conversionsapi-updates",
+    "tags": [
+      "Meta Pixel",
+      "转化API",
+      "技术更新"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "google-2026-04-15-001",
+    "date": "2026-04-15",
+    "week": "2026-W16",
+    "platform": "google",
+    "title": "通过需求挖掘第8版更新在YouTube上更快实现转化",
+    "titleOriginal": "Convert faster on YouTube with Demand Gen Drop #8.",
+    "summary": "Google Ads推出需求挖掘（Demand Gen）广告系列的第8版更新，专注于提升YouTube平台上的转化速度。新功能可能包括更智能的受众匹配、优化的出价策略和创意展示方式，帮助广告主在YouTube发现页和In-Feed视频中更高效地获取高质量转化。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/demand-gen-drop-april-2026/",
+    "tags": [
+      "YouTube",
+      "Demand Gen",
+      "转化优化",
+      "视频广告"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-14-002",
+    "date": "2026-04-14",
+    "week": "2026-W16",
+    "platform": "tiktok",
+    "title": "从设计到上线：如何在Canva中创建TikTok广告",
+    "titleOriginal": "From design to launch: How to create TikTok ads in Canva",
+    "summary": "TikTok与Canva深化合作，为广告主提供从设计到投放的一站式创意工作流。通过Canva平台可直接创建TikTok广告素材并同步到TikTok for Business，支持多尺寸适配、品牌素材库对接等功能，大幅提升创意生产效率，降低跨平台操作成本。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/canva-full-funnel-creative-tips",
+    "tags": [
+      "Canva",
+      "创意工具",
+      "创意制作",
+      "合作伙伴"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-14-001",
+    "date": "2026-04-14",
+    "week": "2026-W16",
+    "platform": "meta",
+    "title": "Threads API 新功能一览",
+    "titleOriginal": "What's new in the Threads API",
+    "summary": "Threads API 迎来重大改进，为开发者带来全新功能：支持客户发布更丰富的内容、将 Threads 集成到自有应用、以及增强的互动管理能力。这些更新旨在提升开发者体验，帮助广告主和合作伙伴更好地利用 Threads 平台进行内容营销和用户互动。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/04/14/whats-new-in-the-threads-api/",
+    "tags": [
+      "Threads API",
+      "开发者工具",
+      "内容发布",
+      "平台集成"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "line-2026-04-14-002",
+    "date": "2026-04-14",
+    "week": "2026-W16",
+    "platform": "line",
+    "title": "LINE迷你应用数字内容「付费功能」正式开放",
+    "titleOriginal": "【LINEミニアプリ】デジタルコンテンツ「課金機能」本格提供を開始",
+    "summary": "LINE迷你应用正式推出数字内容付费功能，支持游戏道具、电子书、会员订阅等虚拟商品的购买与变现。广告投放团队可关注此功能对用户体验和转化路径的影响，评估作为电商或付费内容类广告的落地页可能性。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.linebiz.com/jp/column/",
+    "tags": [
+      "LINE迷你应用",
+      "付费功能",
+      "数字内容",
+      "电商"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-13-003",
+    "date": "2026-04-13",
+    "week": "2026-W16",
+    "platform": "tiktok",
+    "title": "TikTok Symphony与Dreamina Seedance 2.0重塑视频创作",
+    "titleOriginal": "Transforming video creation with TikTok Symphony and Dreamina Seedance 2.0",
+    "summary": "TikTok Symphony创意套件迎来重大升级，集成Dreamina Seedance 2.0 AI视频生成能力。新版本提供更一致的创意风格控制、更强的批量制作能力，并支持AI脚本生成、数字人克隆等功能。广告主可在Symphony平台直接完成从创意构思到素材生成的完整流程，显著提升规模化创意生产效率。",
+    "category": "creative",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/transforming-video-creation-tiktok-symphony-dreamina-seedance",
+    "tags": [
+      "AI创意",
+      "视频生成",
+      "Symphony",
+      "Dreamina",
+      "自动化"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "snapchat-2026-04-13-001",
+    "date": "2026-04-13",
+    "week": "2026-W16",
+    "platform": "snapchat",
+    "title": "保险购买的新时代：Snapchat上的消费者决策研究",
+    "titleOriginal": "The New Era of Insurance Buying on Snapchat",
+    "summary": "Snapchat与益普索(Ipsos)联合发布最新研究，揭示社交平台特别是Snapchat在消费者保险决策中的关键作用。研究显示，社交媒体已成为用户获取保险信息、比较方案和最终决策的重要渠道。对于保险品牌而言，这意味着在Snapchat上的精准投放和内容营销将直接影响转化效果。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/swipe-up-for-coverage",
+    "tags": [
+      "行业研究",
+      "保险",
+      "消费者决策",
+      "社交媒体影响"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-14-001",
+    "date": "2026-04-14",
+    "week": "2026-W16",
+    "platform": "tiktok",
+    "title": "从设计到发布：如何在Canva中创建TikTok广告",
+    "titleOriginal": "From design to launch: How to create TikTok ads in Canva",
+    "summary": "TikTok与Canva深化合作，为广告投放团队提供更便捷的创意制作流程。通过Canva平台直接创建TikTok广告素材，简化从设计到投放的工作流，适合需要快速产出创意内容的营销团队。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://www.tiktok.com/business/en-US/blog",
+    "tags": [
+      "合作伙伴",
+      "创意工具",
+      "Canva",
+      "工作流优化"
+    ],
+    "fetchedAt": "2026-04-26T22:38:02.234996"
+  }
+]

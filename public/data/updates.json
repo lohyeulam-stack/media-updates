@@ -1,0 +1,3453 @@
+[
+  {
+    "id": "tiktok-2026-04-24-001",
+    "date": "2026-04-24",
+    "week": "2026-W17",
+    "platform": "tiktok",
+    "title": "互动组件扩展至升级版Smart+网页和电商目录广告，驱动用户参与",
+    "titleOriginal": "Interaction add-ons support expanded to Upgraded Smart+ Web Campaigns and E-commerce Catalog Ads",
+    "summary": "升级版Smart+网页广告和电商目录广告现已支持互动组件管理。广告投放团队可通过 /smart_plus/ad/create/ 和 /smart_plus/ad/update/ 接口的 interactive_add_on_list 参数启用互动组件，帮助提升广告互动率。",
+    "category": "campaign-management",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "interaction-addon",
+      "e-commerce",
+      "campaign"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "youtube-2026-04-24-001",
+    "date": "2026-04-24",
+    "week": "2026-W17",
+    "platform": "youtube",
+    "title": "跟着YouTube教程和播放列表学最新排舞",
+    "titleOriginal": "Learn the latest line dance routines with YouTube tutorials and playlists",
+    "summary": "YouTube正在庆祝排舞热潮，在Stagecoach音乐节期间推出定制版YouTube标志。排舞视频观看量激增，803Fresh的《Boots on the Ground》获得超7000万观看量。YouTube成为分享新一代艺术家歌曲和舞蹈的关键平台，观众会在网上学习后再到公共场合实践。对广告投放团队而言，排舞相关内容的流行趋势可作为季节性营销参考，尤其适合与乡村音乐、时装品牌或娱乐相关的广告投放。",
+    "category": "culture-trends",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/culture-and-trends/line-dancing-trends-youtube/",
+    "tags": [
+      "排舞",
+      "音乐节",
+      "乡村音乐",
+      "文化趋势",
+      "教程内容"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "mintegral-2026-04-24-001",
+    "date": "2026-04-24",
+    "week": "2026-W17",
+    "platform": "mintegral",
+    "title": "非游戏营销人员如何重写用户获取规则",
+    "titleOriginal": "How Non-Gaming Marketers Are Rewriting The Rules Of User Acquisition",
+    "summary": "本文探讨非游戏类广告主在用户获取（UA）领域的新策略和方法。分析非游戏品牌如何利用移动广告平台实现增长突破，包括垂直电商、健康健身、生活方式等领域的成功案例。为非游戏类应用的投放团队提供用户获取思路和策略参考。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/non-gaming-rewriting-rules-of-user-acquisition",
+    "tags": [
+      "用户获取",
+      "非游戏应用",
+      "移动营销",
+      "策略"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-api-2026-04-24-001",
+    "date": "2026-04-24",
+    "week": "2026-W17",
+    "platform": "tiktok",
+    "title": "Smart+广告互动附加组件支持扩展、报表新增三个社交指标、关键词发现功能新增11个地区支持",
+    "titleOriginal": "Interaction add-ons for Upgraded Smart+ campaigns, new social metrics in reporting, and expanded keyword discovery regions",
+    "summary": "本次更新包含三个重要功能增强：1) 扩展了互动附加组件(interaction add-ons)的支持范围，现在可用于常规Upgraded Smart+网页广告和升级版Smart+电商目录广告，通过interactive_add_on_list参数在/smart_plus/ad/create/和/smart_plus/ad/update/端点管理。2) 报表能力增强，新增三个社交指标：cost_per_consideration、new_consideration_rate和new_consideration_size，已在基础报表和升级版Smart+创意概览报表中可用。3) 关键词发现功能扩展，/tool/search_keyword/keyword_idea/端点现支持英国、法国、加拿大等11个新增地区的关键词研究。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "reporting",
+      "keyword-discovery",
+      "social-metrics"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "google-2026-04-23-001",
+    "date": "2026-04-23",
+    "week": "2026-W17",
+    "platform": "google",
+    "title": "简化 Google Ads API v24 中的关键词预测指标",
+    "titleOriginal": "Simplifying Keyword Forecast Metrics in Google Ads API v24",
+    "summary": "Google Ads API v24 统一了预测基础设施，更新了 GenerateKeywordForecastMetrics 方法。核心变更：1) 预测指标与竞价策略对齐，Manual CPC/Maximize Clicks 提供点击/平均CPC/成本，Maximize Conversions 提供转化/平均CPA/成本；2) 简化请求参数，CampaignToForecast.geo_modifiers 替换为 geo_target_constants，ForecastAdGroup.biddable_keywords 替换为 keywords；3) 移除多个字段包括 keyword_plan_network、negative_keywords、max_cpc_bid_micros 等。v23 版本将于 2027 年 2 月停用。建议开发者检查集成兼容性并参考最新文档。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/simplifying-keyword-forecast-metrics-in.html",
+    "tags": [
+      "google_ads_api",
+      "keyword_forecast",
+      "v24",
+      "bidding_strategy"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-22-001",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "meta",
+    "title": "Meta AI 商业助手全球扩展，支持更多语言",
+    "titleOriginal": "Meta AI business assistant Expands Globally, More Languages",
+    "summary": "Meta 正在将 Meta AI 商业助手 beta 测试扩展至全球主要市场的广告主和代理商，支持更多语言。这意味着各类规模的广告主都能使用 AI 助手来优化广告活动管理和策略制定，是 Meta AI 功能全球化的重要一步。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-ai-business-assistant-expands-globally-with-more-languages",
+    "tags": [
+      "AI助手",
+      "全球化",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "google-2026-04-22-002",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "google",
+    "title": "宣布 Google Ads API v24 发布",
+    "titleOriginal": "Announcing v24 of the Google Ads API",
+    "summary": "Google Ads API v24 正式发布，主要新功能：1) 新增 CartDataSalesView 资源支持购物转化数据，支持按产品维度分析销售数据，新增 all_* 非竞价指标如 all_cost_of_goods_sold_micros；2) 简化视频内容排除设置；3) ReachPlanService 新增 YouTube Select Lineups 支持。重要变更：AudienceInsightsService.topic_audience_combinations 移至公共命名空间，ReachPlanService.ListPlannableProducts 的 youtube_select_lineups 字段调整，ContentCreatorInsightsService 移除 is_brand_connect_creator 字段，广告资源视图移除 click_type 维度，VideoResponsiveAdInfo 现为可变状态。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/announcing-v24-of-google-ads-api.html",
+    "tags": [
+      "google_ads_api",
+      "v24",
+      "cart_data",
+      "release_notes"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "line-2026-04-22-001",
+    "date": "2026-04-22",
+    "week": "2026-W17",
+    "platform": "line",
+    "title": "【2026年1～3月】LINE迷你应用功能更新汇总",
+    "titleOriginal": "【2026年1～3月】LINEミニアプリのアップデートまとめ",
+    "summary": "汇总2026年第一季度（1月至3月）LINE迷你应用的各项功能更新，包括性能优化、新增API接口、用户体验改进等内容。帮助广告投放团队了解迷你应用生态的最新动态，评估是否可作为广告落地页或转化渠道使用。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-research/service-information/lite-update-2026/",
+    "tags": [
+      "LINE迷你应用",
+      "功能更新",
+      "小程序"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-21-001",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "tiktok",
+    "title": "TikTok Product Preview：2026年Q2品牌新功能前瞻",
+    "titleOriginal": "TikTok Product Preview: What's new for brands in Q2 2026",
+    "summary": "TikTok发布2026年第二季度产品更新预览，涵盖最新的产品创新功能，旨在帮助品牌和代理商在TikTok上推动业务增长。本季度重点可能包括AI驱动创意工具升级、效果广告优化及商务功能增强。建议广告投放团队关注本季度产品路线图，以便及时调整投放策略和利用新功能。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-product-preview",
+    "tags": [
+      "Q2 2026",
+      "产品更新",
+      "新功能",
+      "品牌解决方案"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-21-002",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "meta",
+    "title": "The Media Image 如何利用 Meta 协作者系统提升洞察与绩效",
+    "titleOriginal": "How The Media Image boosted insights and performance with a Meta co-pilot system",
+    "summary": "全球领先独立获客营销机构 The Media Image 构建了 Meta 协作者多智能体系统，显著提升了运营效率并为客户带来更好的广告效果。此案例展示了 AI 协作者系统在广告投放中的实际应用价值，为其他代理商提供了可借鉴的实践方案。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-media-image-agency-copilot-success-story",
+    "tags": [
+      "AI协作者",
+      "代理案例",
+      "运营效率"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "youtube-2026-04-21-002",
+    "date": "2026-04-21",
+    "week": "2026-W17",
+    "platform": "youtube",
+    "title": "YouTube将面容检测技术扩展至娱乐行业",
+    "titleOriginal": "Expanding likeness detection to the entertainment industry",
+    "summary": "YouTube将其AI面容检测技术扩展至娱乐行业，涵盖人才经纪公司、管理公司和名人。该技术类似Content ID，可检测AI生成的内容（如深度伪造），并赋予权利人发现并申请移除的权力。已获得CAA、UTA、WME和Untitled Management等主要经纪公司支持。这意味着YouTube在AI内容管理和版权保护方面迈出重要一步，可能影响未来名人代言类广告的内容合规性管理。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-likeness-detection-ai-protection/",
+    "tags": [
+      "AI面容检测",
+      "深度伪造",
+      "内容保护",
+      "版权管理",
+      "娱乐行业"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "youtube-2026-04-20-003",
+    "date": "2026-04-20",
+    "week": "2026-W17",
+    "platform": "youtube",
+    "title": "First We Feast推出全新系列《Slice Joint》",
+    "titleOriginal": "First We Feast debuts new series 'Slice Joint' on YouTube",
+    "summary": "知名工作室First We Feast在YouTube推出全新访谈系列《Slice Joint》，由主持人Speedy Morman邀请文化名人边吃纽约披萨边聊天。首期嘉宾为《怪奇物语》演员Gaten Matarazzo。该系列加入Hot Ones和Pro Moves行列，进一步丰富YouTube原创内容矩阵。对广告投放团队而言，可关注此类娱乐IP的合作品牌机会，以及披萨/食品品牌的植入合作空间。",
+    "category": "creative",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/first-we-feast-slice-joint-premiere/",
+    "tags": [
+      "原创内容",
+      "访谈节目",
+      "First We Feast",
+      "娱乐营销",
+      "YouTube Originals"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "mintegral-2026-04-20-002",
+    "date": "2026-04-20",
+    "week": "2026-W17",
+    "platform": "mintegral",
+    "title": "Mintegral 续期 SOC 认证，拥抱认可的数据标准",
+    "titleOriginal": "Mintegral Renews SOC Certifications, Embracing Recognized Data Standards",
+    "summary": "Mintegral 平台正式续期 SOC 2 Type I 和 SOC 2 Type II 认证，同时获得 SOC 3 证书，表明平台在数据安全、隐私保护和合规性方面达到行业最高标准。认证由国际知名审计机构进行评估，确保 Mintegral 的安全控制措施持续有效。",
+    "category": "policy",
+    "importance": "high",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/soc-certification",
+    "tags": [
+      "SOC认证",
+      "数据安全",
+      "合规",
+      "隐私保护"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "google-2026-04-17-003",
+    "date": "2026-04-17",
+    "week": "2026-W16",
+    "platform": "google",
+    "title": "Google Ads API 多因素身份验证要求",
+    "titleOriginal": "Multi-factor authentication requirement for the Google Ads API",
+    "summary": "为提升 Google Ads 账户安全性，Google Ads API 将强制要求用户使用多因素身份验证 (MFA/2SV)。变更生效后，通过用户认证流程生成新 OAuth 2.0 刷新令牌时，除用户名密码外还需验证第二因素。若用户未启用两步验证，系统将提示添加两步验证方式。该安全更新将于 2026 年 4 月 21 日起逐步推出，短期内覆盖所有用户。",
+    "category": "policy",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/multi-factor-authentication-requirement.html",
+    "tags": [
+      "security",
+      "mfa",
+      "oauth",
+      "authentication"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-api-2026-04-17-002",
+    "date": "2026-04-17",
+    "week": "2026-W16",
+    "platform": "tiktok",
+    "title": "Upgraded Smart+应用安装广告年龄定向扩展至13-17岁、自定义受众再营销功能增强",
+    "titleOriginal": "Age targeting expanded for Upgraded Smart+ App Install campaigns and retargeting custom audiences support",
+    "summary": "本次更新带来两项重要能力增强：1) 升级版Smart+应用安装和重定向广告的年龄定向选项扩展，新增AGE_13_17枚举值用于age_groups参数，以及ALL枚举值用于spc_audience_age参数，支持在/smart_plus/adgroup/create/、/smart_plus/adgroup/update/和/smart_plus/adgroup/get/端点定向13-17岁用户群体。2) 升级版Smart+目录广告（应用目录广告和电商目录广告）的自定义受众再营销功能扩展，新增shopping_ads_retargeting_type、shopping_ads_retargeting_actions_days、included_custom_actions、excluded_custom_actions和shopping_ads_retargeting_custom_audience_relation参数，支持基于特定行为重新触达受众。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "audience-targeting",
+      "retargeting",
+      "app-install"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "google-2026-04-16-004",
+    "date": "2026-04-16",
+    "week": "2026-W16",
+    "platform": "google",
+    "title": "Ads DevCast E3：优化广告工作流程",
+    "titleOriginal": "Ads DevCast E3: Improving your Advertising Workflows",
+    "summary": "Google Ads 开发者社区线上活动，邀请开发者和广告技术团队参与讨论 API 工作流程优化。提供 Discord、YouTube Live、LinkedIn Live 等多平台参与方式。适合希望了解 Google Ads API 最佳实践和新功能的开发者参与。",
+    "category": "other",
+    "importance": "low",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/04/ads-devcast-e3-improving-your.html",
+    "tags": [
+      "community",
+      "event",
+      "workflow",
+      "developer"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-15-003",
+    "date": "2026-04-15",
+    "week": "2026-W16",
+    "platform": "meta",
+    "title": "打破技术壁垒，帮助各类规模企业从广告中获得更多收益",
+    "titleOriginal": "Removing Technical Barriers to Help Businesses of All Sizes Get More From Their Ads",
+    "summary": "Meta 宣布更新 Meta Pixel 和转化 API，使企业更容易维护良好的连接状态和最新配置以提升广告效果。这些更新降低了技术门槛，帮助中小型企业更好地实现像素和 API 的正确设置，从而改善广告归因和优化效果。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/pixel-conversionsapi-updates",
+    "tags": [
+      "Meta Pixel",
+      "转化API",
+      "技术更新"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "google-2026-04-15-001",
+    "date": "2026-04-15",
+    "week": "2026-W16",
+    "platform": "google",
+    "title": "通过需求挖掘第8版更新在YouTube上更快实现转化",
+    "titleOriginal": "Convert faster on YouTube with Demand Gen Drop #8.",
+    "summary": "Google Ads推出需求挖掘（Demand Gen）广告系列的第8版更新，专注于提升YouTube平台上的转化速度。新功能可能包括更智能的受众匹配、优化的出价策略和创意展示方式，帮助广告主在YouTube发现页和In-Feed视频中更高效地获取高质量转化。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/demand-gen-drop-april-2026/",
+    "tags": [
+      "YouTube",
+      "Demand Gen",
+      "转化优化",
+      "视频广告"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-14-002",
+    "date": "2026-04-14",
+    "week": "2026-W16",
+    "platform": "tiktok",
+    "title": "从设计到上线：如何在Canva中创建TikTok广告",
+    "titleOriginal": "From design to launch: How to create TikTok ads in Canva",
+    "summary": "TikTok与Canva深化合作，为广告主提供从设计到投放的一站式创意工作流。通过Canva平台可直接创建TikTok广告素材并同步到TikTok for Business，支持多尺寸适配、品牌素材库对接等功能，大幅提升创意生产效率，降低跨平台操作成本。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/canva-full-funnel-creative-tips",
+    "tags": [
+      "Canva",
+      "创意工具",
+      "创意制作",
+      "合作伙伴"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "meta-2026-04-14-001",
+    "date": "2026-04-14",
+    "week": "2026-W16",
+    "platform": "meta",
+    "title": "Threads API 新功能一览",
+    "titleOriginal": "What's new in the Threads API",
+    "summary": "Threads API 迎来重大改进，为开发者带来全新功能：支持客户发布更丰富的内容、将 Threads 集成到自有应用、以及增强的互动管理能力。这些更新旨在提升开发者体验，帮助广告主和合作伙伴更好地利用 Threads 平台进行内容营销和用户互动。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/04/14/whats-new-in-the-threads-api/",
+    "tags": [
+      "Threads API",
+      "开发者工具",
+      "内容发布",
+      "平台集成"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "line-2026-04-14-002",
+    "date": "2026-04-14",
+    "week": "2026-W16",
+    "platform": "line",
+    "title": "LINE迷你应用数字内容「付费功能」正式开放",
+    "titleOriginal": "【LINEミニアプリ】デジタルコンテンツ「課金機能」本格提供を開始",
+    "summary": "LINE迷你应用正式推出数字内容付费功能，支持游戏道具、电子书、会员订阅等虚拟商品的购买与变现。广告投放团队可关注此功能对用户体验和转化路径的影响，评估作为电商或付费内容类广告的落地页可能性。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.linebiz.com/jp/column/",
+    "tags": [
+      "LINE迷你应用",
+      "付费功能",
+      "数字内容",
+      "电商"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-13-003",
+    "date": "2026-04-13",
+    "week": "2026-W16",
+    "platform": "tiktok",
+    "title": "TikTok Symphony与Dreamina Seedance 2.0重塑视频创作",
+    "titleOriginal": "Transforming video creation with TikTok Symphony and Dreamina Seedance 2.0",
+    "summary": "TikTok Symphony创意套件迎来重大升级，集成Dreamina Seedance 2.0 AI视频生成能力。新版本提供更一致的创意风格控制、更强的批量制作能力，并支持AI脚本生成、数字人克隆等功能。广告主可在Symphony平台直接完成从创意构思到素材生成的完整流程，显著提升规模化创意生产效率。",
+    "category": "creative",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/transforming-video-creation-tiktok-symphony-dreamina-seedance",
+    "tags": [
+      "AI创意",
+      "视频生成",
+      "Symphony",
+      "Dreamina",
+      "自动化"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "snapchat-2026-04-13-001",
+    "date": "2026-04-13",
+    "week": "2026-W16",
+    "platform": "snapchat",
+    "title": "保险购买的新时代：Snapchat上的消费者决策研究",
+    "titleOriginal": "The New Era of Insurance Buying on Snapchat",
+    "summary": "Snapchat与益普索(Ipsos)联合发布最新研究，揭示社交平台特别是Snapchat在消费者保险决策中的关键作用。研究显示，社交媒体已成为用户获取保险信息、比较方案和最终决策的重要渠道。对于保险品牌而言，这意味着在Snapchat上的精准投放和内容营销将直接影响转化效果。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/swipe-up-for-coverage",
+    "tags": [
+      "行业研究",
+      "保险",
+      "消费者决策",
+      "社交媒体影响"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "youtube-2026-04-10-004",
+    "date": "2026-04-10",
+    "week": "2026-W15",
+    "platform": "youtube",
+    "title": "YouTube创作者如何塑造音乐节时尚与身份表达",
+    "titleOriginal": "How YouTube creators shape music festival fashion and identity",
+    "summary": "YouTube深度报道创作者如何通过穿搭、妆造和时尚内容影响音乐节文化。内容涵盖造型视频、GRWM和时尚穿搭展示。YouTube还推出特别版Logo致敬五位时尚创作者。音乐节正成为时尚、美妆和生活方式创作者的重要舞台。对广告投放团队建议：可结合Coachella等音乐节时机，针对时尚/美妆/生活方式品牌进行节日前后的定向广告投放，抓住音乐节相关的流量高峰。",
+    "category": "culture-trends",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/culture-and-trends/festival-fashion-trends-youtube/",
+    "tags": [
+      "音乐节时尚",
+      "Coachella",
+      "创作者经济",
+      "时尚内容",
+      "美妆"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-api-2026-04-10-003",
+    "date": "2026-04-10",
+    "week": "2026-W15",
+    "platform": "tiktok",
+    "title": "Upgraded Smart+应用安装广告追踪功能增强、添加追踪像素和离线事件集ID支持",
+    "titleOriginal": "Enhanced tracking capabilities for Upgraded Smart+ App Install campaigns with tracking_pixel_id and tracking_offline_event_set_ids",
+    "summary": "升级版Smart+应用安装和重定向广告的追踪功能得到显著增强。通过在/smart_plus/ad/create/、/smart_plus/ad/update/和/smart_plus/ad/get/端点引入tracking_pixel_id和tracking_offline_event_set_ids参数，广告主现在可以测量完整的用户参与漏斗，包括在线网站活动（如加购）和离线事件（如到店购买）。这一增强帮助广告主获得更全面的用户行为洞察，优化整体广告效果。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "tracking",
+      "pixel",
+      "offline-events"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "youtube-2026-04-09-005",
+    "date": "2026-04-09",
+    "week": "2026-W15",
+    "platform": "youtube",
+    "title": "YouTube新报告：独立动画创作者正在重塑娱乐产业",
+    "titleOriginal": "New YouTube report shows how online animators are reshaping the entertainment industry",
+    "summary": "YouTube发布《Animation's New Wave》报告，显示61%的14-24岁动画粉丝表示喜欢看YouTube上独立动画师创作的动画剧集，与大制片厂作品相当或更喜欢。63%每周至少看一次YouTube动画内容，50%的动画粉丝会观看其他语言的动画作品。独立在线动画师正在快速拓展动画的可能性边界。对广告投放团队的启示：动画内容是触达年轻受众的有效载体，可关注动画类创作者的商务合作机会。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/culture-and-trends/independent-animation-trends-report/",
+    "tags": [
+      "动画趋势",
+      "独立创作者",
+      "报告发布",
+      "Z世代",
+      "动画内容"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-08-004",
+    "date": "2026-04-08",
+    "week": "2026-W15",
+    "platform": "tiktok",
+    "title": "Wix与TikTok联手：将发现转化为销售",
+    "titleOriginal": "Turn discovery into sales with Wix and TikTok",
+    "summary": "TikTok与Wix达成深度集成，品牌可将Wix网站内容直接连接到TikTok for Business，轻松设置广告投放、追踪转化表现。整合后支持从内容发现到购买转化的全链路追踪，实现站外流量变现。该合作为电商广告主提供更便捷的TikTok营销入口。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/wix-integration",
+    "tags": [
+      "Wix",
+      "电商",
+      "合作伙伴",
+      "转化追踪"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "snapchat-2026-04-07-002",
+    "date": "2026-04-07",
+    "week": "2026-W15",
+    "platform": "snapchat",
+    "title": "Snapcodes：品牌专属内容营销的终极工具",
+    "titleOriginal": "Why Snapcodes are the Ultimate Tool for Exclusive Brand Content",
+    "summary": "Snapcodes成为品牌解锁专属内容的重要工具，支持AR体验、自定义设计和数据分析功能。通过Snapcodes，品牌可提升用户参与度、促进转化并建立用户忠诚度。广告投放团队可利用此工具设计互动活动，将线下场景与线上体验无缝衔接。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/snapcodes-exclusive-brand-content",
+    "tags": [
+      "Snapcodes",
+      "AR",
+      "互动营销",
+      "品牌内容"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "snapchat-2026-04-07-003",
+    "date": "2026-04-07",
+    "week": "2026-W15",
+    "platform": "snapchat",
+    "title": "品牌如何利用实用性AR体验赋能营销",
+    "titleOriginal": "Who Empowers Brands to Craft Utility-Based AR Experiences?",
+    "summary": "品牌可通过Snapchat广告创建实用性AR体验，提升用户参与度并实现产品可视化。通过Lens、Web Builder和动态产品广告等工具，用户可虚拟试穿、试用产品，从而推动更多转化。这类AR功能为零售和电商品牌提供强大的购物体验解决方案。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/utility-based-ar-experiences",
+    "tags": [
+      "AR",
+      "产品可视化",
+      "电商",
+      "实用性体验"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "snapchat-2026-04-06-004",
+    "date": "2026-04-06",
+    "week": "2026-W15",
+    "platform": "snapchat",
+    "title": "社交健康：从数字研究到线下问诊的健康之旅",
+    "titleOriginal": "Health on Social: From Digital Research to Real-World Consultations",
+    "summary": "Snap与益普索研究表明，Snapchat已成为现代患者健康旅程中的重要一环。用户在社交平台发现健康信息后，会进一步咨询医生完成线下问诊。这为健康和医疗品牌提供了精准触达高意向用户的营销机会，从社交发现到实际转化的完整链路价值凸显。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/health-on-social-from-digital-research-to-real-world-consultations",
+    "tags": [
+      "健康行业",
+      "消费者旅程",
+      "医疗营销",
+      "用户意图"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-2026-04-03-005",
+    "date": "2026-04-03",
+    "week": "2026-W14",
+    "platform": "tiktok",
+    "title": "一个工作流，更智能的营销活动：TikTok与HubSpot对接",
+    "titleOriginal": "One workflow, smarter campaigns: TikTok meets HubSpot",
+    "summary": "TikTok与HubSpot营销自动化平台实现深度对接，广告主现可将TikTok广告数据与HubSpot CRM工作流无缝同步。通过连接受众群体、转化追踪和自动化规则，提升线索质量和全漏斗营销可视化。该集成帮助B2B及高价值线索广告主实现从TikTok引流到CRM培育的闭环管理。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/hubspot-integration",
+    "tags": [
+      "HubSpot",
+      "CRM集成",
+      "营销自动化",
+      "线索管理"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "tiktok-api-2026-04-03-004",
+    "date": "2026-04-03",
+    "week": "2026-W14",
+    "platform": "tiktok",
+    "title": "Smart+目录广告自定义受众再营销、GMV Max创意管理端点、报表维度扩展、文档链接语义化更新",
+    "titleOriginal": "Custom audience retargeting for Smart+ Catalog Ads, new GMV Max creative update endpoint, expanded reporting dimensions, and semantic doc links",
+    "summary": "本次更新包含四项重要增强：1) 升级版Smart+网站和应用优化目录广告新增自定义受众再营销功能，通过新增参数shopping_ads_retargeting_type、shopping_ads_retargeting_actions_days、included_custom_actions、excluded_custom_actions和shopping_ads_retargeting_custom_audience_relation支持基于特定行为重新触达用户。2) 新增/campaign/gmv_max/creative/update/端点，简化GMV Max广告系列的创意管理，支持在商品或直播GMV Max广告系列中添加或移除创意。3) GMV Max广告系列报表新增两个创意级指标维度组：[\"campaign_id\",\"item_group_id\",\"item_id\",\"stat_time_day\"]和[\"item_id\",\"stat_time_day\"]。4) 开发者文档链接更新为更语义化、描述性的格式，基于文档标题和内容，便于快速识别信息。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "gmv-max",
+      "retargeting",
+      "reporting",
+      "documentation"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "mintegral-2026-04-01-003",
+    "date": "2026-04-01",
+    "week": "2026-W14",
+    "platform": "mintegral",
+    "title": "在 UA 活动中平衡短期 ROAS 与长期留存",
+    "titleOriginal": "Balancing Short-Term ROAS With Long-Term Retention In UA Campaigns",
+    "summary": "针对广告投放团队在优化广告效果时面临的短期收益与长期用户价值之间的矛盾，提供实战策略建议。指导如何设置合理的 ROAS 目标，在追求即时回报的同时培育高价值用户群体，实现 UA 活动的可持续增长。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/balance-short-term-roas-and-retention",
+    "tags": [
+      "ROAS优化",
+      "用户留存",
+      "广告投放策略",
+      "效果营销"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "pinterest-2026-03-31-002",
+    "date": "2026-03-31",
+    "week": "2026-W14",
+    "platform": "pinterest",
+    "title": "Pinterest揭示定义音乐节季的趋势",
+    "titleOriginal": "Pinterest reveals the trends that will define the festival season",
+    "summary": "Pinterest发布2026年音乐节季趋势报告，揭示用户对音乐节相关内容的搜索和保存行为洞察。报告涵盖时尚穿搭、妆容造型、露营装备、旅行目的地等多个品类的流行趋势，为广告主提供音乐节营销的季节性策略参考。",
+    "category": "creative",
+    "importance": "low",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/coachella-2026-trends/",
+    "tags": [
+      "趋势报告",
+      "音乐节",
+      "时尚",
+      "生活方式"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "linkedin-2026-03-31-005",
+    "date": "2026-03-31",
+    "week": "2026-W14",
+    "platform": "linkedin",
+    "title": "NewFronts 2026回顾：B2B营销已进入成果时代",
+    "titleOriginal": "Recap NewFronts 2026: B2B Marketing Has Entered the Outcomes Era",
+    "summary": "LinkedIn NewFronts 2026活动总结，行业专家共同探讨B2B营销从品牌曝光向实际业务成果的范式转变。LinkedIn在此次转变中扮演关键角色，为广告主提供更精准的归因工具和效果衡量方案，推动B2B营销进入以可衡量成果为核心的新时代。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/measurement/newfronts-2026-recap-b2b-marketing-has-entered-the-outcomes-era",
+    "tags": [
+      "NewFronts",
+      "行业活动",
+      "B2B趋势",
+      "营销成果衡量"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "snapchat-2026-03-31-001",
+    "date": "2026-03-31",
+    "week": "2026-W14",
+    "platform": "snapchat",
+    "title": "Snap to Suitcase：Snapchat在旅行中的角色",
+    "titleOriginal": "Snap to Suitcase: The Role of Snapchat in the Travel Journey",
+    "summary": "Snapchat与Suzy联合发布新研究，揭示Snapchat如何影响用户完整旅行决策链——从旅行灵感激发到预订完成，乃至旅行归来后的分享回顾。研究为旅游品牌提供用户旅程洞察，帮助广告主制定更精准的旅行季节性营销策略。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/snap-to-suitcase",
+    "tags": [
+      "旅游行业",
+      "消费者洞察",
+      "用户旅程",
+      "品牌营销"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "tiktok-2026-03-27-001",
+    "date": "2026-03-27",
+    "week": "2026-W13",
+    "platform": "tiktok",
+    "title": "Upgraded Smart+广告新增产品详情和促销信息参数",
+    "titleOriginal": "New parameters for Upgraded Smart+ Ads",
+    "summary": "在/smart_plus/ad/create/、/smart_plus/ad/update/和/smart_plus/ad/get/端点中新增product_titles、product_image_list、catalog_tag_list、promo_info_list和product_info_enabled参数。广告主可将产品详情和促销代码整合到Upgraded Smart+广告中，让系统自动生成定制化广告变体，提升广告效果并突出优惠信息以驱动用户参与。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs",
+    "tags": [
+      "smart-plus",
+      "产品目录广告",
+      "创意优化",
+      "参数更新"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "meta-2026-03-27-001",
+    "date": "2026-03-27",
+    "week": "2026-W13",
+    "platform": "meta",
+    "title": "Message Tags即将停用，请迁移至Utility Templates或Marketing Messages API",
+    "titleOriginal": "Message Tags Deprecation Notice",
+    "summary": "Meta宣布将于2026年4月27日起停用CONFIRMED_EVENT_UPDATE、ACCOUNT_UPDATE和POST_PURCHASE_UPDATE三个Message Tags，届时包含这些标签的API请求将返回错误码100。广告投放团队需要提前迁移至Utility Templates或Marketing Messages API，避免业务消息发送中断。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform",
+    "tags": [
+      "api-deprecation",
+      "message-tags",
+      "migration",
+      "messenger"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "tiktok-api-2026-03-27-005",
+    "date": "2026-03-27",
+    "week": "2026-W13",
+    "platform": "tiktok",
+    "title": "Smart+广告新增产品详情和促销信息参数、同步受众报表维度增强",
+    "titleOriginal": "New product and promo parameters for Smart+ ads and enhanced synchronous audience reports",
+    "summary": "本次更新包含两个重要增强：1) 升级版Smart+广告能力增强，在/smart_plus/ad/create/、/smart_plus/ad/update/和/smart_plus/ad/get/端点新增product_titles、product_image_list、catalog_tag_list、promo_info_list和product_info_enabled参数。通过在广告中融入产品详情和促销代码信息，系统可自动生成定制化广告变体，提升广告效果并有效展示优惠活动。2) 同步受众报表功能增强，新增bucket_id和stat_time_hour维度以及cost指标，支持按实时API桶ID分组数据，便于基于不同桶的用户特征优化实时竞价策略并评估各流量段的不同方案。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "product-ads",
+      "reporting",
+      "real-time-bidding"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "meta-2026-03-26-001",
+    "date": "2026-03-26",
+    "week": "2026-W13",
+    "platform": "meta",
+    "title": "从商业到文化：AI如何推动整个营销漏斗的个性化连接与增长",
+    "titleOriginal": "From Commerce to Culture: How AI is Powering Personalized Connection and Growth Across the Funnel",
+    "summary": "Meta在NewFronts活动上宣布其AI驱动工具生态系统的重大更新，旨在帮助企业在整个营销漏斗中创建个性化体验。主要包括：1）Reels和Stories的AI增强推荐功能扩展至更多品牌内容；2）AI驱动的创意分析和优化建议，帮助品牌创作更符合用户偏好的内容；3）跨应用（Facebook、Instagram、WhatsApp）的统一受众连接能力提升。广告投放团队应关注AI在内容推荐中的深度整合，这将影响创意策略和受众触达方式。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/from-commerce-to-culture-at-newfronts",
+    "tags": [
+      "AI",
+      "个性化推荐",
+      "创意优化",
+      "营销漏斗",
+      "NewFronts"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "mintegral-2026-03-26-001",
+    "date": "2026-03-26",
+    "week": "2026-W13",
+    "platform": "mintegral",
+    "title": "2026年数字健康应用全球增长背后的驱动力是什么？",
+    "titleOriginal": "What's Driving Global Growth For Digital Health Apps In 2026?",
+    "summary": "本文探讨了2026年数字健康应用在全球市场快速增长的关键驱动因素。内容涵盖市场趋势、用户行为变化、技术进步以及广告投放策略建议，为数字健康类应用的营销人员提供用户获取（UA）领域的实战洞察与策略指导。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/driving-global-growth-for-digital-health-apps",
+    "tags": [
+      "数字健康",
+      "用户获取",
+      "市场趋势",
+      "移动营销"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "meta-2026-03-25-001",
+    "date": "2026-03-25",
+    "week": "2026-W13",
+    "platform": "meta",
+    "title": "Meta营销API：Threads广告最新更新",
+    "titleOriginal": "Marketing API: Latest Updates for Ads on Threads",
+    "summary": "Meta发布Threads营销API最新更新，Threads月活跃用户已超过4亿。更新内容涵盖新的广告功能和工具，使合作伙伴和广告主能够采用增强的广告系列功能。广告投放团队应关注Threads广告API的最新变更，以便及时利用新功能优化广告投放策略。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/03/25/marketing-api-latest-updates-for-ads-on-threads/",
+    "tags": [
+      "Threads",
+      "Marketing API",
+      "Ads",
+      "API更新"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "linkedin-2026-03-24-004",
+    "date": "2026-03-24",
+    "week": "2026-W13",
+    "platform": "linkedin",
+    "title": " Bullspend：当营销指标与业务影响不符时",
+    "titleOriginal": "Bullspend: When Marketing Metrics Don't Add Up to Business Impact",
+    "summary": "太多B2B营销预算流向看似亮眼但无法带来实际效果的指标。Keith Browning深度分析\"Bullspend\"现象，揭示常见的虚荣指标陷阱（如点赞、点击、曝光量），指导营销团队如何从追求表面数据转向衡量真正的业务影响和投资回报率。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/measurement/b2b-marketing-spend-bullspend",
+    "tags": [
+      "ROI测量",
+      "营销归因",
+      "KPI优化",
+      "预算效率"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "tiktok-2026-03-24-001",
+    "date": "2026-03-24",
+    "week": "2026-W13",
+    "platform": "tiktok",
+    "title": "TikTok Pulse套件：通过与TikTok精选内容对齐触达专属受众",
+    "titleOriginal": "TikTok Pulse suite: Reach exclusive audiences through alignment with the best of TikTok",
+    "summary": "TikTok推出Pulse套件，为广告主提供一整套解决方案，使其品牌内容与平台上的热门内容相邻展示。该套件解锁了在高度相关环境中触达原本难以覆盖的受众群体的能力，帮助品牌获取优质流量并提升广告效果。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-pulse-premium-contextual-ad-placement",
+    "tags": [
+      "品牌安全",
+      "内容营销",
+      "受众触达",
+      "品牌调性匹配"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "tiktok-2026-03-24-002",
+    "date": "2026-03-24",
+    "week": "2026-W13",
+    "platform": "tiktok",
+    "title": "重新定义「置顶」体验：TopReach全新上线",
+    "titleOriginal": "Redefining what it means to stay on top (of the feed) with TopReach",
+    "summary": "TikTok推出全新TopReach解决方案，将TopView和Top Feed的最佳优势整合在一起，以更高的性价比为品牌带来优质可见性和独特覆盖。该产品革新了开屏和首位信息流广告的组合模式，为品牌提供更高效的曝光解决方案。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/introducing-topreach",
+    "tags": [
+      "开屏广告",
+      "信息流广告",
+      "品牌曝光",
+      "覆盖量"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "meta-2026-03-24-002",
+    "date": "2026-03-24",
+    "week": "2026-W13",
+    "platform": "meta",
+    "title": "AI与创作者赋能产品发现的新时代",
+    "titleOriginal": "Introducing a New Era of Product Discovery Powered by AI and Creators",
+    "summary": "Meta在ShopTalk 2026大会上发布全新产品发现功能：1）推出AI驱动的产品推荐助手，可根据用户浏览历史和社交互动提供个性化购物建议；2）创作者产品推荐功能升级，允许创作者直接在内容中嵌入AI推荐的产品链接并获得佣金分成；3）Facebook Marketplace引入AI匹配算法，提升买卖双方的匹配效率。这些更新将为广告投放团队带来新的产品植入场景和创作者合作机会。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/ai-and-creators-product-discovery",
+    "tags": [
+      "AI",
+      "创作者经济",
+      "产品发现",
+      "ShopTalk",
+      "AI推荐"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-24-002",
+    "date": "2026-03-24",
+    "week": "2026-W13",
+    "platform": "snapchat",
+    "title": "从注意力到行动：Snapchat的全漏斗优势",
+    "titleOriginal": "From Attention to Action: Snapchat's Full-Funnel Advantage",
+    "summary": "Snapchat展示其全漏斗解决方案，涵盖品牌认知（注意力捕获和品牌知名度建设）和效果转化（将注意力转化为购买）两大核心能力。为广告主提供从认知到转化的完整营销链路指导。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/snapchat-full-funnel-advantage",
+    "tags": [
+      "全漏斗营销",
+      "品牌建设",
+      "效果广告",
+      "营销策略"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "tiktok-2026-03-23-003",
+    "date": "2026-03-23",
+    "week": "2026-W13",
+    "platform": "tiktok",
+    "title": "TikTok创作者适配性报告：品牌策略与实践指南",
+    "titleOriginal": "TikTok Creator Suitability Report: Strategies and tactics for brands",
+    "summary": "TikTok发布全新研究与指南，帮助品牌在扩大创作者合作规模的同时，维护品牌安全、适配性、真实性和受众信任。该报告为广告主提供了负责任地规模化创作者营销的策略框架和实操建议。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-creator-suitability-report",
+    "tags": [
+      "创作者营销",
+      "品牌安全",
+      "KOL合作",
+      "研究报告"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "tiktok-api-2026-03-20-006",
+    "date": "2026-03-20",
+    "week": "2026-W12",
+    "platform": "tiktok",
+    "title": "基础报表新增TikTok指标、报表订阅API发布、支付组合管理功能增强",
+    "titleOriginal": "New TikTok metrics in Basic reports, Reporting Subscription API launch, and Payment Portfolio management enhancements",
+    "summary": "本次更新包含三项重要功能：1) 基础报表增强，新增TikTok专属指标提供更深入的用户行为洞察，包括购买、广告收入和订阅等关键操作追踪。2) 全新报表订阅API发布，允许监控花费、展示、点击和视频播放等报表指标变化，提供分钟级通知能力，支持更快的数据驱动决策。3) 支付组合管理流程优化：/bc/balance/get/和/bc/transfer/端点新增payment_portfolio_id参数；/bc/transfer/端点响应新增payee_account和remitter_account详情；/advertiser/balance/get/、/payment_portfolio/create/和/payment_portfolio/get/端点响应新增payment_portfolio_type字段，便于识别高级和标准支付组合。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "reporting",
+      "subscription-api",
+      "payment-portfolio",
+      "tiktok-metrics"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "pinterest-2026-03-19-001",
+    "date": "2026-03-19",
+    "week": "2026-W12",
+    "platform": "pinterest",
+    "title": "将 Pinterest Performance+ 广告系列设为新默认选项",
+    "titleOriginal": "Make Pinterest Performance+ campaigns your new default",
+    "summary": "本文介绍了 Pinterest Performance+ 广告系列的最新最佳实践。Performance+ 是 Pinterest 的自动化广告解决方案，可帮助广告主简化投放流程、优化广告表现。指南涵盖如何将 Performance+ 设为新的默认广告系列类型，以及相关配置建议和效果提升技巧。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-performance-plus-campaigns/",
+    "tags": [
+      "Performance+",
+      "自动化投放",
+      "广告系列优化",
+      "最佳实践"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "linkedin-2026-03-18-003",
+    "date": "2026-03-18",
+    "week": "2026-W12",
+    "platform": "linkedin",
+    "title": "B2B营销人员如何利用视频再营销提升转化",
+    "titleOriginal": "How B2B Marketers Can Use Video Retargeting to Boost Campaign Conversions",
+    "summary": "文章揭示B2B营销人员如何利用视频再营销策略，在漫长的非线性购买旅程中提升熟悉度、信任度和最终转化率。视频内容能够有效触达在不同决策阶段的潜在客户，是培养客户关系和推动转化的高级广告技巧。",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/how-b2b-marketers-can-use-video-retargeting-to-boost-campaign-conversions2",
+    "tags": [
+      "视频再营销",
+      "转化优化",
+      "B2B买家旅程",
+      "广告策略"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "meta-2026-03-18-003",
+    "date": "2026-03-18",
+    "week": "2026-W12",
+    "platform": "meta",
+    "title": "Manus x Meta for Business：企业AI代理新时代",
+    "titleOriginal": "Manus x Meta for Businesses",
+    "summary": "Meta宣布与Manus公司合作，在其应用家族（包括Facebook、Instagram、WhatsApp等）中推出Manus自主AI代理的Beta测试。这是首个深度集成到Meta广告和商务工具的企业级AI代理服务，能够帮助企业自动完成复杂的多步骤业务流程，如广告素材生成与优化、跨平台活动管理等。广告投放团队将获得更强大的自动化工作流程支持，提升运营效率。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/manus-joins-meta-accelerating-ai-innovation-for-businesses",
+    "tags": [
+      "Manus",
+      "AI代理",
+      "自动化",
+      "企业工具",
+      "Beta测试"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "pinterest-2026-03-17-005",
+    "date": "2026-03-17",
+    "week": "2026-W12",
+    "platform": "pinterest",
+    "title": "Pinterest春季趋势报告2026：个性化正当时",
+    "titleOriginal": "Pinterest Spring Trend Report 2026: Personalization is in bloom",
+    "summary": "Pinterest发布2026年春季趋势报告，指出个性化将成为今年春季的核心主题。用户在穿搭、家居、美妆等领域的搜索更趋个性化，风格混搭和定制化需求显著增长。报告为广告主提供春季营销选品和创意方向指引。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/spring-trend-report-2026/",
+    "tags": [
+      "趋势报告",
+      "春季",
+      "个性化",
+      "营销洞察"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "snapchat-2026-03-17-003",
+    "date": "2026-03-17",
+    "week": "2026-W12",
+    "platform": "snapchat",
+    "title": "社交影响力：科技产品购买的新路径",
+    "titleOriginal": "The Social Effect: The New Tech Path to Purchase",
+    "summary": "Snapchat与Alter Agents合作研究，揭示家人朋友、社交渠道和创作者如何影响Snapchatters的科技产品购买决策。为科技品牌提供关键洞察，指导其在社交平台的营销布局和KOL合作策略。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/the-new-tech-path-to-purchase",
+    "tags": [
+      "科技行业",
+      "购买决策",
+      "社交影响",
+      "创作者营销"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "mintegral-2026-03-17-002",
+    "date": "2026-03-17",
+    "week": "2026-W12",
+    "platform": "mintegral",
+    "title": "掌握目标ROAS：Mintegral高级指南",
+    "titleOriginal": "Master Target ROAS With Mintegral's Advanced Guide",
+    "summary": "Mintegral发布的Target ROAS（目标广告支出回报率）深度操作指南，帮助广告主理解并有效运用该竞价策略。指南涵盖ROAS设置逻辑、优化技巧及常见问题解决方案，旨在帮助营销团队提升广告投放效率和投资回报。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/mastering-target-roas",
+    "tags": [
+      "Target ROAS",
+      "自动化竞价",
+      "广告优化",
+      "投放策略"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "meta-2026-03-13-002",
+    "date": "2026-03-13",
+    "week": "2026-W11",
+    "platform": "meta",
+    "title": "汽车型号广告过渡至Comscore Markets",
+    "titleOriginal": "Transitioning to Comscore Markets for automotive model ads",
+    "summary": "Meta宣布从2026年6月22日起停止使用Nielsen指定市场区域(DMA)进行汽车型号广告定向，改用Comscore Markets®作为替代方案。Comscore Markets于2025年8月推出。届时仍使用Nielsen DMA的汽车型号广告活动将被暂停，需更新为Comscore Markets定向。广告投放团队应立即检查现有汽车广告的定向设置，确保在截止日期前完成迁移。",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/03/13/transitioning-to-comscore-markets-for-automotive-model-ads/",
+    "tags": [
+      "Comscore Markets",
+      "Nielsen DMA",
+      "汽车广告",
+      "定向",
+      "数据迁移"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "mintegral-2026-03-13-003",
+    "date": "2026-03-13",
+    "week": "2026-W11",
+    "platform": "mintegral",
+    "title": "为什么目标ROAS广告活动难以规模化",
+    "titleOriginal": "Why Target ROAS Campaigns Can Struggle To Scale",
+    "summary": "分析广告主在使用Target ROAS竞价策略时经常遇到的规模化瓶颈问题。内容深入探讨了预算限制、出价竞争、素材质量等因素如何影响ROAScampaign的扩展能力，并为营销团队提供突破增长天花板的实用建议。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/why-roas-campaigns-can-struggle-to-scale",
+    "tags": [
+      "Target ROAS",
+      "规模化",
+      "竞价策略",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "tiktok-api-2026-03-13-007",
+    "date": "2026-03-13",
+    "week": "2026-W11",
+    "platform": "tiktok",
+    "title": "Spark Ads推送内容控制增强、Smart+电商目录广告创意能力扩展、广告预览功能增强",
+    "titleOriginal": "Enhanced Spark Ads Push content control, expanded Smart+ E-commerce Catalog Ads creative capabilities, and improved ad preview",
+    "summary": "本次更新包含三项重要增强：1) Spark Ads推送内容控制能力提升，现在可从/identity/get/检索ads_only_mode和username，从/identity/info/获取username，/advertiser/info/端点支持ads_only_mode参数，便于验证广告账户的强制\"仅广告模式\"状态，防止意外的个人资料发帖。2) 升级版Smart+电商目录广告能力扩展，/smart_plus/ad/create/、/smart_plus/ad/update/和/smart_plus/ad/get/端点支持catalog_creative_info、identity_authorized_bc_id参数，以及TT_USER和BC_AUTH_TT新身份类型，支持更灵活的广告创意设置。3) 升级版Smart+电商目录广告预览功能增强，/smart_plus/ad/preview/端点新增identity_authorized_bc_id和catalog_creative_info参数，支持TT_USER和BC_AUTH_TT身份类型，便于在发布前准确预览广告效果。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "spark-ads",
+      "smart-plus",
+      "catalog-ads",
+      "identity",
+      "preview"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "linkedin-2026-03-12-002",
+    "date": "2026-03-12",
+    "week": "2026-W11",
+    "platform": "linkedin",
+    "title": "2026年如何在LinkedIn上提升AI可见性",
+    "titleOriginal": "How to Leverage LinkedIn for AI Visibility in 2026",
+    "summary": "随着AI搜索的兴起，B2B营销人员需要调整LinkedIn内容策略以适应新的发现机制。文章提供可操作的技巧，指导如何创建具有教育性、原创性和可信度的内容，以提升在AI搜索结果中的可见性。这是B2B营销人员在AI驱动搜索时代获取有机流量的重要指南。",
+    "category": "content-marketing",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/how-to-leverage-linkedin-for-ai-visibility-in-2026",
+    "tags": [
+      "AI搜索",
+      "内容策略",
+      "SEO",
+      "有机流量",
+      "2026趋势"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "snapchat-2026-03-12-004",
+    "date": "2026-03-12",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "社交如何驱动电信决策",
+    "titleOriginal": "How Social Drives Telco Decisions",
+    "summary": "Snapchat与Alter Agents联合研究，深入分析影响Snapchatters电信决策的关键因素，以及Snapchat在其购买旅程中的独特作用。为电信运营商提供用户获取和品牌定位的策略参考。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/how-social-drives-telco-decisions",
+    "tags": [
+      "电信行业",
+      "消费者决策",
+      "品牌策略",
+      "行业研究"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-11-005",
+    "date": "2026-03-11",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "独立代理商聚焦：January Digital",
+    "titleOriginal": "Indy Agency Spotlight: January Digital",
+    "summary": "深入介绍January Digital如何帮助客户在2026年实现增长，核心策略包括AI应用、统一归因测量、媒体多元化组合以及全漏斗营销方法论。为代理商和品牌主提供前沿数字营销实践参考。",
+    "category": "automation",
+    "importance": "low",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/agency-spotlight-january-digital",
+    "tags": [
+      "代理商",
+      "AI营销",
+      "归因测量",
+      "行业洞察"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-11-006",
+    "date": "2026-03-11",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "超越点击的效果：归因数据揭示真实社交影响力",
+    "titleOriginal": "Performance Beyond Clicks: What Attribution Data Reveals About Real Social Impact",
+    "summary": "探讨当消费者旅程横跨多个平台、格式和场景时，营销者面临的核心问题：哪些渠道真正推动了实际业务成果。分享归因数据分析方法，帮助广告主建立更科学的效果衡量体系。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/performance-beyond-clicks-attribution-data-publicis",
+    "tags": [
+      "归因分析",
+      "效果衡量",
+      "跨平台营销",
+      "数据分析"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-10-007",
+    "date": "2026-03-10",
+    "week": "2026-W11",
+    "platform": "snapchat",
+    "title": "社交平台和创作者如何影响你的电视观看选择",
+    "titleOriginal": "How platforms and creators influence what you watch on TV",
+    "summary": "Snapchat与Omnicom Media及Ipsos合作研究，揭示社交平台和创作者在影响用户电视观看决策中的角色。为内容发行商和娱乐品牌提供跨屏营销策略建议。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/social-effect-tv",
+    "tags": [
+      "娱乐行业",
+      "内容营销",
+      "创作者经济",
+      "跨屏营销"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "tiktok-api-2026-03-06-008",
+    "date": "2026-03-06",
+    "week": "2026-W10",
+    "platform": "tiktok",
+    "title": "GMV Max商品数量限制扩展、商品数量字段、加速测试功能、广告账户创建和转账功能增强",
+    "titleOriginal": "Expanded item_group_ids size, new quantity field, accelerate testing, and enhanced ad account creation and transfer",
+    "summary": "本次更新包含五项重要增强：1) GMV Max广告系列商品数量限制扩展，/campaign/gmv_max/create/和/campaign/gmv_max/update/端点的item_group_ids参数最大数量从50扩展至400，显著提升单次商品GMV Max广告系列可包含的商品数量。2) 新增quantity响应参数至/store/product/get/端点，提供TikTok Shop商品数量统计，便于GMV Max广告系列规划。3) 所有GMV Max广告系列API端点（/campaign/gmv_max/create/、/campaign/gmv_max/update/、/campaign/gmv_max/info/）新增accelerate_testing_for_new_videos参数，支持优先测试新视频、近期授权和更新的视频。4) 广告账户创建流程增强，/bc/advertiser/create/端点新增payment_info请求参数，响应返回payment_portfolio_binding_result和budget_setup_result，支持同时绑定支付组合和配置预算。5) 转账功能增强，/bc/transfer/端点新增amount_info请求参数，支持指定精确的现金、代金券或信用额度进行账户级别资金转账。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "gmv-max",
+      "product-campaigns",
+      "ad-account",
+      "transfer",
+      "testing"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "x-2026-03-05-001",
+    "date": "2026-03-05",
+    "week": "2026-W10",
+    "platform": "x",
+    "title": "X 允许广告主使用任何创意广告格式",
+    "titleOriginal": "X Enables Advertisers to Use Any Creative Ad Format",
+    "summary": "X 宣布扩展广告创意支持的比例范围，广告主可直接在 X 上复用现有社交媒体创意内容，无需重新调整格式。这一变更简化了跨平台创意复用流程，广告团队可将 Instagram、TikTok 等平台的竖版视频（9:16、4:5等）直接用于 X 广告投放，降低了创意制作成本和人力投入。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "X Business Blog",
+    "sourceUrl": "https://business.x.com/en/blog/x-expands-aspect-ratio-support-for-ad-creatives-replacement",
+    "tags": [
+      "ad-format",
+      "creative",
+      "aspect-ratio",
+      "video"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "tiktok-2026-03-05-004",
+    "date": "2026-03-05",
+    "week": "2026-W10",
+    "platform": "tiktok",
+    "title": "TikTok与Samba：为电影公司带来可衡量的票房增长",
+    "titleOriginal": "TikTok and Samba: Driving measurable box office growth for studios",
+    "summary": "TikTok与Samba合作发布元分析研究，展示了TikTok平台对电影票房增长的可衡量影响。该研究为电影公司和内容发行商提供了数据支持，证明TikTok已成为电影宣发的重要渠道。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/samba-meta-analysis-box-office",
+    "tags": [
+      "效果营销",
+      "电影营销",
+      "案例研究",
+      "归因分析"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "linkedin-2026-03-03-001",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "linkedin",
+    "title": "释放LinkedIn视频广告的力量，打造品牌影响力",
+    "titleOriginal": "Unlock the Power of LinkedIn's Video Ads to Build Your Brand",
+    "summary": "LinkedIn推出视频广告完整指南，帮助B2B广告主利用视频格式建立品牌。介绍主要广告形式（如引流视频、品牌 awareness 广告）、经过验证的投放策略，以及与合作伙伴解决方案的整合方法。视频广告在LinkedIn平台上的互动率远超其他格式，是B2B营销人员提升品牌认知和用户信任的重要工具。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/linkedin-ads/unlock-the-power-of-linkedin-video-ads-to-build-your-brand",
+    "tags": [
+      "视频广告",
+      "品牌建设",
+      "B2B营销",
+      "广告格式"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "meta-2026-03-03-004",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "meta",
+    "title": "简化社交优先世界的广告衡量",
+    "titleOriginal": "Simplifying Ad Measurement for a Social-First World",
+    "summary": "Meta宣布对广告测量和归因模型进行重大更新，特别是针对点击归因的变革。主要变更：1）将8天点击窗口期缩短至1天，减少归因偏差；2）推出增强版Meta Pixel以更准确地追踪转化路径；3）新增\"跨设备归因\"报告，帮助理解移动端到PC端的多触点转化；4）移除部分旧版归因模型以简化报告。这些变化将影响广告投放团队的转化追踪方式和效果评估逻辑，需及时调整归因预期。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/click-attribution",
+    "tags": [
+      "归因模型",
+      "点击归因",
+      "Meta Pixel",
+      "转化追踪",
+      "测量更新"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "snapchat-2026-03-03-008",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "snapchat",
+    "title": "社交在电影发现中的角色",
+    "titleOriginal": "The Role of Social in Movie Discovery",
+    "summary": "Snapchat与OM及Ipsos联合发布研究，解析驱动用户观影行为的因素，以及创作者对观影决策的影响。为电影宣发方提供社交平台营销策略指导。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/movies-blog",
+    "tags": [
+      "娱乐行业",
+      "电影营销",
+      "创作者营销",
+      "消费者行为"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "mintegral-2026-03-03-004",
+    "date": "2026-03-03",
+    "week": "2026-W10",
+    "platform": "mintegral",
+    "title": "为什么Mintegral是全球领先的移动广告平台",
+    "titleOriginal": "Why Mintegral Is The Leading Mobile Ad Platform Globally",
+    "summary": "Mintegral平台自助广告服务（Self-Serve Ad Platform）的入门指南，介绍其作为全球领先移动广告平台的核心优势与能力。内容涵盖平台功能、投放工具、数据分析等方面，帮助广告主全面了解Mintegral的服务体系。",
+    "category": "ad-product",
+    "importance": "low",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/self-serve-ad-platform-primer",
+    "tags": [
+      "平台介绍",
+      "自助投放",
+      "移动广告",
+      "产品功能"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "linkedin-2026-02-28-001",
+    "date": "2026-02-28",
+    "week": "2026-W09",
+    "platform": "linkedin",
+    "title": "高管如何使用视频扩大视野和公信力",
+    "titleOriginal": "How Top Marketing Leaders Use Video to Scale Vision and Credib...",
+    "summary": "文章探讨B2B营销领导者如何利用视频建立信任和公信力。引用CES 2026洞察，展示高管如何通过真实视频内容扩大个人品牌影响力。对广告投放团队的启示：高管层视频内容可提升品牌信任度，建议在LinkedIn广告策略中融入真实高管人设内容。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/b2b-video-executive-voices-credibility",
+    "tags": [
+      "视频广告",
+      "B2B品牌建设",
+      "高管营销",
+      "内容策略"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "pinterest-2026-02-27-001",
+    "date": "2026-02-27",
+    "week": "2026-W09",
+    "platform": "pinterest",
+    "title": "Pinterest购物模板：将产品目录转化为绩效",
+    "titleOriginal": "Shopping templates on Pinterest: turn product feeds into performance",
+    "summary": "Pinterest推出购物模板功能，帮助广告主将产品目录快速转化为购物广告素材。该功能简化了购物广告的创建流程，广告投放团队可通过模板批量生成广告，显著提升投放效率。建议广告主尽快熟悉该功能，优化购物广告素材的制作流程。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/shopping-templates-on-pinterest-turn-product-feeds-into-performance/",
+    "tags": [
+      "购物广告",
+      "产品目录",
+      "模板",
+      "广告素材"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "tiktok-api-2026-02-27-009",
+    "date": "2026-02-27",
+    "week": "2026-W09",
+    "platform": "tiktok",
+    "title": "非CBO广告系列预算模式扩展、支持每日和总预算设置",
+    "titleOriginal": "Expanded budget options for non-CBO campaigns with daily and total budget modes",
+    "summary": "升级版Smart+ API端点（/smart_plus/campaign/create/、/smart_plus/campaign/update/、/smart_plus/campaign/get/）的预算选项得到显著扩展。非CBO广告系列现在支持BUDGET_MODE_DAY和BUDGET_MODE_TOTAL枚举值，分别用于设置每日预算限额和总预算限额，应用于该非CBO广告系列下所有广告组。这一增强为广告主提供更精确的预算分配控制，确保广告支出更高效。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "budget",
+      "campaign-management"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "mintegral-2026-02-25-001",
+    "date": "2026-02-25",
+    "week": "2026-W09",
+    "platform": "mintegral",
+    "title": "如何提升目标CPE广告系列效果",
+    "titleOriginal": "How To Uplift Target CPE Campaigns",
+    "summary": "本文深入解析Mintegral平台目标CPE（每次参与成本）出价策略的优化方法，帮助广告主在控制成本的同时提升用户参与度。对于追求高效获客和优化投放ROI的团队具有实际指导意义。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/faq-target-cpe-bidding",
+    "tags": [
+      "CPE",
+      "出价策略",
+      "成本优化",
+      "用户获取"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "pinterest-2026-02-24-001",
+    "date": "2026-02-24",
+    "week": "2026-W09",
+    "platform": "pinterest",
+    "title": "Pinterest 2026育儿趋势报告：培养追求真实世界冒险的屏幕智慧儿童",
+    "titleOriginal": "Pinterest Parenting Trend Report 2026: Raising screen‑smart kids who seek real-world adventure",
+    "summary": "Pinterest发布2026年育儿趋势报告，揭示父母如何培养孩子在数字时代的健康生活方式。报告显示家长越来越注重屏幕时间管理与现实世界体验的平衡，孩子成为推动家庭决策的重要因素。对广告投放团队而言，这一趋势意味着针对家庭、亲子教育品类的品牌需关注家长对\"屏幕智慧\"产品的需求，如教育应用、户外活动装备、创意学习工具等品类在Pinterest上的搜索量可能上升。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/parenting-trend-report-2026/",
+    "tags": [
+      "趋势报告",
+      "家庭用户",
+      "育儿",
+      "数字健康"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "meta-2026-02-18-001",
+    "date": "2026-02-18",
+    "week": "2026-W08",
+    "platform": "meta",
+    "title": "Graph API v25.0 正式发布",
+    "titleOriginal": "Graph API v25.0 Released",
+    "summary": "Meta 发布 Graph API v25.0 版本（2026年2月18日），Marketing API v25.0 同时发布。该版本为当前最新稳定版本，将作为未来主要支持版本。开发者可通过升级指南升级到新版本。v24.0 将于2026年10月6日到期，v23.0 将于2026年6月9日到期。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Facebook Marketing API Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/graph-api/changelog",
+    "tags": [
+      "Graph API",
+      "API版本升级",
+      "v25.0"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "meta-2026-02-18-001",
+    "date": "2026-02-18",
+    "week": "2026-W08",
+    "platform": "meta",
+    "title": "Graph API v25.0 和 Marketing API v25.0 正式发布",
+    "titleOriginal": "Introducing Graph API v25.0 and Marketing API v25.0",
+    "summary": "Meta 发布 Graph API v25.0 和 Marketing API v25.0 版本。主要更新包括：Graph API 将引入 Page Viewer Metric（页面浏览量指标），计划于 2026 年 6 月底前上线，用于替代旧版 reach（覆盖）指标，为广告主提供更精准的内容表现衡量方式。详细变更请参阅官方 changelog。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/02/18/introducing-graph-api-v25-and-marketing-api-v25/",
+    "tags": [
+      "Graph API",
+      "Marketing API",
+      "v25.0",
+      "Page Viewer Metric"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "line-2026-02-17-001",
+    "date": "2026-02-17",
+    "week": "2026-W08",
+    "platform": "line",
+    "title": "表达方式不同，传达效果也不同——融入DE&I视角的「替换短语集」",
+    "titleOriginal": "表現によって伝わり方は変わる－DE&Iの視点を取り入れた「置き換えフレーズ集」",
+    "summary": "LINE官方发布DE&I（多元共融）替换短语集，帮助广告主和运营者在创作营销内容时，使用更包容、更易于理解的表达方式。强调了表达选择对信息传达效果的重要影响，是广告投放团队优化创意文案的参考资源。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/other/guideline/deandi_phrase/",
+    "tags": [
+      "DE&I",
+      "创意文案",
+      "内容质量",
+      "广告合规"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "line-2026-02-17-001",
+    "date": "2026-02-17",
+    "week": "2026-W08",
+    "platform": "line",
+    "title": "表现方式不同，传达效果也不同——融入DE&I视角的「替换用语集」",
+    "titleOriginal": "表現によって伝わり方は変わる－DE&Iの視点を取り入れた「置き換えフレーズ集」",
+    "summary": "LINE官方发布DE&I（多元化与包容性）视角的替换用语指南，帮助广告主和运营者在创作内容时避免歧视性或偏见性表达，改用更具包容性的用语。指南提供具体替换示例，如将「老年人」替换为「65岁以上人群」等，提升品牌形象和社会责任感知。",
+    "category": "creative",
+    "importance": "low",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/guideline/quality/20260217-01/",
+    "tags": [
+      "DE&I",
+      "创意表达",
+      "品牌形象",
+      "包容性用语"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "mintegral-2026-02-17-001",
+    "date": "2026-02-17",
+    "week": "2026-W08",
+    "platform": "mintegral",
+    "title": "突破学习阶段：四条助您扩展AppGrowth广告系列的技巧",
+    "titleOriginal": "Overcoming The Learning Phase: Four Tips To Scale AppGrowth Campaigns",
+    "summary": "本文为广告投放团队提供四条实用建议，帮助突破AppGrowth平台的机器学习阶段瓶颈。文章聚焦于如何加速学习期优化过程、提升广告系列规模化能力，以及减少冷启动阶段的成本损耗。对于需要快速起量且追求稳定ROAS的广告主具有直接指导价值。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/overcoming-the-learning-phase-four-scaling-tips",
+    "tags": [
+      "学习阶段",
+      "AppGrowth",
+      "规模化投放",
+      "广告优化",
+      "自动化"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "meta-2026-02-13-001",
+    "date": "2026-02-13",
+    "week": "2026-W07",
+    "platform": "meta",
+    "title": "ASC和AAC弃用 - MAPI V25.0",
+    "titleOriginal": "ASC and AAC deprecation MAPI V25.0",
+    "summary": "自动化统一（Automation Unification）推动App、Sales和Leads广告系列默认采用最优的自动化优先 Advantage+ 设置，使广告主和合作伙伴能够简化访问Meta最新且性能最佳的自动化产品。V25.0版本将执行传统API的分阶段弃用和向自动化统一/Advantage+的新迁移。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/02/13/asc-and-aac-deprecation-mapi-v25/",
+    "tags": [
+      "Advantage+",
+      "自动化",
+      "API弃用",
+      "MAPI V25.0"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "tiktok-api-2026-02-13-010",
+    "date": "2026-02-13",
+    "week": "2026-W07",
+    "platform": "tiktok",
+    "title": "评论图片上传功能、Business Messaging消息原ID增强",
+    "titleOriginal": "New image upload for comments and enhanced Business Messaging with original message ID",
+    "summary": "本次更新包含两项功能增强：1) 评论图片上传功能：新增/business/comment/image/upload/端点用于图片上传；/business/comment/create/和/business/comment/reply/create/端点新增image_uri、image_width、image_height请求参数和image_url响应参数，支持创建带图片的评论和回复；/business/comment/list/和/business/comment/reply/list/端点响应新增image_url参数，支持检索评论和回复中的图片。2) Business Messaging webhook增强：im_send_msg和im_receive_msg事件新增original_msg_id参数，便于获取收到反应的消息ID，丰富反应功能的上下文数据。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "comments",
+      "messaging",
+      "webhook",
+      "image-upload"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "linkedin-2026-02-12-002",
+    "date": "2026-02-12",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "2026年B2B营销六大洞察：AI影响新浪潮",
+    "titleOriginal": "6 B2B Marketing Insights for 2026: The Next Wave of AI Impact ...",
+    "summary": "B2B营销人员已不再纠结于是否使用AI，而是关注如何更好地使用AI。最新研究揭示关键聚焦领域以实现差异化竞争。洞察涵盖AI在营销中的应用趋势、数据驱动决策、创意与AI的结合等。对广告投放团队的启示：AI辅助投放和优化将成为2026年核心竞争力。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/trends-tips/big-insight-ai-b2b-marketing-skills-data-creativity",
+    "tags": [
+      "AI营销",
+      "B2B营销",
+      "营销趋势",
+      "数据分析"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "line-2026-02-12-002",
+    "date": "2026-02-12",
+    "week": "2026-W07",
+    "platform": "line",
+    "title": "【认证账号】LINE官方账号账号名称设置规则及名称变更须知",
+    "titleOriginal": "【認証済アカウント】LINE公式アカウントのアカウント名設定ルールと名称変更に…",
+    "summary": "LINE官方明确认证账号的账号名称设置规则及名称变更流程。广告主和运营团队需遵守相关命名规范，确保官方账号名称符合平台要求，避免因违规导致账号功能受限。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-official-account/guideline/official-account-name/",
+    "tags": [
+      "LINE官方账号",
+      "账号管理",
+      "认证账号",
+      "规则变更"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "line-2026-02-12-002",
+    "date": "2026-02-12",
+    "week": "2026-W07",
+    "platform": "line",
+    "title": "【认证账号】LINE官方账号账号名称设置规则与更名注意事项",
+    "titleOriginal": "【認証済アカウント】LINE公式アカウントのアカウント名設定ルールと名称変更に関するお知らせ",
+    "summary": "LINE官方明确了认证账号的账号名称设置规则，包含名称可用字符、长度限制以及品牌一致性要求。账号名称变更流程和审批标准也有所更新，运营者需严格遵守命名规范以确保账号通过认证或维持认证状态。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/guideline/quality/20260212-01/",
+    "tags": [
+      "LINE官方账号",
+      "认证账号",
+      "账号命名规则",
+      "账号管理"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "linkedin-2026-02-11-003",
+    "date": "2026-02-11",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "借助Factors.ai报告洞察优化2026年市场进入策略",
+    "titleOriginal": "Refine Your 2026 Go-to-Market Strategy with Insights from the ...",
+    "summary": "LinkedIn营销合作伙伴Factors.ai分析了超过100家B2B公司Q3季度以来的表现数据，提供GTM策略优化建议。涵盖受众定位、归因分析和信号识别。对广告投放团队的启示：可参考同行表现数据优化投放策略，关注LinkedIn提供的B2B归因和分析工具。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/research-and-insights/refine-your-go-to-market-strategy-with-insights-from-the-factors-ai-linkedin-benchmark-report",
+    "tags": [
+      "GTM策略",
+      "B2B归因",
+      "数据分析",
+      "市场进入策略"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-10-004",
+    "date": "2026-02-10",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "发布：优化AI搜索内容指南",
+    "titleOriginal": "Introducing a Guide to Optimizing Your Owned Content for AI Di...",
+    "summary": "LinkedIn发布新指南《如何优化自有内容以适应AI搜索》，详细阐述提升AI搜索可见性的具体策略，包括内容结构优化、原创性提升和可信度建设。对广告投放团队的启示：内容SEO策略需考虑AI搜索场景，优化内容以适应新兴的AI发现渠道。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/introducing-a-guide-to-optimizing-your-owned-content-for-ai-discovery",
+    "tags": [
+      "AI搜索",
+      "内容优化",
+      "SEO",
+      "内容营销"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-09-005",
+    "date": "2026-02-09",
+    "week": "2026-W07",
+    "platform": "linkedin",
+    "title": "有效B2B视频品牌建设的三大原则",
+    "titleOriginal": "Three Principles for Effective B2B Video Brand Building",
+    "summary": "Adobe的Amanda Fetterly分享LinkedIn视频营销三大原则：真实性、一致性、参与性。视频在LinkedIn上的共鸣度超过其他任何格式。对广告投放团队的启示：投资高质量视频广告内容，建立品牌真实形象，遵循三大原则可提升视频广告效果。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/customer-stories/b2b-video-brand-building/b2b-video-brand-building",
+    "tags": [
+      "视频广告",
+      "B2B品牌建设",
+      "创意策略",
+      "广告效果"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "meta-2026-02-06-001",
+    "date": "2026-02-06",
+    "week": "2026-W06",
+    "platform": "meta",
+    "title": "Instagram OAuth授权新增enable_fb_login参数支持",
+    "titleOriginal": "Added support for the enable_fb_login parameter in Instagram OAuth authorization requests",
+    "summary": "在Instagram OAuth授权请求中新增enable_fb_login参数支持，开发者可控制Instagram登录页面是否显示Facebook登录选项。该参数默认值为true。对于同时管理Facebook和Instagram账户的广告投放团队，可通过此参数优化跨平台登录流程，提升授权效率和用户体验。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Instagram Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/instagram-platform/changelog",
+    "tags": [
+      "oauth",
+      "facebook-login",
+      "instagram-login",
+      "authentication"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "tiktok-api-2026-02-06-011",
+    "date": "2026-02-06",
+    "week": "2026-W06",
+    "platform": "tiktok",
+    "title": "Smart+广告免责声明、自动添加创意开关、自动增强策略功能上线、关键词发现工具发布",
+    "titleOriginal": "New disclaimer, creative auto-add toggle, automatic enhancement strategy, and keyword discovery endpoint",
+    "summary": "本次更新包含四项重要功能：1) 升级版Smart+广告免责声明功能：/smart_plus/ad/create/、/smart_plus/ad/update/和/smart_plus/ad/get/端点新增disclaimer参数，支持配置纯文本或可点击的免责声明，确保合规性和信息清晰度。2) 创意自动添加开关：升级版Smart+端点新增creative_auto_add_toggle参数，控制是否在投放期间自动将新生成的素材添加到广告中，提供更精确的素材管理。3) 自动增强策略：多个端点（包括/smart_plus/ad/create/、/ad/create/、/campaign/copy/task/create/等）新增creative_auto_enhancement_strategy_list参数，提供强大的自动优化广告创意能力。4) 关键词发现工具：全新端点/tool/search_keyword/keyword_idea/发布，帮助发现搜索广告系列的新关键词，有效触达对业务感兴趣的用户。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "creative",
+      "disclaimer",
+      "keyword-discovery",
+      "automation"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "linkedin-2026-02-05-006",
+    "date": "2026-02-05",
+    "week": "2026-W06",
+    "platform": "linkedin",
+    "title": "数据驱动决策：LinkedIn上的报告、ROI与智能实验",
+    "titleOriginal": "Data Meets Decision-Making: Reporting, ROI and Smart Experimentation on LinkedIn",
+    "summary": "探讨B2B营销如何通过数据驱动决策，最大化LinkedIn广告ROI。内容涵盖报告方法论、ROI计算模型和A/B测试最佳实践。对广告投放团队的启示：建立科学的测试框架和归因体系，系统化提升投放效率和投资回报率。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/measurement/b2b-marketing-measurement-evaluate-maximize",
+    "tags": [
+      "ROI分析",
+      "A/B测试",
+      "数据驱动",
+      "营销归因"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "linkedin-2026-02-03-007",
+    "date": "2026-02-03",
+    "week": "2026-W06",
+    "platform": "linkedin",
+    "title": "LinkedIn携手营销合作伙伴推出B2B归因与分析解决方案",
+    "titleOriginal": "LinkedIn Introduces B2B Attribution & Analytics with Marketing Partners",
+    "summary": "LinkedIn宣布与营销合作伙伴共同推出B2B归因与分析解决方案，帮助广告主更好地追踪和衡量LinkedIn渠道的业务贡献。对广告投放团队的启示：新工具将提升跨渠道归因能力，建议关注并测试新功能，优化预算分配决策。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/measurement/linkedin-introduces-b2b-attribution-and-analytics-with-marketing-partners",
+    "tags": [
+      "B2B归因",
+      "分析工具",
+      "营销合作伙伴",
+      "效果衡量"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "tiktok-2026-02-02-001",
+    "date": "2026-02-02",
+    "week": "2026-W06",
+    "platform": "tiktok",
+    "title": "Ebiquity x TikTok 2026研究：高端付费回报",
+    "titleOriginal": "Ebiquity x TikTok 2026 Research",
+    "summary": "基于2026年最新研究，揭示高影响力广告格式如何帮助品牌实现更低成本的业务成果。该研究为广告投放团队提供了关于广告格式投资回报的重要参考数据，指导优化广告预算分配策略。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "TikTok Ads Blog (AU)",
+    "sourceUrl": "https://ads.tiktok.com/business/en-AU/blog/tiktok-ebiquity",
+    "tags": [
+      "研究报告",
+      "广告效果",
+      "投资回报率",
+      "高影响力格式"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "tiktok-2026-02-02-001",
+    "date": "2026-02-02",
+    "week": "2026-W06",
+    "platform": "tiktok",
+    "title": "Ebiquity x TikTok 2026研究：高价付费回报——高影响力广告格式如何带来更低的业务成本",
+    "titleOriginal": "Ebiquity x TikTok 2026 Research",
+    "summary": "该研究探讨了高影响力广告格式如何为广告主带来更低业务成本。研究基于实际投放数据，分析了TikTok优质广告位的投资回报表现，为品牌优化2026年广告预算分配提供数据支撑。对于追求高效投放的广告团队，建议关注高影响力格式的CPA优势。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-ebiquity",
+    "tags": [
+      "研究",
+      "广告效果",
+      "ROI",
+      "高影响力格式"
+    ],
+    "fetchedAt": "2026-04-26T00:13:00.293289"
+  },
+  {
+    "id": "tiktok-2026-02-01-001",
+    "date": "2026-02-01",
+    "week": "2026-W05",
+    "platform": "tiktok",
+    "title": "专业预览体验：TikTok Ads Manager全新独立广告预览工具、可分享链接及批量预览功能",
+    "titleOriginal": "Preview like a pro: New standalone Ad Preview Tool, shareable URLs, and Bulk Preview in TikTok Ads Manager",
+    "summary": "TikTok Ads Manager推出全新独立预览工具，支持可分享URL和批量预览功能。广告主可在正式投放前通过链接与团队成员协作预览，支持二维码预览，便于多方快速审阅广告视觉效果和功能状态，有效减少投放前的问题。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok What's New",
+    "sourceUrl": "https://ads.tiktok.com/help/blog",
+    "tags": [
+      "预览工具",
+      "批量预览",
+      "团队协作",
+      "广告创建"
+    ],
+    "fetchedAt": "2026-04-27T09:10:14.294296"
+  },
+  {
+    "id": "meta-2026-01-30-001",
+    "date": "2026-01-30",
+    "week": "2026-W05",
+    "platform": "meta",
+    "title": "Page Integrity API 正式发布",
+    "titleOriginal": "Page Integrity API",
+    "summary": "通过 Page Integrity Webhook 和 API，企业现在可以实时获取页面的完整性信息，包括完整性状态、违规记录、限制措施、建议操作（如提交申诉）以及申诉状态。这为广告投放团队提供了监控页面健康状况和及时响应平台政策变化的能力。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/changelog",
+    "tags": [
+      "Messenger",
+      "Page Integrity",
+      "Webhook",
+      "政策合规"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "meta-2026-01-30-001",
+    "date": "2026-01-30",
+    "week": "2026-W05",
+    "platform": "meta",
+    "title": "非Instagram关联账号现可获取粉丝数和粉丝画像指标",
+    "titleOriginal": "Threads profiles without a linked Instagram account can now access the followers_count and follower_demographics user metrics",
+    "summary": "Threads API更新：未关联Instagram账号的Threads用户现在可以访问followers_count（粉丝数）和follower_demographics（粉丝画像）指标。这意味着纯Threads用户也能获取用户洞察数据，对社交媒体管理工具和数据分析平台有直接影响。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Threads Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/threads",
+    "tags": [
+      "metrics",
+      "insights",
+      "user-profile",
+      "follower-demographics"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "meta-2026-01-30-001",
+    "date": "2026-01-30",
+    "week": "2026-W05",
+    "platform": "meta",
+    "title": "新增 Page Integrity API",
+    "titleOriginal": "[New] Page Integrity API",
+    "summary": "Meta 推出全新 Page Integrity API 及 Webhook，允许开发者实时获取 Page 的完整性信息，包括违规状态（violations）、受限情况（restrictions）、推荐操作（如提交申诉）以及申诉状态（appeal status）。广告投放团队可通过此 API 主动监控页面合规状态，及时响应平台处罚，提升运营效率。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Facebook Pages API Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/pages-api",
+    "tags": [
+      "Page API",
+      "Integrity",
+      "Webhook",
+      "合规管理",
+      "页面监控"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "tiktok-api-2026-01-30-012",
+    "date": "2026-01-30",
+    "week": "2026-W05",
+    "platform": "tiktok",
+    "title": "GMV Max报表状态筛选、身份仅广告模式查询、组织账户创建和Business Center功能全面增强",
+    "titleOriginal": "GMV Max report status filter, ads_only_mode, Organization Account creation, and comprehensive Business Center enhancements",
+    "summary": "本次更新包含多项重要增强：1) GMV Max报表功能：/gmv_max/report/get/端点新增STATUS_ALL枚举值至campaign_statuses参数，支持一次性获取所有GMV Max广告系列的绩效数据。2) 身份模式查询：/identity/info/响应新增ads_only_mode参数，确认身份是否受限创建仅广告模式内容。3) 组织账户创建：新增/bc/oa/create/端点用于在直接或代理商业中心创建组织账户；/bc/get/响应新增verification_status参数，便于检查商业中心验证状态。4) Business Center功能全面增强：/bc/asset/advertiser/assign/端点支持通过asset_type参数链接TikTok账号用于广告和自然流量；新增/bc/asset/advertiser/unassign/和/bc/asset/advertiser/assigned/端点用于解除链接和获取链接列表；/bc/asset/admin/get/、/bc/asset/get/和/bc/asset/member/get/端点新增MANAGED_BUSINESS_ACCOUNT枚举值和business_account_roles、is_business_verified、operating_region_code、tt_asset_handle、tt_asset_profile_image等响应参数；/bc/asset/assign/和/bc/asset/unassign/端点支持更精细的角色分配。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "gmv-max",
+      "business-center",
+      "organization-account",
+      "identity",
+      "asset-management"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "pinterest-2026-01-27-002",
+    "date": "2026-01-27",
+    "week": "2026-W05",
+    "platform": "pinterest",
+    "title": "通过Pinterest搜索顶部广告获得优先展示",
+    "titleOriginal": "Show up front and center with Pinterest Top of Search ads",
+    "summary": "Pinterest推出全新Top of Search广告展示位置，使广告主能够在用户搜索结果的最顶部获得显著曝光。该功能帮助品牌在用户主动搜索阶段抢占注意力，提升广告可见度和点击率。平台同时分享了搜索广告的优化最佳实践，包括关键词策略、着陆页优化和竞价技巧，助力广告投放团队最大化搜索广告效果。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/show-up-first-with-pinterest-top-of-search-ads/",
+    "tags": [
+      "Top of Search",
+      "搜索广告",
+      "广告展示",
+      "最佳实践"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "pinterest-2026-01-23-003",
+    "date": "2026-01-23",
+    "week": "2026-W04",
+    "platform": "pinterest",
+    "title": "Pinterest Media Planner让活动规划更便捷",
+    "titleOriginal": "Campaign planning just got easier with Pinterest Media Planner",
+    "summary": "Pinterest推出全新Media Planner工具，为广告投放团队提供更便捷的活动规划体验。该工具整合了平台受众数据、趋势洞察和投放预算规划功能，支持团队在单一界面完成从策略制定到排期安排的完整流程。Media Planner的推出旨在提升营销团队的协作效率，缩短活动准备周期。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/campaign-planning-just-got-easier-with-media-planner/",
+    "tags": [
+      "Media Planner",
+      "活动规划",
+      "营销工具",
+      "效率提升"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "tiktok-api-2026-01-23-013",
+    "date": "2026-01-23",
+    "week": "2026-W04",
+    "platform": "tiktok",
+    "title": "升级版Smart+ API正式发布、统一框架下的增强型广告系列管理",
+    "titleOriginal": "Upgraded Smart+ API availability with enhanced campaign structure and unified management framework",
+    "summary": "升级版Smart+ API正式发布，该API支持增强型广告系列结构，内置升级版Smart+体验。广告主可以在统一框架内更高效地创建和管理广告系列，简化操作流程，提升整体广告管理效率。这一版本标志着TikTok广告管理能力的重大升级，为广告主提供更智能、更简化的广告投放体验。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "smart-plus",
+      "api-launch",
+      "campaign-management"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "tiktok-2026-01-22-001",
+    "date": "2026-01-22",
+    "week": "2026-W04",
+    "platform": "tiktok",
+    "title": "还在使用Custom Identity？迁移到TikTok F.I.R.S.T. presence",
+    "titleOriginal": "Still using Custom Identity? Transition to a TikTok F.I.R.S.T. presence",
+    "summary": "本文是Custom Identity向F.I.R.S.T.迁移的分步指南。F.I.R.S.T.是TikTok推出的统一付费和有机内容的解决方案，帮助广告主更好地整合营销存在。迁移后可实现更统一的品牌呈现和更好的业务效果。建议广告投放团队尽快完成迁移，避免Custom Identity功能在未来被弃用后影响广告投放。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/custom-identity-transition",
+    "tags": [
+      "identity",
+      "F.I.R.S.T.",
+      "migration",
+      "transition",
+      "unified-presence"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "vivo-2026-01-21-001",
+    "date": "2026-01-21",
+    "week": "2026-W04",
+    "platform": "vivo",
+    "title": "平台更新通知",
+    "titleOriginal": "Platform Update Notice",
+    "summary": "vivo开发者平台发布重要更新通知。具体更新内容未在页面摘要中详细说明，建议前往原文链接查看完整更新详情。",
+    "category": "other",
+    "importance": "medium",
+    "source": "vivo Developer",
+    "sourceUrl": "https://developer.vivo.com/",
+    "tags": [
+      "平台更新",
+      "通知公告"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "tiktok-2026-01-21-002",
+    "date": "2026-01-21",
+    "week": "2026-W04",
+    "platform": "tiktok",
+    "title": "TikTok Market Scope：品牌用户规模分析解决方案",
+    "titleOriginal": "Introducing TikTok Market Scope",
+    "summary": "Market Scope是TikTok推出的第一方数据分析平台，帮助广告主识别、理解和激活不同漏斗阶段的用户群体。该工具提供用户规模洞察，支持品牌在TikTok全漏斗进行精准营销策略制定。对于广告投放团队，这意味着可以更精准地了解目标用户规模，优化投放预算分配和策略规划。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/market-scope-brand-consideration-ads",
+    "tags": [
+      "analytics",
+      "audience",
+      "market-scope",
+      "funnel",
+      "data-insights"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "tiktok-api-2026-01-16-014",
+    "date": "2026-01-16",
+    "week": "2026-W03",
+    "platform": "tiktok",
+    "title": "广告预览新增CapCut和Lemon8投放位支持、商业音乐库集成、趋势歌曲片段检索",
+    "titleOriginal": "Ad preview expanded with CapCut and Lemon8 placements, Commercial Music Library integration, and trending song clips",
+    "summary": "本次更新包含三项重要增强：1) 广告预览能力扩展：/creative/ads_preview/create/端点新增CapCut和Lemon8投放位支持，placement参数新增PLACEMENT_GLOBAL_APP_BUNDLE枚举值，新增tiktok_subplacement参数和IN_FEED_TWO_COLUMNS预览格式枚举值，支持竞价位在更多平台的预览。2) 内容发布音乐集成：/business/video/publish/和/business/photo/publish/端点新增music_sound_info参数，支持在发布视频或图片时附加商业音乐库曲目。3) 趋势歌曲片段检索：/discovery/cml/trending_list/端点响应新增full_duration_song_clip和trending_song_clip参数，便于获取热门歌曲的趋势片段。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "preview",
+      "creative",
+      "music",
+      "placements"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "pinterest-2026-01-15-004",
+    "date": "2026-01-15",
+    "week": "2026-W03",
+    "platform": "pinterest",
+    "title": "抢占先机：您的2026年营销 playbook",
+    "titleOriginal": "Win the moment before it happens: Your 2026 marketing playbook",
+    "summary": "Pinterest发布2026年品牌营销时刻指南，帮助广告主提前规划全年关键营销节点。报告梳理了情人节、母亲节、毕业季、父亲节、美国国庆等重要时刻的用户行为趋势和内容偏好，为品牌提供精准的投放时机建议和创意方向指导。建议广告投放团队据此提前制定季度营销计划，在关键节点实现最大化营销效果。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-brand-moments-guide-2026/",
+    "tags": [
+      "2026营销策略",
+      "品牌营销",
+      "营销日历",
+      "季节性营销"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "meta-2026-01-14-001",
+    "date": "2026-01-14",
+    "week": "2026-W03",
+    "platform": "meta",
+    "title": "Threads广告一周年——现已覆盖全球所有用户和市场",
+    "titleOriginal": "Ads on Threads: One Year In – Now Reaching All Users and Markets Globally",
+    "summary": "Threads广告正式扩展至全球所有用户和市场，为广告主提供一个快速增长的对话平台触达目标受众。广告投放团队应抓住这一新渠道机会，考虑将Threads纳入跨平台营销策略，特别针对追求年轻用户群体和实时互动效果的品牌。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/ads-on-threads-one-year-in",
+    "tags": [
+      "Threads",
+      "广告扩展",
+      "全球投放",
+      "新渠道"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "line-2026-01-13-001",
+    "date": "2026-01-13",
+    "week": "2026-W03",
+    "platform": "line",
+    "title": "LINEを起点にした行政サービス活用事例｜災害対応からデジタルクーポンまで",
+    "titleOriginal": "コロナ禍災害対応からデジタルクーポン、おこめ券まで。LINEを起点にした行政サービス活用事例",
+    "summary": "本文未能获取详细摘要。该文章介绍了LINE在行政服务领域的多种应用场景，包括疫情应对、自然灾害响应、数字优惠券发放等实际问题解决案例。涉及LINE官方账号与JPKI（公的个人认证服务）的结合使用。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-official-account/technique/line-jpki/",
+    "tags": [
+      "LINE公式アカウント",
+      "JPKI",
+      "行政連携",
+      "事例"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "line-2026-01-13-003",
+    "date": "2026-01-13",
+    "week": "2026-W03",
+    "platform": "line",
+    "title": "广告数据授受的正确理解｜为用户提供可信赖的广告运用",
+    "titleOriginal": "広告データの授受を正しく理解する｜ユーザーに信頼される広告運用のために",
+    "summary": "该文章旨在帮助广告主正确理解LINE雅虎广告平台上的广告数据授受规范。包括搜索广告、展示广告（运用型）和展示广告（预约型）的数据管理要求。强调了透明、合规的数据使用对于维护用户信任的重要性，对广告投放团队的合规运营具有指导意义。",
+    "category": "policy",
+    "importance": "high",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/ly-ads/guideline/handling-data/",
+    "tags": [
+      "LINE雅虎广告",
+      "数据合规",
+      "广告政策",
+      "搜索广告",
+      "展示广告"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "line-2026-01-13-001",
+    "date": "2026-01-13",
+    "week": "2026-W03",
+    "platform": "line",
+    "title": "LINEを起点にした行政管理・マーケティング活用事例",
+    "titleOriginal": "コロナ禍、地震対応からデジタルクーポン、おこめ券まで。LINEを起点にした行政管理・地域活性の活用事例",
+    "summary": "本文缺失，仅能从目录列表提取标题。无法提供详细内容摘要，但可确认该文介绍了LINE在行政服务领域的多种应用场景，包括灾害应对、公共服务数字化等。实际影响需阅读原文后补充。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/",
+    "tags": [
+      "LINE公式アカウント",
+      "LINE 公的個人認証サービス",
+      "行政連携",
+      "活用事例"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "pinterest-2026-01-12-001",
+    "date": "2026-01-12",
+    "week": "2026-W03",
+    "platform": "pinterest",
+    "title": "Z世代如何夺回他们的审美主导权",
+    "titleOriginal": "How Gen Z is taking back their taste",
+    "summary": "Pinterest发布Z世代消费者趋势洞察，揭示这一代用户在AI生成内容泛滥的时代背景下，更加注重真实性和个人审美表达。广告投放团队应关注Z世代对原创内容和个性化推荐的需求上升趋势，在创意策略上强调真实感和独特性，以更好地与该群体建立连接。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/how-gen-z-is-taking-back-their-taste-from-ai/",
+    "tags": [
+      "Z世代",
+      "消费者洞察",
+      "趋势",
+      "创意策略"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "tiktok-api-2026-01-09-015",
+    "date": "2026-01-09",
+    "week": "2026-W02",
+    "platform": "tiktok",
+    "title": "GMV Max广告系列促销日预算和自动预算功能、Zefr可见性合作伙伴、搜索广告库存过滤、TikTok One创作者市场指标扩展",
+    "titleOriginal": "GMV Max promotion days budget, Zefr viewability partner, Search Ads inventory filter, and expanded TikTok One metrics",
+    "summary": "本次更新包含四项重要功能增强：1) GMV Max广告系列预算管理增强：/campaign/gmv_max/create/、/campaign/gmv_max/update/和/campaign/gmv_max/info/端点新增promotion_days和auto_budget参数，支持在促销日和非促销日启用自动预算增长，并可自定义增长百分比和增长上限。2) 手动广告可见性测量：/ad/create/端点支持Zefr作为可见性合作伙伴，viewability_postbid_partner参数新增ZEFR枚举值，支持对手动广告启用Zefr后bid第三方可见性测量。3) 搜索广告品牌安全增强：通过/adgroup/create/端点的brand_safety_type和category_exclusion_ids参数支持库存过滤和类目排除功能。4) TikTok One创作者市场报告扩展：/tto/tcm/report/端点新增reach_organic、reach_paid、video_completion_rate_organic、video_completion_rate_paid、average_view_time_organic、average_view_time_paid、organic_two_seconds_views、paid_two_seconds_views、organic_six_seconds_views、paid_six_seconds_views和audience_language_distribution等指标，提供更深入的视频覆盖、播放和受众语言分布洞察。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "gmv-max",
+      "budget",
+      "viewability",
+      "search-ads",
+      "tiktok-one",
+      "brand-safety"
+    ],
+    "fetchedAt": "2026-04-26T01:01:56.849890"
+  },
+  {
+    "id": "meta-2026-01-08-001",
+    "date": "2026-01-08",
+    "week": "2026-W02",
+    "platform": "meta",
+    "title": "Ads Insights Async API 增强错误提示功能",
+    "titleOriginal": "Enhanced Error Messaging for Ads Insights Async API",
+    "summary": "Meta 正在增强 Ads Insights Async API GET {AD_REPORT_RUN_ID} 端点的错误报告功能，旨在提升开发者体验的透明度，并帮助开发者构建更稳定、更有韧性的应用程序。该增强功能将在 Graph API V25.0 版本中推出。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/01/08/enhanced-error-messaging-for-ads-insights-async-api/",
+    "tags": [
+      "API",
+      "开发者工具",
+      "错误报告",
+      "Ads Insights",
+      "Graph API"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "meta-2026-01-08-002",
+    "date": "2026-01-08",
+    "week": "2026-W02",
+    "platform": "meta",
+    "title": "Kepler如何帮助easyJet发现其Meta广告的真实影响力",
+    "titleOriginal": "How Kepler helped easyJet discover the true impact of their ads on Meta technologies",
+    "summary": "独立代理公司Kepler与easyJet及其分析合作伙伴route1.io合作，帮助easyJet精准衡量Meta平台上广告的真实影响，恢复了优化预算以推动增长的信心。该案例为广告主提供了效果归因和预算优化的参考思路。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-ad-measurement-kepler-easyjet",
+    "tags": [
+      "效果衡量",
+      "案例研究",
+      "归因分析",
+      "预算优化"
+    ],
+    "fetchedAt": "2026-04-26T00:02:31.149419"
+  },
+  {
+    "id": "line-2026-01-07-002",
+    "date": "2026-01-07",
+    "week": "2026-W02",
+    "platform": "line",
+    "title": "フライパン×AIで日常の料理がもっと楽しく～バナソニック「Bistroアシスタント」活用事例",
+    "titleOriginal": "調理家電×AIで日常の料理がもっと楽しく～バナソニック「Bistroアシスタン…」",
+    "summary": "本文未能获取详细摘要。该文章介绍了家电厂商如何利用LINE官方账号与AI技术结合，提升用户日常烹饪体验的营销案例。",
+    "category": "ad-product",
+    "importance": "low",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-official-account/technique/panasonic/",
+    "tags": [
+      "LINE公式アカウント",
+      "AI",
+      "事例",
+      "营销活用"
+    ],
+    "fetchedAt": "2026-04-27T08:56:05.866246"
+  },
+  {
+    "id": "line-2025-12-25-001",
+    "date": "2025-12-25",
+    "week": "2025-W52",
+    "platform": "line",
+    "title": "LINEミニアプリ完全指南｜导入方法和费用、导入案例【面向店铺运营者】",
+    "titleOriginal": "LINEミニアプリ完全ガイド｜導入方法和費用、導入事例まで【店舗運営社向け】",
+    "summary": "本文为店铺运营者提供LINEミニアプリ（LINE小程序）的全面指南，涵盖从零开始导入的完整流程、费用结构说明、以及多个行业的成功导入案例。内容包含小程序基础功能介绍、开发环境搭建、与LINE官方账号的联动设置等实操要点，帮助零售、餐饮、服务业等店铺运营者快速理解和部署LINE小程序，提升顾客服务体验和运营效率。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-mini-app/technique/20220204/",
+    "tags": [
+      "LINEミニアプリ",
+      "小程序",
+      "店铺运营",
+      "O2O",
+      "客户体验"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "meta-2025-12-18-002",
+    "date": "2025-12-18",
+    "week": "2025-W51",
+    "platform": "meta",
+    "title": "2025年安全与诚信亮点回顾",
+    "titleOriginal": "Safety and Integrity Highlights from 2025",
+    "summary": "Meta发布2025年度安全与诚信工作回顾，涵盖负责任媒体建设的四大关键支柱进展。此内容偏内部治理总结，对广告投放团队的直接影响有限。",
+    "category": "policy",
+    "importance": "low",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/safety-and-integrity-highlights-from-2025",
+    "tags": [
+      "安全",
+      "诚信",
+      "平台治理",
+      "年度回顾"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "meta-2025-12-17-003",
+    "date": "2025-12-17",
+    "week": "2025-W51",
+    "platform": "meta",
+    "title": "2025年Cyber 5购物季：哪些策略有效、发生了什么变化及如何把握Q5",
+    "titleOriginal": "Cyber 5 2025: What worked, what changed and how to win Q5",
+    "summary": "Meta分析2025年最大购物周末的表现，提供关键趋势洞察和策略建议，帮助广告主在Q5（圣诞购物季）制定有效的广告策略，抓住年末销售机遇。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/cyber-5-2025-what-worked",
+    "tags": [
+      "Cyber 5",
+      "购物季",
+      "Q5",
+      "节日营销",
+      "策略建议"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "pinterest-2025-12-09-001",
+    "date": "2025-12-09",
+    "week": "2025-W50",
+    "platform": "pinterest",
+    "title": "Pinterest Predicts™ 2026：将趋势转化为无限可能",
+    "titleOriginal": "Pinterest Predicts™ 2026: Turn trends into unlimited possibilities",
+    "summary": "Pinterest发布2026年度趋势预测报告，帮助广告主把握未来一年的消费趋势。该报告基于平台搜索和收藏数据，预测将成为主流的趋势方向。广告投放团队可据此提前规划创意素材和投放策略，将新兴趋势转化为营销机会。建议重点关注报告中提到的关键品类趋势，优化Q1季度的广告创意方向。",
+    "category": "other",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-predicts-2026-turn-trends-into-unlimited-possibilities/",
+    "tags": [
+      "趋势预测",
+      "2026",
+      "营销洞察",
+      "消费者行为"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "pinterest-2025-12-09-001",
+    "date": "2025-12-09",
+    "week": "2025-W50",
+    "platform": "pinterest",
+    "title": "Pinterest预测™：不墨守成规、自我保护和逃避主义推动2026年21个趋势",
+    "titleOriginal": "Pinterest Predicts™: Nonconformity, self-preservation, and escapism drive 21 trends for 2026",
+    "summary": "Pinterest发布2026年度趋势预测报告，涵盖21个将影响用户行为和消费趋势的关键洞察。报告指出不墨守成规、自我保护和逃避主义将成为明年三大主导趋势，为广告投放团队提供前瞻性的用户兴趣洞察，有助于在内容策略和广告创意中把握先机，提前规划2026年的营销活动方向。",
+    "category": "Trends",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-predicts-nonconformity-self-preservation-and-escapism-drive-21-trends-for-2026/",
+    "tags": [
+      "趋势预测",
+      "用户洞察",
+      "2026趋势",
+      "内容策略"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "line-2025-12-08-002",
+    "date": "2025-12-08",
+    "week": "2025-W50",
+    "platform": "line",
+    "title": "利用LINE API对未付款用户的应对措施",
+    "titleOriginal": "LINE APIを活用した未入金ユーザーへの取り組み",
+    "summary": "本文介绍高岛屋如何利用LINE API技术针对未完成付款的用户实施精准营销和催款策略。通过API实现自动化消息推送、个性化优惠券发放、分阶段提醒等功能，有效提升付款转化率的同时保持良好的用户体验，为电商和零售行业提供了实用的LINE营销自动化参考案例。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/line-official-account/technique/takashimaya-fp/",
+    "tags": [
+      "LINE API",
+      "自动化营销",
+      "付款转化",
+      "用户运营",
+      "电商"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "meta-2025-12-03-001",
+    "date": "2025-12-03",
+    "week": "2025-W49",
+    "platform": "meta",
+    "title": "Instagram API 更新：洞察、内容管理和协作功能",
+    "titleOriginal": "Instagram API Updates for Insights, Content Management, and Collaboration",
+    "summary": "Meta 发布 Instagram API 重大更新，新增 5 个洞察指标以增强内容表现衡量，提供更强大的内容管理和协作功能。这些更新适用于使用 Instagram API 和 Marketing API 的开发者，广告投放团队可借此获得更精准的内容效果数据，优化 Instagram 营销策略。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2025/12/03/instragram-api-updates/",
+    "tags": [
+      "Instagram API",
+      "Insights",
+      "内容管理",
+      "协作功能",
+      "Marketing API"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "meta-2025-12-03-002",
+    "date": "2025-12-03",
+    "week": "2025-W49",
+    "platform": "meta",
+    "title": "Embedded Signup v4 简化企业接入流程",
+    "titleOriginal": "Simplify business onboarding with Embedded signup v4",
+    "summary": "Embedded Signup v4 正式发布，旨在简化和统一 Meta Business Messaging 技术的商业接入体验。开发者反馈此前将企业客户接入多个 API 面临较大挑战，新版本通过整合流程降低接入复杂度，提升与 Messenger、Pages API 等集成的效率。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2025/12/03/simplify-business-onboarding-with-embedded-signup-v4/",
+    "tags": [
+      "Embedded Signup",
+      "Business Messaging",
+      "开发者工具",
+      "Messenger",
+      "Pages API"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "spotify-2025-12-01-001",
+    "date": "2025-12-01",
+    "week": "2025-W49",
+    "platform": "spotify",
+    "title": "2025广告商年度回顾：如何借助Spotify趋势在2026年抢占先机",
+    "titleOriginal": "2025 Wrapped for Advertisers",
+    "summary": "Spotify发布2025年度流媒体趋势深度分析，帮助广告主深入了解塑造2025年流媒体消费的关键趋势。这些Insights旨在为广告主提供2026年营销规划的参考依据，建议广告投放团队利用此资源进行年度总结和未来策略制定。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Spotify Ads",
+    "sourceUrl": "https://ads.spotify.com/en-US/news-and-insights/how-wrapped-for-advertisers-preps-you-for-2026/",
+    "tags": [
+      "趋势分析",
+      "年度回顾",
+      "2026营销规划",
+      "insights"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "spotify-2025-12-01-002",
+    "date": "2025-12-01",
+    "week": "2025-W49",
+    "platform": "spotify",
+    "title": "当文化时刻来临：人们在Spotify上如何庆祝",
+    "titleOriginal": "When cultural moments hit, people celebrate on Spotify",
+    "summary": "Spotify分析用户在文化关键时刻（如重大事件、节日、流行文化等）期间的行为模式和庆祝方式，帮助广告主理解如何把握这些高参与度时刻进行品牌营销。对于广告投放团队而言，这意味着可以在用户活跃度激增的文化时刻进行精准投放。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Spotify Ads",
+    "sourceUrl": "https://ads.spotify.com/en-US/news-and-insights/cultural-moments-hit-on-spotify/",
+    "tags": [
+      "文化营销",
+      "用户行为",
+      "时机策略",
+      "品牌营销"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "spotify-2025-12-01-003",
+    "date": "2025-12-01",
+    "week": "2025-W49",
+    "platform": "spotify",
+    "title": "程序化购买手册：解锁跨渠道更佳广告效果",
+    "titleOriginal": "The Programmatic Playbook: Unlock better results across every channel",
+    "summary": "Spotify发布全面的程序化广告购买指南，帮助广告主在所有渠道实现更优的广告效果。该手册涵盖程序化购买策略、最佳实践和跨渠道整合方法，适合寻求规模化投放的广告投放团队参考。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Spotify Ads",
+    "sourceUrl": "https://ads.spotify.com/en-US/news-and-insights/programmatic-playbook/",
+    "tags": [
+      "程序化广告",
+      "跨渠道",
+      "投放策略",
+      "自动化"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "spotify-2025-12-01-004",
+    "date": "2025-12-01",
+    "week": "2025-W49",
+    "platform": "spotify",
+    "title": "如何在Spotify上激发创意：3个简单步骤",
+    "titleOriginal": "How to fuel creativity on Spotify: 3 simple steps",
+    "summary": "Spotify官方创意指南，提供三个简单步骤帮助广告主在平台上激发创意灵感。内容涵盖创意最佳实践和制作技巧，适合需要提升广告素材质量和创意表现力的广告投放团队参考。",
+    "category": "creative",
+    "importance": "low",
+    "source": "Spotify Ads",
+    "sourceUrl": "https://ads.spotify.com/en-US/news-and-insights/how-to-fuel-creativity/",
+    "tags": [
+      "创意指南",
+      "素材制作",
+      "最佳实践"
+    ],
+    "fetchedAt": "2026-04-28T19:56:35.697783"
+  },
+  {
+    "id": "pinterest-2025-11-12-003",
+    "date": "2025-11-12",
+    "week": "2025-W46",
+    "platform": "pinterest",
+    "title": "Pinterest与零售媒体：为你的品牌提升效果",
+    "titleOriginal": "Pinterest and retail media: Level up results for your brands",
+    "summary": "Pinterest深入解析零售媒体网络（RMN）与平台广告的协同效应，帮助品牌在用户购物决策路径的早期阶段（灵感发现）占据优势。提供零售媒体与Pinterest Ads结合的最佳实践方案，实现从品牌认知到实际购买的全链路营销效果提升。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-and-retail-media-level-up-results-for-your-brand/",
+    "tags": [
+      "零售媒体",
+      "效果营销",
+      "全链路营销"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  },
+  {
+    "id": "meta-2025-11-10-001",
+    "date": "2025-11-10",
+    "week": "2025-W46",
+    "platform": "meta",
+    "title": "平台演进：Facebook社交插件将于2026年2月停用",
+    "titleOriginal": "Platform Evolution: Facebook Social Plugins to Be Discontinued February 2026",
+    "summary": "Meta宣布将于2026年2月10日停用两个Facebook社交插件——点赞按钮和评论按钮。这是平台战略调整的一部分，旨在聚焦为开发者和企业提供更有价值的功能。广告投放团队需注意，如在网站或应用中使用了这些插件，需提前规划迁移方案。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2025/11/10/platform-evolution-facebook-social-plugins-to-be-discontinued-february-2026/",
+    "tags": [
+      "社交插件",
+      "平台演进",
+      "停用公告"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  },
+  {
+    "id": "meta-2025-11-10-002",
+    "date": "2025-11-10",
+    "week": "2025-W46",
+    "platform": "meta",
+    "title": "营销API新功能：通过机会评分功能释放最佳广告表现",
+    "titleOriginal": "Unlock peak performance with new opportunity score features in the Marketing API",
+    "summary": "Meta在营销API中推出新的机会评分功能，帮助广告主发现并应用优化建议。截至2026年3月更新，API应用支持已扩展至14种推荐类型，使开发者能够在MAPI驱动的工具中直接为广告主提供可操作的价值验证推荐，从而提升广告表现。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2025/11/10/unlock-peak-performance-with-new-opportunity-score-features-in-the-marketing-api/",
+    "tags": [
+      "营销API",
+      "机会评分",
+      "广告优化",
+      "推荐系统"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  },
+  {
+    "id": "pinterest-2025-11-10-002",
+    "date": "2025-11-10",
+    "week": "2025-W46",
+    "platform": "pinterest",
+    "title": "Pinterest Q5：你的额外营销时刻",
+    "titleOriginal": "Q5 on Pinterest: Your bonus marketing moment",
+    "summary": "Pinterest发布Q5营销指南，为广告主提供年末购物季后的额外营销机会。Q5通常指感恩节到圣诞节之间的关键营销窗口期，文章包含优化广告投放节奏、把握用户购物决策延迟窗口、以及在节日后延续品牌热度的实战策略。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/q5-on-pinterest-your-bonus-marketing-moment/",
+    "tags": [
+      "营销策略",
+      "季节性营销",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  },
+  {
+    "id": "pinterest-2025-11-05-001",
+    "date": "2025-11-05",
+    "week": "2025-W45",
+    "platform": "pinterest",
+    "title": "Epsilon受众现已登陆Pinterest",
+    "titleOriginal": "Epsilon audiences are now available on Pinterest",
+    "summary": "Pinterest宣布Epsilon受众群体功能正式上线，广告主可直接在Pinterest平台访问Epsilon强大的消费者数据能力，实现更精准的受众定向。这一整合将帮助广告投放团队利用Epsilon的人口统计和行为数据，提升广告投放的精准度和效果转化。",
+    "category": "targeting",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/epsilon-audiences-are-now-available-on-pinterest/",
+    "tags": [
+      "受众定向",
+      "数据整合",
+      "广告投放"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  },
+  {
+    "id": "pinterest-2025-11-03-001",
+    "date": "2025-11-03",
+    "week": "2025-W45",
+    "platform": "pinterest",
+    "title": "Pinterest节日季编辑：为节日购物带来精准化体验",
+    "titleOriginal": "Pinterest's Festive Season Edit brings precision to festive shopping",
+    "summary": "Pinterest发布节日季编辑内容，帮助广告主把握节日购物趋势。该编辑整合了节日装饰、礼物选购、派对策划等热门品类趋势，为广告投放团队提供节日营销方向。内容涵盖Ads、Creators、Trends三大类别，建议广告主结合节日趋势更新素材并优化投放策略。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-holiday-edit-brings-precision-to-festive-shopping/",
+    "tags": [
+      "节日营销",
+      "趋势",
+      "广告产品",
+      "创作者"
+    ],
+    "fetchedAt": "2026-04-28T19:45:55.457705"
+  },
+  {
+    "id": "meta-2025-10-30-001",
+    "date": "2025-10-30",
+    "week": "2025-W44",
+    "platform": "meta",
+    "title": "Instagram帖子分享Webhook载荷新增ig_post附件类型",
+    "titleOriginal": "Instagram post share webhook payload includes new ig_post attachment",
+    "summary": "从2025年11月3日起，Instagram帖子分享的Webhook载荷将包含两种附件：原有的share附件和新的ig_post附件。新载荷提供额外元数据，包括媒体ID、URL和标题。旧的share附件类型将支持至2026年2月1日，之后将被移除。建议开发者尽快迁移到新的ig_post附件类型。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/messaging_echoes/",
+    "tags": [
+      "webhook",
+      "instagram",
+      "post-share",
+      "attachment"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-28-001",
+    "date": "2025-10-28",
+    "week": "2025-W44",
+    "platform": "meta",
+    "title": "营销API：Threads广告新格式和优化",
+    "titleOriginal": "Marketing API: New formats and optimizations for Ads in Threads",
+    "summary": "Threads拥有超过4亿月活跃用户，Meta宣布为Threads广告推出新格式和优化功能。广告主可以通过营销API在Threads上扩展现有广告系列，参与这个快速增长的平台的对话。这些更新是Threads广告能力持续改进的一部分，为广告主提供更多接触用户的途径。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2025/10/28/new-formats-and-optimization-for-ads-in-threads/",
+    "tags": [
+      "Threads",
+      "广告格式",
+      "营销API",
+      "新功能"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-27-002",
+    "date": "2025-10-27",
+    "week": "2025-W44",
+    "platform": "meta",
+    "title": "面向泰国广告受众的选择性广告主验证和透明度要求",
+    "titleOriginal": "Verification and Transparency Requirements for Select Advertisers Delivering Ads to Thailand",
+    "summary": "Meta将针对投放泰国受众（包括全球广告系列）且符合风险标准的广告主扩展验证和透明度要求。受影响的广告主需要完成验证流程，以确保平台安全并符合当地准则。这对投放泰国市场的广告主有直接合规影响。",
+    "category": "policy",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2025/10/27/advertiser-verification-transparency-thailand/",
+    "tags": [
+      "泰国",
+      "广告验证",
+      "透明度",
+      "合规",
+      "政策变更"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-27-002",
+    "date": "2025-10-27",
+    "week": "2025-W44",
+    "platform": "meta",
+    "title": "Conversations API响应支持AI生成贴纸",
+    "titleOriginal": "AI generated stickers included in Messenger Conversations API response",
+    "summary": "AI生成的贴纸现在会包含在Messenger Conversations API响应中，当请求包含shares消息字段时。响应提供AI生成贴纸的stickerID和url。此功能增强了消息分享体验的可见性。",
+    "category": "api-change",
+    "importance": "low",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/reference/conversations/",
+    "tags": [
+      "conversations-api",
+      "messenger",
+      "sticker",
+      "ai"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-27-001",
+    "date": "2025-10-27",
+    "week": "2025-W44",
+    "platform": "meta",
+    "title": "Instagram消息Webhook增强支持帖子分享功能",
+    "titleOriginal": "Enhanced support for Instagram post shares in Instagram messaging webhooks",
+    "summary": "Instagram消息Webhook新增对帖子分享功能的增强支持，开发者现可更好地接收和处理用户通过Direct Message分享帖子的相关事件，便于构建更完善的消息自动化和互动工作流。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Instagram Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/instagram",
+    "tags": [
+      "messaging",
+      "webhooks",
+      "sharing",
+      "api-update"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-23-003",
+    "date": "2025-10-23",
+    "week": "2025-W43",
+    "platform": "meta",
+    "title": "Handover Protocol正式停用，全面迁移至Conversation Routing",
+    "titleOriginal": "Handover Protocol no longer supported, migrated to Conversation Routing",
+    "summary": "Meta正式停止支持Instagram的Handover Protocol，所有企业已迁移至Conversation Routing。Conversation Routing与大多数Handover Protocol API和功能向后兼容，预计不会造成业务中断。这是Instagram消息平台架构的重要更新。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/conversation-routing",
+    "tags": [
+      "handover-protocol",
+      "conversation-routing",
+      "instagram",
+      "deprecation"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-21-004",
+    "date": "2025-10-21",
+    "week": "2025-W43",
+    "platform": "meta",
+    "title": "Instagram Moderate Conversations API正式发布",
+    "titleOriginal": "Instagram Moderate Conversations API available",
+    "summary": "Instagram Moderate Conversations API正式可用，允许企业通过API阻止用户、解除阻止、将对话移至垃圾邮件文件夹，替代此前仅能在Instagram应用或Meta Business Suite中完成的管理操作。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/moderating-conversations",
+    "tags": [
+      "moderate-conversations",
+      "instagram",
+      "api",
+      "spam-filtering"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "pinterest-2025-10-20-001",
+    "date": "2025-10-20",
+    "week": "2025-W43",
+    "platform": "pinterest",
+    "title": "你的3步黑五网一攻略",
+    "titleOriginal": "Your 3-step Black Friday and Cyber Monday playbook",
+    "summary": "Pinterest官方发布的黑五网一营销攻略，提供三步走策略帮助广告主在年末大促季抓住购物机遇。涵盖素材准备、受众定向和预算分配的实战建议，适合所有希望在2025年末购物季提升业绩的广告投放团队参考。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/black-friday-cyber-monday-playbook/",
+    "tags": [
+      "黑五网一",
+      "节假日营销",
+      "购物季",
+      "广告策略"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "pinterest-2025-10-16-002",
+    "date": "2025-10-16",
+    "week": "2025-W42",
+    "platform": "pinterest",
+    "title": "Pinterest学院新上线：Q4效果最大化工具",
+    "titleOriginal": "New on Pinterest Academy: Tools to maximize your Q4 performance",
+    "summary": "Pinterest Academy推出全新学习资源，旨在帮助广告主优化Q4营销表现。新工具涵盖广告投放优化、受众触达和创意策略等核心模块，为年末营销冲刺提供系统化学习支持。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-academy-updates-september-2025/",
+    "tags": [
+      "Pinterest学院",
+      "Q4营销",
+      "学习资源",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "pinterest-2025-10-16-001",
+    "date": "2025-10-16",
+    "week": "2025-W42",
+    "platform": "pinterest",
+    "title": "Pinterest推出新工具让用户更好地控制AI生成内容",
+    "titleOriginal": "Pinterest rolls out new tools to give users more control over GenAI content",
+    "summary": "Pinterest推出新工具增强用户对AI生成内容的控制权，包括AI编辑内容的标签透明度提升、用户可重新编辑或移除AI生成背景的工具，以及在搜索结果中明确标注AI生成图像。这些更新旨在提升平台信任度，为广告主提供更清晰的AI内容使用规范环境。",
+    "category": "product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-rolls-out-new-tools-to-give-users-more-control-over-gen-ai-content/",
+    "tags": [
+      "AI工具",
+      "用户控制",
+      "内容透明度",
+      "信任安全"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "pinterest-2025-10-08-003",
+    "date": "2025-10-08",
+    "week": "2025-W41",
+    "platform": "pinterest",
+    "title": "玩转万圣节季节性营销",
+    "titleOriginal": "Scare up spooky seasonal success",
+    "summary": "Pinterest发布的万圣节季节性营销洞察，分析秋季热门趋势和用户搜索行为。帮助广告主把握万圣节前后的流量高峰，提供创意方向和投放策略建议，适合消费品和娱乐类品牌参考。",
+    "category": "creative",
+    "importance": "low",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/scare-up-spooky-seasonal-success/",
+    "tags": [
+      "万圣节",
+      "季节性营销",
+      "创意策略",
+      "趋势洞察"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "meta-2025-10-06-006",
+    "date": "2025-10-06",
+    "week": "2025-W41",
+    "platform": "meta",
+    "title": "Conversations API和Webhooks支持reply_to字段",
+    "titleOriginal": "reply_to available in Conversations API and Webhooks",
+    "summary": "reply_to字段现已在Conversations API中可用，当消息为回复时返回且非空，并可标识是否为自回复。同时，reply_to对象也将出现在Message和Echo webhooks的message对象中，包含被回复消息的mid和is_self_reply布尔字段。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Messenger Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/messenger-platform/reference/webhook-events/messages/",
+    "tags": [
+      "conversations-api",
+      "webhook",
+      "reply-to",
+      "message-reply"
+    ],
+    "fetchedAt": "2026-04-28T19:33:53.043831"
+  },
+  {
+    "id": "line-2025-09-29-001",
+    "date": "2025-09-29",
+    "week": "2025-W40",
+    "platform": "line",
+    "title": "LINE雅虎广告 展示广告的效果可视化｜转化测定的设置方法",
+    "titleOriginal": "LINE雅虎広告 ディスプレイ広告の効果を可視化｜コンバージョン測定の設定方…",
+    "summary": "本文介绍LINE雅虎广告展示广告的转化测定功能设置方法，帮助广告主有效衡量广告效果。通过正确配置转化跟踪，可精准分析从广告点击到最终转化的完整用户路径，为广告优化提供数据支撑。对于投放团队而言，掌握转化测定是评估ROI和优化投放策略的基础。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/ly-ads/displayads-auc/marketing/conversion-analytics/",
+    "tags": [
+      "LINE雅虎广告",
+      "展示广告",
+      "转化测定",
+      "效果分析"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  },
+  {
+    "id": "line-2025-09-26-002",
+    "date": "2025-09-26",
+    "week": "2025-W39",
+    "platform": "line",
+    "title": "LINE雅虎广告 展示广告的投放位置｜配信面和有效活用方法",
+    "titleOriginal": "LINE雅虎広告 ディスプレイ広告はどこに配信されるのか？配信面と効果的な活…",
+    "summary": "本文详细说明LINE雅虎广告展示广告的投放面（配信面）及其有效利用方法。介绍广告在哪些平台和场景下展示，以及如何选择合适的投放位置以提升广告效果。帮助广告投放团队理解投放面策略，优化广告资源的有效利用。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/ly-ads/displayads-auc/marketing/ad-placement/",
+    "tags": [
+      "LINE雅虎广告",
+      "展示广告",
+      "投放面",
+      "媒体策略"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  },
+  {
+    "id": "pinterest-2025-09-25-001",
+    "date": "2025-09-25",
+    "week": "2025-W39",
+    "platform": "pinterest",
+    "title": "Pinterest Presents™ 2025 大会亮点发布",
+    "titleOriginal": "Top reveals from Pinterest Presents™ 2025",
+    "summary": "Pinterest在2025年度大会上发布的最新产品更新和营销工具。大会聚焦于帮助广告主更好地在用户决策前期触达目标受众，提供更智能的创意工具和数据分析能力，以提升品牌在购物季的表现。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/top-news-pinterest-presents/",
+    "tags": [
+      "Pinterest Presents",
+      "产品更新",
+      "大会",
+      "营销工具"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  },
+  {
+    "id": "pinterest-2025-09-25-001",
+    "date": "2025-09-25",
+    "week": "2025-W39",
+    "platform": "pinterest",
+    "title": "Pinterest推出搜索顶部广告和新广告工具，推动视觉购物决策",
+    "titleOriginal": "Pinterest launches Top of Search ads and new advertising tools to drive visual shopping decisions",
+    "summary": "Pinterest在9月25日发布多项广告产品更新，包括全新Top of Search（搜索顶部）广告位，该位置允许品牌在用户搜索时第一时间展示视觉内容。同时推出新的广告工具组合，聚焦提升视觉购物体验，帮助广告主更好地在灵感发现阶段触达消费者，推动从探索到购买的转化路径。对于广告投放团队而言，这意味着搜索场景下的曝光机会增加，需关注新广告位的竞价策略和创意优化。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-introduces-top-of-search-ads-and-new-advertising-tools/",
+    "tags": [
+      "搜索广告",
+      "广告产品更新",
+      "视觉购物",
+      "Pinterest Ads"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  },
+  {
+    "id": "pinterest-2025-09-17-002",
+    "date": "2025-09-17",
+    "week": "2025-W38",
+    "platform": "pinterest",
+    "title": "被遗弃购物车的真实问题",
+    "titleOriginal": "Choices, choices: The real problem behind abandoned carts",
+    "summary": "深入分析用户在Pinterest上购物时放弃购物车的原因。研究发现用户并非不愿购买，而是面临选择困难或决策信息不足。广告主应优化产品信息展示和结账流程，提供更清晰的购买指引以提升转化率。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/the-real-problem-behind-abandoned-carts/",
+    "tags": [
+      "购物车放弃",
+      "转化优化",
+      "用户行为",
+      "购物体验"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  },
+  {
+    "id": "pinterest-2025-09-08-003",
+    "date": "2025-09-08",
+    "week": "2025-W37",
+    "platform": "pinterest",
+    "title": "如何让品牌在这个礼品季脱颖而出",
+    "titleOriginal": "How to make your brand unmissable this gifting season",
+    "summary": "Pinterest发布礼品季营销攻略，指导品牌把握年末购物高峰。强调用户在Pinterest上提前规划礼品清单的独特行为模式，建议广告主在灵感激发阶段就开始布局，通过高质量视觉内容和精准定向抓住用户注意力。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/festive-gifting-pinterest/",
+    "tags": [
+      "礼品季",
+      "节日营销",
+      "购物季",
+      "创意策略"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  },
+  {
+    "id": "line-2025-09-05-003",
+    "date": "2025-09-05",
+    "week": "2025-W36",
+    "platform": "line",
+    "title": "LINE雅虎广告 展示广告是什么？特征、机制、费用及活用要点",
+    "titleOriginal": "LINE雅虎広告 ディスプレイ広告とは？特徴や仕組み、費用や活用ポイントまで…",
+    "summary": "本文是LINE雅虎广告展示广告的基础入门指南，系统介绍展示广告的特征、运作机制、费用结构及活用要点。适合初次接触LINE雅虎广告展示广告的营销人员，帮助理解产品全貌，制定广告投放策略的基础知识。",
+    "category": "ad-product",
+    "importance": "low",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/ly-ads/displayads-auc/marketing/yahoo-ads_displayads-auc_what_is_displayads/",
+    "tags": [
+      "LINE雅虎广告",
+      "展示广告",
+      "入门指南",
+      "基础知识"
+    ],
+    "fetchedAt": "2026-04-28T19:23:44.303181"
+  },
+  {
+    "id": "applovin-2025-05-07-001",
+    "date": "2025-05-07",
+    "week": "2025-W19",
+    "platform": "applovin",
+    "title": "为什么追求TikTok？经济扩张的愿景",
+    "titleOriginal": "Why pursue TikTok? A vision for economic expansion",
+    "summary": "AppLovin CEO探讨公司为何积极追求TikTok平台的战略考量。文章阐述了对经济扩张的愿景，分析了TikTok作为广告渠道的独特机遇，可能涉及平台整合、商业化策略等重要信息，对广告投放团队了解平台选择和预算分配具有参考价值。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/why-pursue-tiktok/",
+    "tags": [
+      "TikTok",
+      "平台战略",
+      "经济扩张",
+      "移动广告"
+    ],
+    "fetchedAt": "2026-04-28T18:47:07.035865"
+  },
+  {
+    "id": "pinterest-2025-05-05-001",
+    "date": "2025-05-05",
+    "week": "2025-W19",
+    "platform": "pinterest",
+    "title": "Pinterest推出全新视觉搜索功能，打造更个性化的发现体验",
+    "titleOriginal": "Introducing new visual search features for a more personalized discovery experience",
+    "summary": "Pinterest发布新一代视觉搜索功能，旨在提升用户发现灵感的个性化体验。这些新功能将帮助用户更精准地通过图片搜索找到相关内容，为广告主提供更精准的投放机会。该更新强化了Pinterest作为灵感发现平台的核心定位，对创意策略和用户触达方式产生积极影响。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/introducing-new-visual-search-features/",
+    "tags": [
+      "视觉搜索",
+      "产品更新",
+      "用户体验",
+      "AI功能"
+    ],
+    "fetchedAt": "2026-04-28T18:47:07.035865"
+  },
+  {
+    "id": "tiktok-2025-05-01-001",
+    "date": "2025-05-01",
+    "week": "2025-W18",
+    "platform": "tiktok",
+    "title": "专业预览：TikTok Ads Manager全新独立广告预览工具、可分享链接和批量预览功能",
+    "titleOriginal": "Preview like a pro: New standalone Ad Preview Tool, shareable URLs, and Bulk Preview in TikTok Ads Manager",
+    "summary": "TikTok Ads Manager推出全新独立广告预览工具，支持可分享URL和批量预览功能。广告主可在正式投放前通过链接或二维码便捷预览广告效果，支持团队协作审阅，提升广告上线前质量把控能力。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok What's New",
+    "sourceUrl": "https://ads.tiktok.com/i18n/?refer=from_help_create",
+    "tags": [
+      "广告预览",
+      "协作工具",
+      "Ads Manager更新"
+    ],
+    "fetchedAt": "2026-04-28T18:47:07.035865"
+  },
+  {
+    "id": "pinterest-2025-04-30-001",
+    "date": "2025-04-30",
+    "week": "2025-W18",
+    "platform": "pinterest",
+    "title": "Pinterest推出Gen AI标签：在透明度方面迈出新步伐",
+    "titleOriginal": "Introducing Gen AI Labels: Pinterest is taking a new step in transparency",
+    "summary": "Pinterest宣布为AI生成的内容推出标签功能，这是平台在透明度方面的重要更新。此举旨在帮助用户识别由AI生成或增强的图像，提升平台内容信任度。对于广告投放团队而言，这意味着需要关注AI生成内容与真实图片的区分，确保广告素材的合规性与真实性。同时，这一透明度措施可能影响用户对广告内容的信任度和互动行为。",
+    "category": "product",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/introducing-gen-ai-labels/",
+    "tags": [
+      "AI透明度",
+      "内容标签",
+      "平台信任",
+      "产品更新"
+    ],
+    "fetchedAt": "2026-04-28T18:37:24.449000"
+  },
+  {
+    "id": "google-2025-04-27-001",
+    "date": "2025-04-27",
+    "week": "2025-W17",
+    "platform": "google",
+    "title": "Albertsons Media Collective 通过 Google Commerce Media Suite 将零售信号引入 YouTube",
+    "titleOriginal": "Albertsons Media Collective brings retail signals to YouTube with Google's Commerce Media Suite.",
+    "summary": "Albertsons Media Collective 与 Google Commerce Media Suite 合作，将零售购买数据信号引入 YouTube 广告投放。广告主可利用真实购买行为数据优化 targeting，提升广告相关性和转化效果，为电商和零售广告主提供更精准的投放能力。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://ads.google.com/home/",
+    "tags": [
+      "retail media",
+      "YouTube",
+      "commerce media",
+      "零售信号",
+      "数据驱动投放"
+    ],
+    "fetchedAt": "2026-04-28T18:37:24.449000"
+  },
+  {
+    "id": "applovin-2025-03-31-001",
+    "date": "2025-03-31",
+    "week": "2025-W14",
+    "platform": "applovin",
+    "title": "效果广告：我们如何创造价值与处理数据",
+    "titleOriginal": "Performance Advertising: How we drive value and handle data",
+    "summary": "AppLovin CEO Adam Foroughi阐述公司效果广告的核心价值观与数据处理方式。强调公司通过技术创新为广告主和用户创造双向价值，承诺负责任的数据使用，在隐私保护与广告效果之间寻求平衡。此文为广告投放团队提供了理解AppLovin平台理念的重要参考。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/how-we-drive-value-and-handle-data/",
+    "tags": [
+      "效果广告",
+      "数据隐私",
+      "平台理念"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  },
+  {
+    "id": "applovin-2025-03-31-002",
+    "date": "2025-03-31",
+    "week": "2025-W14",
+    "platform": "applovin",
+    "title": "电商数据实践深度剖析",
+    "titleOriginal": "Examination of e-commerce data practices",
+    "summary": "AppLovin对电商行业数据实践的全面审视，分析当前电商广告投放中的数据采集、使用及隐私合规问题。旨在帮助广告主理解行业最佳实践，在数据利用与合规要求间找到平衡点，提升广告投放效率。",
+    "category": "policy",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/examination-of-e-commerce-data-practices/",
+    "tags": [
+      "电商数据",
+      "隐私合规",
+      "数据实践"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  },
+  {
+    "id": "applovin-2025-03-27-003",
+    "date": "2025-03-27",
+    "week": "2025-W13",
+    "platform": "applovin",
+    "title": "CEO公开信：探讨网页广告机遇与像素追踪",
+    "titleOriginal": "A Note from Our CEO: Discussing Web Advertising Opportunity and Unpacking Pixels",
+    "summary": "AppLovin CEO Adam Foroughi讨论网页广告的增长机遇，深入解读像素追踪技术及其在归因和效果测量中的应用。为开发者提供网页端广告变现与用户获取的战略建议，强调第一方数据在后IDFA时代的重要性。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/note-from-our-ceo-2/",
+    "tags": [
+      "CEO公开信",
+      "网页广告",
+      "像素追踪",
+      "归因"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  },
+  {
+    "id": "applovin-2025-03-13-004",
+    "date": "2025-03-13",
+    "week": "2025-W11",
+    "platform": "applovin",
+    "title": "预算有限情况下的用户获取十大技巧",
+    "titleOriginal": "10 tips for user acquisition on a budget",
+    "summary": "为预算受限的移动应用开发者提供10条实用的用户获取策略。涵盖创意优化、投放渠道选择、出价策略调整、A/B测试方法等实战技巧，帮助小团队在有限预算下最大化ROI，实现高效增长。",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/10-tips-for-user-acquisition-on-a-budget/",
+    "tags": [
+      "用户获取",
+      "预算优化",
+      "增长策略"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  },
+  {
+    "id": "applovin-2025-03-13-005",
+    "date": "2025-03-13",
+    "week": "2025-W11",
+    "platform": "applovin",
+    "title": "应用技术健康如何影响LTV及应对方案",
+    "titleOriginal": "How app technical health impacts LTV—and what to do about it",
+    "summary": "深入分析应用技术健康状况（如崩溃率、加载速度、内存占用）与用户生命周期价值(LTV)的关联。提供具体的应用性能优化建议，帮助广告主识别高价值用户，提升整体广告回报率。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/mobile-app-performance-issues-affect-ltv/",
+    "tags": [
+      "LTV优化",
+      "应用性能",
+      "用户质量"
+    ],
+    "fetchedAt": "2026-04-28T18:28:20.419406"
+  },
+  {
+    "id": "applovin-2025-02-26-001",
+    "date": "2025-02-26",
+    "week": "2025-W09",
+    "platform": "applovin",
+    "title": "CEO致信：探讨公司发展方向",
+    "titleOriginal": "Note from our CEO",
+    "summary": "AppLovin CEO分享公司战略愿景与未来发展方向，阐述公司如何在移动广告领域持续创新，为广告主和开发者创造更大价值。",
+    "category": "other",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/note-from-our-ceo/",
+    "tags": [
+      "CEO",
+      "公司战略",
+      "行业洞察"
+    ],
+    "fetchedAt": "2026-04-28T18:18:36.712287"
+  },
+  {
+    "id": "tiktok-2025-02-20-001",
+    "date": "2025-02-20",
+    "week": "2025-W08",
+    "platform": "tiktok",
+    "title": "TikTok直播最佳实践",
+    "titleOriginal": "TikTok Live Best Practices",
+    "summary": "本指南详细介绍了TikTok Live如何帮助创作者和品牌与受众建立实时连接、提升互动率并推动销售。涵盖成功的直播格式、准备工作技巧以及经过验证的最佳实践。对于广告投放团队而言，TikTok Live是品牌与用户建立深度互动、积累粉丝资产的重要渠道，建议结合品牌营销活动灵活运用直播形式获取增量流量。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok Ads Blog (AU)",
+    "sourceUrl": "https://ads.tiktok.com/business/en-AU/blog/tiktok-live-best-practice",
+    "tags": [
+      "TikTok Live",
+      "直播营销",
+      "最佳实践",
+      "实时互动"
+    ],
+    "fetchedAt": "2026-04-28T18:18:36.712287"
+  },
+  {
+    "id": "applovin-2025-02-18-002",
+    "date": "2025-02-18",
+    "week": "2025-W08",
+    "platform": "applovin",
+    "title": "在不确定的社交媒体环境中保障用户获取的未来",
+    "titleOriginal": "Future-proofing UA in an uncertain social media landscape",
+    "summary": "分析当前社交媒体平台的不确定性对用户获取（UA）策略的影响，提供多元化渠道、预算分配优化和长期可持续增长方案，帮助广告主应对市场波动风险。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/future-proofing-ua-in-an-uncertain-social-media-landscape/",
+    "tags": [
+      "用户获取",
+      "社交媒体",
+      "风险管理",
+      "预算优化"
+    ],
+    "fetchedAt": "2026-04-28T18:18:36.712287"
+  },
+  {
+    "id": "applovin-2025-02-13-003",
+    "date": "2025-02-13",
+    "week": "2025-W07",
+    "platform": "applovin",
+    "title": "在视频和可玩广告主导的世界中，移动横幅广告为何依然存在",
+    "titleOriginal": "Why mobile banner ads persist in a video and playable world",
+    "summary": "探讨传统横幅广告在视频和可玩广告时代依然具有高价值的原因，分析用户疲劳度、创意制作成本、特定场景效果及广告主ROI表现，指出横幅广告在品牌曝光和直接响应场景中的持续优势。",
+    "category": "creative",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/mobile-banner-ads-popularity/",
+    "tags": [
+      "横幅广告",
+      "广告创意",
+      "广告格式",
+      "效果优化"
+    ],
+    "fetchedAt": "2026-04-28T18:18:36.712287"
+  },
+  {
+    "id": "applovin-2025-02-06-004",
+    "date": "2025-02-06",
+    "week": "2025-W06",
+    "platform": "applovin",
+    "title": "2025年移动应用趋势报告现已发布",
+    "titleOriginal": "2025 Mobile App Trends Report – Out Now",
+    "summary": "AppLovin发布2025年度移动应用趋势报告，涵盖用户行为变化、广告技术发展、变现策略优化及行业预测，为广告投放团队和移动开发者提供数据驱动的决策参考。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/mobile-app-trends-2025/",
+    "tags": [
+      "趋势报告",
+      "行业报告",
+      "数据洞察",
+      "移动应用"
+    ],
+    "fetchedAt": "2026-04-28T18:18:36.712287"
+  },
+  {
+    "id": "applovin-2025-01-31-001",
+    "date": "2025-01-31",
+    "week": "2025-W05",
+    "platform": "applovin",
+    "title": "什么是可玩广告？",
+    "titleOriginal": "What is a playable ad?",
+    "summary": "介绍可玩广告的定义和特点，帮助广告主理解这种交互式广告形式如何提升用户参与度和转化效果。可玩广告允许用户在下载应用前先体验游戏或应用的核心功能。",
+    "category": "creative",
+    "importance": "low",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/what-is-a-playable-ad/",
+    "tags": [
+      "可玩广告",
+      "创意形式",
+      "互动广告"
+    ],
+    "fetchedAt": "2026-04-28T18:08:05.744673"
+  },
+  {
+    "id": "dv360-2025-01-28-001",
+    "date": "2025-01-28",
+    "week": "2025-W05",
+    "platform": "dv360",
+    "title": "Ads Decoded播客第一期：营销人员如何利用分析和AI获得更好效果",
+    "titleOriginal": "The first episode of the Ads Decoded podcast dives into how marketers can leverage analytics and AI for better results.",
+    "summary": "Google Ads & Commerce推出全新播客系列，第一期深入探讨营销人员如何利用分析和人工智能技术提升营销效果。播客邀请行业专家分享AI驱动营销策略的最佳实践，帮助广告主优化广告投放和提升投资回报率。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Marketing Platform Blog",
+    "sourceUrl": "https://blog.google/products/marketingplatform/",
+    "tags": [
+      "播客",
+      "AI",
+      "营销分析",
+      "Google Ads",
+      "行业洞察"
+    ],
+    "fetchedAt": "2026-04-28T18:08:05.744673"
+  },
+  {
+    "id": "applovin-2025-01-23-002",
+    "date": "2025-01-23",
+    "week": "2025-W04",
+    "platform": "applovin",
+    "title": "重新定义2025年应用行业的移动游戏趋势",
+    "titleOriginal": "Mobile gaming trends redefining the app industry in 2025",
+    "summary": "探讨2025年移动游戏领域的最新发展趋势，分析这些趋势如何影响整个应用行业生态，为广告投放团队提供行业洞察和策略参考。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "AppLovin Blog",
+    "sourceUrl": "https://blog.applovin.com/blog/mobile-gaming-trends-redefining-the-app-industry-in-2025/",
+    "tags": [
+      "移动游戏",
+      "行业趋势",
+      "2025趋势"
+    ],
+    "fetchedAt": "2026-04-28T18:08:05.744673"
+  },
+  {
+    "id": "x-2025-01-10-001",
+    "date": "2025-01-10",
+    "week": "2025-W02",
+    "platform": "x",
+    "title": "X @ CES 2025 活动回顾",
+    "titleOriginal": "X @ CES 2025 Recap",
+    "summary": "X在2025年CES展会上分享了关于Everything App未来的新洞察，重点介绍了X如何在2025年独特定位以推动业务增长。广告投放团队可关注X平台在消费电子领域的用户增长趋势和品牌营销机会。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "X Business Blog",
+    "sourceUrl": "https://business.x.com/en/blog/x-at-ces-2025",
+    "tags": [
+      "CES",
+      "活动回顾",
+      "业务增长",
+      "品牌营销"
+    ],
+    "fetchedAt": "2026-04-28T18:08:05.744673"
+  }
+]

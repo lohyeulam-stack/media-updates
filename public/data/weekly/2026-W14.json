@@ -1,0 +1,102 @@
+[
+  {
+    "id": "tiktok-2026-04-03-005",
+    "date": "2026-04-03",
+    "week": "2026-W14",
+    "platform": "tiktok",
+    "title": "一个工作流，更智能的营销活动：TikTok与HubSpot对接",
+    "titleOriginal": "One workflow, smarter campaigns: TikTok meets HubSpot",
+    "summary": "TikTok与HubSpot营销自动化平台实现深度对接，广告主现可将TikTok广告数据与HubSpot CRM工作流无缝同步。通过连接受众群体、转化追踪和自动化规则，提升线索质量和全漏斗营销可视化。该集成帮助B2B及高价值线索广告主实现从TikTok引流到CRM培育的闭环管理。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/hubspot-integration",
+    "tags": [
+      "HubSpot",
+      "CRM集成",
+      "营销自动化",
+      "线索管理"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "mintegral-2026-04-01-003",
+    "date": "2026-04-01",
+    "week": "2026-W14",
+    "platform": "mintegral",
+    "title": "在 UA 活动中平衡短期 ROAS 与长期留存",
+    "titleOriginal": "Balancing Short-Term ROAS With Long-Term Retention In UA Campaigns",
+    "summary": "针对广告投放团队在优化广告效果时面临的短期收益与长期用户价值之间的矛盾，提供实战策略建议。指导如何设置合理的 ROAS 目标，在追求即时回报的同时培育高价值用户群体，实现 UA 活动的可持续增长。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/balance-short-term-roas-and-retention",
+    "tags": [
+      "ROAS优化",
+      "用户留存",
+      "广告投放策略",
+      "效果营销"
+    ],
+    "fetchedAt": "2026-04-26T00:32:53.467107"
+  },
+  {
+    "id": "snapchat-2026-03-31-001",
+    "date": "2026-03-31",
+    "week": "2026-W14",
+    "platform": "snapchat",
+    "title": "Snap to Suitcase：Snapchat在旅行中的角色",
+    "titleOriginal": "Snap to Suitcase: The Role of Snapchat in the Travel Journey",
+    "summary": "Snapchat与Suzy联合发布新研究，揭示Snapchat如何影响用户完整旅行决策链——从旅行灵感激发到预订完成，乃至旅行归来后的分享回顾。研究为旅游品牌提供用户旅程洞察，帮助广告主制定更精准的旅行季节性营销策略。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/snap-to-suitcase",
+    "tags": [
+      "旅游行业",
+      "消费者洞察",
+      "用户旅程",
+      "品牌营销"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407"
+  },
+  {
+    "id": "pinterest-2026-03-31-002",
+    "date": "2026-03-31",
+    "week": "2026-W14",
+    "platform": "pinterest",
+    "title": "Pinterest揭示定义音乐节季的趋势",
+    "titleOriginal": "Pinterest reveals the trends that will define the festival season",
+    "summary": "Pinterest发布2026年音乐节季趋势报告，揭示用户对音乐节相关内容的搜索和保存行为洞察。报告涵盖时尚穿搭、妆容造型、露营装备、旅行目的地等多个品类的流行趋势，为广告主提供音乐节营销的季节性策略参考。",
+    "category": "creative",
+    "importance": "low",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/coachella-2026-trends/",
+    "tags": [
+      "趋势报告",
+      "音乐节",
+      "时尚",
+      "生活方式"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  },
+  {
+    "id": "linkedin-2026-03-31-005",
+    "date": "2026-03-31",
+    "week": "2026-W14",
+    "platform": "linkedin",
+    "title": "NewFronts 2026回顾：B2B营销已进入成果时代",
+    "titleOriginal": "Recap NewFronts 2026: B2B Marketing Has Entered the Outcomes Era",
+    "summary": "LinkedIn NewFronts 2026活动总结，行业专家共同探讨B2B营销从品牌曝光向实际业务成果的范式转变。LinkedIn在此次转变中扮演关键角色，为广告主提供更精准的归因工具和效果衡量方案，推动B2B营销进入以可衡量成果为核心的新时代。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/measurement/newfronts-2026-recap-b2b-marketing-has-entered-the-outcomes-era",
+    "tags": [
+      "NewFronts",
+      "行业活动",
+      "B2B趋势",
+      "营销成果衡量"
+    ],
+    "fetchedAt": "2026-04-27T09:22:47.336801"
+  }
+]
