@@ -1,0 +1,25 @@
+name: Weekly & Monthly Media Updates
+
+on:
+  schedule:
+    # Every Monday at 06:00 CST (22:00 UTC)
+    - cron: '0 22 * * 0'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: pip install requests beautifulsoup4 playwright
+      - run: py -m playwright install chromium
+      - env:
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+        run: py scripts/fetch_updates.py --mode=weekly
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: media updates'
+          branch: main

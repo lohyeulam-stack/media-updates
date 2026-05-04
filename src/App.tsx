@@ -9,6 +9,9 @@ import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { MonthlyReport } from './pages/MonthlyReport';
 import { WeeklyReport } from './pages/WeeklyReport';
+import { Log } from './pages/Log';
+import { getUpdates, getAvailableWeeks, getAvailableMonths } from './data';
+import type { MediaUpdate } from './types';
 
 // Localization System
 export type Locale = 'en' | 'cn';
@@ -28,9 +31,30 @@ export const useApp = () => {
   return context;
 };
 
+// Data context
+interface DataContextType {
+  updates: MediaUpdate[];
+  weeks: string[];
+  months: string[];
+  loading: boolean;
+}
+
+const DataContext = createContext<DataContextType>({
+  updates: [],
+  weeks: [],
+  months: [],
+  loading: true,
+});
+
+export const useData = () => useContext(DataContext);
+
 export default function App() {
   const [locale, setLocale] = useState<Locale>('cn');
   const [isDark, setIsDark] = useState(false);
+  const [updates, setUpdates] = useState<MediaUpdate[]>([]);
+  const [weeks, setWeeks] = useState<string[]>([]);
+  const [months, setMonths] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (isDark) {
@@ -40,17 +64,33 @@ export default function App() {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    Promise.all([
+      getUpdates(),
+      getAvailableWeeks(),
+      getAvailableMonths(),
+    ]).then(([updatesData, weeksData, monthsData]) => {
+      setUpdates(updatesData);
+      setWeeks(weeksData);
+      setMonths(monthsData);
+      setLoading(false);
+    });
+  }, []);
+
   return (
     <AppContext.Provider value={{ locale, setLocale, isDark, toggleTheme: () => setIsDark(!isDark) }}>
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/report/:month" element={<MonthlyReport />} />
-            <Route path="/weekly/:week" element={<WeeklyReport />} />
-          </Routes>
-        </Layout>
-      </Router>
+      <DataContext.Provider value={{ updates, weeks, months, loading }}>
+        <Router>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/report/:month" element={<MonthlyReport />} />
+              <Route path="/weekly/:week" element={<WeeklyReport />} />
+              <Route path="/log" element={<Log />} />
+            </Routes>
+          </Layout>
+        </Router>
+      </DataContext.Provider>
     </AppContext.Provider>
   );
 }

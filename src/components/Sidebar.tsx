@@ -6,13 +6,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { PLATFORMS, GROUP_ORDER, GROUP_LABELS } from '../constants';
-import { useApp } from '../App';
+import { useApp, useData } from '../App';
 import { Layers, Calendar, Bookmark } from 'lucide-react';
 import { clsx } from 'clsx';
 import type { PlatformGroup, Platform } from '../types';
 
 export function Sidebar({ onClose }: { onClose: () => void }) {
   const { locale } = useApp();
+  const { weeks, months } = useData();
 
   const t = {
     cn: {
@@ -24,9 +25,6 @@ export function Sidebar({ onClose }: { onClose: () => void }) {
       reports: 'Intelligence Archive',
     },
   }[locale];
-
-  const months = ['2026-04', '2026-03', '2026-02', '2026-01'];
-  const weeks = ['2026-W17', '2026-W16', '2026-W15', '2026-W14', '2026-W13', '2026-W12'];
 
   // Group platforms
   const groupedPlatforms = new Map<PlatformGroup, Platform[]>();

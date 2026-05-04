@@ -3,12 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { TrendChart } from '../components/TrendChart';
-import { getUpdates } from '../data';
 import { CATEGORIES, PLATFORMS, PLATFORM_LIST, type CategoryFilter } from '../constants';
-import { useApp } from '../App';
+import { useApp, useData } from '../App';
 import { Search, ExternalLink, ChevronLeft, ChevronRight, LayoutGrid, List, BarChart2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import type { MediaUpdate } from '../types';
@@ -128,11 +127,10 @@ function UpdateTableRow({ update }: { update: MediaUpdate }) {
 
 export function Home() {
   const { locale } = useApp();
+  const { updates, weeks, loading } = useData();
   const [searchParams, setSearchParams] = useSearchParams();
   const platformParam = searchParams.get('platform');
 
-  const [updates, setUpdates] = useState<MediaUpdate[]>([]);
-  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('All');
   const [viewMode, setViewMode] = useState<ViewMode>('card');
@@ -140,16 +138,7 @@ export function Home() {
   const [currentWeekIndex, setCurrentWeekIndex] = useState(0);
   const [tablePage, setTablePage] = useState(1);
 
-  const weeks = ['2026-W17', '2026-W16', '2026-W15', '2026-W14', '2026-W13', '2026-W12'];
-  const currentWeek = weeks[currentWeekIndex] || weeks[0];
-
-  // Fetch real data
-  useEffect(() => {
-    getUpdates().then((data) => {
-      setUpdates(data);
-      setLoading(false);
-    });
-  }, []);
+  const currentWeek = weeks[0] || '2026-W17';
 
   // Filter logic
   const filtered = useMemo(() => {
