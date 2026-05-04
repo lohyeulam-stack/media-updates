@@ -13,6 +13,19 @@ interface ChangelogEntry {
 
 const CHANGELOG: ChangelogEntry[] = [
   {
+  {
+    date: "2026-05-04",
+    version: "v4.0",
+    changes: [
+      { type: "feat", text: "Swiss editorial 重设计：无边框上划线卡片、品牌蓝 #001AFF 体系、大标题排版风格" },
+      { type: "feat", text: "OG 图片自动抓取：从 sourceUrl 解析 og:image，有图展示有图，无图不留占位空白" },
+      { type: "feat", text: "信息源图片改为左文右图分栏布局（文字 60% + 图片 40%，maxHeight:320px 限高）" },
+      { type: "feat", text: "Kinetic Preloader：motion/react 动效开屏，进度计数器 + 终端 log 滚动 + 平台节点逐一亮起" },
+      { type: "feat", text: "排版改为双列编辑行：[8,4][6,6][4,8][12][7,5] 循环，每行最多 2 张卡，节奏感更强" },
+      { type: "fix", text: "CSS Grid 布局用 style={{ gridColumn }} 替换动态 Tailwind 类名，修复 v4 purge 导致的卡片塌缩" },
+      { type: "feat", text: "平台专属页 /platform/[platform]：独立 hero + 趋势图 + 按日期分组卡片流" },
+    ],
+  },
     date: "2026-04-29",
     version: "v3.7",
     changes: [

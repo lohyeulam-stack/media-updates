@@ -66,6 +66,15 @@ jobs:
           MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
         run: python scripts/fetch_updates.py --mode=${{ steps.mode.outputs.mode }}
 
+      - name: Setup Node.js for OG enrichment
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Enrich OG images
+        if: steps.mode.outputs.mode != 'skip'
+        run: node scripts/fetch_og_images.mjs
+
       - name: Commit and push updates
         if: steps.mode.outputs.mode != 'skip'
         run: |
