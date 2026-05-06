@@ -3,7 +3,7 @@ name: Weekly & Monthly Media Updates
 on:
   schedule:
     - cron: '0 22 * * 0'       # UTC Sun 22:00 = Asia/Singapore Mon 06:00, weekly
-    - cron: '0 22 28-31 * *'   # UTC 28-31st = check if last day of month
+    - cron: '0 22 28-31 * *'   # UTC 28-31st = month-end check in UTC
   workflow_dispatch:
     inputs:
       mode:
@@ -19,11 +19,11 @@ on:
       week_scope:
         description: 'Weekly scope, only used when mode is weekly or both'
         required: true
-        default: 'last'
+        default: 'current'
         type: choice
         options:
-          - last
           - current
+          - last
       backfill_year:
         description: 'Backfill year, only used when mode is backfill'
         required: false
@@ -94,10 +94,10 @@ jobs:
             tomorrow=$(date -u -d '+1 day' +%d)
             if [ "$tomorrow" = '01' ]; then
               mode='both'
-              args='--mode=both'
+              args='--mode=both --current-week'
             else
               mode='weekly'
-              args='--mode=weekly'
+              args='--mode=weekly --current-week'
             fi
           else
             tomorrow=$(date -u -d '+1 day' +%d)
