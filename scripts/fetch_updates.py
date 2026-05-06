@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -21,22 +23,41 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 WEEKLY_DIR = DATA_DIR / "weekly"
 MONTHLY_DIR = DATA_DIR / "monthly"
 UPDATES_FILE = DATA_DIR / "updates.json"
+LOCAL_TZ = ZoneInfo(os.environ.get("MEDIA_UPDATES_TZ", "Asia/Singapore"))
+
+
+def now_local() -> datetime:
+    return datetime.now(LOCAL_TZ)
 
 
 def get_last_week_range() -> tuple[str, str, str]:
-    today = datetime.now()
+    """Return the last completed Monday-Sunday week in the business timezone."""
+    today = now_local()
     last_monday = today - timedelta(days=today.weekday() + 7)
     last_sunday = last_monday + timedelta(days=6)
-    week_label = f"{last_monday.year}-W{last_monday.isocalendar()[1]:02d}"
+    iso = last_monday.isocalendar()
+    week_label = f"{iso.year}-W{iso.week:02d}"
     return last_monday.strftime("%Y-%m-%d"), last_sunday.strftime("%Y-%m-%d"), week_label
 
 
 def get_current_week_range() -> tuple[str, str, str]:
-    today = datetime.now()
+    """Return the current Monday-Sunday week in the business timezone."""
+    today = now_local()
     monday = today - timedelta(days=today.weekday())
     sunday = monday + timedelta(days=6)
-    week_label = f"{today.year}-W{today.isocalendar()[1]:02d}"
+    iso = today.isocalendar()
+    week_label = f"{iso.year}-W{iso.week:02d}"
     return monday.strftime("%Y-%m-%d"), sunday.strftime("%Y-%m-%d"), week_label
+
+
+def get_default_month_label() -> str:
+    """Default monthly report month.
+
+    The scheduled month-end workflow runs at 22:00 UTC on the last UTC day of
+    the month. Using UTC here keeps that run aligned to the month being closed,
+    even though it is already the next morning in Asia/Singapore.
+    """
+    return datetime.now(timezone.utc).strftime("%Y-%m")
 
 
 def load_json(path: Path) -> list[dict]:
@@ -127,7 +148,7 @@ def run_weekly(week_start: str, week_end: str, week_label: str) -> None:
     pages = scrape_all(SOURCES)
     print(f"\n[Scrape] Collected {len(pages)} pages from {len(SOURCES)} sources")
 
-    now_iso = datetime.now().isoformat()
+    now_iso = now_local().isoformat()
     all_new: list[dict] = []
 
     with ThreadPoolExecutor(max_workers=8) as executor:
@@ -169,7 +190,7 @@ def run_weekly(week_start: str, week_end: str, week_label: str) -> None:
 
 def run_monthly(month_label: str | None = None) -> None:
     if not month_label:
-        month_label = datetime.now().strftime("%Y-%m")
+        month_label = get_default_month_label()
     print(f"[Monthly] Generating report for {month_label}")
 
     all_updates = load_json(UPDATES_FILE)
@@ -208,7 +229,7 @@ def run_backfill(year: int, start_month: int, end_month: int) -> None:
         pages = scrape_all(SOURCES)
         print(f"\n[Scrape] Collected {len(pages)} pages")
 
-        now_iso = datetime.now().isoformat()
+        now_iso = now_local().isoformat()
         all_new: list[dict] = []
 
         with ThreadPoolExecutor(max_workers=8) as executor:
@@ -255,7 +276,7 @@ def _date_to_week_label(date_str: str) -> str:
     try:
         d = datetime.strptime(date_str, "%Y-%m-%d")
         iso = d.isocalendar()
-        return f"{iso[0]}-W{iso[1]:02d}"
+        return f"{iso.year}-W{iso.week:02d}"
     except (ValueError, TypeError):
         return "unknown"
 
@@ -264,12 +285,13 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["weekly", "monthly", "both", "backfill"], default="weekly")
     parser.add_argument("--current-week", action="store_true")
+    parser.add_argument("--month", help="Monthly report month override in YYYY-MM format")
     parser.add_argument("--backfill-year", type=int, default=2026)
     parser.add_argument("--backfill-start", type=int, default=1)
     parser.add_argument("--backfill-end", type=int, default=4)
     args = parser.parse_args()
 
-    print(f"[Start] {datetime.now().isoformat()}")
+    print(f"[Start] {now_local().isoformat()} ({LOCAL_TZ.key})")
 
     if args.mode == "backfill":
         run_backfill(args.backfill_year, args.backfill_start, args.backfill_end)
@@ -282,9 +304,9 @@ def main() -> None:
             run_weekly(ws, we, wl)
 
         if args.mode in ("monthly", "both"):
-            run_monthly()
+            run_monthly(args.month)
 
-    print(f"\n[Done] {datetime.now().isoformat()}")
+    print(f"\n[Done] {now_local().isoformat()} ({LOCAL_TZ.key})")
 
 
 if __name__ == "__main__":
