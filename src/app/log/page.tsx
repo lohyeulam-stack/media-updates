@@ -13,7 +13,6 @@ interface ChangelogEntry {
 
 const CHANGELOG: ChangelogEntry[] = [
   {
-  {
     date: "2026-05-04",
     version: "v4.0",
     changes: [
@@ -26,6 +25,7 @@ const CHANGELOG: ChangelogEntry[] = [
       { type: "feat", text: "平台专属页 /platform/[platform]：独立 hero + 趋势图 + 按日期分组卡片流" },
     ],
   },
+  {
     date: "2026-04-29",
     version: "v3.7",
     changes: [
