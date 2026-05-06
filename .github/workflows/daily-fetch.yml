@@ -2,7 +2,7 @@ name: Weekly & Monthly Media Updates
 
 on:
   schedule:
-    - cron: '0 22 * * 0'       # UTC Sun 22:00 = CST Mon 06:00 (weekly)
+    - cron: '0 22 * * 0'       # UTC Sun 22:00 = Asia/Singapore Mon 06:00, weekly
     - cron: '0 22 28-31 * *'   # UTC 28-31st = check if last day of month
   workflow_dispatch:
     inputs:
@@ -15,75 +15,241 @@ on:
           - weekly
           - monthly
           - both
+          - backfill
+      week_scope:
+        description: 'Weekly scope, only used when mode is weekly or both'
+        required: true
+        default: 'last'
+        type: choice
+        options:
+          - last
+          - current
+      backfill_year:
+        description: 'Backfill year, only used when mode is backfill'
+        required: false
+        default: '2026'
+      backfill_start:
+        description: 'Backfill start month, only used when mode is backfill'
+        required: false
+        default: '1'
+      backfill_end:
+        description: 'Backfill end month, only used when mode is backfill'
+        required: false
+        default: '4'
+      og_force:
+        description: 'Force re-fetch OG images that are already null'
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: write
+  actions: read
+
+concurrency:
+  group: media-updates-fetch-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  PYTHONUNBUFFERED: '1'
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.12'
 
 jobs:
   fetch:
+    name: Fetch, validate, and publish data
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
+
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          python-version: '3.12'
+          fetch-depth: 0
 
-      - name: Install Python dependencies
-        run: pip install -r scripts/requirements.txt
-
-      - name: Install Playwright browsers
-        run: python -m playwright install chromium --with-deps
-
-      - name: Determine mode
+      - name: Determine run mode
         id: mode
         run: |
+          set -euo pipefail
+
+          mode='skip'
+          args=''
+
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
-          elif [ "$(date +%u)" = "7" ]; then
-            # Sunday = weekly trigger
-            # Check if also last day of month
-            tomorrow=$(date -d "+1 day" +%d)
-            if [ "$tomorrow" = "01" ]; then
-              echo "mode=both" >> $GITHUB_OUTPUT
+            mode='${{ github.event.inputs.mode }}'
+
+            if [ "$mode" = 'backfill' ]; then
+              args="--mode=backfill --backfill-year=${{ github.event.inputs.backfill_year }} --backfill-start=${{ github.event.inputs.backfill_start }} --backfill-end=${{ github.event.inputs.backfill_end }}"
             else
-              echo "mode=weekly" >> $GITHUB_OUTPUT
+              args="--mode=$mode"
+              if { [ "$mode" = 'weekly' ] || [ "$mode" = 'both' ]; } && [ "${{ github.event.inputs.week_scope }}" = 'current' ]; then
+                args="$args --current-week"
+              fi
+            fi
+          elif [ "$(date -u +%u)" = '7' ]; then
+            tomorrow=$(date -u -d '+1 day' +%d)
+            if [ "$tomorrow" = '01' ]; then
+              mode='both'
+              args='--mode=both'
+            else
+              mode='weekly'
+              args='--mode=weekly'
             fi
           else
-            # 28-31st cron: only run monthly if it's the last day
-            tomorrow=$(date -d "+1 day" +%d)
-            if [ "$tomorrow" = "01" ]; then
-              echo "mode=monthly" >> $GITHUB_OUTPUT
-            else
-              echo "mode=skip" >> $GITHUB_OUTPUT
+            tomorrow=$(date -u -d '+1 day' +%d)
+            if [ "$tomorrow" = '01' ]; then
+              mode='monthly'
+              args='--mode=monthly'
             fi
           fi
 
-      - name: Run fetch script
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "args=$args" >> "$GITHUB_OUTPUT"
+          echo "Resolved mode: $mode"
+          echo "Resolved args: $args"
+
+      - name: Stop when scheduled run should skip
+        if: steps.mode.outputs.mode == 'skip'
+        run: echo 'Not the weekly or month-end window. Skipping.'
+
+      - name: Setup Python
+        if: steps.mode.outputs.mode != 'skip'
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install Python dependencies
+        if: steps.mode.outputs.mode != 'skip'
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Install Playwright Chromium
+        if: steps.mode.outputs.mode != 'skip'
+        run: python -m playwright install chromium --with-deps
+
+      - name: Setup Node.js
+        if: steps.mode.outputs.mode != 'skip'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install Node dependencies
+        if: steps.mode.outputs.mode != 'skip'
+        run: npm ci
+
+      - name: Check required secrets
         if: steps.mode.outputs.mode != 'skip'
         env:
           MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
-        run: python scripts/fetch_updates.py --mode=${{ steps.mode.outputs.mode }}
+        run: |
+          if [ -z "$MINIMAX_API_KEY" ]; then
+            echo 'MINIMAX_API_KEY is missing. Add it in repository Settings > Secrets and variables > Actions.'
+            exit 1
+          fi
 
-      - name: Setup Node.js for OG enrichment
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+      - name: Run fetch pipeline
+        if: steps.mode.outputs.mode != 'skip'
+        env:
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+        run: python scripts/fetch_updates.py ${{ steps.mode.outputs.args }}
 
       - name: Enrich OG images
         if: steps.mode.outputs.mode != 'skip'
-        run: node scripts/fetch_og_images.mjs
+        run: |
+          args=''
+          if [ "${{ github.event.inputs.og_force || 'false' }}" = 'true' ]; then
+            args='--force'
+          fi
+          node scripts/fetch_og_images.mjs $args
 
-      - name: Commit and push updates
+      - name: Validate generated data
         if: steps.mode.outputs.mode != 'skip'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          allowed_platforms = {
+              'tiktok', 'meta', 'snapchat', 'pinterest', 'x', 'linkedin',
+              'google', 'apple', 'youtube', 'spotify',
+              'kwai', 'line', 'naver', 'kakao',
+              'dv360', 'applovin', 'ironsource', 'mintegral', 'pangle', 'amazon',
+              'huawei', 'xiaomi', 'oppo', 'vivo',
+          }
+          allowed_categories = {
+              'ad-product', 'api-change', 'policy', 'creative',
+              'measurement', 'targeting', 'automation', 'other',
+          }
+          required = {'id', 'date', 'platform', 'title', 'summary', 'category', 'importance', 'source', 'sourceUrl', 'tags', 'fetchedAt'}
+
+          path = Path('data/updates.json')
+          if not path.exists():
+              raise SystemExit('data/updates.json does not exist')
+
+          data = json.loads(path.read_text(encoding='utf-8'))
+          if not isinstance(data, list):
+              raise SystemExit('data/updates.json must be a JSON array')
+
+          bad = []
+          ids = set()
+          for i, item in enumerate(data):
+              missing = sorted(required - set(item))
+              if missing:
+                  bad.append(f'item[{i}] missing {missing}')
+              if item.get('id') in ids:
+                  bad.append(f'duplicate id: {item.get("id")}')
+              ids.add(item.get('id'))
+              if item.get('platform') not in allowed_platforms:
+                  bad.append(f'item[{i}] unknown platform: {item.get("platform")}')
+              if item.get('category') not in allowed_categories:
+                  bad.append(f'item[{i}] unknown category: {item.get("category")}')
+              if item.get('importance') not in {'high', 'medium', 'low'}:
+                  bad.append(f'item[{i}] invalid importance: {item.get("importance")}')
+
+          if bad:
+              print('\n'.join(bad[:50]))
+              raise SystemExit(f'Data validation failed: {len(bad)} issue(s)')
+
+          print(f'Data validation passed: {len(data)} updates')
+          PY
+
+      - name: Lint frontend
+        if: steps.mode.outputs.mode != 'skip'
+        run: npm run lint
+
+      - name: Build frontend
+        if: steps.mode.outputs.mode != 'skip'
+        run: npm run build
+
+      - name: Commit and push data updates
+        if: steps.mode.outputs.mode != 'skip'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add data/
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo 'No data changes to commit'
           else
             git commit -m "chore: media updates $(date -u +%Y-%m-%d) [${{ steps.mode.outputs.mode }}]"
             git push
           fi
+
+      - name: Upload data snapshot
+        if: always() && steps.mode.outputs.mode != 'skip'
+        uses: actions/upload-artifact@v4
+        with:
+          name: media-updates-data-${{ github.run_id }}
+          path: |
+            data/updates.json
+            data/weekly/*.json
+            data/monthly/*.md
+          if-no-files-found: warn
+          retention-days: 14
