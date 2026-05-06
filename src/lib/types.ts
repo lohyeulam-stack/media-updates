@@ -1,7 +1,7 @@
 export type Platform =
-  | "tiktok" | "meta" | "snapchat" | "pinterest" | "x"
+  | "tiktok" | "meta" | "snapchat" | "pinterest" | "x" | "linkedin"
   | "google" | "apple"
-  | "youtube"
+  | "youtube" | "spotify"
   | "kwai" | "line" | "naver" | "kakao"
   | "dv360" | "applovin" | "ironsource" | "mintegral" | "pangle" | "amazon"
   | "huawei" | "xiaomi" | "oppo" | "vivo"
@@ -35,9 +35,11 @@ export const PLATFORM_META: Record<Platform, { label: string; color: string; gro
   snapchat:    { label: "Snapchat",    color: "#FFFC00", group: "social" },
   pinterest:   { label: "Pinterest",   color: "#E60023", group: "social" },
   x:           { label: "X (Twitter)", color: "#000000", group: "social" },
+  linkedin:    { label: "LinkedIn",    color: "#0A66C2", group: "social" },
   google:      { label: "Google",      color: "#4285F4", group: "search" },
   apple:       { label: "Apple",       color: "#000000", group: "search" },
   youtube:     { label: "YouTube",     color: "#FF0000", group: "video" },
+  spotify:     { label: "Spotify",     color: "#1DB954", group: "video" },
   kwai:        { label: "快手",         color: "#FF4906", group: "asia" },
   line:        { label: "LINE",        color: "#06C755", group: "asia" },
   naver:       { label: "Naver",       color: "#03CF5D", group: "asia" },
