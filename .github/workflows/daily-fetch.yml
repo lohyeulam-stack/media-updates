@@ -170,6 +170,10 @@ jobs:
           fi
           node scripts/fetch_og_images.mjs $args
 
+      - name: Normalize generated data
+        if: steps.mode.outputs.mode != 'skip'
+        run: python scripts/normalize_data.py
+
       - name: Validate generated data
         if: steps.mode.outputs.mode != 'skip'
         run: |
