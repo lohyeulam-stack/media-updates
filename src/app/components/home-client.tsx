@@ -1,438 +1,415 @@
 "use client"
 
 import { Suspense, useCallback, useMemo, useState } from "react"
+import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Search, X, BarChart3, SlidersHorizontal, List, LayoutGrid, ChevronLeft, ChevronRight } from "lucide-react"
+import { Search, ExternalLink, X } from "lucide-react"
+import { motion } from "motion/react"
 import { SwissHeader, SwissFooter } from "./page-layout"
 import { Sidebar } from "./sidebar"
-import { UpdateCard } from "./update-card"
-import { UpdateTableView } from "./update-table-view"
-import { TrendChart } from "./trend-chart"
-import type { MediaUpdate, Platform, Category } from "@/lib/types"
+import { CATEGORY_LABELS, PLATFORM_META, type Category, type MediaUpdate, type Platform } from "@/lib/types"
+import { AnimatePresence } from "motion/react"
 
-const CATEGORY_FILTERS: (Category | "all")[] = ["all", "ad-product", "api-change", "policy", "creative", "measurement", "targeting", "automation", "other"]
-
-function categoryLabel(c: Category | "all"): string {
-  const labels: Record<Category | "all", string> = {
-    all: "全部",
-    "ad-product": "产品",
-    "api-change": "API",
-    policy: "政策",
-    creative: "创意",
-    measurement: "监测",
-    targeting: "定向",
-    automation: "自动化",
-    other: "其他",
-  }
-  return labels[c] || c
-}
-
-interface BiStatStripProps {
-  totalUpdates: number
-  totalCompletionRate: number
-  totalPlatforms: number
-  thisWeekCount: number
-  currentWeek: string
-  totalPriority: number
-}
-
-function BiStatStrip({ totalUpdates, totalCompletionRate, totalPlatforms, thisWeekCount, currentWeek, totalPriority }: BiStatStripProps) {
-  const stats = [
-    { label: "总更新数", value: totalUpdates.toLocaleString(), unit: "条" },
-    { label: "覆盖平台", value: totalPlatforms, unit: "个" },
-    { label: "本周新增", value: thisWeekCount, unit: "条", highlight: true },
-    { label: "重要更新", value: totalPriority, unit: "条", highlight: totalPriority > 0 },
-  ]
-
-  return (
-    <section className="border-b border-border/50 dark:border-white/5 bg-muted/30 dark:bg-white/[0.01]">
-      <div className="px-6 lg:px-12 py-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {stats.map((stat, i) => (
-            <div key={i} className="space-y-2">
-              <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground/60">
-                {stat.label}
-              </p>
-              <div className="flex items-baseline gap-1.5">
-                <span className={`text-3xl lg:text-4xl font-bold tracking-tight tabular-nums ${stat.highlight ? "text-brand-blue dark:text-blue-400" : "text-foreground"}`}>
-                  {stat.value}
-                </span>
-                <span className="text-sm text-muted-foreground font-medium">
-                  {stat.unit}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-interface HomeClientInnerProps {
+interface HomeClientProps {
   updates: MediaUpdate[]
   months: string[]
   weeks: string[]
 }
 
-function HomeClientInner({ updates, months, weeks }: HomeClientInnerProps) {
+const CATEGORY_FILTERS: (Category | "all")[] = [
+  "all", "ad-product", "api-change", "policy", "creative",
+]
+
+function categoryLabel(category: Category | "all") {
+  if (category === "all") return "全部"
+  return CATEGORY_LABELS[category] || category
+}
+
+/**
+ * Editorial-style update card with dynamic sizing
+ * Large cards (col-span-8) for high importance, small (col-span-4) for normal
+ */
+function StudioUpdateCard({ update, index }: { update: MediaUpdate; index: number }) {
+  const platform = PLATFORM_META[update.platform]
+  // Reference style: alternate between large and small cards
+  const isLarge = index % 3 === 0
+  const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4"
+
+  return (
+    <motion.article
+      className={`${colSpan} group cursor-pointer`}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <a
+        href={update.sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
+      >
+        {/* Visual placeholder block with platform color */}
+        <div className={`${isLarge ? "aspect-[16/9]" : "aspect-[4/3]"} bg-muted mb-6 lg:mb-8 overflow-hidden relative group/img transition-all`}>
+          <motion.div
+            className="absolute inset-0 opacity-10 blur-2xl scale-110"
+            style={{ backgroundColor: platform?.color }}
+            whileHover={{ scale: 1.3, opacity: 0.2 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.span
+              className={`${isLarge ? "text-[10vw]" : "text-[6vw]"} font-bold tracking-tighter opacity-[0.04] uppercase select-none text-foreground`}
+              aria-hidden="true"
+            >
+              {platform?.label}
+            </motion.span>
+          </div>
+          {/* Category badge top-left */}
+          <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1">
+            {CATEGORY_LABELS[update.category] || update.category}
+          </div>
+          {/* Date badge top-right */}
+          <div className="absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono opacity-40">
+            {update.date}
+          </div>
+          {/* External link icon on hover */}
+          <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+            <ExternalLink size={isLarge ? 32 : 24} strokeWidth={1.5} />
+          </div>
+        </div>
+
+        <div className="space-y-3 lg:space-y-4">
+          {/* Platform indicator */}
+          <div className="flex items-center gap-2">
+            <div
+              className="w-2 h-2 rounded-full"
+              style={{ backgroundColor: platform?.color }}
+              aria-hidden="true"
+            />
+            <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40">
+              {platform?.label}
+            </h4>
+          </div>
+
+          {/* Title - the hero */}
+          <h3 className={`font-bold tracking-tight leading-[1] group-hover:text-brand-blue transition-colors ${
+            isLarge ? "text-3xl lg:text-5xl" : "text-xl lg:text-2xl"
+          }`}>
+            {update.title}
+          </h3>
+
+          {/* Original title - serif italic */}
+          {update.titleOriginal && update.titleOriginal !== update.title && (
+            <p className="text-sm lg:text-base font-serif italic text-foreground/40 leading-snug">
+              &ldquo;{update.titleOriginal}&rdquo;
+            </p>
+          )}
+
+          {/* Summary */}
+          {update.summary && (
+            <p className={`text-foreground/60 leading-snug ${isLarge ? "line-clamp-3 text-base" : "line-clamp-2 text-sm"}`}>
+              {update.summary}
+            </p>
+          )}
+
+          {/* Tags */}
+          {update.tags.length > 0 && (
+            <div className="flex flex-wrap gap-x-4 gap-y-1 pt-3 lg:pt-4 border-t border-foreground/5">
+              {update.tags.slice(0, 4).map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[9px] uppercase font-bold tracking-[0.2em] opacity-30"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </a>
+    </motion.article>
+  )
+}
+
+function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
   const searchParams = useSearchParams()
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [platform, setPlatform] = useState<Platform | "all">("all")
-  const [category, setCategory] = useState<Category | "all">("all")
+  const initialPlatform = (searchParams.get("platform") as Platform) || "all"
+
+  const [platform, setPlatform] = useState<Platform | "all">(initialPlatform)
   const [query, setQuery] = useState("")
-  const [showTrend, setShowTrend] = useState(false)
-  const [viewMode, setViewMode] = useState<"card" | "table">("card")
-  const [tablePage, setTablePage] = useState(1)
-  const [currentWeekIndex, setCurrentWeekIndex] = useState(0)
+  const [category, setCategory] = useState<Category | "all">("all")
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
-  const TABLE_PAGE_SIZE = 50
-  const currentWeek = weeks[currentWeekIndex] || weeks[0]
+  const currentWeek = weeks[0] || ""
+  const latestDate = updates.length > 0 ? updates[0].date : ""
 
-  // Filtering logic
   const filtered = useMemo(() => {
-    return updates.filter((u) => {
-      if (platform !== "all" && u.platform !== platform) return false
-      if (category !== "all" && u.category !== category) return false
-      if (query) {
-        const q = query.toLowerCase()
-        return (
-          u.title.toLowerCase().includes(q) ||
-          u.summary?.toLowerCase().includes(q) ||
-          u.tags.some((t) => t.toLowerCase().includes(q))
-        )
-      }
-      return true
-    })
-  }, [updates, platform, category, query])
+    let result = updates
+    if (platform !== "all") result = result.filter((u) => u.platform === platform)
+    if (category !== "all") result = result.filter((u) => u.category === category)
+    if (query) {
+      const q = query.toLowerCase()
+      result = result.filter((u) =>
+        u.title.toLowerCase().includes(q) ||
+        u.summary.toLowerCase().includes(q) ||
+        u.tags.some((tag) => tag.toLowerCase().includes(q))
+      )
+    }
+    return result
+  }, [updates, platform, query, category])
 
-  const weekFiltered = useMemo(() => {
-    return platform === "all" ? filtered : filtered.filter((u) => u.week === currentWeek)
-  }, [filtered, platform, currentWeek])
+  const thisWeekUpdates = updates.filter((u) => u.week === currentWeek)
 
-  const grouped = useMemo(() => {
-    const byDate: Record<string, MediaUpdate[]> = {}
-    weekFiltered.forEach((u) => {
-      if (!byDate[u.date]) byDate[u.date] = []
-      byDate[u.date].push(u)
-    })
-    return Object.entries(byDate)
-      .sort(([a], [b]) => b.localeCompare(a))
-      .map(([date, items]) => ({ date, items }))
-  }, [weekFiltered])
-
-  // Table pagination
-  const safeTablePage = Math.max(1, Math.min(tablePage, Math.ceil(filtered.length / TABLE_PAGE_SIZE)))
-  const totalPages = Math.ceil(filtered.length / TABLE_PAGE_SIZE)
-  const paginatedTableData = useMemo(() => {
-    if (platform === "all") return filtered
-    const start = (safeTablePage - 1) * TABLE_PAGE_SIZE
-    return filtered.slice(start, start + TABLE_PAGE_SIZE)
-  }, [filtered, platform, safeTablePage])
-
-  // Stats
   const stats = useMemo(() => {
     const totalUpdates = updates.length
-    const totalCompleted = updates.filter((u) => u.summary && u.summary.length > 10).length
-    const totalCompletionRate = totalUpdates ? Math.round((totalCompleted / totalUpdates) * 100) : 0
     const totalPlatforms = new Set(updates.map((u) => u.platform)).size
     const totalPriority = updates.filter((u) => u.importance === "high").length
+    const weeksCount = new Set(updates.map((u) => u.week).filter(Boolean)).size
+    return { totalUpdates, totalPlatforms, totalPriority, weeksCount, thisWeek: thisWeekUpdates.length }
+  }, [updates, thisWeekUpdates.length])
 
-    return {
-      totalUpdates,
-      totalCompleted,
-      totalCompletionRate,
-      totalPlatforms,
-      totalPriority,
-    }
-  }, [updates])
-
-  // Event handlers
   const handlePlatformSelect = useCallback((p: Platform | "all") => {
     setPlatform(p)
-    setTablePage(1)
-  }, [])
-
-  const handleCategorySelect = useCallback((c: Category | "all") => {
-    setCategory(c)
-    setTablePage(1)
-  }, [])
-
-  const handleQueryChange = useCallback((value: string) => {
-    setQuery(value)
-    setTablePage(1)
-  }, [])
-
-  const handleShowTrendToggle = useCallback(() => {
-    setShowTrend((prev) => !prev)
-  }, [])
-
-  const handleViewModeToggle = useCallback(() => {
-    setViewMode((prev) => (prev === "card" ? "table" : "card"))
-  }, [])
-
-  const handleClearFilters = useCallback(() => {
-    setQuery("")
-    setCategory("all")
-    setPlatform("all")
+    setSidebarOpen(false)
   }, [])
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-brand-blue selection:text-white transition-colors duration-700">
       <SwissHeader onMenuOpen={() => setSidebarOpen(true)} />
 
-      <Sidebar
-        updates={updates}
-        months={months}
-        weeks={weeks}
-        selectedPlatform={platform}
-        onSelect={handlePlatformSelect}
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+      {/* Drawer */}
+      <AnimatePresence>
+        {sidebarOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSidebarOpen(false)}
+              className="fixed inset-0 bg-foreground/20 dark:bg-background/60 backdrop-blur-sm z-[60]"
+              aria-hidden="true"
+            />
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              role="dialog"
+              aria-modal="true"
+              aria-label="导航菜单"
+              className="fixed inset-y-0 right-0 w-full lg:w-[440px] bg-background z-[70] border-l border-foreground p-8 lg:p-12 overflow-y-auto"
+            >
+              <button
+                onClick={() => setSidebarOpen(false)}
+                className="absolute top-8 right-8 lg:top-12 lg:right-12 text-foreground hover:text-brand-blue transition-colors z-10"
+                aria-label="关闭菜单"
+              >
+                <X size={32} strokeWidth={1.5} />
+              </button>
+              <Sidebar
+                updates={updates}
+                months={months}
+                weeks={weeks}
+                selectedPlatform={platform}
+                onSelect={handlePlatformSelect}
+                onClose={() => setSidebarOpen(false)}
+              />
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
 
       <main className="flex-1">
-        {/* Hero Section - Largest, most prominent */}
-        <section className="relative px-6 lg:px-12 pt-20 pb-24 lg:pt-28 lg:pb-32 border-b border-border/50 dark:border-white/5 overflow-hidden">
-          {/* Background gradient */}
-          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div
-              className="absolute right-0 top-0 w-[600px] h-[600px] opacity-30 dark:opacity-20"
-              style={{
-                background: "radial-gradient(circle at center, rgba(0,26,255,0.15) 0%, transparent 70%)",
-                filter: "blur(80px)",
-              }}
-            />
-          </div>
+        {/* ═══════════════════════════════════════════════
+            1. MEGA HERO SECTION
+            ═══════════════════════════════════════════════ */}
+        <section className="px-6 lg:px-12 pt-32 lg:pt-40 pb-32 lg:pb-56 border-b border-foreground overflow-hidden relative">
+          <motion.div
+            initial={{ y: 60, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {/* Eyebrow */}
+            <div className="text-[10px] uppercase tracking-[0.5em] font-bold mb-12 lg:mb-16 flex items-center gap-6">
+              <span className="w-12 h-[2px] bg-foreground" aria-hidden="true" />
+              北京时间每日同步 · 追踪 {stats.totalPlatforms} 个平台
+            </div>
 
-          <div className="relative z-10 max-w-4xl">
-            {/* Eyebrow - smallest */}
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 mb-6 animate-fade-up">
-              多媒体平台更新追踪系统
-            </p>
-
-            {/* Main title - largest */}
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-[-0.02em] leading-[0.95] mb-6 animate-fade-up animation-delay-100">
-              <span className="text-foreground">Media</span>
-              <br />
-              <span className="text-muted-foreground/60 italic">Updates</span>
+            {/* Swiss H1 - 10vw */}
+            <h1 className="swiss-h1 mb-12 lg:mb-16">
+              追踪<span className="italic-accent">广告</span>世界，<br />
+              让每一次<span className="text-brand-blue">变化</span>被看见。
             </h1>
 
-            {/* Description - medium */}
-            <p className="text-lg lg:text-xl text-muted-foreground/80 max-w-2xl leading-relaxed mb-8 animate-fade-up animation-delay-200">
-              实时追踪 {stats.totalPlatforms} 个广告平台的产品更新、API 变更和政策调整
-            </p>
-
-            {/* CTA - prominent */}
-            <div className="flex flex-wrap gap-3 animate-fade-up animation-delay-300">
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className="inline-flex items-center gap-2 h-11 px-6 bg-brand-black dark:bg-white text-white dark:text-black text-sm font-bold tracking-wide rounded-full hover:bg-brand-blue dark:hover:bg-blue-500 transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              >
-                浏览平台
-              </button>
-              <a
-                href="#search"
-                className="inline-flex items-center gap-2 h-11 px-6 border-2 border-border dark:border-white/10 text-foreground text-sm font-bold tracking-wide rounded-full hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              >
-                搜索更新
-              </a>
+            {/* Description + CTA */}
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16">
+              <p className="text-2xl lg:text-4xl xl:text-5xl font-light tracking-tighter max-w-3xl leading-[0.95]">
+                每日 00:00 自动同步，覆盖 TikTok、Meta、Google 等 <span className="italic-accent">20+</span> 广告平台。从产品更新到政策变更，一切<span className="italic-accent">尽在掌握</span>。
+              </p>
+              <Link href="#feed" className="swiss-button shrink-0">
+                浏览本周情报
+              </Link>
             </div>
+          </motion.div>
+
+          {/* Blue abstract flow */}
+          <div
+            className="absolute -right-20 -top-20 w-[40vw] h-[40vw] bg-brand-blue blur-[120px] opacity-10 rounded-full pointer-events-none"
+            aria-hidden="true"
+          />
+        </section>
+
+        {/* ═══════════════════════════════════════════════
+            2. BI METRICS STRIP
+            ═══════════════════════════════════════════════ */}
+        <section className="grid grid-cols-2 lg:grid-cols-5 border-b border-foreground divide-x divide-foreground">
+          <StatItem label="累计更新" value={stats.totalUpdates.toString()} change="ALL TIME" />
+          <StatItem label="追踪平台" value={stats.totalPlatforms.toString()} change="PLATFORMS" />
+          <StatItem label="本周同步" value={stats.thisWeek.toString()} change="THIS WEEK" />
+          <StatItem label="周度存档" value={stats.weeksCount.toString()} change="ARCHIVED" />
+          <div className="py-12 lg:py-20 px-6 lg:px-12 flex flex-col justify-between items-start bg-brand-blue text-white group cursor-crosshair">
+            <div className="flex items-baseline justify-between w-full">
+              <span className="text-5xl lg:text-7xl xl:text-8xl font-bold tracking-tighter leading-none">
+                {stats.totalPriority.toString().padStart(2, "0")}
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] translate-y-[-6px]">
+                URGENT
+              </span>
+            </div>
+            <p className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-60 mt-6 lg:mt-8">
+              重要更新
+            </p>
           </div>
         </section>
 
-        {/* Stats Strip */}
-        <BiStatStrip
-          totalUpdates={stats.totalUpdates}
-          totalCompletionRate={stats.totalCompletionRate}
-          totalPlatforms={stats.totalPlatforms}
-          thisWeekCount={weekFiltered.length}
-          currentWeek={currentWeek}
-          totalPriority={stats.totalPriority}
-        />
+        {/* ═══════════════════════════════════════════════
+            3. CONTROL STRIP (Sticky)
+            ═══════════════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="sticky top-20 lg:top-24 z-40 bg-background border-b border-foreground flex flex-col lg:flex-row items-stretch"
+        >
+          {/* Search input */}
+          <div className="flex-1 flex items-center px-6 lg:px-12 border-r-0 lg:border-r border-foreground py-5 lg:py-6 min-w-0">
+            <Search size={20} className="shrink-0 mr-4 lg:mr-6 opacity-40" strokeWidth={1.5} aria-hidden="true" />
+            <label htmlFor="home-search" className="sr-only">搜索更新、摘要或标签</label>
+            <input
+              id="home-search"
+              type="search"
+              placeholder="搜索本周情报..."
+              className="w-full bg-transparent outline-none font-sans font-bold text-xs uppercase tracking-[0.3em] placeholder:text-foreground/20"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              aria-label="搜索更新、摘要或标签"
+            />
+            {query && (
+              <button
+                onClick={() => setQuery("")}
+                className="ml-4 shrink-0 opacity-40 hover:opacity-100 transition-opacity"
+                aria-label="清除搜索"
+              >
+                <X size={16} strokeWidth={1.5} />
+              </button>
+            )}
+          </div>
 
-        {/* Search and Filter Section */}
-        <section id="search" className="px-6 lg:px-12 py-8 border-b border-border/50 dark:border-white/5 bg-muted/20 dark:bg-white/[0.005]">
-          <div className="max-w-5xl mx-auto space-y-6">
-            {/* Search Input - Most prominent */}
-            <div className="relative">
-              <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground/40" aria-hidden="true" />
-              <label htmlFor="home-search" className="sr-only">搜索更新、摘要或标签</label>
-              <input
-                id="home-search"
-                type="search"
-                placeholder="搜索更新、摘要或标签..."
-                value={query}
-                onChange={(e) => handleQueryChange(e.target.value)}
-                className="w-full h-14 pl-12 pr-12 text-base bg-background dark:bg-white/5 border-2 border-border dark:border-white/10 rounded-2xl text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-brand-blue dark:focus:border-blue-500 focus:ring-4 focus:ring-brand-blue/10 dark:focus:ring-blue-500/10 transition-all"
-              />
-              {query && (
+          {/* Category filters */}
+          <div className="flex overflow-x-auto scrollbar-hide border-t lg:border-t-0 border-foreground">
+            {CATEGORY_FILTERS.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setCategory(cat)}
+                aria-pressed={category === cat}
+                className={`px-6 lg:px-12 py-5 lg:py-6 text-[10px] uppercase font-bold tracking-[0.3em] border-r border-foreground transition-all whitespace-nowrap ${
+                  category === cat
+                    ? "bg-foreground text-background"
+                    : "hover:bg-muted"
+                }`}
+              >
+                {categoryLabel(cat)}
+              </button>
+            ))}
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="px-6 lg:px-12 py-5 lg:py-6 bg-brand-blue text-white flex items-center gap-3 text-[10px] uppercase font-bold tracking-[0.3em] hover:bg-foreground dark:hover:bg-white dark:hover:text-foreground transition-all whitespace-nowrap"
+            >
+              筛选 +{stats.totalPlatforms - 4}
+            </button>
+          </div>
+        </motion.div>
+
+        {/* ═══════════════════════════════════════════════
+            4. UPDATE FEED (Editorial Masonry)
+            ═══════════════════════════════════════════════ */}
+        <section id="feed" className="px-6 lg:px-12 py-24 lg:py-32 border-b border-foreground">
+          {/* Section header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 lg:mb-32 gap-8 lg:gap-12"
+          >
+            <div className="max-w-4xl">
+              <div className="text-[10px] uppercase tracking-[0.5em] font-bold mb-4 lg:mb-6 flex items-center gap-4 opacity-40">
+                本周情报 / Week {currentWeek}
+              </div>
+              <h2 className="swiss-h2">
+                平台的每一次<span className="italic-accent">变化</span>，<br />
+                都<span className="text-brand-blue">值得</span>被记录。
+              </h2>
+              {latestDate && (
+                <p className="text-sm font-mono mt-6 opacity-40">
+                  最新更新 / {latestDate} · 当前显示 {filtered.length} 条 / 共 {updates.length} 条
+                </p>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Masonry grid - 8+4 alternating */}
+          {filtered.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-y-32 gap-x-8 md:gap-x-12">
+              {filtered.slice(0, 24).map((update, i) => (
+                <StudioUpdateCard key={update.id} update={update} index={i} />
+              ))}
+            </div>
+          ) : (
+            <div className="col-span-12 py-40 lg:py-60 text-center">
+              <div className="text-5xl lg:text-7xl font-bold uppercase tracking-tighter opacity-10 mb-4">
+                No Signal.
+              </div>
+              <p className="text-sm font-mono opacity-40">
+                未找到匹配的更新 · 尝试调整筛选条件
+              </p>
+              {(query || category !== "all" || platform !== "all") && (
                 <button
-                  onClick={() => handleQueryChange("")}
-                  aria-label="清除搜索"
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  onClick={() => {
+                    setQuery("")
+                    setCategory("all")
+                    setPlatform("all")
+                  }}
+                  className="mt-8 swiss-button-outline"
                 >
-                  <X className="h-5 w-5" />
+                  清空筛选
                 </button>
               )}
             </div>
+          )}
 
-            {/* Filters Row */}
-            <div className="flex items-center gap-4 flex-wrap">
-              {/* Category Pills - Medium prominence */}
-              <div className="flex flex-wrap gap-2 flex-1" role="group" aria-label="分类筛选">
-                {CATEGORY_FILTERS.map((filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => handleCategorySelect(filter)}
-                    aria-pressed={category === filter}
-                    className={`px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] rounded-full border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
-                      category === filter
-                        ? "bg-brand-black dark:bg-white text-white dark:text-black border-brand-black dark:border-white scale-105"
-                        : "border-border dark:border-white/10 text-muted-foreground hover:border-foreground dark:hover:border-white/30 hover:text-foreground hover:scale-105"
-                    }`}
-                  >
-                    {categoryLabel(filter)}
-                  </button>
-                ))}
-              </div>
-
-              {/* View Controls - Smaller, right-aligned */}
-              <div className="flex gap-2 shrink-0">
-                <button
-                  onClick={handleShowTrendToggle}
-                  aria-label={showTrend ? "隐藏趋势图" : "显示趋势图"}
-                  aria-pressed={showTrend}
-                  title={showTrend ? "隐藏趋势图" : "显示趋势图"}
-                  className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
-                    showTrend
-                      ? "border-brand-black dark:border-white bg-brand-black dark:bg-white text-white dark:text-black"
-                      : "border-border dark:border-white/10 text-muted-foreground hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50"
-                  }`}
-                >
-                  {showTrend ? <SlidersHorizontal className="h-4 w-4" /> : <BarChart3 className="h-4 w-4" />}
-                </button>
-                <button
-                  onClick={handleViewModeToggle}
-                  aria-label={viewMode === "card" ? "切换到表格视图" : "切换到卡片视图"}
-                  aria-pressed={viewMode === "table"}
-                  className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
-                    viewMode === "table"
-                      ? "border-brand-black dark:border-white bg-brand-black dark:bg-white text-white dark:text-black"
-                      : "border-border dark:border-white/10 text-muted-foreground hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50"
-                  }`}
-                >
-                  {viewMode === "card" ? <List className="h-4 w-4" /> : <LayoutGrid className="h-4 w-4" />}
-                </button>
-              </div>
+          {/* Load more indicator */}
+          {filtered.length > 24 && (
+            <div className="text-center pt-24 lg:pt-32">
+              <p className="text-[10px] uppercase font-bold tracking-[0.4em] opacity-40 mb-6">
+                已展示 24 / {filtered.length} 条更新
+              </p>
+              <Link href={`/weekly/${currentWeek}`} className="swiss-button-outline">
+                查看完整周报
+              </Link>
             </div>
-          </div>
+          )}
         </section>
-
-        {/* Trend Chart */}
-        {showTrend && (
-          <section className="px-6 lg:px-12 py-8 border-b border-border/50 dark:border-white/5 bg-muted/10 dark:bg-white/[0.002]">
-            <div className="max-w-5xl mx-auto">
-              <TrendChart updates={weekFiltered} />
-            </div>
-          </section>
-        )}
-
-        {/* Results Header */}
-        <div className="flex items-center justify-between gap-4 px-6 lg:px-12 py-4 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground/60 border-b border-border/50 dark:border-white/5 bg-muted/10 dark:bg-white/[0.002]">
-          <span>{filtered.length} 条更新</span>
-          <span>{viewMode === "card" ? `${grouped.length} 天` : "表格视图"}</span>
-        </div>
-
-        {/* Content Area */}
-        <div className="px-6 lg:px-12 py-12">
-          <div className="max-w-5xl mx-auto">
-            {viewMode === "card" ? (
-              <div className="space-y-12 animate-fade-up">
-                {grouped.map(({ date, items }) => (
-                  <div key={date} className="space-y-4">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.12em] text-muted-foreground/60 sticky top-16 bg-background/80 backdrop-blur-sm py-2 z-10">
-                      {date}
-                    </h2>
-                    <div className="grid gap-4">
-                      {items.map((update) => (
-                        <UpdateCard key={update.id} update={update} />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="animate-fade-up space-y-6">
-                <UpdateTableView updates={platform === "all" ? filtered : paginatedTableData} />
-                {platform !== "all" && totalPages > 1 && (
-                  <nav className="flex items-center justify-center gap-4" aria-label="表格分页">
-                    <button
-                      onClick={() => setTablePage(safeTablePage - 1)}
-                      disabled={safeTablePage === 1}
-                      aria-label="上一页"
-                      className="inline-flex h-10 items-center gap-2 px-5 text-xs font-bold uppercase tracking-wider border-2 border-border dark:border-white/10 rounded-full transition-all hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-border disabled:hover:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <ChevronLeft className="h-4 w-4" aria-hidden="true" /> 上一页
-                    </button>
-                    <span className="text-sm font-bold tabular-nums text-muted-foreground" aria-current="page">
-                      {safeTablePage} / {totalPages}
-                    </span>
-                    <button
-                      onClick={() => setTablePage(safeTablePage + 1)}
-                      disabled={safeTablePage >= totalPages}
-                      aria-label="下一页"
-                      className="inline-flex h-10 items-center gap-2 px-5 text-xs font-bold uppercase tracking-wider border-2 border-border dark:border-white/10 rounded-full transition-all hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-border disabled:hover:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      下一页 <ChevronRight className="h-4 w-4" aria-hidden="true" />
-                    </button>
-                  </nav>
-                )}
-              </div>
-            )}
-
-            {/* Empty State */}
-            {filtered.length === 0 && (
-              <div className="animate-fade-up border-2 border-dashed border-border/50 dark:border-white/10 py-20 px-6 text-center rounded-2xl" role="status">
-                <p className="text-2xl font-bold tracking-tight text-foreground mb-3">未找到更新</p>
-                <p className="text-sm text-muted-foreground mb-6">尝试调整筛选条件或搜索关键词</p>
-                {(query || category !== "all" || platform !== "all") && (
-                  <button
-                    onClick={handleClearFilters}
-                    className="inline-flex items-center gap-2 h-10 px-5 text-xs font-bold uppercase tracking-wider border-2 border-border dark:border-white/10 rounded-full transition-all hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                  >
-                    清空筛选
-                  </button>
-                )}
-              </div>
-            )}
-
-            {/* Week Navigation */}
-            {platform !== "all" && (
-              <nav className="flex items-center justify-center gap-4 pt-12 mt-12 border-t border-border/50 dark:border-white/5" aria-label="周导航">
-                <button
-                  onClick={() => setCurrentWeekIndex(currentWeekIndex + 1)}
-                  disabled={currentWeekIndex >= weeks.length - 1}
-                  aria-label="上一周"
-                  className="inline-flex h-10 items-center gap-2 px-5 text-xs font-bold uppercase tracking-wider border-2 border-border dark:border-white/10 rounded-full transition-all hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-border disabled:hover:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <ChevronLeft className="h-4 w-4" aria-hidden="true" /> 上一周
-                </button>
-                <span className="text-sm font-bold tabular-nums text-muted-foreground" aria-current="page">
-                  {currentWeek}
-                </span>
-                <button
-                  onClick={() => setCurrentWeekIndex(currentWeekIndex - 1)}
-                  disabled={currentWeekIndex === 0}
-                  aria-label="下一周"
-                  className="inline-flex h-10 items-center gap-2 px-5 text-xs font-bold uppercase tracking-wider border-2 border-border dark:border-white/10 rounded-full transition-all hover:border-foreground dark:hover:border-white/30 hover:bg-muted/50 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-border disabled:hover:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  下一周 <ChevronRight className="h-4 w-4" aria-hidden="true" />
-                </button>
-              </nav>
-            )}
-          </div>
-        </div>
       </main>
 
       <SwissFooter months={months} />
@@ -440,7 +417,25 @@ function HomeClientInner({ updates, months, weeks }: HomeClientInnerProps) {
   )
 }
 
-export function HomeClient(props: HomeClientInnerProps) {
+function StatItem({ label, value, change }: { label: string; value: string; change: string }) {
+  return (
+    <div className="py-12 lg:py-20 px-6 lg:px-12 flex flex-col justify-between items-start hover:bg-muted transition-colors group">
+      <div className="flex items-baseline justify-between w-full">
+        <span className="text-5xl lg:text-7xl xl:text-8xl font-bold tracking-tighter leading-none group-hover:scale-[1.02] transition-transform origin-left duration-700 tabular-nums">
+          {value}
+        </span>
+        <span className="text-[10px] font-bold text-brand-blue uppercase tracking-[0.3em] translate-y-[-6px]">
+          {change}
+        </span>
+      </div>
+      <p className="text-[10px] uppercase font-bold tracking-[0.3em] text-foreground/30 mt-6 lg:mt-8">
+        {label}
+      </p>
+    </div>
+  )
+}
+
+export function HomeClient(props: HomeClientProps) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-background" />}>
       <HomeClientInner {...props} />

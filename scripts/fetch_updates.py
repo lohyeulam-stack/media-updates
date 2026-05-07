@@ -23,7 +23,7 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 WEEKLY_DIR = DATA_DIR / "weekly"
 MONTHLY_DIR = DATA_DIR / "monthly"
 UPDATES_FILE = DATA_DIR / "updates.json"
-LOCAL_TZ = ZoneInfo(os.environ.get("MEDIA_UPDATES_TZ", "Asia/Singapore"))
+LOCAL_TZ = ZoneInfo(os.environ.get("MEDIA_UPDATES_TZ", "Asia/Shanghai"))
 
 
 def now_local() -> datetime:
@@ -55,7 +55,7 @@ def get_default_month_label() -> str:
 
     The scheduled month-end workflow runs at 22:00 UTC on the last UTC day of
     the month. Using UTC here keeps that run aligned to the month being closed,
-    even though it is already the next morning in Asia/Singapore.
+    even though it is already the next morning in Asia/Shanghai.
     """
     return datetime.now(timezone.utc).strftime("%Y-%m")
 

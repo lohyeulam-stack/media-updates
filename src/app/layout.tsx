@@ -1,31 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import { Providers } from "./providers";
-import { SplashScreen } from "./components/splash-screen";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Media Updates - TopTou",
-  description: "广告平台更新追踪系统 — 20+ 平台周报月报",
+  title: "Media Updates — 广告平台每日情报",
+  description: "追踪 20+ 广告平台的产品更新、API 变更与政策调整 · 北京时间每日 00:00 同步 · TopTou 产品团队",
   alternates: {
     types: { "application/rss+xml": "/feed.xml" },
   },
@@ -39,11 +18,10 @@ export default function RootLayout({
   return (
     <html
       lang="zh-CN"
-      className={`${inter.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className="h-full antialiased"
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <SplashScreen />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -3,7 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Rss, Menu } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "motion/react"
 import { Sidebar } from "./sidebar"
 import { ThemeToggle } from "./theme-toggle"
 import { LocaleToggle } from "./locale"
@@ -30,167 +31,183 @@ export function PageLayout({ updates, months, weeks, children }: PageLayoutProps
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-brand-blue selection:text-white transition-colors duration-700">
       <SwissHeader onMenuOpen={() => setSidebarOpen(true)} />
 
-      <Sidebar
-        updates={updates}
-        months={months}
-        weeks={weeks}
-        selectedPlatform="all"
-        onSelect={handlePlatformSelect}
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+      {/* Drawer Overlay */}
+      <AnimatePresence>
+        {sidebarOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSidebarOpen(false)}
+              className="fixed inset-0 bg-foreground/20 dark:bg-background/60 backdrop-blur-sm z-[60]"
+              aria-hidden="true"
+            />
+            <motion.aside
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              role="dialog"
+              aria-modal="true"
+              aria-label="导航菜单"
+              className="fixed inset-y-0 right-0 w-full lg:w-[440px] bg-background z-[70] border-l border-foreground p-8 lg:p-12 overflow-y-auto"
+            >
+              <button
+                onClick={() => setSidebarOpen(false)}
+                className="absolute top-8 right-8 lg:top-12 lg:right-12 text-foreground hover:text-brand-blue transition-colors"
+                aria-label="关闭菜单"
+              >
+                <X size={32} strokeWidth={1.5} />
+              </button>
+              <Sidebar
+                updates={updates}
+                months={months}
+                weeks={weeks}
+                selectedPlatform="all"
+                onSelect={handlePlatformSelect}
+                onClose={() => setSidebarOpen(false)}
+              />
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
 
       <main className="flex-1">
         {children}
       </main>
-
-      <SwissFooter months={months} />
     </div>
   )
 }
 
 export function SwissHeader({ onMenuOpen }: { onMenuOpen: () => void }) {
   return (
-    <header className="sticky top-0 z-30 h-16 border-b border-border/50 dark:border-white/5 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-      <div className="flex items-center justify-between h-full px-6 lg:px-12">
-        {/* Logo - largest, most prominent */}
-        <Link
-          href="/"
-          className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
-        >
-          <span className="inline-flex items-center justify-center h-8 px-2.5 bg-brand-black dark:bg-white text-white dark:text-black text-xs font-bold tracking-[0.15em] rounded transition-all group-hover:bg-brand-blue dark:group-hover:bg-blue-500 group-hover:scale-105">
-            MEDIA
-          </span>
-          <span className="text-lg font-bold tracking-tight text-foreground group-hover:text-brand-blue dark:group-hover:text-blue-400 transition-colors">
-            Updates
-          </span>
-        </Link>
+    <header className="h-20 lg:h-24 sticky top-0 z-50 bg-background border-b border-foreground flex items-center justify-between px-6 lg:px-12">
+      <Link
+        href="/"
+        className="text-xl lg:text-2xl font-bold tracking-tighter uppercase flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
+      >
+        <span className="bg-foreground text-background px-2 py-0.5 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+          Media
+        </span>
+        <span className="group-hover:text-brand-blue transition-colors">Updates</span>
+      </Link>
 
-        {/* Actions - smaller, right-aligned */}
-        <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-6 lg:gap-12 text-[10px] font-bold uppercase tracking-[0.3em]">
+        <div className="hidden sm:block">
           <LocaleToggle />
-          <ThemeToggle />
-          <Link
-            href="/feed.xml"
-            target="_blank"
-            aria-label="RSS 订阅"
-            className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
-            <Rss className="h-4 w-4" />
-          </Link>
-          <button
-            onClick={onMenuOpen}
-            className="inline-flex items-center gap-2 h-9 px-4 ml-2 bg-brand-black dark:bg-white text-white dark:text-black text-[11px] font-bold uppercase tracking-[0.12em] rounded-full hover:bg-brand-blue dark:hover:bg-blue-500 transition-all hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            aria-label="打开导航菜单"
-          >
-            <Menu className="h-3.5 w-3.5" aria-hidden="true" />
-            <span className="hidden sm:inline">菜单</span>
-          </button>
         </div>
+        <ThemeToggle />
+        <button
+          onClick={onMenuOpen}
+          className="flex items-center gap-2 bg-foreground text-background px-4 lg:px-6 py-2 rounded-full hover:bg-brand-blue hover:text-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
+          aria-label="打开导航菜单"
+        >
+          <Menu size={14} strokeWidth={2} />
+          <span className="hidden sm:inline">菜单</span>
+        </button>
       </div>
     </header>
   )
 }
 
 export function SwissFooter({ months }: { months?: string[] }) {
-  const recentMonths = months?.slice(0, 6) || []
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-brand-black dark:bg-black text-white border-t border-white/10">
-      <div className="px-6 lg:px-12 pt-20 pb-12">
-        {/* Hero text - largest */}
-        <div className="mb-16">
-          <h2 className="text-5xl lg:text-7xl font-bold tracking-[-0.02em] leading-[0.95] mb-6">
-            TopTou<br />
-            Media<br />
-            Updates
-          </h2>
-          <p className="text-base text-white/60 max-w-md leading-relaxed">
-            实时追踪 20+ 广告平台的产品更新、API 变更和政策调整
+    <footer className="bg-brand-blue text-white px-6 lg:px-12 pt-24 lg:pt-32 pb-12">
+      {/* Hero Statement */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24 lg:mb-40">
+        <h2 className="text-5xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] leading-[0.95]">
+          追踪<br />
+          广告世界的<br />
+          每一次<span className="font-serif italic font-medium"> 变化</span>
+        </h2>
+        <div className="flex flex-col justify-between gap-12">
+          <p className="text-lg lg:text-2xl font-light opacity-80 max-w-md leading-relaxed">
+            Media Updates 是一套自动化情报系统，每日同步 20+ 广告平台的产品、API、政策变更，为 TopTou 产品团队提供决策依据。
           </p>
-        </div>
-
-        {/* Links grid - medium size */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 pb-16 border-b border-white/10">
-          {/* Recent months */}
-          {recentMonths.length > 0 && (
-            <div>
-              <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-white/40 mb-4">
-                月度报告
-              </h3>
-              <ul className="space-y-2">
-                {recentMonths.map((month) => (
-                  <li key={month}>
-                    <Link
-                      href={`/report/${month}`}
-                      className="text-sm text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-brand-blue group-hover:scale-150 transition-transform" aria-hidden="true" />
-                      {month}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className="grid grid-cols-2 gap-8 lg:gap-12">
+            <div className="space-y-3">
+              <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">更新频率</div>
+              <div className="text-sm font-bold">北京时间每日 00:00<br />自动同步</div>
             </div>
-          )}
+            <div className="space-y-3">
+              <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">数据来源</div>
+              <div className="text-sm font-bold">32 个官方信息源<br />MiniMax AI 提炼</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          {/* Quick links */}
+      {/* Links Grid */}
+      {months && months.length > 0 && (
+        <div className="border-t border-white/10 pt-16 pb-16 grid grid-cols-1 lg:grid-cols-4 gap-12">
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-white/40 mb-4">
-              快速链接
-            </h3>
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">月报</div>
+            <ul className="space-y-2">
+              {months.slice(0, 6).map((m) => (
+                <li key={m}>
+                  <Link
+                    href={`/report/${m}`}
+                    className="text-sm font-medium opacity-80 hover:opacity-100 hover:italic transition-all"
+                  >
+                    {m}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">链接</div>
             <ul className="space-y-2">
               <li>
-                <Link
-                  href="/archive"
-                  className="text-sm text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
-                >
-                  <span className="w-1 h-1 rounded-full bg-brand-blue group-hover:scale-150 transition-transform" aria-hidden="true" />
-                  归档
+                <Link href="/archive" className="text-sm font-medium opacity-80 hover:opacity-100 hover:italic transition-all">
+                  历史归档
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/log"
-                  className="text-sm text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
-                >
-                  <span className="w-1 h-1 rounded-full bg-brand-blue group-hover:scale-150 transition-transform" aria-hidden="true" />
+                <Link href="/log" className="text-sm font-medium opacity-80 hover:opacity-100 hover:italic transition-all">
                   更新日志
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/feed.xml"
-                  target="_blank"
-                  className="text-sm text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded"
-                >
-                  <span className="w-1 h-1 rounded-full bg-brand-blue group-hover:scale-150 transition-transform" aria-hidden="true" />
+                <Link href="/feed.xml" target="_blank" className="text-sm font-medium opacity-80 hover:opacity-100 hover:italic transition-all">
                   RSS 订阅
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/* About */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-white/40 mb-4">
-              关于
-            </h3>
-            <p className="text-sm text-white/60 leading-relaxed">
-              由 TopTou 产品团队维护<br />
-              每周自动更新
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">覆盖平台</div>
+            <p className="text-sm font-medium opacity-80">
+              TikTok · Meta · Google<br />
+              LinkedIn · X · Snapchat<br />
+              Pinterest · YouTube<br />
+              以及 12+ 更多平台
+            </p>
+          </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">维护团队</div>
+            <p className="text-sm font-medium opacity-80">
+              TopTou 产品团队<br />
+              <span className="opacity-60">GitHub 开源</span>
             </p>
           </div>
         </div>
+      )}
 
-        {/* Copyright - smallest */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-white/40">
-          <p>© {currentYear} TopTou. All rights reserved.</p>
-          <p className="font-mono">Built with Next.js · Tailwind CSS</p>
+      {/* Mega Brand Mark */}
+      <div className="border-t border-white/10 pt-16">
+        <h1 className="text-[16vw] lg:text-[14vw] font-bold tracking-[-0.06em] leading-none mb-12">
+          Updates
+        </h1>
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 text-[10px] uppercase font-bold tracking-[0.3em] opacity-40">
+          <div>© {currentYear} / TopTou Product Team</div>
+          <div className="font-mono">End of Transmission</div>
         </div>
       </div>
     </footer>
