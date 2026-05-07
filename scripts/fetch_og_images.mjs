@@ -106,17 +106,43 @@ async function getBrowser() {
   return _browser
 }
 
-async function fetchOgImagePlaywright(url) {
+// TikTok's newsroom uses heavy JS — networkidle times out, so use domcontentloaded + wait
+const SLOW_PLATFORMS = new Set(['tiktok'])
+
+async function fetchOgImagePlaywright(url, platform) {
+  const isSlow = SLOW_PLATFORMS.has(platform)
   for (let attempt = 0; attempt < 2; attempt++) {
     let page = null
     try {
       const browser = await getBrowser()
       page = await browser.newPage()
       await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-US,en;q=0.9' })
-      await page.goto(url, { waitUntil: 'networkidle', timeout: PW_TIMEOUT_MS })
-      const html = await page.content()
+      if (isSlow) {
+        await page.goto(url, { waitUntil: 'domcontentloaded', timeout: PW_TIMEOUT_MS })
+        await page.waitForTimeout(4000)
+      } else {
+        await page.goto(url, { waitUntil: 'networkidle', timeout: PW_TIMEOUT_MS })
+      }
+
+      const result = await page.evaluate((logoPatternSources) => {
+        const logoPatterns = logoPatternSources.map(s => new RegExp(s, 'i'))
+        function isLogo(u) { return u && logoPatterns.some(p => p.test(u)) }
+
+        // 1. Try og:image / twitter:image
+        const ogMeta = document.querySelector('meta[property="og:image"], meta[name="twitter:image"]')
+        const ogUrl = ogMeta?.getAttribute('content')
+        if (ogUrl && !isLogo(ogUrl)) return ogUrl
+
+        // 2. Fallback: largest <img> in the page that isn't a logo/icon/nav element
+        const imgs = [...document.querySelectorAll('article img, main img, [class*="hero"] img, [class*="cover"] img, [class*="featured"] img, [class*="banner"] img, img')]
+          .map(img => ({ src: img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src'), w: img.naturalWidth || img.width || 0 }))
+          .filter(i => i.src && i.src.startsWith('http') && i.w > 200 && !isLogo(i.src))
+          .sort((a, b) => b.w - a.w)
+        return imgs[0]?.src || null
+      }, LOGO_PATTERNS.map(r => r.source))
+
       await page.close()
-      return extractOgFromHtml(html)
+      return result || null
     } catch {
       if (page) await page.close().catch(() => {})
       if (attempt === 0) await new Promise(r => setTimeout(r, 2000))
@@ -160,16 +186,16 @@ async function enrichFile(filePath) {
 
   console.log(`  → ${pending.length} items (${pwItems.length} playwright, ${httpItems.length} fetch)`)
 
-  const makeTasks = (list, fetcher) =>
+  const makeTasks = (list, fetcher, usePlatform = false) =>
     list.map(item => async () => {
       process.stdout.write(`  [${item.platform}] ${item.id}... `)
-      const img = await fetcher(item.sourceUrl)
+      const img = usePlatform ? await fetcher(item.sourceUrl, item.platform) : await fetcher(item.sourceUrl)
       item.imageUrl = img || null
       console.log(img ? `✓` : `✗`)
       return img
     })
 
-  await pool(makeTasks(pwItems, fetchOgImagePlaywright), PW_CONCURRENCY)
+  await pool(makeTasks(pwItems, fetchOgImagePlaywright, true), PW_CONCURRENCY)
   await pool(makeTasks(httpItems, fetchOgImageHttp), FETCH_CONCURRENCY)
 
   for (const item of items) {
