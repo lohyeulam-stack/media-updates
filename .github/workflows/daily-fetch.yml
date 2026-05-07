@@ -1,9 +1,11 @@
-name: Weekly & Monthly Media Updates
+name: Daily Media Updates (Beijing 00:00)
 
 on:
   schedule:
-    - cron: '0 22 * * 0'       # UTC Sun 22:00 = Asia/Singapore Mon 06:00, weekly
-    - cron: '0 22 28-31 * *'   # UTC 28-31st = month-end check in UTC
+    # Daily at 16:00 UTC = 00:00 next day in Beijing (Asia/Shanghai, UTC+8)
+    - cron: '0 16 * * *'
+    # Month-end: last day of month at 23:00 Beijing (15:00 UTC)
+    - cron: '0 15 28-31 * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -58,6 +60,7 @@ env:
   PYTHONUNBUFFERED: '1'
   NODE_VERSION: '20'
   PYTHON_VERSION: '3.12'
+  MEDIA_UPDATES_TZ: 'Asia/Shanghai'
 
 jobs:
   fetch:
@@ -90,20 +93,32 @@ jobs:
                 args="$args --current-week"
               fi
             fi
-          elif [ "$(date -u +%u)" = '7' ]; then
-            tomorrow=$(date -u -d '+1 day' +%d)
-            if [ "$tomorrow" = '01' ]; then
-              mode='both'
-              args='--mode=both --current-week'
-            else
-              mode='weekly'
-              args='--mode=weekly --current-week'
-            fi
           else
-            tomorrow=$(date -u -d '+1 day' +%d)
-            if [ "$tomorrow" = '01' ]; then
-              mode='monthly'
-              args='--mode=monthly'
+            # Scheduled run — daily at 16:00 UTC (Beijing 00:00)
+            # Compute Beijing date: if UTC is the month-end cron (15:00 UTC on 28-31),
+            # we want to run monthly; otherwise run the daily weekly sync.
+
+            beijing_tomorrow=$(TZ='Asia/Shanghai' date -d '+1 day' +%d)
+            beijing_day=$(TZ='Asia/Shanghai' date +%d)
+            utc_hour=$(date -u +%H)
+
+            if [ "$utc_hour" = '15' ]; then
+              # Month-end cron — only run monthly if current Beijing day is month's last day
+              if [ "$beijing_tomorrow" = '01' ]; then
+                mode='monthly'
+                args='--mode=monthly'
+              fi
+            else
+              # Regular daily cron (16:00 UTC = 00:00 Beijing next day)
+              # Always sync the current ISO week so the site stays fresh each day.
+              # On the 1st of month (Beijing), also generate previous month's report.
+              if [ "$beijing_day" = '01' ]; then
+                mode='both'
+                args='--mode=both --current-week'
+              else
+                mode='weekly'
+                args='--mode=weekly --current-week'
+              fi
             fi
           fi
 
@@ -114,7 +129,7 @@ jobs:
 
       - name: Stop when scheduled run should skip
         if: steps.mode.outputs.mode == 'skip'
-        run: echo 'Not the weekly or month-end window. Skipping.'
+        run: echo 'Not a scheduled sync window. Skipping.'
 
       - name: Setup Python
         if: steps.mode.outputs.mode != 'skip'
