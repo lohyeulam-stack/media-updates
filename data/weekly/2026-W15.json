@@ -7,7 +7,7 @@
     "title": "YouTube创作者如何塑造音乐节时尚与身份表达",
     "titleOriginal": "How YouTube creators shape music festival fashion and identity",
     "summary": "YouTube深度报道创作者如何通过穿搭、妆造和时尚内容影响音乐节文化。内容涵盖造型视频、GRWM和时尚穿搭展示。YouTube还推出特别版Logo致敬五位时尚创作者。音乐节正成为时尚、美妆和生活方式创作者的重要舞台。对广告投放团队建议：可结合Coachella等音乐节时机，针对时尚/美妆/生活方式品牌进行节日前后的定向广告投放，抓住音乐节相关的流量高峰。",
-    "category": "culture-trends",
+    "category": "other",
     "importance": "medium",
     "source": "YouTube Official Blog",
     "sourceUrl": "https://blog.youtube/culture-and-trends/festival-fashion-trends-youtube/",
@@ -18,7 +18,8 @@
       "时尚内容",
       "美妆"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260429-1629"
   },
   {
     "id": "youtube-2026-04-09-005",
@@ -39,7 +40,8 @@
       "Z世代",
       "动画内容"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/YT-Motion-Desktop.max-1440x810.png"
   },
   {
     "id": "tiktok-2026-04-08-004",
@@ -59,7 +61,8 @@
       "合作伙伴",
       "转化追踪"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://lf-tt4b.tiktokcdn.com/obj/i18nblog/tt4b_cms/en-US/tipdilz7wysq-7shXeIflgfigVXaeNVsWdP.jpg"
   },
   {
     "id": "snapchat-2026-04-07-002",
@@ -79,7 +82,8 @@
       "互动营销",
       "品牌内容"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://images.ctfassets.net/inb32lme5009/eW1Nxd8ufAP6MJUPhY7fH/5ca9fcb597f98be7c43400a83531a59e/Snapchat_Logo_Ghost_Yellow.jpg?q=40&amp;h=512"
   },
   {
     "id": "snapchat-2026-04-07-003",
@@ -99,7 +103,8 @@
       "电商",
       "实用性体验"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://images.ctfassets.net/inb32lme5009/eW1Nxd8ufAP6MJUPhY7fH/5ca9fcb597f98be7c43400a83531a59e/Snapchat_Logo_Ghost_Yellow.jpg?q=40&amp;h=512"
   },
   {
     "id": "snapchat-2026-04-06-004",
@@ -119,6 +124,7 @@
       "医疗营销",
       "用户意图"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://images.ctfassets.net/inb32lme5009/7yhKDKPsVXdWfC0UWcprgZ/7b49b475398be122eae296deace3b88f/SN12882.jpg?q=40&amp;h=512"
   }
 ]

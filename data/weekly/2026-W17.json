@@ -7,7 +7,7 @@
     "title": "互动组件扩展至升级版Smart+网页和电商目录广告，驱动用户参与",
     "titleOriginal": "Interaction add-ons support expanded to Upgraded Smart+ Web Campaigns and E-commerce Catalog Ads",
     "summary": "升级版Smart+网页广告和电商目录广告现已支持互动组件管理。广告投放团队可通过 /smart_plus/ad/create/ 和 /smart_plus/ad/update/ 接口的 interactive_add_on_list 参数启用互动组件，帮助提升广告互动率。",
-    "category": "campaign-management",
+    "category": "ad-product",
     "importance": "medium",
     "source": "TikTok Business API Changelog",
     "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
@@ -17,7 +17,8 @@
       "e-commerce",
       "campaign"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": null
   },
   {
     "id": "youtube-2026-04-24-001",
@@ -27,7 +28,7 @@
     "title": "跟着YouTube教程和播放列表学最新排舞",
     "titleOriginal": "Learn the latest line dance routines with YouTube tutorials and playlists",
     "summary": "YouTube正在庆祝排舞热潮，在Stagecoach音乐节期间推出定制版YouTube标志。排舞视频观看量激增，803Fresh的《Boots on the Ground》获得超7000万观看量。YouTube成为分享新一代艺术家歌曲和舞蹈的关键平台，观众会在网上学习后再到公共场合实践。对广告投放团队而言，排舞相关内容的流行趋势可作为季节性营销参考，尤其适合与乡村音乐、时装品牌或娱乐相关的广告投放。",
-    "category": "culture-trends",
+    "category": "other",
     "importance": "low",
     "source": "YouTube Official Blog",
     "sourceUrl": "https://blog.youtube/culture-and-trends/line-dancing-trends-youtube/",
@@ -38,7 +39,8 @@
       "文化趋势",
       "教程内容"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260429-1629"
   },
   {
     "id": "mintegral-2026-04-24-001",
@@ -58,7 +60,8 @@
       "移动营销",
       "策略"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://assets-official.mintegral.com/v3/blog-cover/2026/04/22/MTG%20banner_202601%202%20%281%29.png"
   },
   {
     "id": "google-2026-04-23-001",
@@ -78,7 +81,8 @@
       "v24",
       "bidding_strategy"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrr-PwvV95psTLUBUnl3pjRal36AYNMXfhIblIuUICz_w0NRGtK4PVGr6DOHTA0ouC3Nrxciv56LoqvdgQo_sQMZaNk2_8ZOWZZVhGTlNFLb6qDwr90wKtRkL61c9-ZYrBoUm0e9f81U-p/s1600/googlelogo_color_200x200.png"
   },
   {
     "id": "meta-2026-04-22-001",
@@ -97,7 +101,8 @@
       "全球化",
       "广告优化"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": null
   },
   {
     "id": "google-2026-04-22-002",
@@ -117,7 +122,8 @@
       "cart_data",
       "release_notes"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrr-PwvV95psTLUBUnl3pjRal36AYNMXfhIblIuUICz_w0NRGtK4PVGr6DOHTA0ouC3Nrxciv56LoqvdgQo_sQMZaNk2_8ZOWZZVhGTlNFLb6qDwr90wKtRkL61c9-ZYrBoUm0e9f81U-p/s1600/googlelogo_color_200x200.png"
   },
   {
     "id": "line-2026-04-22-001",
@@ -136,7 +142,8 @@
       "功能更新",
       "小程序"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": null
   },
   {
     "id": "tiktok-2026-04-21-001",
@@ -156,7 +163,8 @@
       "新功能",
       "品牌解决方案"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://lf-tt4b.tiktokcdn.com/obj/i18nblog/tt4b_cms/en-US/tipdilz7wysq-63reVQqHHHiOCcKFWtVWbC.png"
   },
   {
     "id": "meta-2026-04-21-002",
@@ -175,7 +183,8 @@
       "代理案例",
       "运营效率"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": null
   },
   {
     "id": "youtube-2026-04-21-002",
@@ -196,7 +205,8 @@
       "版权管理",
       "娱乐行业"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-logo.max-700x3000.format-webp.max-1440x810.png"
   },
   {
     "id": "youtube-2026-04-20-003",
@@ -217,7 +227,8 @@
       "娱乐营销",
       "YouTube Originals"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Slice_Joint.max-1440x810.jpg"
   },
   {
     "id": "mintegral-2026-04-20-002",
@@ -237,6 +248,7 @@
       "合规",
       "隐私保护"
     ],
-    "fetchedAt": "2026-04-26T00:32:53.467107"
+    "fetchedAt": "2026-04-26T00:32:53.467107",
+    "imageUrl": "https://assets-official.mintegral.com/v3/blog-cover/2025/04/15/SOC%20certificate_MTG%20960x600.webp"
   }
 ]

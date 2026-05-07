@@ -1,0 +1,43 @@
+[
+  {
+    "id": "google-2026-05-05-001",
+    "date": "2026-05-05",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "Display & Video 360 推出部分结构化数据文件上传功能",
+    "titleOriginal": "Introducing Partial Structured Data File Upload",
+    "summary": "Display & Video 360 推出部分结构化数据文件（SDF）上传功能，允许广告主仅上传特定列的子集，无需包含全部120+列。这使得文件更小、更易于管理，同时提高了单文件资源限制、加快上传速度，并降低意外更改其他行项目设置的风险。通过Display & Video 360 UI即可上传，无需额外注册或配置。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/introducing-partial-structured-data.html",
+    "tags": [
+      "sdf",
+      "display-video",
+      "targeting",
+      "release"
+    ],
+    "fetchedAt": "2026-05-07T11:49:11.316317+08:00",
+    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrr-PwvV95psTLUBUnl3pjRal36AYNMXfhIblIuUICz_w0NRGtK4PVGr6DOHTA0ouC3Nrxciv56LoqvdgQo_sQMZaNk2_8ZOWZZVhGTlNFLb6qDwr90wKtRkL61c9-ZYrBoUm0e9f81U-p/s1600/googlelogo_color_200x200.png"
+  },
+  {
+    "id": "linkedin-2026-05-06-001",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "linkedin",
+    "title": "LinkedIn Ads代理商认证正式发布",
+    "titleOriginal": "Introducing LinkedIn Ads Agency Certification",
+    "summary": "LinkedIn推出全新的全球代理商认证计划，用于认可在LinkedIn Ads方面具备专业能力并致力于平台投入的代理商机构。该认证将帮助广告主识别和选择具备LinkedIn广告专业知识的合作伙伴，提升广告投放效果。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/linkedin-ads/introducing-linkedin-ads-agency-certification",
+    "tags": [
+      "代理商认证",
+      "合作伙伴",
+      "广告平台"
+    ],
+    "fetchedAt": "2026-05-07T11:49:11.316317+08:00",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQEkS3nKb0rYlQ/croft-frontend-shrinkToFit1024/B4DZ3gfPOGKEAc-/0/1777587779980?e=2147483647&amp;v=beta&amp;t=Lf-9ml2ghFukb-y5c_VtmLofyeEWrRVCAqup5IC97wY"
+  }
+]

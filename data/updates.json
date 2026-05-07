@@ -1,5 +1,46 @@
 [
   {
+    "id": "linkedin-2026-05-06-001",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "linkedin",
+    "title": "LinkedIn Ads代理商认证正式发布",
+    "titleOriginal": "Introducing LinkedIn Ads Agency Certification",
+    "summary": "LinkedIn推出全新的全球代理商认证计划，用于认可在LinkedIn Ads方面具备专业能力并致力于平台投入的代理商机构。该认证将帮助广告主识别和选择具备LinkedIn广告专业知识的合作伙伴，提升广告投放效果。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/linkedin-ads/introducing-linkedin-ads-agency-certification",
+    "tags": [
+      "代理商认证",
+      "合作伙伴",
+      "广告平台"
+    ],
+    "fetchedAt": "2026-05-07T11:49:11.316317+08:00",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQEkS3nKb0rYlQ/croft-frontend-shrinkToFit1024/B4DZ3gfPOGKEAc-/0/1777587779980?e=2147483647&amp;v=beta&amp;t=Lf-9ml2ghFukb-y5c_VtmLofyeEWrRVCAqup5IC97wY"
+  },
+  {
+    "id": "google-2026-05-05-001",
+    "date": "2026-05-05",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "Display & Video 360 推出部分结构化数据文件上传功能",
+    "titleOriginal": "Introducing Partial Structured Data File Upload",
+    "summary": "Display & Video 360 推出部分结构化数据文件（SDF）上传功能，允许广告主仅上传特定列的子集，无需包含全部120+列。这使得文件更小、更易于管理，同时提高了单文件资源限制、加快上传速度，并降低意外更改其他行项目设置的风险。通过Display & Video 360 UI即可上传，无需额外注册或配置。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/introducing-partial-structured-data.html",
+    "tags": [
+      "sdf",
+      "display-video",
+      "targeting",
+      "release"
+    ],
+    "fetchedAt": "2026-05-07T11:49:11.316317+08:00",
+    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrr-PwvV95psTLUBUnl3pjRal36AYNMXfhIblIuUICz_w0NRGtK4PVGr6DOHTA0ouC3Nrxciv56LoqvdgQo_sQMZaNk2_8ZOWZZVhGTlNFLb6qDwr90wKtRkL61c9-ZYrBoUm0e9f81U-p/s1600/googlelogo_color_200x200.png"
+  },
+  {
     "id": "tiktok-2026-04-24-001",
     "date": "2026-04-24",
     "week": "2026-W17",
@@ -7,7 +48,7 @@
     "title": "互动组件扩展至升级版Smart+网页和电商目录广告，驱动用户参与",
     "titleOriginal": "Interaction add-ons support expanded to Upgraded Smart+ Web Campaigns and E-commerce Catalog Ads",
     "summary": "升级版Smart+网页广告和电商目录广告现已支持互动组件管理。广告投放团队可通过 /smart_plus/ad/create/ 和 /smart_plus/ad/update/ 接口的 interactive_add_on_list 参数启用互动组件，帮助提升广告互动率。",
-    "category": "campaign-management",
+    "category": "ad-product",
     "importance": "medium",
     "source": "TikTok Business API Changelog",
     "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
@@ -28,7 +69,7 @@
     "title": "跟着YouTube教程和播放列表学最新排舞",
     "titleOriginal": "Learn the latest line dance routines with YouTube tutorials and playlists",
     "summary": "YouTube正在庆祝排舞热潮，在Stagecoach音乐节期间推出定制版YouTube标志。排舞视频观看量激增，803Fresh的《Boots on the Ground》获得超7000万观看量。YouTube成为分享新一代艺术家歌曲和舞蹈的关键平台，观众会在网上学习后再到公共场合实践。对广告投放团队而言，排舞相关内容的流行趋势可作为季节性营销参考，尤其适合与乡村音乐、时装品牌或娱乐相关的广告投放。",
-    "category": "culture-trends",
+    "category": "other",
     "importance": "low",
     "source": "YouTube Official Blog",
     "sourceUrl": "https://blog.youtube/culture-and-trends/line-dancing-trends-youtube/",
@@ -490,7 +531,7 @@
     "title": "YouTube创作者如何塑造音乐节时尚与身份表达",
     "titleOriginal": "How YouTube creators shape music festival fashion and identity",
     "summary": "YouTube深度报道创作者如何通过穿搭、妆造和时尚内容影响音乐节文化。内容涵盖造型视频、GRWM和时尚穿搭展示。YouTube还推出特别版Logo致敬五位时尚创作者。音乐节正成为时尚、美妆和生活方式创作者的重要舞台。对广告投放团队建议：可结合Coachella等音乐节时机，针对时尚/美妆/生活方式品牌进行节日前后的定向广告投放，抓住音乐节相关的流量高峰。",
-    "category": "culture-trends",
+    "category": "other",
     "importance": "medium",
     "source": "YouTube Official Blog",
     "sourceUrl": "https://blog.youtube/culture-and-trends/festival-fashion-trends-youtube/",
@@ -1233,7 +1274,7 @@
     "title": "2026年如何在LinkedIn上提升AI可见性",
     "titleOriginal": "How to Leverage LinkedIn for AI Visibility in 2026",
     "summary": "随着AI搜索的兴起，B2B营销人员需要调整LinkedIn内容策略以适应新的发现机制。文章提供可操作的技巧，指导如何创建具有教育性、原创性和可信度的内容，以提升在AI搜索结果中的可见性。这是B2B营销人员在AI驱动搜索时代获取有机流量的重要指南。",
-    "category": "content-marketing",
+    "category": "creative",
     "importance": "medium",
     "source": "LinkedIn Marketing Blog",
     "sourceUrl": "https://www.linkedin.com/business/marketing/blog/content-marketing/how-to-leverage-linkedin-for-ai-visibility-in-2026",
@@ -1605,7 +1646,7 @@
     "imageUrl": null
   },
   {
-    "id": "meta-2026-02-18-001",
+    "id": "meta-2026-02-18-001-39d281",
     "date": "2026-02-18",
     "week": "2026-W08",
     "platform": "meta",
@@ -1647,7 +1688,7 @@
     "imageUrl": "https://www.lycbiz.com/sites/default/files/media/jp/column/guideline_quality/deandi_phrase/DE%26I%E9%96%A2%E9%80%A3%E3%82%B3%E3%83%A9%E3%83%A0_%E3%82%B5%E3%83%A0%E3%83%8D%E3%82%A4%E3%83%AB_0209.png"
   },
   {
-    "id": "line-2026-02-17-001",
+    "id": "line-2026-02-17-001-02762f",
     "date": "2026-02-17",
     "week": "2026-W08",
     "platform": "line",
@@ -1774,7 +1815,7 @@
     "imageUrl": "https://www.lycbiz.com/sites/default/files/media/jp/column/policy/official-account-name/thumbnail.png"
   },
   {
-    "id": "line-2026-02-12-002",
+    "id": "line-2026-02-12-002-c4cd4f",
     "date": "2026-02-12",
     "week": "2026-W07",
     "platform": "line",
@@ -1964,7 +2005,7 @@
     "imageUrl": null
   },
   {
-    "id": "tiktok-2026-02-02-001",
+    "id": "tiktok-2026-02-02-001-bb67de",
     "date": "2026-02-02",
     "week": "2026-W06",
     "platform": "tiktok",
@@ -2027,7 +2068,7 @@
     "imageUrl": null
   },
   {
-    "id": "meta-2026-01-30-001",
+    "id": "meta-2026-01-30-001-8f752b",
     "date": "2026-01-30",
     "week": "2026-W05",
     "platform": "meta",
@@ -2048,7 +2089,7 @@
     "imageUrl": null
   },
   {
-    "id": "meta-2026-01-30-001",
+    "id": "meta-2026-01-30-001-f3129a",
     "date": "2026-01-30",
     "week": "2026-W05",
     "platform": "meta",
@@ -2323,7 +2364,7 @@
     "imageUrl": "https://www.lycbiz.com/sites/default/files/media/jp/column/guideline_quality/handling-data/handling-data_thumbnail.png"
   },
   {
-    "id": "line-2026-01-13-001",
+    "id": "line-2026-01-13-001-6aa540",
     "date": "2026-01-13",
     "week": "2026-W03",
     "platform": "line",
@@ -2538,14 +2579,14 @@
     "imageUrl": null
   },
   {
-    "id": "pinterest-2025-12-09-001",
+    "id": "pinterest-2025-12-09-001-7fd920",
     "date": "2025-12-09",
     "week": "2025-W50",
     "platform": "pinterest",
     "title": "Pinterest预测™：不墨守成规、自我保护和逃避主义推动2026年21个趋势",
     "titleOriginal": "Pinterest Predicts™: Nonconformity, self-preservation, and escapism drive 21 trends for 2026",
     "summary": "Pinterest发布2026年度趋势预测报告，涵盖21个将影响用户行为和消费趋势的关键洞察。报告指出不墨守成规、自我保护和逃避主义将成为明年三大主导趋势，为广告投放团队提供前瞻性的用户兴趣洞察，有助于在内容策略和广告创意中把握先机，提前规划2026年的营销活动方向。",
-    "category": "Trends",
+    "category": "other",
     "importance": "medium",
     "source": "Pinterest Newsroom",
     "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-predicts-nonconformity-self-preservation-and-escapism-drive-21-trends-for-2026/",
@@ -2894,7 +2935,7 @@
     "imageUrl": null
   },
   {
-    "id": "meta-2025-10-27-002",
+    "id": "meta-2025-10-27-002-3f938e",
     "date": "2025-10-27",
     "week": "2025-W44",
     "platform": "meta",
@@ -3027,7 +3068,7 @@
     "title": "Pinterest推出新工具让用户更好地控制AI生成内容",
     "titleOriginal": "Pinterest rolls out new tools to give users more control over GenAI content",
     "summary": "Pinterest推出新工具增强用户对AI生成内容的控制权，包括AI编辑内容的标签透明度提升、用户可重新编辑或移除AI生成背景的工具，以及在搜索结果中明确标注AI生成图像。这些更新旨在提升平台信任度，为广告主提供更清晰的AI内容使用规范环境。",
-    "category": "product",
+    "category": "ad-product",
     "importance": "medium",
     "source": "Pinterest Newsroom",
     "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/pinterest-rolls-out-new-tools-to-give-users-more-control-over-gen-ai-content/",
@@ -3146,7 +3187,7 @@
     "imageUrl": null
   },
   {
-    "id": "pinterest-2025-09-25-001",
+    "id": "pinterest-2025-09-25-001-677281",
     "date": "2025-09-25",
     "week": "2025-W39",
     "platform": "pinterest",
@@ -3299,7 +3340,7 @@
     "title": "Pinterest推出Gen AI标签：在透明度方面迈出新步伐",
     "titleOriginal": "Introducing Gen AI Labels: Pinterest is taking a new step in transparency",
     "summary": "Pinterest宣布为AI生成的内容推出标签功能，这是平台在透明度方面的重要更新。此举旨在帮助用户识别由AI生成或增强的图像，提升平台内容信任度。对于广告投放团队而言，这意味着需要关注AI生成内容与真实图片的区分，确保广告素材的合规性与真实性。同时，这一透明度措施可能影响用户对广告内容的信任度和互动行为。",
-    "category": "product",
+    "category": "ad-product",
     "importance": "medium",
     "source": "Pinterest Newsroom",
     "sourceUrl": "https://newsroom.pinterest.com/en-sg/news/introducing-gen-ai-labels/",
