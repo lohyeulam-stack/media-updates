@@ -1,13 +1,19 @@
 "use client"
 
-import { Suspense, useEffect, useMemo, useState } from "react"
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
+import dynamic from "next/dynamic"
 import { BarChart3, ChevronLeft, ChevronRight, ExternalLink, LayoutGrid, List, Search, SlidersHorizontal, X } from "lucide-react"
 import { Sidebar } from "./sidebar"
-import { TrendChart } from "./trend-chart"
 import { SwissHeader, SwissFooter } from "./page-layout"
 import { CATEGORY_LABELS, PLATFORM_META, type Category, type MediaUpdate, type Platform } from "@/lib/types"
+import { useDebouncedValue } from "@/lib/hooks/use-debounced-value"
+
+const TrendChart = dynamic(() => import("./trend-chart").then((mod) => ({ default: mod.TrendChart })), {
+  loading: () => <div className="h-64 animate-pulse rounded-lg bg-muted" />,
+  ssr: false,
+})
 
 interface HomeClientProps {
   updates: MediaUpdate[]
@@ -309,6 +315,9 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
   const [currentWeekIndex, setCurrentWeekIndex] = useState(0)
   const [tablePage, setTablePage] = useState(1)
 
+  // Debounce search query to reduce unnecessary re-renders
+  const debouncedQuery = useDebouncedValue(query, 300)
+
   const fallbackWeekIndex = useMemo(() => {
     return weeks.findIndex((week) => updates.some((u) => u.week === week))
   }, [weeks, updates])
@@ -324,7 +333,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
 
   useEffect(() => {
     setTablePage(1)
-  }, [currentWeekIndex, platform, category, query])
+  }, [currentWeekIndex, platform, category, debouncedQuery])
 
   const weekFiltered = useMemo(() => {
     if (platform === "all") return updates
@@ -335,8 +344,8 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
     let result = weekFiltered
     if (platform !== "all") result = result.filter((u) => u.platform === platform)
     if (category !== "all") result = result.filter((u) => u.category === category)
-    if (query) {
-      const q = query.toLowerCase()
+    if (debouncedQuery) {
+      const q = debouncedQuery.toLowerCase()
       result = result.filter((u) =>
         u.title.toLowerCase().includes(q) ||
         u.summary.toLowerCase().includes(q) ||
@@ -344,7 +353,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
       )
     }
     return result
-  }, [weekFiltered, platform, query, category])
+  }, [weekFiltered, platform, debouncedQuery, category])
 
   useEffect(() => {
     const maxPage = Math.ceil(filtered.length / 10)
@@ -368,11 +377,41 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
     return filtered.slice(startIndex, startIndex + itemsPerPage)
   }, [filtered, tablePage])
 
-  const totalUpdates = updates.length
-  const totalCompleted = updates.filter((u) => u.summary?.trim()).length
-  const totalCompletionRate = totalUpdates ? Math.round((totalCompleted / totalUpdates) * 100) : 0
-  const totalPlatforms = new Set(updates.map((u) => u.platform)).size
-  const totalPriority = updates.filter((u) => u.importance === "high").length
+  // Memoize stats calculations to avoid recalculating on every render
+  const stats = useMemo(() => {
+    const totalUpdates = updates.length
+    const totalCompleted = updates.filter((u) => u.summary?.trim()).length
+    const totalCompletionRate = totalUpdates ? Math.round((totalCompleted / totalUpdates) * 100) : 0
+    const totalPlatforms = new Set(updates.map((u) => u.platform)).size
+    const totalPriority = updates.filter((u) => u.importance === "high").length
+
+    return {
+      totalUpdates,
+      totalCompleted,
+      totalCompletionRate,
+      totalPlatforms,
+      totalPriority,
+    }
+  }, [updates])
+
+  // Event handlers with useCallback to prevent unnecessary re-renders
+  const handlePlatformSelect = useCallback((p: Platform | "all") => {
+    setPlatform(p)
+    setTablePage(1)
+  }, [])
+
+  const handleCategorySelect = useCallback((c: Category | "all") => {
+    setCategory(c)
+    setTablePage(1)
+  }, [])
+
+  const handleShowTrendToggle = useCallback(() => {
+    setShowTrend((prev) => !prev)
+  }, [])
+
+  const handleViewModeToggle = useCallback(() => {
+    setViewMode((prev) => (prev === "card" ? "table" : "card"))
+  }, [])
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -383,7 +422,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
         months={months}
         weeks={weeks}
         selectedPlatform={platform}
-        onSelect={(p) => setPlatform(p)}
+        onSelect={handlePlatformSelect}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
       />
@@ -399,7 +438,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
               <span className="italic-accent text-muted-foreground">Updates</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
-              覆盖 {totalPlatforms} 个广告平台 · {totalUpdates} 条更新记录 · TopTou 产品团队
+              覆盖 {stats.totalPlatforms} 个广告平台 · {stats.totalUpdates} 条更新记录 · TopTou 产品团队
             </p>
           </div>
           <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" aria-hidden="true">
@@ -414,12 +453,12 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
         </section>
 
         <BiStatStrip
-          totalUpdates={totalUpdates}
-          totalCompletionRate={totalCompletionRate}
-          totalPlatforms={totalPlatforms}
+          totalUpdates={stats.totalUpdates}
+          totalCompletionRate={stats.totalCompletionRate}
+          totalPlatforms={stats.totalPlatforms}
           thisWeekCount={weekFiltered.length}
-          currentWeek={currentWeek || ""}
-          totalPriority={totalPriority}
+          currentWeek={currentWeek}
+          totalPriority={stats.totalPriority}
         />
 
         <section className="px-6 lg:px-12 py-6 border-b border-brand-black dark:border-white/10">
@@ -444,7 +483,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
                 {CATEGORY_FILTERS.map((filter) => (
                   <button
                     key={filter}
-                    onClick={() => setCategory(filter)}
+                    onClick={() => handleCategorySelect(filter)}
                     className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] rounded-full border transition-all ${
                       category === filter
                         ? "bg-brand-black text-white border-brand-black dark:bg-white dark:text-black dark:border-white"
@@ -457,7 +496,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
               </div>
               <div className="flex gap-2 shrink-0">
                 <button
-                  onClick={() => setShowTrend(!showTrend)}
+                  onClick={handleShowTrendToggle}
                   className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
                     showTrend
                       ? "border-brand-black bg-brand-black text-white dark:border-white dark:bg-white dark:text-black"
@@ -468,7 +507,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
                   {showTrend ? <SlidersHorizontal className="h-3.5 w-3.5" /> : <BarChart3 className="h-3.5 w-3.5" />}
                 </button>
                 <button
-                  onClick={() => setViewMode(viewMode === "card" ? "table" : "card")}
+                  onClick={handleViewModeToggle}
                   className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
                     viewMode === "table"
                       ? "border-brand-black bg-brand-black text-white dark:border-white dark:bg-white dark:text-black"
