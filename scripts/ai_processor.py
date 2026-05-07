@@ -11,6 +11,35 @@ import requests
 API_URL = "https://api.minimax.chat/v1/text/chatcompletion_v2"
 MODEL = "MiniMax-M2.7-highspeed"
 
+# Category mapping for AI-generated categories
+CATEGORY_MAPPING = {
+    "campaign-management": "automation",
+    "culture-trends": "other",
+    "content-marketing": "creative",
+    "trends": "other",
+    "product": "ad-product",
+}
+
+def normalize_category(category: str) -> str:
+    """Normalize AI-generated category to valid type."""
+    category_lower = category.lower().strip()
+
+    # Check mapping first
+    if category_lower in CATEGORY_MAPPING:
+        return CATEGORY_MAPPING[category_lower]
+
+    # Check if already valid
+    valid_categories = {
+        "ad-product", "api-change", "policy", "creative",
+        "measurement", "targeting", "automation", "other"
+    }
+
+    if category_lower in valid_categories:
+        return category_lower
+
+    # Default to "other"
+    return "other"
+
 EXTRACT_PROMPT = """你是一个广告行业情报分析师。我会给你一个广告平台官方博客页面的文本内容和链接列表。
 
 你的任务：
@@ -127,6 +156,9 @@ def extract_and_summarize(
             for item in parsed:
                 item["platform"] = platform
                 item["source"] = source_name
+                # Normalize category to valid type
+                if "category" in item:
+                    item["category"] = normalize_category(item["category"])
             print(f"[AI] Extracted {len(parsed)} articles from {source_name}")
             return parsed
     except json.JSONDecodeError:
