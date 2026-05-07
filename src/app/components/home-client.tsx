@@ -26,11 +26,38 @@ function categoryLabel(category: Category | "all") {
 }
 
 /**
+ * Detect whether an imageUrl is actually a platform logo / default sharing card
+ * rather than a real article cover. Logos make bad hero images on cards.
+ */
+function isLogoOrIcon(url: string | null | undefined): boolean {
+  if (!url) return false
+  const u = url.toLowerCase()
+  // Known logo / default sharing-card patterns seen in scraped data
+  const logoPatterns = [
+    "/logo",            // googlelogo, snap ghost logo, etc.
+    "googlelogo",
+    "snapchat_logo",
+    "_logo_",
+    "-logo-",
+    "/icon",
+    "favicon",
+    "sharing-card",     // X default sharing card
+    "gmp.max",          // Google Marketing Platform logo
+    "/logo.",
+    "youtube_social",   // YouTube default social card
+    "ghost_yellow",     // Snapchat ghost
+  ]
+  return logoPatterns.some((p) => u.includes(p))
+}
+
+/**
  * Editorial-style update card with dynamic sizing
  * Large cards (col-span-8) for high importance, small (col-span-4) for normal
  */
 function StudioUpdateCard({ update, index }: { update: MediaUpdate; index: number }) {
   const platform = PLATFORM_META[update.platform]
+  // Filter out logo/icon urls so they don't hijack the hero visual
+  const hasRealImage = Boolean(update.imageUrl) && !isLogoOrIcon(update.imageUrl)
   // Reference style: alternate between large and small cards
   const isLarge = index % 3 === 0
   const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4"
@@ -49,52 +76,95 @@ function StudioUpdateCard({ update, index }: { update: MediaUpdate; index: numbe
         rel="noopener noreferrer"
         className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
       >
-        {/* Image block — real imageUrl if available, fallback to platform color */}
-        <div className={`${isLarge ? "aspect-[16/9]" : "aspect-[4/3]"} bg-muted mb-6 lg:mb-8 overflow-hidden relative group/img transition-all`}>
-          {update.imageUrl ? (
+        {/* Image block — real imageUrl if it's an article cover (not a logo),
+            otherwise a designed typographic fallback using the title */}
+        <div className={`${isLarge ? "aspect-[16/9]" : "aspect-[4/3]"} mb-6 lg:mb-8 overflow-hidden relative group/img transition-all`}>
+          {hasRealImage ? (
             <>
+              {/* Platform color wash behind image so transparent PNGs don't look broken */}
+              <div
+                className="absolute inset-0"
+                style={{ backgroundColor: platform?.color || "#0a0a0a" }}
+                aria-hidden="true"
+              />
               <img
-                src={update.imageUrl}
+                src={update.imageUrl!}
                 alt=""
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
               />
-              {/* Subtle gradient overlay for readability */}
+              {/* Bottom gradient for readability */}
               <div
                 className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 pointer-events-none"
                 aria-hidden="true"
               />
             </>
           ) : (
-            <>
-              <motion.div
-                className="absolute inset-0 opacity-10 blur-2xl scale-110"
-                style={{ backgroundColor: platform?.color }}
-                whileHover={{ scale: 1.3, opacity: 0.2 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            /* Typographic fallback: platform color as canvas, big title preview */
+            <div
+              className="absolute inset-0 flex flex-col justify-between p-6 lg:p-8"
+              style={{
+                backgroundColor: platform?.color || "#111",
+                color: platform?.color === "#FFFC00" || platform?.color === "#FEE500" ? "#000" : "#fff",
+              }}
+            >
+              {/* Subtle texture via radial gradient */}
+              <div
+                className="absolute inset-0 opacity-60"
+                style={{
+                  background: `radial-gradient(circle at 85% 15%, rgba(255,255,255,0.15) 0%, transparent 50%)`,
+                }}
+                aria-hidden="true"
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span
-                  className={`${isLarge ? "text-[10vw]" : "text-[6vw]"} font-bold tracking-tighter opacity-[0.04] uppercase select-none text-foreground`}
-                  aria-hidden="true"
-                >
+              {/* Huge platform wordmark bottom-right as background texture */}
+              <span
+                className={`absolute -bottom-4 -right-2 font-bold tracking-tighter leading-none opacity-[0.08] uppercase select-none pointer-events-none ${
+                  isLarge ? "text-[18vw]" : "text-[12vw]"
+                }`}
+                aria-hidden="true"
+              >
+                {platform?.label}
+              </span>
+              {/* Category at top (visible layer) */}
+              <div className="relative z-10 text-[10px] font-bold uppercase tracking-[0.3em] opacity-70">
+                {CATEGORY_LABELS[update.category] || update.category}
+              </div>
+              {/* Title preview at bottom - designed as the image */}
+              <div className="relative z-10">
+                <h4 className={`font-bold tracking-tight leading-[1.05] ${
+                  isLarge ? "text-2xl lg:text-4xl line-clamp-3" : "text-lg lg:text-xl line-clamp-2"
+                }`}>
+                  {update.title}
+                </h4>
+                <div className="flex items-center gap-2 mt-3 text-[10px] font-bold uppercase tracking-[0.2em] opacity-60">
+                  <span className="w-6 h-[1px] bg-current" />
                   {platform?.label}
-                </span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Top badges — only show when there's a real image (fallback has them built-in) */}
+          {hasRealImage && (
+            <>
+              <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1 z-10">
+                {CATEGORY_LABELS[update.category] || update.category}
+              </div>
+              <div className="absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono z-10 text-white/80">
+                {update.date}
               </div>
             </>
           )}
-          {/* Category badge top-left */}
-          <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1 z-10">
-            {CATEGORY_LABELS[update.category] || update.category}
-          </div>
-          {/* Date badge top-right */}
-          <div className={`absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono z-10 ${update.imageUrl ? "text-white/80" : "opacity-40"}`}>
-            {update.date}
-          </div>
-          {/* External link icon on hover */}
-          <div className={`absolute bottom-4 right-4 lg:bottom-6 lg:right-6 opacity-0 group-hover:opacity-100 transition-opacity z-10 ${update.imageUrl ? "text-white" : ""}`}>
+          {/* External link icon on hover - always show */}
+          <div className={`absolute bottom-4 right-4 lg:bottom-6 lg:right-6 opacity-0 group-hover:opacity-100 transition-opacity z-10 ${hasRealImage ? "text-white" : ""}`}>
             <ExternalLink size={isLarge ? 32 : 24} strokeWidth={1.5} />
           </div>
+          {/* Date badge for fallback (corner) */}
+          {!hasRealImage && (
+            <div className="absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono z-10 opacity-60">
+              {update.date}
+            </div>
+          )}
         </div>
 
         <div className="space-y-3 lg:space-y-4">

@@ -21,6 +21,29 @@ const UA_LIST = [
   'Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
 ]
 
+// Reject og:image URLs that are platform logos or default sharing cards.
+// These make cards look broken because every article shares the same logo,
+// and logos don't have the aspect ratio / content suited to a 16:9 hero image.
+const LOGO_PATTERNS = [
+  /\/logo[._-]/i,
+  /googlelogo/i,
+  /snapchat_logo/i,
+  /_logo[._-]/i,
+  /-logo[._-]/i,
+  /\/icon[._-]/i,
+  /favicon/i,
+  /sharing-card/i,           // X default
+  /gmp\.max/i,                // Google Marketing Platform logo
+  /youtube_social/i,          // YouTube default social image
+  /ghost_yellow/i,            // Snapchat default ghost
+  /default[._-](hero|image|cover|og)/i,
+]
+
+function isLogoUrl(url) {
+  if (!url) return false
+  return LOGO_PATTERNS.some((p) => p.test(url))
+}
+
 async function fetchOgImage(url) {
   const ua = UA_LIST[Math.floor(Math.random() * UA_LIST.length)]
   for (let attempt = 0; attempt < 2; attempt++) {
@@ -44,7 +67,11 @@ async function fetchOgImage(url) {
             || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i)
             || html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
             || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i)
-      return m ? m[1].trim() : null
+      if (!m) return null
+      const imageUrl = m[1].trim()
+      // Reject platform logos / default sharing cards — they make bad hero covers
+      if (isLogoUrl(imageUrl)) return null
+      return imageUrl
     } catch {
       if (attempt === 0) await new Promise(r => setTimeout(r, 1500))
     }

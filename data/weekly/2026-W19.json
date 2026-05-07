@@ -18,7 +18,7 @@
       "release"
     ],
     "fetchedAt": "2026-05-07T11:49:11.316317+08:00",
-    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrr-PwvV95psTLUBUnl3pjRal36AYNMXfhIblIuUICz_w0NRGtK4PVGr6DOHTA0ouC3Nrxciv56LoqvdgQo_sQMZaNk2_8ZOWZZVhGTlNFLb6qDwr90wKtRkL61c9-ZYrBoUm0e9f81U-p/s1600/googlelogo_color_200x200.png"
+    "imageUrl": null
   },
   {
     "id": "linkedin-2026-05-06-001",
@@ -60,7 +60,7 @@
       "缝纫"
     ],
     "fetchedAt": "2026-05-07T12:15:19.482287+08:00",
-    "imageUrl": "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260429-1629"
+    "imageUrl": null
   },
   {
     "id": "google-2026-05-06-001",
@@ -81,7 +81,7 @@
       "人工智能"
     ],
     "fetchedAt": "2026-05-07T12:15:19.482287+08:00",
-    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Logo.max-1440x810.png"
+    "imageUrl": null
   },
   {
     "id": "x-2026-05-06-002",
@@ -103,6 +103,6 @@
       "srn"
     ],
     "fetchedAt": "2026-05-07T12:15:19.482287+08:00",
-    "imageUrl": "https://business.x.com/content/dam/business-twitter/sharing-card.png.twimg.768.png"
+    "imageUrl": null
   }
 ]
