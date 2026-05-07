@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Rss } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { Sidebar } from "./sidebar"
 import { ThemeToggle } from "./theme-toggle"
 import { LocaleToggle } from "./locale"
@@ -68,12 +69,17 @@ export function SwissHeader({ onMenuOpen }: { onMenuOpen: () => void }) {
         <div className="flex items-center gap-2">
           <LocaleToggle />
           <ThemeToggle />
-          <Link href="/feed.xml" target="_blank" aria-label="RSS feed" className="p-1.5 rounded-md hover:bg-muted transition-colors text-muted-foreground hover:text-foreground">
+          <Link
+            href="/feed.xml"
+            target="_blank"
+            aria-label="RSS feed"
+            className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg hover:bg-muted hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          >
             <Rss className="h-4 w-4" />
           </Link>
           <button
             onClick={onMenuOpen}
-            className="inline-flex items-center gap-2 h-8 px-3 bg-brand-black text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-blue transition-colors"
+            className="inline-flex items-center gap-2 h-8 px-3 bg-brand-black text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-blue transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label="Open navigation menu"
           >
             [Menu]

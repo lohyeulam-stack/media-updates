@@ -21,11 +21,14 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 
 export function LocaleToggle() {
   const { locale, setLocale } = useLocale()
+  const toggleLocale = () => setLocale(locale === "zh" ? "en" : "zh")
+
   return (
     <button
-      onClick={() => setLocale(locale === "zh" ? "en" : "zh")}
-      className="px-3 py-1.5 rounded-full border border-brand-black dark:border-white/20 text-[10px] font-bold uppercase tracking-widest text-foreground hover:bg-brand-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer"
-      title="Switch language"
+      onClick={toggleLocale}
+      className="px-3 py-1.5 rounded-full border border-brand-black dark:border-white/20 text-[10px] font-bold uppercase tracking-widest text-foreground hover:bg-brand-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      aria-label={locale === "zh" ? "Switch to English" : "切换到中文"}
+      aria-pressed={locale === "zh"}
     >
       {locale === "zh" ? "EN" : "中"}
     </button>
