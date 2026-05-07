@@ -1,5 +1,48 @@
 [
   {
+    "id": "google-2026-05-06-001",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "人工智能正在重塑广告创意，品牌如何正确应对",
+    "titleOriginal": "AI is reshaping ad creative. Here's how brands can get it right.",
+    "summary": "Google探讨人工智能如何改变广告创意的制作和应用方式，为品牌在AI时代的广告创意策略提供指导建议。这是一篇营销洞察类文章，适合广告投放团队了解AI驱动创意生产的行业趋势。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/",
+    "tags": [
+      "AI创意",
+      "广告创意",
+      "品牌营销",
+      "人工智能"
+    ],
+    "fetchedAt": "2026-05-07T12:15:19.482287+08:00",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Logo.max-1440x810.png"
+  },
+  {
+    "id": "x-2026-05-06-002",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "x",
+    "title": "AppsFlyer 独家推出 X 高级 SRN 归因",
+    "titleOriginal": "Advanced SRN for X is now live, exclusively on AppsFlyer",
+    "summary": "X 与 AppsFlyer 合作推出高级 SRN（社交归因网络）功能，为广告主提供完整的 iOS 端归因测量解决方案。这一功能填补了 iOS 14+ 隐私政策变化后 X 平台归因能力的空白，帮助广告主更准确追踪广告效果和 ROI。",
+    "category": "measurement",
+    "importance": "high",
+    "source": "X Business Blog",
+    "sourceUrl": "https://business.x.com/en/blog/appsflyer-asrn",
+    "tags": [
+      "measurement",
+      "ios",
+      "appsflyer",
+      "attribution",
+      "srn"
+    ],
+    "fetchedAt": "2026-05-07T12:15:19.482287+08:00",
+    "imageUrl": "https://business.x.com/content/dam/business-twitter/sharing-card.png.twimg.768.png"
+  },
+  {
     "id": "linkedin-2026-05-06-001",
     "date": "2026-05-06",
     "week": "2026-W19",
@@ -39,6 +82,28 @@
     ],
     "fetchedAt": "2026-05-07T11:49:11.316317+08:00",
     "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrr-PwvV95psTLUBUnl3pjRal36AYNMXfhIblIuUICz_w0NRGtK4PVGr6DOHTA0ouC3Nrxciv56LoqvdgQo_sQMZaNk2_8ZOWZZVhGTlNFLb6qDwr90wKtRkL61c9-ZYrBoUm0e9f81U-p/s1600/googlelogo_color_200x200.png"
+  },
+  {
+    "id": "youtube-2026-05-04-001",
+    "date": "2026-05-04",
+    "week": "2026-W19",
+    "platform": "youtube",
+    "title": "开启时尚设计之旅：缝纫教程与创作者技巧",
+    "titleOriginal": "Start your fashion design journey with sewing tutorials and creator tips",
+    "summary": "YouTube上的时尚设计师们正将频道打造为全球时尚舞台，从初学者到资深专业人士，涵盖各种风格、历史时代和文化影响的视频内容。2025年带有“初学者”字样的缝纫机相关视频获得了超过1亿次播放。YouTube还推出特别设计的logo（Yoodle），致敬时尚设计师社区的创意工艺。",
+    "category": "other",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/culture-and-trends/fashion-design-creators-youtube/",
+    "tags": [
+      "时尚",
+      "设计",
+      "教程",
+      "创作者",
+      "缝纫"
+    ],
+    "fetchedAt": "2026-05-07T12:15:19.482287+08:00",
+    "imageUrl": "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260429-1629"
   },
   {
     "id": "pinterest-2026-05-01-003",
