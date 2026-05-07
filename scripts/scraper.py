@@ -143,6 +143,27 @@ def _extract_links(page: Page, base_url: str) -> list[dict]:
     raw_links = page.evaluate("""() => {
         const links = [];
         const seen = new Set();
+
+        // Helper to parse various date formats to ISO
+        function parseDate(dateStr) {
+            if (!dateStr) return '';
+
+            // Already ISO format
+            if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) {
+                return dateStr.substring(0, 10);
+            }
+
+            // Try parsing with Date
+            try {
+                const d = new Date(dateStr);
+                if (!isNaN(d.getTime())) {
+                    return d.toISOString().substring(0, 10);
+                }
+            } catch (e) {}
+
+            return dateStr; // Return original if can't parse
+        }
+
         document.querySelectorAll('a[href]').forEach(a => {
             const href = a.href;
 
@@ -165,13 +186,26 @@ def _extract_links(page: Page, base_url: str) -> list[dict]:
             if (href && text && text.length > 5 && !seen.has(href)) {
                 seen.add(href);
 
-                // Look for nearby date elements
-                const parent = a.closest('article, [class*="card"], [class*="post"], [class*="item"], section, li');
+                // Look for nearby date elements - expanded search
+                const parent = a.closest('article, [class*="card"], [class*="post"], [class*="item"], [class*="entry"], section, li, div[class*="blog"]');
                 let date = '';
+
                 if (parent) {
-                    const timeEl = parent.querySelector('time, [datetime], [class*="date"]');
+                    // Try multiple selectors for date
+                    const timeEl = parent.querySelector('time, [datetime], [class*="date"], [class*="time"], [class*="publish"], span[class*="meta"]');
                     if (timeEl) {
-                        date = timeEl.getAttribute('datetime') || timeEl.innerText.trim();
+                        date = timeEl.getAttribute('datetime') ||
+                               timeEl.getAttribute('data-date') ||
+                               timeEl.innerText.trim();
+                        date = parseDate(date);
+                    }
+                }
+
+                // If no date found in parent, try meta tags in document
+                if (!date) {
+                    const metaDate = document.querySelector('meta[property="article:published_time"], meta[name="date"], meta[name="publish_date"]');
+                    if (metaDate) {
+                        date = parseDate(metaDate.getAttribute('content') || '');
                     }
                 }
 

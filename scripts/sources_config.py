@@ -7,7 +7,7 @@ SOURCES = [
     {
         "platform": "tiktok",
         "name": "TikTok for Business Blog",
-        "url": "https://www.tiktok.com/business/en-US/blog",
+        "url": "https://ads.tiktok.com/business/en-US/blog",
         "wait_ms": 5000,
         "category": "social",
     },
@@ -127,7 +127,7 @@ SOURCES = [
     {
         "platform": "linkedin",
         "name": "LinkedIn Marketing Blog",
-        "url": "https://business.linkedin.com/marketing-solutions/blog",
+        "url": "https://www.linkedin.com/business/marketing/blog",
         "wait_ms": 5000,
         "category": "social",
     },
