@@ -68,7 +68,8 @@ async function fetchOgImage(url) {
             || html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
             || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i)
       if (!m) return null
-      const imageUrl = m[1].trim()
+      // Decode HTML entities (e.g. &amp; → &) before storing
+      const imageUrl = m[1].trim().replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
       // Reject platform logos / default sharing cards — they make bad hero covers
       if (isLogoUrl(imageUrl)) return null
       return imageUrl
