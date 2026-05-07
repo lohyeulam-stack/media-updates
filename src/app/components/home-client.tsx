@@ -1,7 +1,6 @@
 "use client"
 
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react"
-import Link from "next/link"
+import { Suspense, useCallback, useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import dynamic from "next/dynamic"
 import { BarChart3, ChevronLeft, ChevronRight, ExternalLink, LayoutGrid, List, Search, SlidersHorizontal, X } from "lucide-react"
@@ -318,22 +317,11 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
   // Debounce search query to reduce unnecessary re-renders
   const debouncedQuery = useDebouncedValue(query, 300)
 
-  const fallbackWeekIndex = useMemo(() => {
-    return weeks.findIndex((week) => updates.some((u) => u.week === week))
-  }, [weeks, updates])
-
-  const safeWeekIndex = fallbackWeekIndex >= 0
-    ? Math.max(currentWeekIndex, fallbackWeekIndex === 0 ? currentWeekIndex : fallbackWeekIndex)
-    : currentWeekIndex
-  const currentWeek = weeks[safeWeekIndex] || weeks[0]
-
-  useEffect(() => {
-    if (currentWeekIndex >= weeks.length) setCurrentWeekIndex(0)
-  }, [weeks, currentWeekIndex])
-
-  useEffect(() => {
-    setTablePage(1)
-  }, [currentWeekIndex, platform, category, debouncedQuery])
+  // Memoize current week to avoid invalid index
+  const currentWeek = useMemo(() => {
+    const validIndex = Math.min(currentWeekIndex, weeks.length - 1)
+    return weeks[validIndex] || weeks[0]
+  }, [currentWeekIndex, weeks])
 
   const weekFiltered = useMemo(() => {
     if (platform === "all") return updates
@@ -355,11 +343,6 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
     return result
   }, [weekFiltered, platform, debouncedQuery, category])
 
-  useEffect(() => {
-    const maxPage = Math.ceil(filtered.length / 10)
-    if (tablePage > maxPage && maxPage > 0) setTablePage(maxPage)
-  }, [filtered.length, tablePage])
-
   const grouped = useMemo(() => {
     const groups: Record<string, MediaUpdate[]> = {}
     for (const update of filtered) {
@@ -372,10 +355,13 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
 
   const itemsPerPage = 10
   const totalPages = Math.ceil(filtered.length / itemsPerPage)
+  // Clamp table page to valid range
+  const safeTablePage = Math.min(Math.max(1, tablePage), Math.max(1, totalPages))
+
   const paginatedTableData = useMemo(() => {
-    const startIndex = (tablePage - 1) * itemsPerPage
+    const startIndex = (safeTablePage - 1) * itemsPerPage
     return filtered.slice(startIndex, startIndex + itemsPerPage)
-  }, [filtered, tablePage])
+  }, [filtered, safeTablePage])
 
   // Memoize stats calculations to avoid recalculating on every render
   const stats = useMemo(() => {
@@ -402,6 +388,11 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
 
   const handleCategorySelect = useCallback((c: Category | "all") => {
     setCategory(c)
+    setTablePage(1)
+  }, [])
+
+  const handleQueryChange = useCallback((value: string) => {
+    setQuery(value)
     setTablePage(1)
   }, [])
 
@@ -469,11 +460,11 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
                 type="text"
                 placeholder="搜索更新、摘要或标签..."
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => handleQueryChange(e.target.value)}
                 className="w-full pl-6 pr-8 py-2 border-0 border-b border-brand-black dark:border-white/20 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-brand-blue transition-colors"
               />
               {query && (
-                <button onClick={() => setQuery("")} className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
+                <button onClick={() => handleQueryChange("")} className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
                   <X className="h-4 w-4" />
                 </button>
               )}
@@ -554,16 +545,16 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
               {platform !== "all" && totalPages > 1 && (
                 <div className="flex items-center justify-center gap-4 py-4">
                   <button
-                    onClick={() => setTablePage(tablePage - 1)}
-                    disabled={tablePage === 1}
+                    onClick={() => setTablePage(safeTablePage - 1)}
+                    disabled={safeTablePage === 1}
                     className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
                   >
                     <ChevronLeft className="h-3 w-3" /> Prev
                   </button>
                   <span className="text-[10px] font-bold uppercase tracking-wider tabular-nums text-muted-foreground">{tablePage} / {totalPages}</span>
                   <button
-                    onClick={() => setTablePage(tablePage + 1)}
-                    disabled={tablePage >= totalPages}
+                    onClick={() => setTablePage(safeTablePage + 1)}
+                    disabled={safeTablePage >= totalPages}
                     className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
                   >
                     Next <ChevronRight className="h-3 w-3" />
