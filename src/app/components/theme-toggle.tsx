@@ -2,7 +2,7 @@
 
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
@@ -10,10 +10,12 @@ export function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
 
   // Avoid hydration mismatch by only rendering after mount
-  if (typeof window === "undefined") return null
-  if (!mounted && typeof window !== "undefined") {
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
-  }
+  }, [])
+
+  if (!mounted) return null
 
   const isDark = theme === "dark"
 
