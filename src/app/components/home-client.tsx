@@ -456,26 +456,34 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
           <div className="flex flex-col gap-4">
             <div className="relative">
               <Search className="pointer-events-none absolute left-0 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+              <label htmlFor="home-search" className="sr-only">搜索更新、摘要或标签</label>
               <input
-                type="text"
+                id="home-search"
+                type="search"
                 placeholder="搜索更新、摘要或标签..."
                 value={query}
                 onChange={(e) => handleQueryChange(e.target.value)}
+                aria-label="搜索更新、摘要或标签"
                 className="w-full pl-6 pr-8 py-2 border-0 border-b border-brand-black dark:border-white/20 bg-transparent text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-brand-blue transition-colors"
               />
               {query && (
-                <button onClick={() => handleQueryChange("")} className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
+                <button
+                  onClick={() => handleQueryChange("")}
+                  aria-label="清除搜索"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-full p-1"
+                >
                   <X className="h-4 w-4" />
                 </button>
               )}
             </div>
             <div className="flex items-center gap-3 flex-wrap">
-              <div className="flex flex-wrap gap-2 flex-1">
+              <div className="flex flex-wrap gap-2 flex-1" role="group" aria-label="分类筛选">
                 {CATEGORY_FILTERS.map((filter) => (
                   <button
                     key={filter}
                     onClick={() => handleCategorySelect(filter)}
-                    className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] rounded-full border transition-all ${
+                    aria-pressed={category === filter}
+                    className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] rounded-full border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                       category === filter
                         ? "bg-brand-black text-white border-brand-black dark:bg-white dark:text-black dark:border-white"
                         : "border-border text-muted-foreground hover:border-foreground hover:text-foreground"
@@ -488,23 +496,25 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
               <div className="flex gap-2 shrink-0">
                 <button
                   onClick={handleShowTrendToggle}
-                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
+                  aria-label={showTrend ? "隐藏趋势图" : "显示趋势图"}
+                  aria-pressed={showTrend}
+                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                     showTrend
                       ? "border-brand-black bg-brand-black text-white dark:border-white dark:bg-white dark:text-black"
                       : "border-border text-muted-foreground hover:border-foreground"
                   }`}
-                  title="Toggle trend chart"
+                  title={showTrend ? "隐藏趋势图" : "显示趋势图"}
                 >
                   {showTrend ? <SlidersHorizontal className="h-3.5 w-3.5" /> : <BarChart3 className="h-3.5 w-3.5" />}
                 </button>
                 <button
                   onClick={handleViewModeToggle}
-                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all ${
+                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                     viewMode === "table"
                       ? "border-brand-black bg-brand-black text-white dark:border-white dark:bg-white dark:text-black"
                       : "border-border text-muted-foreground hover:border-foreground"
                   }`}
-                  aria-label={viewMode === "card" ? "Switch to table view" : "Switch to card view"}
+                  aria-label={viewMode === "card" ? "切换到表格视图" : "切换到卡片视图"}
                   aria-pressed={viewMode === "table"}
                 >
                   {viewMode === "card" ? <List className="h-3.5 w-3.5" /> : <LayoutGrid className="h-3.5 w-3.5" />}
@@ -543,52 +553,70 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
             <div className="animate-fade-up space-y-3">
               <UpdateTableView updates={platform === "all" ? filtered : paginatedTableData} />
               {platform !== "all" && totalPages > 1 && (
-                <div className="flex items-center justify-center gap-4 py-4">
+                <nav className="flex items-center justify-center gap-4 py-4" aria-label="表格分页">
                   <button
                     onClick={() => setTablePage(safeTablePage - 1)}
                     disabled={safeTablePage === 1}
-                    className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
+                    aria-label="上一页"
+                    className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
-                    <ChevronLeft className="h-3 w-3" /> Prev
+                    <ChevronLeft className="h-3 w-3" aria-hidden="true" /> Prev
                   </button>
-                  <span className="text-[10px] font-bold uppercase tracking-wider tabular-nums text-muted-foreground">{tablePage} / {totalPages}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider tabular-nums text-muted-foreground" aria-current="page">
+                    {safeTablePage} / {totalPages}
+                  </span>
                   <button
                     onClick={() => setTablePage(safeTablePage + 1)}
                     disabled={safeTablePage >= totalPages}
-                    className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
+                    aria-label="下一页"
+                    className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
-                    Next <ChevronRight className="h-3 w-3" />
+                    Next <ChevronRight className="h-3 w-3" aria-hidden="true" />
                   </button>
-                </div>
+                </nav>
               )}
             </div>
           )}
 
           {filtered.length === 0 && (
-            <div className="animate-fade-up border border-dashed border-brand-black/20 dark:border-white/10 py-24 text-center">
+            <div className="animate-fade-up border border-dashed border-brand-black/20 dark:border-white/10 py-16 px-6 text-center" role="status">
               <p className="text-2xl font-bold tracking-tight text-foreground">No updates found</p>
               <p className="mt-2 text-sm text-muted-foreground">Try adjusting your filters or search terms.</p>
+              {(query || category !== "all" || platform !== "all") && (
+                <button
+                  onClick={() => {
+                    handleQueryChange("")
+                    handleCategorySelect("all")
+                    handlePlatformSelect("all")
+                  }}
+                  className="mt-6 inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-brand-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  清空筛选
+                </button>
+              )}
             </div>
           )}
 
           {platform !== "all" && (
-            <div className="flex items-center justify-center gap-4 py-8">
+            <nav className="flex items-center justify-center gap-4 py-8" aria-label="周导航">
               <button
                 onClick={() => setCurrentWeekIndex(currentWeekIndex + 1)}
                 disabled={currentWeekIndex >= weeks.length - 1}
-                className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
+                aria-label="上一周"
+                className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                <ChevronLeft className="h-3 w-3" /> Previous Week
+                <ChevronLeft className="h-3 w-3" aria-hidden="true" /> Previous Week
               </button>
-              <span className="text-sm font-bold text-muted-foreground">{currentWeek}</span>
+              <span className="text-sm font-bold text-muted-foreground tabular-nums" aria-current="page">{currentWeek}</span>
               <button
                 onClick={() => setCurrentWeekIndex(currentWeekIndex - 1)}
                 disabled={currentWeekIndex === 0}
-                className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full"
+                aria-label="下一周"
+                className="inline-flex h-8 items-center gap-1.5 px-4 text-[10px] font-bold uppercase tracking-wider border border-brand-black dark:border-white/20 transition-colors hover:bg-muted disabled:opacity-30 disabled:cursor-not-allowed rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                Next Week <ChevronRight className="h-3 w-3" />
+                Next Week <ChevronRight className="h-3 w-3" aria-hidden="true" />
               </button>
-            </div>
+            </nav>
           )}
         </div>
       </main>
