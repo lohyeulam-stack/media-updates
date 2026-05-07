@@ -1,11 +1,11 @@
 "use client"
 
+import { ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card"
 import {
   CATEGORY_LABELS,
@@ -14,9 +14,15 @@ import {
 } from "@/lib/types"
 
 const IMPORTANCE_STYLES = {
-  high: "bg-red-50 text-red-700 border-red-200",
-  medium: "bg-amber-50 text-amber-700 border-amber-200",
-  low: "bg-slate-50 text-slate-500 border-slate-200",
+  high: "bg-red-500/10 text-red-600 dark:bg-red-500/20 dark:text-red-400 border-red-500/20",
+  medium: "bg-amber-500/10 text-amber-600 dark:bg-amber-500/20 dark:text-amber-400 border-amber-500/20",
+  low: "bg-slate-500/10 text-slate-600 dark:bg-slate-500/20 dark:text-slate-400 border-slate-500/20",
+}
+
+const IMPORTANCE_LABELS = {
+  high: "重要",
+  medium: "一般",
+  low: "次要",
 }
 
 export function UpdateCard({ update }: { update: MediaUpdate }) {
@@ -24,53 +30,102 @@ export function UpdateCard({ update }: { update: MediaUpdate }) {
   const impStyle = IMPORTANCE_STYLES[update.importance]
 
   return (
-    <Card className="group transition-[transform,box-shadow] duration-300 motion-reduce:transition-none hover:shadow-xl motion-reduce:hover:shadow-lg hover:-translate-y-1 motion-reduce:hover:translate-y-0 border-l-4 bg-card/50 backdrop-blur-sm"
-          style={{ borderLeftColor: pm?.color || "#888" }}>
-      <CardHeader className="pb-2 space-y-1.5">
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2 py-0.5 rounded-full"
-                style={{ backgroundColor: pm?.color + "15", color: pm?.color }}>
-            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: pm?.color }} />
+    <Card className="group relative overflow-hidden transition-all duration-200 hover:shadow-lg dark:hover:shadow-xl/5 border-border/50 dark:border-white/5 bg-card dark:bg-white/[0.02] backdrop-blur-sm">
+      {/* Platform color accent bar */}
+      <div
+        className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-200 group-hover:w-1.5"
+        style={{ backgroundColor: pm?.color || "#888" }}
+        aria-hidden="true"
+      />
+
+      <CardHeader className="pb-3 pl-5">
+        {/* Meta row: platform, importance, category, date */}
+        <div className="flex items-center gap-2 flex-wrap mb-3">
+          {/* Platform badge - most prominent */}
+          <span
+            className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md transition-colors"
+            style={{
+              backgroundColor: pm?.color + "15",
+              color: pm?.color,
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: pm?.color }}
+              aria-hidden="true"
+            />
             {pm?.label || update.platform}
           </span>
-          <span className={`text-xs px-2 py-0.5 rounded-full border ${impStyle}`}>
-            {update.importance === "high" ? "重要" : update.importance === "medium" ? "一般" : "次要"}
+
+          {/* Importance badge */}
+          <span className={`text-[11px] font-medium px-2 py-0.5 rounded-md border ${impStyle}`}>
+            {IMPORTANCE_LABELS[update.importance]}
           </span>
-          <Badge variant="outline" className="text-xs text-muted-foreground font-normal">
+
+          {/* Category badge - lower contrast */}
+          <Badge variant="outline" className="text-[11px] text-muted-foreground font-normal border-border/50">
             {CATEGORY_LABELS[update.category] || update.category}
           </Badge>
-          <span className="text-xs text-muted-foreground ml-auto tabular-nums">{update.date}</span>
+
+          {/* Date - right aligned, lowest contrast */}
+          <span className="text-[11px] text-muted-foreground/60 ml-auto tabular-nums font-mono">
+            {update.date}
+          </span>
         </div>
-        <CardTitle className="text-[15px] leading-snug font-semibold">
-          <a href={update.sourceUrl} target="_blank" rel="noopener noreferrer"
-             className="hover:text-blue-600 transition-colors">
-            {update.title}
+
+        {/* Title - largest, most prominent */}
+        <h3 className="text-base font-semibold leading-snug tracking-tight mb-1.5">
+          <a
+            href={update.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/link inline-flex items-start gap-1.5 hover:text-brand-blue dark:hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+          >
+            <span className="flex-1">{update.title}</span>
+            <ExternalLink
+              className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity shrink-0 mt-0.5"
+              aria-hidden="true"
+            />
+            <span className="sr-only">(在新标签页打开)</span>
           </a>
-        </CardTitle>
+        </h3>
+
+        {/* Original title - if different, smaller and muted */}
         {update.titleOriginal && update.titleOriginal !== update.title && (
-          <p className="text-xs text-muted-foreground/70 italic leading-snug">
+          <p className="text-xs text-muted-foreground/60 italic leading-snug">
             {update.titleOriginal}
           </p>
         )}
       </CardHeader>
-      <CardContent className="pt-0 space-y-2">
+
+      <CardContent className="pt-0 pb-4 pl-5 space-y-3">
+        {/* Summary - medium size, good contrast */}
         {update.summary ? (
-          <p className="text-sm text-foreground/75 leading-relaxed">
+          <p className="text-sm text-foreground/80 dark:text-foreground/70 leading-relaxed">
             {update.summary}
           </p>
         ) : (
-          <p className="text-sm text-muted-foreground/50 italic">Pending...</p>
+          <p className="text-sm text-muted-foreground/40 italic">等待处理...</p>
         )}
+
+        {/* Tags - smallest, grouped together */}
         {update.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1 pt-1">
+          <div className="flex flex-wrap gap-1.5">
             {update.tags.map((tag) => (
-              <span key={tag} className="text-[11px] px-1.5 py-0.5 bg-muted rounded-md text-muted-foreground">
+              <span
+                key={tag}
+                className="text-[10px] px-2 py-0.5 bg-muted/50 dark:bg-white/5 rounded-md text-muted-foreground/70 font-medium"
+              >
                 {tag}
               </span>
             ))}
           </div>
         )}
-        <p className="text-[11px] text-muted-foreground/50 pt-1">{update.source}</p>
+
+        {/* Source - smallest, lowest contrast */}
+        <p className="text-[10px] text-muted-foreground/40 pt-0.5">
+          来源：{update.source}
+        </p>
       </CardContent>
     </Card>
   )
