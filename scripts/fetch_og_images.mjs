@@ -3,7 +3,13 @@
  * Usage: node scripts/fetch_og_images.mjs [--force]
  *   --force  re-fetch items that previously returned null
  *
- * Concurrency: 10 parallel fetches (was serial — 172 items × 8s = ~23 min worst case)
+ * Strategy:
+ *   - JS-heavy platforms (meta, tiktok, pinterest, youtube, x, google) → Playwright
+ *   - Everything else → plain fetch (faster, no browser needed)
+ *
+ * Concurrency:
+ *   - Playwright: 3 parallel browser pages (RAM-bound)
+ *   - Fetch: 10 parallel requests
  */
 import { readFileSync, writeFileSync, readdirSync } from 'fs'
 import { join, dirname } from 'path'
@@ -11,9 +17,15 @@ import { fileURLToPath } from 'url'
 
 const __dir = dirname(fileURLToPath(import.meta.url))
 const DATA_DIR = join(__dir, '../data')
-const CONCURRENCY = 10
-const TIMEOUT_MS = 8000
 const FORCE = process.argv.includes('--force')
+
+// Platforms that require a real browser to render og:image tags
+const PLAYWRIGHT_PLATFORMS = new Set(['meta', 'tiktok', 'pinterest', 'youtube', 'x', 'google'])
+
+const FETCH_CONCURRENCY = 10
+const PW_CONCURRENCY = 3
+const FETCH_TIMEOUT_MS = 8000
+const PW_TIMEOUT_MS = 20000
 
 const UA_LIST = [
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
@@ -21,9 +33,6 @@ const UA_LIST = [
   'Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
 ]
 
-// Reject og:image URLs that are platform logos or default sharing cards.
-// These make cards look broken because every article shares the same logo,
-// and logos don't have the aspect ratio / content suited to a 16:9 hero image.
 const LOGO_PATTERNS = [
   /\/logo[._-]/i,
   /googlelogo/i,
@@ -32,10 +41,10 @@ const LOGO_PATTERNS = [
   /-logo[._-]/i,
   /\/icon[._-]/i,
   /favicon/i,
-  /sharing-card/i,           // X default
-  /gmp\.max/i,                // Google Marketing Platform logo
-  /youtube_social/i,          // YouTube default social image
-  /ghost_yellow/i,            // Snapchat default ghost
+  /sharing-card/i,
+  /gmp\.max/i,
+  /youtube_social/i,
+  /ghost_yellow/i,
   /default[._-](hero|image|cover|og)/i,
 ]
 
@@ -44,12 +53,28 @@ function isLogoUrl(url) {
   return LOGO_PATTERNS.some((p) => p.test(url))
 }
 
-async function fetchOgImage(url) {
+function decodeEntities(s) {
+  return s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+}
+
+function extractOgFromHtml(html) {
+  const m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
+          || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i)
+          || html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
+          || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i)
+  if (!m) return null
+  const url = decodeEntities(m[1].trim())
+  return isLogoUrl(url) ? null : url
+}
+
+// ── Plain fetch (for non-JS platforms) ───────────────────────────────────────
+
+async function fetchOgImageHttp(url) {
   const ua = UA_LIST[Math.floor(Math.random() * UA_LIST.length)]
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const ctrl = new AbortController()
-      const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS)
+      const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS)
       const res = await fetch(url, {
         signal: ctrl.signal,
         headers: {
@@ -62,17 +87,7 @@ async function fetchOgImage(url) {
       clearTimeout(timer)
       if (!res.ok) return null
       const html = await res.text()
-      // og:image (both attribute orderings)
-      const m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
-            || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i)
-            || html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
-            || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i)
-      if (!m) return null
-      // Decode HTML entities (e.g. &amp; → &) before storing
-      const imageUrl = m[1].trim().replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
-      // Reject platform logos / default sharing cards — they make bad hero covers
-      if (isLogoUrl(imageUrl)) return null
-      return imageUrl
+      return extractOgFromHtml(html)
     } catch {
       if (attempt === 0) await new Promise(r => setTimeout(r, 1500))
     }
@@ -80,7 +95,38 @@ async function fetchOgImage(url) {
   return null
 }
 
-// Run tasks with bounded concurrency
+// ── Playwright (for JS-rendered platforms) ───────────────────────────────────
+
+let _browser = null
+async function getBrowser() {
+  if (!_browser) {
+    const { chromium } = await import('playwright')
+    _browser = await chromium.launch({ headless: true })
+  }
+  return _browser
+}
+
+async function fetchOgImagePlaywright(url) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    let page = null
+    try {
+      const browser = await getBrowser()
+      page = await browser.newPage()
+      await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-US,en;q=0.9' })
+      await page.goto(url, { waitUntil: 'networkidle', timeout: PW_TIMEOUT_MS })
+      const html = await page.content()
+      await page.close()
+      return extractOgFromHtml(html)
+    } catch {
+      if (page) await page.close().catch(() => {})
+      if (attempt === 0) await new Promise(r => setTimeout(r, 2000))
+    }
+  }
+  return null
+}
+
+// ── Concurrency pool ──────────────────────────────────────────────────────────
+
 async function pool(tasks, concurrency) {
   const results = []
   let idx = 0
@@ -94,12 +140,14 @@ async function pool(tasks, concurrency) {
   return results
 }
 
+// ── File enrichment ───────────────────────────────────────────────────────────
+
 async function enrichFile(filePath) {
   const items = JSON.parse(readFileSync(filePath, 'utf8'))
   const pending = items.filter(item => {
     if (!item.sourceUrl) return false
     if (FORCE) return true
-    return item.imageUrl === undefined  // only unprocessed
+    return item.imageUrl === undefined || item.imageUrl === null
   })
 
   if (pending.length === 0) {
@@ -107,48 +155,61 @@ async function enrichFile(filePath) {
     return 0
   }
 
-  console.log(`  → ${pending.length} items to enrich (concurrency=${CONCURRENCY})`)
+  const pwItems = pending.filter(i => PLAYWRIGHT_PLATFORMS.has(i.platform))
+  const httpItems = pending.filter(i => !PLAYWRIGHT_PLATFORMS.has(i.platform))
 
-  const tasks = pending.map(item => async () => {
-    process.stdout.write(`  ${item.id}... `)
-    const img = await fetchOgImage(item.sourceUrl)
-    item.imageUrl = img || null
-    console.log(img ? `✓` : `✗`)
-    return img
-  })
+  console.log(`  → ${pending.length} items (${pwItems.length} playwright, ${httpItems.length} fetch)`)
 
-  await pool(tasks, CONCURRENCY)
+  const makeTasks = (list, fetcher) =>
+    list.map(item => async () => {
+      process.stdout.write(`  [${item.platform}] ${item.id}... `)
+      const img = await fetcher(item.sourceUrl)
+      item.imageUrl = img || null
+      console.log(img ? `✓` : `✗`)
+      return img
+    })
 
-  // For items with no sourceUrl that were never touched
+  await pool(makeTasks(pwItems, fetchOgImagePlaywright), PW_CONCURRENCY)
+  await pool(makeTasks(httpItems, fetchOgImageHttp), FETCH_CONCURRENCY)
+
   for (const item of items) {
     if (item.imageUrl === undefined) item.imageUrl = null
   }
 
-  const found = items.filter(i => i.imageUrl).length
   writeFileSync(filePath, JSON.stringify(items, null, 2))
-  return found
+  return items.filter(i => i.imageUrl).length
 }
+
+// ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
   const start = Date.now()
-  let totalFound = 0
 
   console.log('\n=== Enriching data/updates.json ===')
-  totalFound += await enrichFile(join(DATA_DIR, 'updates.json'))
+  await enrichFile(join(DATA_DIR, 'updates.json'))
 
   const weeklyDir = join(DATA_DIR, 'weekly')
   const weeklyFiles = readdirSync(weeklyDir)
     .filter(f => f.endsWith('.json'))
     .sort()
-    .slice(-4)  // only 4 most recent weeks
+    .slice(-4)
 
   for (const f of weeklyFiles) {
     console.log(`\n=== Enriching weekly/${f} ===`)
-    totalFound += await enrichFile(join(weeklyDir, f))
+    await enrichFile(join(weeklyDir, f))
   }
 
+  if (_browser) await _browser.close()
+
   const elapsed = ((Date.now() - start) / 1000).toFixed(1)
-  console.log(`\nDone. ${totalFound} images found. Elapsed: ${elapsed}s`)
+  // Final tally
+  const data = JSON.parse(readFileSync(join(DATA_DIR, 'updates.json'), 'utf8'))
+  const withImg = data.filter(i => i.imageUrl).length
+  console.log(`\nDone in ${elapsed}s. updates.json: ${withImg}/${data.length} have images.`)
 }
 
-main().catch(console.error)
+main().catch(async (e) => {
+  if (_browser) await _browser.close().catch(() => {})
+  console.error(e)
+  process.exit(1)
+})

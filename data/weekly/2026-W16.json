@@ -101,7 +101,7 @@
       "合作伙伴"
     ],
     "fetchedAt": "2026-04-26T00:32:53.467107",
-    "imageUrl": "https://lf-tt4b.tiktokcdn.com/obj/i18nblog/tt4b_cms/en-US/tipdilz7wysq-20Rq1lrlQrShKvUBO0qB1q.png"
+    "imageUrl": null
   },
   {
     "id": "meta-2026-04-14-001",
@@ -165,7 +165,7 @@
       "自动化"
     ],
     "fetchedAt": "2026-04-26T00:32:53.467107",
-    "imageUrl": "https://lf-tt4b.tiktokcdn.com/obj/i18nblog/tt4b_cms/en-US/tipdilz7wysq-5NujP3KNKgh7a0uivbcwKs.png"
+    "imageUrl": null
   },
   {
     "id": "snapchat-2026-04-13-001",
@@ -207,6 +207,6 @@
       "工作流优化"
     ],
     "fetchedAt": "2026-04-26T22:38:02.234996",
-    "imageUrl": "https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok_biz_homepage/dist/client/img/default_share.9af38ec.jpg"
+    "imageUrl": null
   }
 ]
