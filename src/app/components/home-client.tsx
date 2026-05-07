@@ -49,32 +49,50 @@ function StudioUpdateCard({ update, index }: { update: MediaUpdate; index: numbe
         rel="noopener noreferrer"
         className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
       >
-        {/* Visual placeholder block with platform color */}
+        {/* Image block — real imageUrl if available, fallback to platform color */}
         <div className={`${isLarge ? "aspect-[16/9]" : "aspect-[4/3]"} bg-muted mb-6 lg:mb-8 overflow-hidden relative group/img transition-all`}>
-          <motion.div
-            className="absolute inset-0 opacity-10 blur-2xl scale-110"
-            style={{ backgroundColor: platform?.color }}
-            whileHover={{ scale: 1.3, opacity: 0.2 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <motion.span
-              className={`${isLarge ? "text-[10vw]" : "text-[6vw]"} font-bold tracking-tighter opacity-[0.04] uppercase select-none text-foreground`}
-              aria-hidden="true"
-            >
-              {platform?.label}
-            </motion.span>
-          </div>
+          {update.imageUrl ? (
+            <>
+              <img
+                src={update.imageUrl}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+              />
+              {/* Subtle gradient overlay for readability */}
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 pointer-events-none"
+                aria-hidden="true"
+              />
+            </>
+          ) : (
+            <>
+              <motion.div
+                className="absolute inset-0 opacity-10 blur-2xl scale-110"
+                style={{ backgroundColor: platform?.color }}
+                whileHover={{ scale: 1.3, opacity: 0.2 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span
+                  className={`${isLarge ? "text-[10vw]" : "text-[6vw]"} font-bold tracking-tighter opacity-[0.04] uppercase select-none text-foreground`}
+                  aria-hidden="true"
+                >
+                  {platform?.label}
+                </span>
+              </div>
+            </>
+          )}
           {/* Category badge top-left */}
-          <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1">
+          <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1 z-10">
             {CATEGORY_LABELS[update.category] || update.category}
           </div>
           {/* Date badge top-right */}
-          <div className="absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono opacity-40">
+          <div className={`absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono z-10 ${update.imageUrl ? "text-white/80" : "opacity-40"}`}>
             {update.date}
           </div>
           {/* External link icon on hover */}
-          <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className={`absolute bottom-4 right-4 lg:bottom-6 lg:right-6 opacity-0 group-hover:opacity-100 transition-opacity z-10 ${update.imageUrl ? "text-white" : ""}`}>
             <ExternalLink size={isLarge ? 32 : 24} strokeWidth={1.5} />
           </div>
         </div>
@@ -233,22 +251,22 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
             {/* Eyebrow */}
             <div className="text-[10px] uppercase tracking-[0.5em] font-bold mb-12 lg:mb-16 flex items-center gap-6">
               <span className="w-12 h-[2px] bg-foreground" aria-hidden="true" />
-              北京时间每日同步 · 追踪 {stats.totalPlatforms} 个平台
+              Daily Sync · Beijing 00:00 · {stats.totalPlatforms} Platforms
             </div>
 
-            {/* Swiss H1 - 10vw */}
+            {/* Swiss H1 - 10vw English typography */}
             <h1 className="swiss-h1 mb-12 lg:mb-16">
-              追踪<span className="italic-accent">广告</span>世界，<br />
-              让每一次<span className="text-brand-blue">变化</span>被看见。
+              Track every <span className="italic-accent">shift</span><br />
+              in the <span className="text-brand-blue">Ad</span> world.
             </h1>
 
             {/* Description + CTA */}
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16">
               <p className="text-2xl lg:text-4xl xl:text-5xl font-light tracking-tighter max-w-3xl leading-[0.95]">
-                每日 00:00 自动同步，覆盖 TikTok、Meta、Google 等 <span className="italic-accent">20+</span> 广告平台。从产品更新到政策变更，一切<span className="italic-accent">尽在掌握</span>。
+                每日 00:00 自动同步 TikTok、Meta、Google 等 <span className="italic-accent">20+</span> 广告平台的产品更新、API 变更与政策调整。一切<span className="italic-accent">尽在掌握</span>。
               </p>
               <Link href="#feed" className="swiss-button shrink-0">
-                浏览本周情报
+                View This Week
               </Link>
             </div>
           </motion.div>
@@ -264,10 +282,10 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
             2. BI METRICS STRIP
             ═══════════════════════════════════════════════ */}
         <section className="grid grid-cols-2 lg:grid-cols-5 border-b border-foreground divide-x divide-foreground">
-          <StatItem label="累计更新" value={stats.totalUpdates.toString()} change="ALL TIME" />
-          <StatItem label="追踪平台" value={stats.totalPlatforms.toString()} change="PLATFORMS" />
-          <StatItem label="本周同步" value={stats.thisWeek.toString()} change="THIS WEEK" />
-          <StatItem label="周度存档" value={stats.weeksCount.toString()} change="ARCHIVED" />
+          <StatItem label="Total Updates" value={stats.totalUpdates.toString()} change="ALL TIME" />
+          <StatItem label="Platforms" value={stats.totalPlatforms.toString()} change="TRACKED" />
+          <StatItem label="This Week" value={stats.thisWeek.toString()} change="NEW" />
+          <StatItem label="Weeks Archived" value={stats.weeksCount.toString()} change="HISTORY" />
           <div className="py-12 lg:py-20 px-6 lg:px-12 flex flex-col justify-between items-start bg-brand-blue text-white group cursor-crosshair">
             <div className="flex items-baseline justify-between w-full">
               <span className="text-5xl lg:text-7xl xl:text-8xl font-bold tracking-tighter leading-none">
@@ -278,7 +296,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
               </span>
             </div>
             <p className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-60 mt-6 lg:mt-8">
-              重要更新
+              Priority Updates
             </p>
           </div>
         </section>
@@ -295,11 +313,11 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
           {/* Search input */}
           <div className="flex-1 flex items-center px-6 lg:px-12 border-r-0 lg:border-r border-foreground py-5 lg:py-6 min-w-0">
             <Search size={20} className="shrink-0 mr-4 lg:mr-6 opacity-40" strokeWidth={1.5} aria-hidden="true" />
-            <label htmlFor="home-search" className="sr-only">搜索更新、摘要或标签</label>
+            <label htmlFor="home-search" className="sr-only">Search updates</label>
             <input
               id="home-search"
               type="search"
-              placeholder="搜索本周情报..."
+              placeholder="FILTER THE FEED..."
               className="w-full bg-transparent outline-none font-sans font-bold text-xs uppercase tracking-[0.3em] placeholder:text-foreground/20"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -336,7 +354,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
               onClick={() => setSidebarOpen(true)}
               className="px-6 lg:px-12 py-5 lg:py-6 bg-brand-blue text-white flex items-center gap-3 text-[10px] uppercase font-bold tracking-[0.3em] hover:bg-foreground dark:hover:bg-white dark:hover:text-foreground transition-all whitespace-nowrap"
             >
-              筛选 +{stats.totalPlatforms - 4}
+              Filters +{stats.totalPlatforms - 4}
             </button>
           </div>
         </motion.div>
@@ -354,15 +372,15 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
           >
             <div className="max-w-4xl">
               <div className="text-[10px] uppercase tracking-[0.5em] font-bold mb-4 lg:mb-6 flex items-center gap-4 opacity-40">
-                本周情报 / Week {currentWeek}
+                This Week / {currentWeek}
               </div>
               <h2 className="swiss-h2">
-                平台的每一次<span className="italic-accent">变化</span>，<br />
-                都<span className="text-brand-blue">值得</span>被记录。
+                Every <span className="italic-accent">signal</span>,<br />
+                worth <span className="text-brand-blue">capturing</span>.
               </h2>
               {latestDate && (
                 <p className="text-sm font-mono mt-6 opacity-40">
-                  最新更新 / {latestDate} · 当前显示 {filtered.length} 条 / 共 {updates.length} 条
+                  Latest / {latestDate} · Showing {filtered.length} of {updates.length}
                 </p>
               )}
             </div>
@@ -381,7 +399,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
                 No Signal.
               </div>
               <p className="text-sm font-mono opacity-40">
-                未找到匹配的更新 · 尝试调整筛选条件
+                No updates match your filters
               </p>
               {(query || category !== "all" || platform !== "all") && (
                 <button
@@ -392,7 +410,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
                   }}
                   className="mt-8 swiss-button-outline"
                 >
-                  清空筛选
+                  Clear Filters
                 </button>
               )}
             </div>
@@ -402,10 +420,10 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
           {filtered.length > 24 && (
             <div className="text-center pt-24 lg:pt-32">
               <p className="text-[10px] uppercase font-bold tracking-[0.4em] opacity-40 mb-6">
-                已展示 24 / {filtered.length} 条更新
+                Showing 24 / {filtered.length}
               </p>
               <Link href={`/weekly/${currentWeek}`} className="swiss-button-outline">
-                查看完整周报
+                View Full Weekly Report
               </Link>
             </div>
           )}

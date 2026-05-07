@@ -34,21 +34,21 @@ export function Sidebar({ updates, months, weeks, onSelect, onClose }: SidebarPr
     <div className="h-full flex flex-col justify-between pt-4 pb-8">
       <div>
         <div className="text-[10px] uppercase tracking-[0.4em] font-bold mb-12 opacity-30">
-          Navigation / 导航
+          Navigation / Portal
         </div>
 
         <nav className="space-y-12">
           {/* All platforms button */}
           <section>
             <h3 className="text-xs uppercase font-bold tracking-[0.3em] text-brand-blue mb-6">
-              平台索引 · {updates.length} 条
+              Network Index · {updates.length} entries
             </h3>
             <button
               onClick={() => onSelect("all")}
               className="group flex items-baseline justify-between w-full text-left mb-8 pb-3 border-b border-foreground/10 hover:border-brand-blue transition-colors focus-visible:outline-none focus-visible:text-brand-blue"
             >
               <span className="text-3xl lg:text-4xl font-bold tracking-tighter group-hover:italic group-hover:text-brand-blue transition-all">
-                全部平台
+                All Platforms
               </span>
               <span className="text-xs font-mono opacity-40 tabular-nums">
                 {counts.all}
@@ -91,7 +91,7 @@ export function Sidebar({ updates, months, weeks, onSelect, onClose }: SidebarPr
           {recentMonths.length > 0 && (
             <section>
               <h3 className="text-xs uppercase font-bold tracking-[0.3em] text-brand-blue mb-6">
-                月度情报
+                Monthly Ledger
               </h3>
               <div className="space-y-3">
                 {recentMonths.map((m) => (
@@ -112,7 +112,7 @@ export function Sidebar({ updates, months, weeks, onSelect, onClose }: SidebarPr
           {recentWeeks.length > 0 && (
             <section>
               <h3 className="text-xs uppercase font-bold tracking-[0.3em] text-brand-blue mb-6">
-                周报存档
+                Weekly Archive
               </h3>
               <div className="space-y-3">
                 {recentWeeks.map((w) => (
@@ -132,7 +132,7 @@ export function Sidebar({ updates, months, weeks, onSelect, onClose }: SidebarPr
           {/* Quick links */}
           <section>
             <h3 className="text-xs uppercase font-bold tracking-[0.3em] text-brand-blue mb-6">
-              其他
+              Elsewhere
             </h3>
             <div className="space-y-3">
               <Link
@@ -140,14 +140,14 @@ export function Sidebar({ updates, months, weeks, onSelect, onClose }: SidebarPr
                 onClick={onClose}
                 className="block text-lg font-medium hover:text-brand-blue hover:italic transition-all focus-visible:outline-none focus-visible:text-brand-blue"
               >
-                历史归档
+                Archive
               </Link>
               <Link
                 href="/log"
                 onClick={onClose}
                 className="block text-lg font-medium hover:text-brand-blue hover:italic transition-all focus-visible:outline-none focus-visible:text-brand-blue"
               >
-                更新日志
+                Changelog
               </Link>
             </div>
           </section>

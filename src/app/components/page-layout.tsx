@@ -107,7 +107,7 @@ export function SwissHeader({ onMenuOpen }: { onMenuOpen: () => void }) {
           aria-label="打开导航菜单"
         >
           <Menu size={14} strokeWidth={2} />
-          <span className="hidden sm:inline">菜单</span>
+          <span className="hidden sm:inline">Menu</span>
         </button>
       </div>
     </header>
@@ -122,9 +122,9 @@ export function SwissFooter({ months }: { months?: string[] }) {
       {/* Hero Statement */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24 lg:mb-40">
         <h2 className="text-5xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] leading-[0.95]">
-          追踪<br />
-          广告世界的<br />
-          每一次<span className="font-serif italic font-medium"> 变化</span>
+          Track every<br />
+          <span className="font-serif italic font-medium">shift</span> in the<br />
+          Ad world.
         </h2>
         <div className="flex flex-col justify-between gap-12">
           <p className="text-lg lg:text-2xl font-light opacity-80 max-w-md leading-relaxed">
@@ -132,12 +132,12 @@ export function SwissFooter({ months }: { months?: string[] }) {
           </p>
           <div className="grid grid-cols-2 gap-8 lg:gap-12">
             <div className="space-y-3">
-              <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">更新频率</div>
-              <div className="text-sm font-bold">北京时间每日 00:00<br />自动同步</div>
+              <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">Sync Cadence</div>
+              <div className="text-sm font-bold">Beijing 00:00<br />Daily Auto-Sync</div>
             </div>
             <div className="space-y-3">
-              <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">数据来源</div>
-              <div className="text-sm font-bold">32 个官方信息源<br />MiniMax AI 提炼</div>
+              <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">Sources</div>
+              <div className="text-sm font-bold">32 Official Feeds<br />MiniMax AI Curated</div>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ export function SwissFooter({ months }: { months?: string[] }) {
       {months && months.length > 0 && (
         <div className="border-t border-white/10 pt-16 pb-16 grid grid-cols-1 lg:grid-cols-4 gap-12">
           <div>
-            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">月报</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">Monthly</div>
             <ul className="space-y-2">
               {months.slice(0, 6).map((m) => (
                 <li key={m}>
@@ -162,39 +162,39 @@ export function SwissFooter({ months }: { months?: string[] }) {
             </ul>
           </div>
           <div>
-            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">链接</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">Navigate</div>
             <ul className="space-y-2">
               <li>
                 <Link href="/archive" className="text-sm font-medium opacity-80 hover:opacity-100 hover:italic transition-all">
-                  历史归档
+                  Archive
                 </Link>
               </li>
               <li>
                 <Link href="/log" className="text-sm font-medium opacity-80 hover:opacity-100 hover:italic transition-all">
-                  更新日志
+                  Changelog
                 </Link>
               </li>
               <li>
                 <Link href="/feed.xml" target="_blank" className="text-sm font-medium opacity-80 hover:opacity-100 hover:italic transition-all">
-                  RSS 订阅
+                  RSS Feed
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">覆盖平台</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">Coverage</div>
             <p className="text-sm font-medium opacity-80">
               TikTok · Meta · Google<br />
               LinkedIn · X · Snapchat<br />
               Pinterest · YouTube<br />
-              以及 12+ 更多平台
+              & 12+ more
             </p>
           </div>
           <div>
-            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">维护团队</div>
+            <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold mb-4">Built By</div>
             <p className="text-sm font-medium opacity-80">
-              TopTou 产品团队<br />
-              <span className="opacity-60">GitHub 开源</span>
+              TopTou Product Team<br />
+              <span className="opacity-60">Open Source on GitHub</span>
             </p>
           </div>
         </div>

@@ -99,7 +99,7 @@ export function PlatformClient({ platform, updates, allUpdates, months, weeks }:
               href="/"
               className="inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] hover:text-brand-blue transition-colors mb-12 lg:mb-16"
             >
-              <ArrowLeft size={14} strokeWidth={2} /> 返回首页
+              <ArrowLeft size={14} strokeWidth={2} /> Back to Index
             </Link>
 
             <div className="flex items-center gap-4 mb-8">
@@ -115,7 +115,7 @@ export function PlatformClient({ platform, updates, allUpdates, months, weeks }:
 
             <h1 className="swiss-h1 mb-8 lg:mb-12">
               {meta.label}.<br />
-              <span className="italic-accent">每日追踪</span>。
+              <span className="italic-accent">Daily tracked</span>.
             </h1>
 
             <div className="grid grid-cols-3 gap-8 lg:gap-16 max-w-2xl">
@@ -124,7 +124,7 @@ export function PlatformClient({ platform, updates, allUpdates, months, weeks }:
                   {updates.length}
                 </div>
                 <div className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40 mt-2">
-                  累计更新
+                  Total Updates
                 </div>
               </div>
               <div>
@@ -132,7 +132,7 @@ export function PlatformClient({ platform, updates, allUpdates, months, weeks }:
                   {thisWeekCount}
                 </div>
                 <div className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40 mt-2">
-                  本周新增
+                  This Week
                 </div>
               </div>
               <div>
@@ -140,7 +140,7 @@ export function PlatformClient({ platform, updates, allUpdates, months, weeks }:
                   {latestDate ? latestDate.slice(5) : "—"}
                 </div>
                 <div className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40 mt-2">
-                  最新日期
+                  Latest
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@ export function PlatformClient({ platform, updates, allUpdates, months, weeks }:
               <div className="text-5xl lg:text-7xl font-bold uppercase tracking-tighter opacity-10 mb-4">
                 No Signal.
               </div>
-              <p className="text-sm font-mono opacity-40">暂无更新</p>
+              <p className="text-sm font-mono opacity-40">No updates available</p>
             </div>
           ) : (
             sortedDates.map((date, dateIdx) => (
@@ -177,7 +177,7 @@ export function PlatformClient({ platform, updates, allUpdates, months, weeks }:
                   </h2>
                   <div className="h-px flex-1" />
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
-                    {grouped[date].length} 条
+                    {grouped[date].length} {grouped[date].length === 1 ? "entry" : "entries"}
                   </span>
                 </div>
 
