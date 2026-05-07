@@ -76,96 +76,35 @@ function StudioUpdateCard({ update, index }: { update: MediaUpdate; index: numbe
         rel="noopener noreferrer"
         className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
       >
-        {/* Image block — real imageUrl if it's an article cover (not a logo),
-            otherwise a designed typographic fallback using the title */}
-        <div className={`${isLarge ? "aspect-[16/9]" : "aspect-[4/3]"} mb-6 lg:mb-8 overflow-hidden relative group/img transition-all`}>
-          {hasRealImage ? (
-            <>
-              {/* Platform color wash behind image so transparent PNGs don't look broken */}
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: platform?.color || "#0a0a0a" }}
-                aria-hidden="true"
-              />
-              <img
-                src={update.imageUrl!}
-                alt=""
-                loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-              />
-              {/* Bottom gradient for readability */}
-              <div
-                className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 pointer-events-none"
-                aria-hidden="true"
-              />
-            </>
-          ) : (
-            /* Typographic fallback: platform color as canvas, big title preview */
+        {/* Image block — only rendered when there's a real article cover image */}
+        {hasRealImage && (
+          <div className={`${isLarge ? "aspect-[16/9]" : "aspect-[4/3]"} mb-6 lg:mb-8 overflow-hidden relative group/img`}>
             <div
-              className="absolute inset-0 flex flex-col justify-between p-6 lg:p-8"
-              style={{
-                backgroundColor: platform?.color || "#111",
-                color: platform?.color === "#FFFC00" || platform?.color === "#FEE500" ? "#000" : "#fff",
-              }}
-            >
-              {/* Subtle texture via radial gradient */}
-              <div
-                className="absolute inset-0 opacity-60"
-                style={{
-                  background: `radial-gradient(circle at 85% 15%, rgba(255,255,255,0.15) 0%, transparent 50%)`,
-                }}
-                aria-hidden="true"
-              />
-              {/* Huge platform wordmark bottom-right as background texture */}
-              <span
-                className={`absolute -bottom-4 -right-2 font-bold tracking-tighter leading-none opacity-[0.08] uppercase select-none pointer-events-none ${
-                  isLarge ? "text-[18vw]" : "text-[12vw]"
-                }`}
-                aria-hidden="true"
-              >
-                {platform?.label}
-              </span>
-              {/* Category at top (visible layer) */}
-              <div className="relative z-10 text-[10px] font-bold uppercase tracking-[0.3em] opacity-70">
-                {CATEGORY_LABELS[update.category] || update.category}
-              </div>
-              {/* Title preview at bottom - designed as the image */}
-              <div className="relative z-10">
-                <h4 className={`font-bold tracking-tight leading-[1.05] ${
-                  isLarge ? "text-2xl lg:text-4xl line-clamp-3" : "text-lg lg:text-xl line-clamp-2"
-                }`}>
-                  {update.title}
-                </h4>
-                <div className="flex items-center gap-2 mt-3 text-[10px] font-bold uppercase tracking-[0.2em] opacity-60">
-                  <span className="w-6 h-[1px] bg-current" />
-                  {platform?.label}
-                </div>
-              </div>
+              className="absolute inset-0"
+              style={{ backgroundColor: platform?.color || "#0a0a0a" }}
+              aria-hidden="true"
+            />
+            <img
+              src={update.imageUrl!}
+              alt=""
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 pointer-events-none"
+              aria-hidden="true"
+            />
+            <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1 z-10">
+              {CATEGORY_LABELS[update.category] || update.category}
             </div>
-          )}
-
-          {/* Top badges — only show when there's a real image (fallback has them built-in) */}
-          {hasRealImage && (
-            <>
-              <div className="absolute top-4 left-4 lg:top-6 lg:left-6 text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1 z-10">
-                {CATEGORY_LABELS[update.category] || update.category}
-              </div>
-              <div className="absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono z-10 text-white/80">
-                {update.date}
-              </div>
-            </>
-          )}
-          {/* External link icon on hover - always show */}
-          <div className={`absolute bottom-4 right-4 lg:bottom-6 lg:right-6 opacity-0 group-hover:opacity-100 transition-opacity z-10 ${hasRealImage ? "text-white" : ""}`}>
-            <ExternalLink size={isLarge ? 32 : 24} strokeWidth={1.5} />
-          </div>
-          {/* Date badge for fallback (corner) */}
-          {!hasRealImage && (
-            <div className="absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono z-10 opacity-60">
+            <div className="absolute top-4 right-4 lg:top-6 lg:right-6 text-[10px] font-mono z-10 text-white/80">
               {update.date}
             </div>
-          )}
-        </div>
+            <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 opacity-0 group-hover:opacity-100 transition-opacity z-10 text-white">
+              <ExternalLink size={isLarge ? 32 : 24} strokeWidth={1.5} />
+            </div>
+          </div>
+        )}
 
         <div className="space-y-3 lg:space-y-4">
           {/* Platform indicator */}
