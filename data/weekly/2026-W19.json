@@ -104,5 +104,115 @@
     ],
     "fetchedAt": "2026-05-07T12:15:19.482287+08:00",
     "imageUrl": "https://business.x.com/content/dam/business-twitter/blog/appsflyer/appsflyer-asrn.png.twimg.1920.png"
+  },
+  {
+    "id": "meta-2026-05-07-001",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "meta",
+    "title": "Dribbleup如何将对Meta的全押押注转化为增长引擎",
+    "titleOriginal": "How Dribbleup Turned Their All-In Bet on Meta Into a Growth Engine",
+    "summary": "DribbleUp首席营销官分享品牌如何在Meta平台上实现盈利增长，98%的广告支出投向Meta，以及为何专注于单一平台、创意数量和AI工具的策略优于多元化布局。案例揭示了集中资源深耕主流平台的效果。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/performance-spotlight-dribble-up",
+    "tags": [
+      "performance-case-study",
+      "meta-advantage",
+      "creative-volume",
+      "growth"
+    ],
+    "fetchedAt": "2026-05-09T10:16:51.058224+08:00",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=547549362953453&version=1778257111&transcode_extension=webp"
+  },
+  {
+    "id": "google-2026-05-07-001",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "Data Manager API：新增 Google Ads 门店销售支持及更多 Google Analytics 事件摄取用例",
+    "titleOriginal": "Data Manager API: Introducing support for Google Ads store sales and more event ingestion use cases for Google Analytics",
+    "summary": "Data Manager API 发布重大更新：（1）新增 Google Ads 门店销售转化上传功能，将多个离线任务合并为单一 API 请求，支持机密匹配、用户标识符加密和多商品事件；（2）扩展 Google Analytics 事件摄取能力，支持将任意事件同时发送至 Web 和 App 数据流，可配置 Firebase App ID 或 Measurement ID 进行事件路由；（3）支持以附加数据源形式发送带交易 ID 的任意事件至 Web 和 App 数据流。此更新显著简化了跨平台事件管理流程，广告投放团队应尽快升级现有门店销售工作流以获取未来改进。",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/data-manager-api-introducing-support.html",
+    "tags": [
+      "data-manager-api",
+      "google-ads",
+      "store-sales",
+      "google-analytics",
+      "measurement",
+      "event-ingestion"
+    ],
+    "fetchedAt": "2026-05-09T10:16:51.058224+08:00",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-05-07-002",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "大规模管理集成：Ads DevCast E4",
+    "titleOriginal": "Managing your integrations at scale: Ads DevCast E4",
+    "summary": "第4期 Ads DevCast 深入探讨规模化广告集成的架构最佳实践。涵盖通用原则（尊重限流、指数退避策略、完善日志与监控、使用官方客户端库、智能缓存）及产品特定建议（Google Ads API 批量操作、Data Manager API 异步验证监控、Google Ads scripts 并行执行、DV360 API 的 SDF 文件管理、Google Analytics BigQuery 导出与异步报告任务）。帮助开发者构建高性能、可扩展的广告集成系统。",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/managing-your-integrations-at-scale-ads.html",
+    "tags": [
+      "best-practices",
+      "google-ads-api",
+      "data-manager-api",
+      "dv360-api",
+      "google-analytics",
+      "scaling"
+    ],
+    "fetchedAt": "2026-05-09T10:16:51.058224+08:00",
+    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9ACSTD7RUGOnXIReXmy4OSL6fFxq2hwY2XLFMRAXUOd0giPOcq98-3aBQa5B5FEqow3r_l-a1lHU6Xgj9HnP_j4AId-BlRcPwMJGzwxJ5zxB5V7D3m-DMH1exEQNwapp7ia2er6dWIS-ejBpp2JpdTEd1H_4P6wrTdEjOUKLESf0IFjbPHqBp84sMXG8/s1600/AdsDevCastLogo.png"
+  },
+  {
+    "id": "mintegral-2026-05-08-001",
+    "date": "2026-05-08",
+    "week": "2026-W19",
+    "platform": "mintegral",
+    "title": "2026年娱乐应用的下一步增长在哪里",
+    "titleOriginal": "Where Is The Next Growth For Entertainment Apps In 2026",
+    "summary": "文章探讨了2026年娱乐类应用的增长机会与策略。内容涵盖娱乐应用市场趋势、用户获取策略、以及如何在竞争激烈的市场中实现差异化增长。对于广告投放团队而言，文章提供了关于娱乐品类用户获取的实战洞察，有助于优化投放策略并把握行业增长红利。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/entertainment-apps-trends-and-strategies-2026",
+    "tags": [
+      "娱乐应用",
+      "用户获取",
+      "市场趋势",
+      "增长策略"
+    ],
+    "fetchedAt": "2026-05-09T10:16:51.058224+08:00",
+    "imageUrl": "https://assets-official.mintegral.com/v3/blog-cover/2026/05/07/MTG%20banner%20122%2020260507.jpg"
+  },
+  {
+    "id": "mintegral-2026-05-07-002",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "mintegral",
+    "title": "CPI还是ROAS？如何优化Mintegral广告系列以获得更好效果",
+    "titleOriginal": "CPI Or ROAS? How To Optimize Mintegral Campaigns For Better Results",
+    "summary": "文章深入对比了CPI（单次安装成本）和ROAS（广告投资回报率）两种优化目标的适用场景。详细介绍了在不同营销目标下如何选择合适的优化指标，以及Mintegral平台的优化技巧。对于广告投放团队来说，文章提供了实用的AB测试策略和出价优化建议，帮助在控制成本的同时提升广告效果。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/cpi-or-roas-how-to-optimize-your-mintegral-campaigns-for-great-results",
+    "tags": [
+      "CPI",
+      "ROAS",
+      "广告优化",
+      "效果营销",
+      "出价策略"
+    ],
+    "fetchedAt": "2026-05-09T10:16:51.058224+08:00",
+    "imageUrl": "https://assets-official.mintegral.com/v3/blog-cover/2026/05/07/MTG%20banner%20121%2020260506.jpg"
   }
 ]
