@@ -200,14 +200,17 @@ async function fetchOgImagePlaywright(url, platform) {
           const src = img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || ''
           const descriptor = `${src} ${textOf(img)}`
           const renderedLarge = rect.width >= 320 && rect.height >= 160
+          const renderedArea = rect.width * rect.height
           if (!src.startsWith('http')) return null
+          if (rect.width <= 0 || rect.height <= 0) return null
           if (isAvatar(descriptor) || isMetaDefault(descriptor) || inAuthorBlock(img)) return null
           if (isLogo(descriptor) && !renderedLarge) return null
           if (rect.width > 0 && rect.height > 0 && (rect.width < 180 || rect.height < 120)) return null
           if (w < 360 || h < 180) return null
           if (w <= 320 && h <= 320) return null
           if (Math.max(w, h) / Math.max(1, Math.min(w, h)) < 1.2 && Math.max(w, h) <= 500) return null
-          return { src, area: w * h, w, h }
+          const positionPenalty = rect.top > 2400 ? 0.25 : 1
+          return { src, area: renderedArea * positionPenalty, naturalArea: w * h, w, h }
         }
 
         // 1. Prefer the largest rendered content image. This avoids default
@@ -215,7 +218,7 @@ async function fetchOgImagePlaywright(url, platform) {
         const imgs = [...document.querySelectorAll('article img, main img, [class*="hero"] img, [class*="cover"] img, [class*="featured"] img, [class*="banner"] img, img')]
           .map(imageScore)
           .filter(Boolean)
-          .sort((a, b) => b.area - a.area)
+          .sort((a, b) => (b.area - a.area) || (b.naturalArea - a.naturalArea))
         if (imgs[0]?.src) return imgs[0].src
 
         // 2. Fallback: og:image / twitter:image
