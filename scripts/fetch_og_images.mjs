@@ -20,13 +20,7 @@ const DATA_DIR = join(__dir, '../data')
 const FORCE = process.argv.includes('--force')
 
 // Platforms that require a real browser to render og:image tags
-const PLAYWRIGHT_PLATFORMS = new Set(['meta', 'tiktok', 'pinterest', 'youtube', 'x', 'google'])
-
-// Some feeds use author/contributor photos as article images. For these sources
-// a missing image is less misleading than a portrait card.
-const NO_IMAGE_SOURCE_NAMES = new Set([
-  'Google Ads Developer Blog',
-])
+const PLAYWRIGHT_PLATFORMS = new Set(['meta', 'tiktok', 'pinterest', 'youtube', 'x', 'google', 'linkedin'])
 
 const FETCH_CONCURRENCY = 10
 const PW_CONCURRENCY = 3
@@ -171,6 +165,7 @@ async function fetchOgImagePlaywright(url, platform) {
         function isAvatar(u) { return u && avatarPatterns.some(p => p.test(u)) }
         function isMetaDefault(u) { return u && metaDefaultPatterns.some(p => p.test(u)) }
         function isRejected(u) { return isLogo(u) || isAvatar(u) || isMetaDefault(u) }
+        const isGoogleDeveloperBlog = location.hostname.includes('ads-developers.googleblog.com')
         function textOf(el) {
           return [
             el.alt,
@@ -204,25 +199,34 @@ async function fetchOgImagePlaywright(url, platform) {
           const h = img.naturalHeight || rect.height || img.height || 0
           const src = img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || ''
           const descriptor = `${src} ${textOf(img)}`
+          const renderedLarge = rect.width >= 320 && rect.height >= 160
           if (!src.startsWith('http')) return null
-          if (isRejected(descriptor) || inAuthorBlock(img)) return null
+          if (isAvatar(descriptor) || isMetaDefault(descriptor) || inAuthorBlock(img)) return null
+          if (isLogo(descriptor) && !renderedLarge) return null
+          if (rect.width > 0 && rect.height > 0 && (rect.width < 180 || rect.height < 120)) return null
           if (w < 360 || h < 180) return null
           if (w <= 320 && h <= 320) return null
           if (Math.max(w, h) / Math.max(1, Math.min(w, h)) < 1.2 && Math.max(w, h) <= 500) return null
           return { src, area: w * h, w, h }
         }
 
-        // 1. Try og:image / twitter:image
-        const ogMeta = document.querySelector('meta[property="og:image"], meta[name="twitter:image"]')
-        const ogUrl = ogMeta?.getAttribute('content')
-        if (ogUrl && !isRejected(ogUrl)) return ogUrl
-
-        // 2. Fallback: largest content image, excluding author avatars/profile photos.
+        // 1. Prefer the largest rendered content image. This avoids default
+        // share cards and author photos when the page exposes a better hero.
         const imgs = [...document.querySelectorAll('article img, main img, [class*="hero"] img, [class*="cover"] img, [class*="featured"] img, [class*="banner"] img, img')]
           .map(imageScore)
           .filter(Boolean)
           .sort((a, b) => b.area - a.area)
-        return imgs[0]?.src || null
+        if (imgs[0]?.src) return imgs[0].src
+
+        // 2. Fallback: og:image / twitter:image
+        const ogMeta = document.querySelector('meta[property="og:image"], meta[name="twitter:image"]')
+        const ogUrl = ogMeta?.getAttribute('content')
+        if (!isGoogleDeveloperBlog && ogUrl && !isRejected(ogUrl)) return ogUrl
+
+        // Blogger often exposes author portraits as high-resolution og:image values.
+        // Only trust rendered article images on Google Ads Developer Blog pages.
+        if (isGoogleDeveloperBlog) return null
+        return ogUrl && !isRejected(ogUrl) ? ogUrl : null
       }, {
         logoPatternSources: LOGO_PATTERNS.map(r => r.source),
         avatarPatternSources: AVATAR_PATTERNS.map(r => r.source),
@@ -239,8 +243,8 @@ async function fetchOgImagePlaywright(url, platform) {
   return null
 }
 
-function shouldSuppressImage(item) {
-  return NO_IMAGE_SOURCE_NAMES.has(item.source)
+function shouldSuppressImage() {
+  return false
 }
 
 // ── Concurrency pool ──────────────────────────────────────────────────────────

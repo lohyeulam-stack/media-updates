@@ -5,9 +5,11 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
+from difflib import SequenceMatcher
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -79,6 +81,42 @@ def save_text(path: Path, text: str) -> None:
         f.write(text)
 
 
+def _normalize_match_text(text: str) -> str:
+    text = re.sub(r"[^\w\s]", " ", (text or "").lower())
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _resolve_source_url(art: dict, page) -> str:
+    source_url = art.get("sourceUrl", "") or ""
+    if source_url and source_url != page.url:
+        return source_url
+
+    titles = [
+        _normalize_match_text(art.get("titleOriginal", "")),
+        _normalize_match_text(art.get("title", "")),
+    ]
+    titles = [t for t in titles if len(t) >= 12]
+    if not titles:
+        return source_url or page.url
+
+    best_url = ""
+    best_score = 0.0
+    for link in page.links:
+        link_title = _normalize_match_text(link.get("title", ""))
+        if not link_title:
+            continue
+        for title in titles:
+            if title in link_title or link_title in title:
+                score = 1.0
+            else:
+                score = SequenceMatcher(None, title, link_title).ratio()
+            if score > best_score:
+                best_score = score
+                best_url = link.get("url", "")
+
+    return best_url if best_url and best_score >= 0.72 else (source_url or page.url)
+
+
 def _extract_for_page(page, week_start, week_end, week_label, now_iso):
     articles = extract_and_summarize(
         page_text=page.text,
@@ -91,7 +129,7 @@ def _extract_for_page(page, week_start, week_end, week_label, now_iso):
     results = []
     for i, art in enumerate(articles):
         art_date = art.get("date", "") or week_end
-        source_url = art.get("sourceUrl", "") or page.url
+        source_url = _resolve_source_url(art, page)
         results.append({
             "id": f"{page.platform}-{art_date}-{i+1:03d}",
             "date": art_date,
@@ -122,7 +160,7 @@ def _extract_for_page_backfill(page, month_start, month_end, now_iso):
     results = []
     for i, art in enumerate(articles):
         art_date = art.get("date", "") or month_end
-        source_url = art.get("sourceUrl", "") or page.url
+        source_url = _resolve_source_url(art, page)
         iso_week = _date_to_week_label(art_date)
         results.append({
             "id": f"{page.platform}-{art_date}-{i+1:03d}",
