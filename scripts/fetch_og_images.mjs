@@ -22,6 +22,12 @@ const FORCE = process.argv.includes('--force')
 // Platforms that require a real browser to render og:image tags
 const PLAYWRIGHT_PLATFORMS = new Set(['meta', 'tiktok', 'pinterest', 'youtube', 'x', 'google'])
 
+// Some feeds use author/contributor photos as article images. For these sources
+// a missing image is less misleading than a portrait card.
+const NO_IMAGE_SOURCE_NAMES = new Set([
+  'Google Ads Developer Blog',
+])
+
 const FETCH_CONCURRENCY = 10
 const PW_CONCURRENCY = 3
 const FETCH_TIMEOUT_MS = 8000
@@ -219,6 +225,10 @@ async function fetchOgImagePlaywright(url, platform) {
   return null
 }
 
+function shouldSuppressImage(item) {
+  return NO_IMAGE_SOURCE_NAMES.has(item.source)
+}
+
 // ── Concurrency pool ──────────────────────────────────────────────────────────
 
 async function pool(tasks, concurrency) {
@@ -240,7 +250,7 @@ async function enrichFile(filePath) {
   const items = JSON.parse(readFileSync(filePath, 'utf8'))
   let cleaned = 0
   for (const item of items) {
-    if (item.imageUrl && isRejectedImageUrl(item.imageUrl)) {
+    if (item.imageUrl && (isRejectedImageUrl(item.imageUrl) || shouldSuppressImage(item))) {
       item.imageUrl = null
       cleaned++
     }
@@ -251,6 +261,7 @@ async function enrichFile(filePath) {
 
   const pending = items.filter(item => {
     if (!item.sourceUrl) return false
+    if (shouldSuppressImage(item)) return false
     if (FORCE) return true
     return item.imageUrl === undefined
   })
