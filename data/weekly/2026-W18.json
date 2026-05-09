@@ -18,7 +18,7 @@
       "自动化"
     ],
     "fetchedAt": "2026-05-07T12:07:20.532975+08:00",
-    "imageUrl": "https://scontent.fsin11-1.fna.fbcdn.net/v/t39.2365-6/636812916_2280898225722488_3353664553481496943_n.png?_nc_cat=108&ccb=1-7&_nc_sid=e280be&_nc_ohc=A_Hsbcxas84Q7kNvwF105Ki&_nc_oc=AdoTgH80yBvvxbhqXtZGyQwcyrLU7xfGdCtv066JGT-l_kFuiA9oTrMAmPL6Y7cJCMU&_nc_zt=14&_nc_ht=scontent.fsin11-1.fna&_nc_gid=FcNlV9wQyoIvAvrBVnWUhQ&_nc_ss=7f289&oh=00_Af4mGucYb7K3hW3qQm_DCM7t6JzKIvUMfaznOl_6n7urQQ&oe=6A16A05F"
+    "imageUrl": null
   },
   {
     "id": "meta-2026-04-28-002",
@@ -39,7 +39,7 @@
       "广告购买"
     ],
     "fetchedAt": "2026-05-07T12:07:20.532975+08:00",
-    "imageUrl": "https://scontent.fsin16-1.fna.fbcdn.net/v/t39.2365-6/464718245_414399311718535_2688112240039425066_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e280be&_nc_ohc=SYjhAfYwOUYQ7kNvwEWIe4t&_nc_oc=AdqYlJAO6c5nSLhPcnCiLFK9jTrlrWLvPVoHNWZyFZAartaPdwvECiEjS2B_5X2L3_0&_nc_zt=14&_nc_ht=scontent.fsin16-1.fna&_nc_gid=cEHPYkZr5WegLy4LYeOAIg&_nc_ss=7f289&oh=00_Af41G5RMT52ppIDnKZEUmAq4P_aHbJt0HQ9WvcyvDC0Rlg&oe=6A167802"
+    "imageUrl": null
   },
   {
     "id": "meta-2026-04-27-001",
@@ -231,7 +231,7 @@
       "AI广告"
     ],
     "fetchedAt": "2026-05-07T12:07:20.532975+08:00",
-    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=547549362953453&version=1778105134&transcode_extension=webp"
+    "imageUrl": null
   },
   {
     "id": "meta-2026-04-30-002",
@@ -252,7 +252,7 @@
       "广告管理"
     ],
     "fetchedAt": "2026-05-07T12:07:20.532975+08:00",
-    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1510159120671129&version=1777395843&transcode_extension=webp"
+    "imageUrl": null
   },
   {
     "id": "meta-2026-04-30-003",
@@ -273,7 +273,7 @@
       "营销策略"
     ],
     "fetchedAt": "2026-05-07T12:07:20.532975+08:00",
-    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=547549362953453&version=1778105134&transcode_extension=webp"
+    "imageUrl": null
   },
   {
     "id": "meta-2026-04-30-004",
@@ -294,6 +294,6 @@
       "市场研究"
     ],
     "fetchedAt": "2026-05-07T12:07:20.532975+08:00",
-    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=547549362953453&version=1778105134&transcode_extension=webp"
+    "imageUrl": null
   }
 ]

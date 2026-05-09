@@ -26,6 +26,8 @@ const PLAYWRIGHT_PLATFORMS = new Set(['meta', 'tiktok', 'pinterest', 'youtube', 
 // a missing image is less misleading than a portrait card.
 const NO_IMAGE_SOURCE_NAMES = new Set([
   'Google Ads Developer Blog',
+  'Meta for Business News',
+  'Meta Developers Blog',
 ])
 
 const FETCH_CONCURRENCY = 10
