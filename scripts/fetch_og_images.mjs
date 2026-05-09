@@ -26,8 +26,6 @@ const PLAYWRIGHT_PLATFORMS = new Set(['meta', 'tiktok', 'pinterest', 'youtube', 
 // a missing image is less misleading than a portrait card.
 const NO_IMAGE_SOURCE_NAMES = new Set([
   'Google Ads Developer Blog',
-  'Meta for Business News',
-  'Meta Developers Blog',
 ])
 
 const FETCH_CONCURRENCY = 10
@@ -70,6 +68,11 @@ const AVATAR_PATTERNS = [
   /=s\d+-p(?:$|[/?#])/i,
 ]
 
+const META_DEFAULT_IMAGE_PATTERNS = [
+  /facebook\.com\/business\/f\//i,
+  /ab_entry=547549362953453/i,
+]
+
 function isLogoUrl(url) {
   if (!url) return false
   return LOGO_PATTERNS.some((p) => p.test(url))
@@ -80,8 +83,13 @@ function isAvatarUrl(url) {
   return AVATAR_PATTERNS.some((p) => p.test(url))
 }
 
+function isMetaDefaultImageUrl(url) {
+  if (!url) return false
+  return META_DEFAULT_IMAGE_PATTERNS.some((p) => p.test(url))
+}
+
 function isRejectedImageUrl(url) {
-  return isLogoUrl(url) || isAvatarUrl(url)
+  return isLogoUrl(url) || isAvatarUrl(url) || isMetaDefaultImageUrl(url)
 }
 
 function decodeEntities(s) {
@@ -137,8 +145,8 @@ async function getBrowser() {
   return _browser
 }
 
-// TikTok's newsroom uses heavy JS — networkidle times out, so use domcontentloaded + wait
-const SLOW_PLATFORMS = new Set(['tiktok'])
+// Some newsroom pages keep background requests open, so use domcontentloaded + wait.
+const SLOW_PLATFORMS = new Set(['meta', 'tiktok'])
 
 async function fetchOgImagePlaywright(url, platform) {
   const isSlow = SLOW_PLATFORMS.has(platform)
@@ -155,11 +163,14 @@ async function fetchOgImagePlaywright(url, platform) {
         await page.goto(url, { waitUntil: 'networkidle', timeout: PW_TIMEOUT_MS })
       }
 
-      const result = await page.evaluate(({ logoPatternSources, avatarPatternSources }) => {
+      const result = await page.evaluate(({ logoPatternSources, avatarPatternSources, metaDefaultPatternSources }) => {
         const logoPatterns = logoPatternSources.map(s => new RegExp(s, 'i'))
         const avatarPatterns = avatarPatternSources.map(s => new RegExp(s, 'i'))
+        const metaDefaultPatterns = metaDefaultPatternSources.map(s => new RegExp(s, 'i'))
         function isLogo(u) { return u && logoPatterns.some(p => p.test(u)) }
         function isAvatar(u) { return u && avatarPatterns.some(p => p.test(u)) }
+        function isMetaDefault(u) { return u && metaDefaultPatterns.some(p => p.test(u)) }
+        function isRejected(u) { return isLogo(u) || isAvatar(u) || isMetaDefault(u) }
         function textOf(el) {
           return [
             el.alt,
@@ -194,7 +205,7 @@ async function fetchOgImagePlaywright(url, platform) {
           const src = img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || ''
           const descriptor = `${src} ${textOf(img)}`
           if (!src.startsWith('http')) return null
-          if (isLogo(descriptor) || isAvatar(descriptor) || inAuthorBlock(img)) return null
+          if (isRejected(descriptor) || inAuthorBlock(img)) return null
           if (w < 360 || h < 180) return null
           if (w <= 320 && h <= 320) return null
           if (Math.max(w, h) / Math.max(1, Math.min(w, h)) < 1.2 && Math.max(w, h) <= 500) return null
@@ -204,7 +215,7 @@ async function fetchOgImagePlaywright(url, platform) {
         // 1. Try og:image / twitter:image
         const ogMeta = document.querySelector('meta[property="og:image"], meta[name="twitter:image"]')
         const ogUrl = ogMeta?.getAttribute('content')
-        if (ogUrl && !isLogo(ogUrl) && !isAvatar(ogUrl)) return ogUrl
+        if (ogUrl && !isRejected(ogUrl)) return ogUrl
 
         // 2. Fallback: largest content image, excluding author avatars/profile photos.
         const imgs = [...document.querySelectorAll('article img, main img, [class*="hero"] img, [class*="cover"] img, [class*="featured"] img, [class*="banner"] img, img')]
@@ -215,6 +226,7 @@ async function fetchOgImagePlaywright(url, platform) {
       }, {
         logoPatternSources: LOGO_PATTERNS.map(r => r.source),
         avatarPatternSources: AVATAR_PATTERNS.map(r => r.source),
+        metaDefaultPatternSources: META_DEFAULT_IMAGE_PATTERNS.map(r => r.source),
       })
 
       await page.close()
