@@ -48,9 +48,32 @@ const LOGO_PATTERNS = [
   /default[._-](hero|image|cover|og)/i,
 ]
 
+const AVATAR_PATTERNS = [
+  /avatar/i,
+  /author/i,
+  /headshot/i,
+  /profile/i,
+  /portrait/i,
+  /byline/i,
+  /userpic/i,
+  /person/i,
+  /people/i,
+  /googleusercontent\.com\/a-/i,
+  /=s\d+-p(?:$|[/?#])/i,
+]
+
 function isLogoUrl(url) {
   if (!url) return false
   return LOGO_PATTERNS.some((p) => p.test(url))
+}
+
+function isAvatarUrl(url) {
+  if (!url) return false
+  return AVATAR_PATTERNS.some((p) => p.test(url))
+}
+
+function isRejectedImageUrl(url) {
+  return isLogoUrl(url) || isAvatarUrl(url)
 }
 
 function decodeEntities(s) {
@@ -64,7 +87,7 @@ function extractOgFromHtml(html) {
           || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i)
   if (!m) return null
   const url = decodeEntities(m[1].trim())
-  return isLogoUrl(url) ? null : url
+  return isRejectedImageUrl(url) ? null : url
 }
 
 // ── Plain fetch (for non-JS platforms) ───────────────────────────────────────
@@ -124,22 +147,67 @@ async function fetchOgImagePlaywright(url, platform) {
         await page.goto(url, { waitUntil: 'networkidle', timeout: PW_TIMEOUT_MS })
       }
 
-      const result = await page.evaluate((logoPatternSources) => {
+      const result = await page.evaluate(({ logoPatternSources, avatarPatternSources }) => {
         const logoPatterns = logoPatternSources.map(s => new RegExp(s, 'i'))
+        const avatarPatterns = avatarPatternSources.map(s => new RegExp(s, 'i'))
         function isLogo(u) { return u && logoPatterns.some(p => p.test(u)) }
+        function isAvatar(u) { return u && avatarPatterns.some(p => p.test(u)) }
+        function textOf(el) {
+          return [
+            el.alt,
+            el.getAttribute('aria-label'),
+            el.getAttribute('title'),
+            el.className,
+            el.id,
+            el.closest('[class], [id], [aria-label]')?.className,
+            el.closest('[class], [id], [aria-label]')?.id,
+            el.closest('[class], [id], [aria-label]')?.getAttribute('aria-label'),
+          ].filter(Boolean).join(' ')
+        }
+        function inAuthorBlock(img) {
+          return Boolean(img.closest([
+            'address',
+            'aside',
+            '[rel="author"]',
+            '[itemprop="author"]',
+            '[class*="author" i]',
+            '[class*="byline" i]',
+            '[class*="profile" i]',
+            '[class*="avatar" i]',
+            '[class*="contributor" i]',
+            '[data-testid*="author" i]',
+            '[data-testid*="avatar" i]',
+          ].join(',')))
+        }
+        function imageScore(img) {
+          const rect = img.getBoundingClientRect()
+          const w = img.naturalWidth || rect.width || img.width || 0
+          const h = img.naturalHeight || rect.height || img.height || 0
+          const src = img.currentSrc || img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || ''
+          const descriptor = `${src} ${textOf(img)}`
+          if (!src.startsWith('http')) return null
+          if (isLogo(descriptor) || isAvatar(descriptor) || inAuthorBlock(img)) return null
+          if (w < 360 || h < 180) return null
+          if (w <= 320 && h <= 320) return null
+          if (Math.max(w, h) / Math.max(1, Math.min(w, h)) < 1.2 && Math.max(w, h) <= 500) return null
+          return { src, area: w * h, w, h }
+        }
 
         // 1. Try og:image / twitter:image
         const ogMeta = document.querySelector('meta[property="og:image"], meta[name="twitter:image"]')
         const ogUrl = ogMeta?.getAttribute('content')
-        if (ogUrl && !isLogo(ogUrl)) return ogUrl
+        if (ogUrl && !isLogo(ogUrl) && !isAvatar(ogUrl)) return ogUrl
 
-        // 2. Fallback: largest <img> in the page that isn't a logo/icon/nav element
+        // 2. Fallback: largest content image, excluding author avatars/profile photos.
         const imgs = [...document.querySelectorAll('article img, main img, [class*="hero"] img, [class*="cover"] img, [class*="featured"] img, [class*="banner"] img, img')]
-          .map(img => ({ src: img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src'), w: img.naturalWidth || img.width || 0 }))
-          .filter(i => i.src && i.src.startsWith('http') && i.w > 200 && !isLogo(i.src))
-          .sort((a, b) => b.w - a.w)
+          .map(imageScore)
+          .filter(Boolean)
+          .sort((a, b) => b.area - a.area)
         return imgs[0]?.src || null
-      }, LOGO_PATTERNS.map(r => r.source))
+      }, {
+        logoPatternSources: LOGO_PATTERNS.map(r => r.source),
+        avatarPatternSources: AVATAR_PATTERNS.map(r => r.source),
+      })
 
       await page.close()
       return result || null
@@ -170,14 +238,28 @@ async function pool(tasks, concurrency) {
 
 async function enrichFile(filePath) {
   const items = JSON.parse(readFileSync(filePath, 'utf8'))
+  let cleaned = 0
+  for (const item of items) {
+    if (item.imageUrl && isRejectedImageUrl(item.imageUrl)) {
+      item.imageUrl = null
+      cleaned++
+    }
+  }
+  if (cleaned) {
+    console.log(`  → cleaned ${cleaned} rejected image URLs`)
+  }
+
   const pending = items.filter(item => {
     if (!item.sourceUrl) return false
     if (FORCE) return true
-    return item.imageUrl === undefined || item.imageUrl === null
+    return item.imageUrl === undefined
   })
 
   if (pending.length === 0) {
     console.log(`  → 0 pending items, skipping`)
+    if (cleaned) {
+      writeFileSync(filePath, JSON.stringify(items, null, 2))
+    }
     return 0
   }
 
@@ -234,7 +316,9 @@ async function main() {
   console.log(`\nDone in ${elapsed}s. updates.json: ${withImg}/${data.length} have images.`)
 }
 
-main().catch(async (e) => {
+main().then(() => {
+  process.exit(0)
+}).catch(async (e) => {
   if (_browser) await _browser.close().catch(() => {})
   console.error(e)
   process.exit(1)
