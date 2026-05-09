@@ -178,6 +178,8 @@ jobs:
 
       - name: Enrich OG images
         if: steps.mode.outputs.mode != 'skip'
+        timeout-minutes: 8
+        continue-on-error: true
         run: |
           args=''
           if [ "${{ github.event.inputs.og_force || 'false' }}" = 'true' ]; then
