@@ -58,9 +58,78 @@ function StudioUpdateCard({ update, index }: { update: MediaUpdate; index: numbe
   const platform = PLATFORM_META[update.platform]
   // Filter out logo/icon urls so they don't hijack the hero visual
   const hasRealImage = Boolean(update.imageUrl) && !isLogoOrIcon(update.imageUrl)
+  const isTextOnly = !hasRealImage
   // Reference style: alternate between large and small cards
   const isLarge = index % 3 === 0
-  const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4"
+  const colSpan = isTextOnly ? "md:col-span-4" : (isLarge ? "md:col-span-8" : "md:col-span-4")
+
+  if (isTextOnly) {
+    return (
+      <motion.article
+        className={`${colSpan} group cursor-pointer`}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <a
+          href={update.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block h-full border-t-2 border-foreground/80 pt-5 lg:pt-6 pb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
+        >
+          <div className="flex items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-2 min-w-0">
+              <div
+                className="w-2 h-2 rounded-full shrink-0"
+                style={{ backgroundColor: platform?.color }}
+                aria-hidden="true"
+              />
+              <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40 truncate">
+                {platform?.label}
+              </h4>
+            </div>
+            <div className="text-[10px] font-mono opacity-35 shrink-0">
+              {update.date}
+            </div>
+          </div>
+
+          <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-brand-blue">
+            {CATEGORY_LABELS[update.category] || update.category}
+          </div>
+
+          <h3 className="text-xl lg:text-2xl font-bold tracking-tight leading-[1.05] group-hover:text-brand-blue transition-colors">
+            {update.title}
+          </h3>
+
+          {update.titleOriginal && update.titleOriginal !== update.title && (
+            <p className="mt-4 text-sm lg:text-base font-serif italic text-foreground/40 leading-snug line-clamp-2">
+              &ldquo;{update.titleOriginal}&rdquo;
+            </p>
+          )}
+
+          {update.summary && (
+            <p className="mt-5 text-sm lg:text-base text-foreground/60 leading-snug line-clamp-4">
+              {update.summary}
+            </p>
+          )}
+
+          {update.tags.length > 0 && (
+            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-6 pt-4 border-t border-foreground/5">
+              {update.tags.slice(0, 4).map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[9px] uppercase font-bold tracking-[0.2em] opacity-30"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </a>
+      </motion.article>
+    )
+  }
 
   return (
     <motion.article
