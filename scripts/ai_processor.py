@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+from urllib.parse import urlparse
 from datetime import datetime
 
 import requests
@@ -187,6 +188,31 @@ def generate_monthly_report(month_label: str, all_updates: list[dict]) -> str:
     return _fallback_monthly_report(month_label, all_updates)
 
 
+FALLBACK_LANGUAGE_TITLES = {
+    "english (us)",
+    "english (uk)",
+    "português (brasil)",
+    "français (france)",
+    "español (españa)",
+}
+
+
+def _is_valid_fallback_link(link: dict) -> bool:
+    title = link.get("title", "").strip()
+    if not title or len(title) <= 8:
+        return False
+    if title.lower() in FALLBACK_LANGUAGE_TITLES:
+        return False
+
+    url = link.get("url", "")
+    parsed = urlparse(url.lower())
+    path = parsed.path.rstrip("/")
+    if path == "/business/news":
+        return False
+
+    return True
+
+
 def _fallback_from_links(links: list[dict], platform: str, source_name: str) -> list[dict]:
     return [
         {
@@ -202,7 +228,7 @@ def _fallback_from_links(links: list[dict], platform: str, source_name: str) -> 
             "source": source_name,
         }
         for l in links
-        if l.get("title", "").strip() and len(l.get("title", "")) > 8
+        if _is_valid_fallback_link(l)
     ]
 
 

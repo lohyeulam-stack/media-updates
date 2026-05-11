@@ -312,6 +312,11 @@ def _is_article_link(href: str, base_url: str) -> bool:
         if path.endswith(cat) or path.endswith(cat + "/"):
             return False
 
+    # Skip Meta Business News locale/home links. Article pages have a slug after
+    # /business/news/.
+    if re.search(r'/business/news/?$', path):
+        return False
+
     # Skip blog homepage URLs (no slug after /blog)
     if re.search(r'/blog/?$', href_lower):
         return False
