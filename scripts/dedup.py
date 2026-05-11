@@ -16,6 +16,31 @@ def _normalize_url(url: str) -> str:
     return f"{parsed.netloc}{path}"
 
 
+def _is_collection_url(url: str) -> bool:
+    """Return True for changelog/index URLs that can contain many dated updates."""
+    parsed = urlparse(url.lower())
+    host = parsed.netloc
+    path = parsed.path.rstrip("/")
+
+    if host == "business-api.tiktok.com" and "/portal/docs/whats-new" in path:
+        return True
+    if host == "developers.facebook.com" and path.endswith("/changelog"):
+        return True
+    if host == "developers.snap.com" and "changelog" in path:
+        return True
+
+    return False
+
+
+def _item_signature(item: dict) -> tuple[str, str, str, str]:
+    return (
+        item.get("platform", ""),
+        item.get("source", ""),
+        item.get("date", ""),
+        item.get("title", "").lower().strip(),
+    )
+
+
 def _title_similarity(t1: str, t2: str) -> float:
     """Compute title similarity based on word overlap. Returns 0-1."""
     if not t1 or not t2:
@@ -36,27 +61,35 @@ def deduplicate(
     existing_urls = {item.get("sourceUrl", "") for item in existing_items}
     existing_normalized = {_normalize_url(item.get("sourceUrl", "")) for item in existing_items}
     existing_titles = {item.get("title", "").lower() for item in existing_items}
+    existing_signatures = {_item_signature(item) for item in existing_items}
 
     unique: list[dict] = []
     seen_urls: set[str] = set()
     seen_normalized: set[str] = set()
     seen_titles_lower: set[str] = set()
+    seen_signatures: set[tuple[str, str, str, str]] = set()
 
     for item in new_items:
         url = item.get("sourceUrl", item.get("url", ""))
         title = item.get("title", "")
         title_lower = title.lower()
         normalized = _normalize_url(url)
+        is_collection = _is_collection_url(url)
+        signature = _item_signature(item)
 
-        # Skip if exact URL match
-        if url in existing_urls or url in seen_urls:
+        if signature in existing_signatures or signature in seen_signatures:
             continue
-        # Skip if normalized URL match (same article, different query params)
-        if normalized in existing_normalized or normalized in seen_normalized:
-            continue
-        # Skip if exact title match
-        if title_lower in existing_titles or title_lower in seen_titles_lower:
-            continue
+
+        if not is_collection:
+            # Skip if exact URL match
+            if url in existing_urls or url in seen_urls:
+                continue
+            # Skip if normalized URL match (same article, different query params)
+            if normalized in existing_normalized or normalized in seen_normalized:
+                continue
+            # Skip if exact title match
+            if title_lower in existing_titles or title_lower in seen_titles_lower:
+                continue
 
         # Semantic dedup: check title similarity against recently added
         is_duplicate = False
@@ -85,9 +118,11 @@ def deduplicate(
         if duplicate_to_remove:
             unique.remove(duplicate_to_remove)
 
-        seen_urls.add(url)
-        seen_normalized.add(normalized)
+        if not is_collection:
+            seen_urls.add(url)
+            seen_normalized.add(normalized)
         seen_titles_lower.add(title_lower)
+        seen_signatures.add(signature)
         unique.append(item)
 
     return unique
