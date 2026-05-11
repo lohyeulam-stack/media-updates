@@ -26,6 +26,7 @@ on:
         options:
           - current
           - last
+          - rolling_8d
       backfill_year:
         description: 'Backfill year, only used when mode is backfill'
         required: false
@@ -89,8 +90,12 @@ jobs:
               args="--mode=backfill --backfill-year=${{ github.event.inputs.backfill_year }} --backfill-start=${{ github.event.inputs.backfill_start }} --backfill-end=${{ github.event.inputs.backfill_end }}"
             else
               args="--mode=$mode"
-              if { [ "$mode" = 'weekly' ] || [ "$mode" = 'both' ]; } && [ "${{ github.event.inputs.week_scope }}" = 'current' ]; then
-                args="$args --current-week"
+              if { [ "$mode" = 'weekly' ] || [ "$mode" = 'both' ]; } then
+                if [ "${{ github.event.inputs.week_scope }}" = 'current' ]; then
+                  args="$args --current-week"
+                elif [ "${{ github.event.inputs.week_scope }}" = 'rolling_8d' ]; then
+                  args="$args --rolling-days=8"
+                fi
               fi
             fi
           else
