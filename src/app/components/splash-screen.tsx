@@ -113,7 +113,7 @@ export function SplashScreen() {
                 className="text-[15vw] font-bold tracking-[-0.08em] leading-[0.8] uppercase"
               >
                 Media
-                <span className="italic text-brand-blue normal-case">Studio</span>
+                <span className="italic text-brand-blue normal-case">Updates</span>
               </motion.h1>
             </div>
 
@@ -140,7 +140,7 @@ export function SplashScreen() {
           <div className="relative z-10 flex items-end justify-between">
             <div className="flex flex-col gap-6 w-full max-w-sm">
               <div className="text-[10px] font-bold uppercase tracking-[0.6em] opacity-40">
-                Intelligence Collective
+                TopTou Product Intelligence
               </div>
               <div className="relative h-px bg-white/10 w-full overflow-hidden">
                 <motion.div
@@ -149,8 +149,8 @@ export function SplashScreen() {
                 />
               </div>
               <p className="text-xs font-light leading-relaxed tracking-tight text-white/40 max-w-xs">
-                Tracking the inevitable shift in media infrastructure. Real-time intelligence
-                for the {platforms.length}+ core nodes of modern influence.
+                Tracking product, API, and policy shifts across the {platforms.length}+ core
+                advertising platforms TopTou watches every day.
               </p>
             </div>
 

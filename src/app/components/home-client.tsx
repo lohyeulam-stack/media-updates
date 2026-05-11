@@ -7,6 +7,7 @@ import { Search, ExternalLink, X } from "lucide-react"
 import { motion } from "motion/react"
 import { SwissHeader, SwissFooter } from "./page-layout"
 import { Sidebar } from "./sidebar"
+import { SplashScreen } from "./splash-screen"
 import { CATEGORY_LABELS, PLATFORM_META, type Category, type MediaUpdate, type Platform } from "@/lib/types"
 import { AnimatePresence } from "motion/react"
 
@@ -272,6 +273,7 @@ function HomeClientInner({ updates, months, weeks }: HomeClientProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-brand-blue selection:text-white transition-colors duration-700">
+      <SplashScreen />
       <SwissHeader onMenuOpen={() => setSidebarOpen(true)} />
 
       {/* Drawer */}
