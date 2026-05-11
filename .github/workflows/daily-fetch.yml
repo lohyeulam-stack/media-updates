@@ -114,10 +114,10 @@ jobs:
               # On the 1st of month (Beijing), also generate previous month's report.
               if [ "$beijing_day" = '01' ]; then
                 mode='both'
-                args='--mode=both --current-week'
+                args='--mode=both --rolling-days=8'
               else
                 mode='weekly'
-                args='--mode=weekly --current-week'
+                args='--mode=weekly --rolling-days=8'
               fi
             fi
           fi

@@ -52,6 +52,13 @@ def get_current_week_range() -> tuple[str, str, str]:
     return monday.strftime("%Y-%m-%d"), sunday.strftime("%Y-%m-%d"), week_label
 
 
+def get_rolling_range(days: int) -> tuple[str, str, str]:
+    """Return a rolling date window ending today in the business timezone."""
+    today = now_local().date()
+    start = today - timedelta(days=max(days, 1) - 1)
+    return start.strftime("%Y-%m-%d"), today.strftime("%Y-%m-%d"), f"rolling-{days}d"
+
+
 def get_default_month_label() -> str:
     """Default monthly report month.
 
@@ -117,7 +124,7 @@ def _resolve_source_url(art: dict, page) -> str:
     return best_url if best_url and best_score >= 0.72 else (source_url or page.url)
 
 
-def _extract_for_page(page, week_start, week_end, week_label, now_iso):
+def _extract_for_page(page, week_start, week_end, week_label, now_iso, assign_week_from_date: bool = False):
     articles = extract_and_summarize(
         page_text=page.text,
         links=page.links,
@@ -129,11 +136,12 @@ def _extract_for_page(page, week_start, week_end, week_label, now_iso):
     results = []
     for i, art in enumerate(articles):
         art_date = art.get("date", "") or week_end
+        item_week = _date_to_week_label(art_date) if assign_week_from_date else week_label
         source_url = _resolve_source_url(art, page)
         results.append({
             "id": f"{page.platform}-{art_date}-{i+1:03d}",
             "date": art_date,
-            "week": week_label,
+            "week": item_week,
             "platform": page.platform,
             "title": art.get("title", ""),
             "titleOriginal": art.get("titleOriginal", ""),
@@ -180,8 +188,9 @@ def _extract_for_page_backfill(page, month_start, month_end, now_iso):
     return results
 
 
-def run_weekly(week_start: str, week_end: str, week_label: str) -> None:
-    print(f"[Week] {week_label}: {week_start} ~ {week_end}")
+def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = False) -> None:
+    label = "Rolling window" if rolling else "Week"
+    print(f"[{label}] {week_label}: {week_start} ~ {week_end}")
 
     pages = scrape_all(SOURCES)
     print(f"\n[Scrape] Collected {len(pages)} pages from {len(SOURCES)} sources")
@@ -191,7 +200,7 @@ def run_weekly(week_start: str, week_end: str, week_label: str) -> None:
 
     with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {
-            executor.submit(_extract_for_page, page, week_start, week_end, week_label, now_iso): page
+            executor.submit(_extract_for_page, page, week_start, week_end, week_label, now_iso, rolling): page
             for page in pages
         }
         for future in as_completed(futures):
@@ -216,14 +225,20 @@ def run_weekly(week_start: str, week_end: str, week_label: str) -> None:
         save_json(UPDATES_FILE, all_updates)
         print(f"[Save] {len(all_updates)} total in updates.json")
 
-        week_file = WEEKLY_DIR / f"{week_label}.json"
-        week_existing = load_json(week_file)
-        week_merged = deduplicate(unique, week_existing)
-        save_json(week_file, week_existing + week_merged)
-        print(f"[Weekly] Saved to {week_file}")
+        by_week: dict[str, list[dict]] = {}
+        for item in unique:
+            by_week.setdefault(item.get("week") or week_label, []).append(item)
+
+        for wk, items in sorted(by_week.items()):
+            week_file = WEEKLY_DIR / f"{wk}.json"
+            week_existing = load_json(week_file)
+            week_merged = deduplicate(items, week_existing)
+            if week_merged:
+                save_json(week_file, week_existing + week_merged)
+            print(f"[Weekly] {wk}: {len(week_merged)} new items")
 
     result = validate_weekly(unique or all_new, week_start, week_end)
-    print_report(result, f"Weekly {week_label}")
+    print_report(result, f"{'Rolling' if rolling else 'Weekly'} {week_label}")
 
 
 def run_monthly(month_label: str | None = None) -> None:
@@ -323,6 +338,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["weekly", "monthly", "both", "backfill"], default="weekly")
     parser.add_argument("--current-week", action="store_true")
+    parser.add_argument("--rolling-days", type=int, default=0, help="Use a rolling date window ending today for weekly sync")
     parser.add_argument("--month", help="Monthly report month override in YYYY-MM format")
     parser.add_argument("--backfill-year", type=int, default=2026)
     parser.add_argument("--backfill-start", type=int, default=1)
@@ -335,11 +351,15 @@ def main() -> None:
         run_backfill(args.backfill_year, args.backfill_start, args.backfill_end)
     else:
         if args.mode in ("weekly", "both"):
-            if args.current_week:
+            if args.rolling_days:
+                ws, we, wl = get_rolling_range(args.rolling_days)
+                run_weekly(ws, we, wl, rolling=True)
+            elif args.current_week:
                 ws, we, wl = get_current_week_range()
+                run_weekly(ws, we, wl)
             else:
                 ws, we, wl = get_last_week_range()
-            run_weekly(ws, we, wl)
+                run_weekly(ws, we, wl)
 
         if args.mode in ("monthly", "both"):
             run_monthly(args.month)
