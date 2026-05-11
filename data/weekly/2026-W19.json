@@ -320,5 +320,49 @@
     ],
     "fetchedAt": "2026-05-11T13:30:12.046074+08:00",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Image_20251113_201733.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "tiktok-2026-05-08-001-17b1a4",
+    "date": "2026-05-08",
+    "week": "2026-W19",
+    "platform": "tiktok",
+    "title": "TikTok为Pulse广告组推出6秒视联率优化目标和视图优化投放策略",
+    "titleOriginal": "Enhanced Pulse Ad Groups with 6s View-through Rate (View+) Optimization Goal and View-Optimized Delivery Strategy",
+    "summary": "TikTok在Pulse广告组中新增两大功能：1) 6秒视联率(View+)优化目标，当optimization_goal设为REACH且cpv_video_duration设为SIX_SECONDS时可用，适用于/adgroup/rf/create/端点；2) 新的视图优化投放策略，通过delivery_mode参数的VIEW_OPTIMIZE枚举值实现，可用于/adgroup/rf/create/、/adgroup/rf/update/和/adgroup/get/端点。这些更新使广告主能够最大化视联率指标，更精准地捕获用户注意力，提升视频广告的观看完成率和互动效果。",
+    "category": "automation",
+    "importance": "high",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "Pulse广告",
+      "优化目标",
+      "视联率",
+      "投放策略",
+      "视图优化"
+    ],
+    "fetchedAt": "2026-05-12T01:54:52.344537+08:00",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-05-07-001-614627",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "搜索和购物广告中的全新AI驱动出价与预算创新",
+    "titleOriginal": "New AI-powered bidding and budgeting innovations in Search and Shopping",
+    "summary": "Google Ads推出全新AI驱动的出价和预算工具，帮助广告主更精准地达成营销目标、有效管理广告支出，并灵活应对消费者行为的持续变化。这些创新涵盖更智能的自动出价策略和动态预算优化功能，旨在提升搜索和购物广告系列的投资回报率。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/",
+    "tags": [
+      "AI出价",
+      "预算优化",
+      "自动化",
+      "搜索广告",
+      "购物广告"
+    ],
+    "fetchedAt": "2026-05-12T01:54:52.344537+08:00",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Header_hero_image.width-1000.format-webp.webp"
   }
 ]
