@@ -100,6 +100,49 @@
     "imageUrl": "https://scontent-iad6-1.xx.fbcdn.net/v/t39.8562-6/486397085_3381924685275939_2720501426454541185_n.gif?_nc_cat=109&ccb=1-7&_nc_sid=f537c7&_nc_ohc=wrmHOs2zYn8Q7kNvwGE9pgR&_nc_oc=Adryb2VK_zCaH4KmZe1v2rzTG80REXYdkdtqSxL4BFQafkVoayAMVQV-bEGYVnKVqDQ&_nc_zt=14&_nc_ht=scontent-iad6-1.xx&_nc_gid=xjEKQXxDVDL3egTJdric6A&_nc_ss=7f289&oh=00_Af5E-RZpyHJfTSWIW30ZDEjplkq2L3mvSuqbE4a4kVu6EQ&oe=6A071584"
   },
   {
+    "id": "youtube-2026-05-09-006",
+    "date": "2026-05-09",
+    "week": "2026-W19",
+    "platform": "youtube",
+    "title": "YouTube未来娱乐形态：平台内容发展方向揭晓",
+    "titleOriginal": "The future of entertainment is here: see what's next on YouTube",
+    "summary": "YouTube官方发布关于内容未来的战略文章，阐述平台如何塑造娱乐内容的下一阶段发展。核心方向包括长短视频融合、直播互动增强、以及AI技术在内容创作中的应用。对于广告投放团队，需关注YouTube内容策略调整对广告库存结构和投放环境的影响。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/the-future-of-content-is-on-youtube/",
+    "tags": [
+      "内容策略",
+      "娱乐趋势",
+      "AI创作",
+      "平台方向"
+    ],
+    "fetchedAt": "2026-05-11T13:30:12.046074+08:00",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Image_20251113_201733.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "tiktok-2026-05-08-001",
+    "date": "2026-05-08",
+    "week": "2026-W19",
+    "platform": "tiktok",
+    "title": "TikTok广告API更新：Pulse广告组支持6秒查看率(View+)优化目标",
+    "titleOriginal": "Enhanced Pulse ad groups with 6s view-through rate (View+) optimization goal support",
+    "summary": "TikTok Business API更新增强了Pulse广告组功能，新增6秒查看率(View+)优化目标支持。当优化目标设置为REACH且cpv_video_duration设置为SIX_SECONDS时可用。同时在/adgroup/rf/create/、/adgroup/rf/update/和/adgroup/get/端点中新增VIEW_OPTIMIZE枚举值用于delivery_mode参数，帮助广告主最大化查看率和捕获更多用户注意力。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://business-api.tiktok.com/portal/docs/whats-new/v1.3",
+    "tags": [
+      "Pulse广告组",
+      "6秒查看率",
+      "View+优化",
+      "优化目标",
+      "投放策略"
+    ],
+    "fetchedAt": "2026-05-11T13:30:12.046074+08:00",
+    "imageUrl": null
+  },
+  {
     "id": "mintegral-2026-05-08-001",
     "date": "2026-05-08",
     "week": "2026-W19",
@@ -119,6 +162,27 @@
     ],
     "fetchedAt": "2026-05-09T10:16:51.058224+08:00",
     "imageUrl": "https://assets-official.mintegral.com/v3/blog-cover/2026/05/07/MTG%20banner%20122%2020260507.jpg"
+  },
+  {
+    "id": "youtube-2026-05-07-003",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "youtube",
+    "title": "帮助创作者在大屏电视上脱颖而出的5个新功能",
+    "titleOriginal": "5 new features to help creators shine on TV screens",
+    "summary": "YouTube发布5项针对TV大屏体验的新功能更新，旨在提升创作者内容在电视端的呈现效果。对于广告投放团队，这意味着用户在大屏上的观看体验将显著改善，电视端广告的可见度和互动率可能随之提升。新功能可能包括界面优化、导航改进和沉浸式播放体验，建议关注具体功能细节以优化电视端广告素材设计。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/new-features-to-help-creators/",
+    "tags": [
+      "TV体验",
+      "功能更新",
+      "创作者工具",
+      "大屏优化"
+    ],
+    "fetchedAt": "2026-05-11T13:30:12.046074+08:00",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/YOUTUBE_BLOG_-_NEAL_S_LETTER_SQ.max-900x600.format-webp.webp"
   },
   {
     "id": "meta-2026-05-07-001",
@@ -210,6 +274,27 @@
     "imageUrl": "https://assets-official.mintegral.com/v3/blog-cover/2026/05/07/MTG%20banner%20121%2020260506.jpg"
   },
   {
+    "id": "youtube-2026-05-06-001",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "youtube",
+    "title": "CEO视角：YouTube 2026年展望",
+    "titleOriginal": "From the CEO: What's coming to YouTube in 2026",
+    "summary": "YouTube CEO Neal Mohan发布年度战略展望，阐述平台在2026年的核心发展方向。文章涵盖内容创作工具升级、变现模式创新、AI辅助功能增强以及多屏幕体验优化等关键战略。对于广告投放团队而言，YouTube持续强化TV大屏体验和Shorts短视频双轨战略，将影响广告库存分配和投放策略，需关注新广告产品的推出时机。",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/inside-youtube/the-future-of-youtube-2026/",
+    "tags": [
+      "战略规划",
+      "平台发展",
+      "CEO",
+      "2026展望"
+    ],
+    "fetchedAt": "2026-05-11T13:30:12.046074+08:00",
+    "imageUrl": "https://i.ytimg.com/vi_webp/YXJVOffU4iA/default.webp"
+  },
+  {
     "id": "google-2026-05-06-001",
     "date": "2026-05-06",
     "week": "2026-W19",
@@ -292,6 +377,27 @@
     ],
     "fetchedAt": "2026-05-07T11:49:11.316317+08:00",
     "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-05-04-004",
+    "date": "2026-05-04",
+    "week": "2026-W19",
+    "platform": "youtube",
+    "title": "如何观看2026年Met Gala红毯直播",
+    "titleOriginal": "How to watch the 2026 Met Gala red carpet live stream",
+    "summary": "YouTube确认将直播2026年Met Gala红毯盛典。此类大型时尚活动直播是品牌植入广告和合作内容的黄金机会。对于广告投放团队，需提前关注YouTube直播广告位的开放时间和招商政策，提前规划品牌在直播场景下的曝光策略。",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/culture-and-trends/watch-met-gala-2026-live-stream/",
+    "tags": [
+      "直播",
+      "Met Gala",
+      "时尚活动",
+      "品牌合作"
+    ],
+    "fetchedAt": "2026-05-11T13:30:12.046074+08:00",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GettyImages-2213593853.max-700x3000.format-webp.webp"
   },
   {
     "id": "youtube-2026-05-04-001",
