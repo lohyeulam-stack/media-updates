@@ -122,6 +122,59 @@ def _call_minimax(system_prompt: str, user_content: str, timeout: int = 90) -> s
         return None
 
 
+def _parse_extraction_response(
+    content: str | None,
+    platform: str,
+    source_name: str,
+) -> list[dict] | None:
+    if not content:
+        return None
+
+    try:
+        start = content.find("[")
+        end = content.rfind("]") + 1
+        if start >= 0 and end > start:
+            parsed = json.loads(content[start:end])
+            for item in parsed:
+                item["platform"] = platform
+                item["source"] = source_name
+                # Normalize category to valid type
+                if "category" in item:
+                    item["category"] = normalize_category(item["category"])
+            return parsed
+    except json.JSONDecodeError:
+        pass
+
+    return None
+
+
+def _links_only_user_content(
+    links: list[dict],
+    platform: str,
+    source_name: str,
+    week_start: str,
+    week_end: str,
+) -> str:
+    links_text = "\n".join(
+        "- title: {title}\n  url: {url}\n  date: {date}\n  snippet: {snippet}".format(
+            title=l.get("title", ""),
+            url=l.get("url", ""),
+            date=l.get("date", "unknown"),
+            snippet=l.get("snippet", ""),
+        )
+        for l in links[:50]
+        if _is_valid_fallback_link(l)
+    )
+
+    return f"""平台: {platform} ({source_name})
+日期范围: {week_start} 至 {week_end}
+
+前一次页面正文提取超时或 JSON 解析失败。请只根据以下链接列表提取符合日期范围的真实文章，并仍然返回中文标题和中文摘要。
+
+=== 链接列表 ===
+{links_text}"""
+
+
 def extract_and_summarize(
     page_text: str,
     links: list[dict],
@@ -147,26 +200,23 @@ def extract_and_summarize(
 {page_text[:10000]}"""
 
     content = _call_minimax(prompt, user_content)
-    if not content:
-        return _fallback_from_links(links, platform, source_name)
+    parsed = _parse_extraction_response(content, platform, source_name)
+    if parsed is not None:
+        print(f"[AI] Extracted {len(parsed)} articles from {source_name}")
+        return parsed
 
-    try:
-        start = content.find("[")
-        end = content.rfind("]") + 1
-        if start >= 0 and end > start:
-            parsed = json.loads(content[start:end])
-            for item in parsed:
-                item["platform"] = platform
-                item["source"] = source_name
-                # Normalize category to valid type
-                if "category" in item:
-                    item["category"] = normalize_category(item["category"])
-            print(f"[AI] Extracted {len(parsed)} articles from {source_name}")
-            return parsed
-    except json.JSONDecodeError:
-        pass
+    print(f"[AI] Retrying links-only extraction for {source_name}")
+    retry_content = _call_minimax(
+        prompt,
+        _links_only_user_content(links, platform, source_name, week_start, week_end),
+        timeout=120,
+    )
+    parsed = _parse_extraction_response(retry_content, platform, source_name)
+    if parsed is not None:
+        print(f"[AI] Extracted {len(parsed)} articles from {source_name} (links-only retry)")
+        return parsed
 
-    print(f"[AI] Failed to parse response for {source_name}")
+    print(f"[AI] Failed to parse response for {source_name}; skipping raw fallback")
     return []
 
 
