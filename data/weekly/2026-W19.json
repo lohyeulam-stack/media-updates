@@ -364,5 +364,48 @@
     ],
     "fetchedAt": "2026-05-12T01:54:52.344537+08:00",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Header_hero_image.width-1000.format-webp.webp"
+  },
+  {
+    "id": "tiktok-2026-05-08-001-91c3ec",
+    "date": "2026-05-08",
+    "week": "2026-W19",
+    "platform": "tiktok",
+    "title": "TikTok Pulse广告组新增6秒浏览率(View+)优化目标和视图优化投放策略",
+    "titleOriginal": "Enhanced Pulse Ad Groups with 6s View-Through Rate (View+) Optimization Goal",
+    "summary": "TikTok在Pulse广告组中新增6秒浏览率(View+)优化目标支持。当optimization_goal设为REACH且cpv_video_duration设为SIX_SECONDS时，广告主可通过/adgroup/rf/create/接口使用此功能。同时在/adgroup/rf/create/、/adgroup/rf/update/、/adgroup/get/接口中新增VIEW_OPTIMIZE枚举值作为delivery_mode参数选项，帮助广告主最大化浏览率并获取更多用户注意力。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "TikTok Business API Changelog",
+    "sourceUrl": "https://ads.tiktok.com/help/article/tiktok-for-business-api",
+    "tags": [
+      "Pulse广告",
+      "View+优化",
+      "投放策略",
+      "广告管理",
+      "CPV"
+    ],
+    "fetchedAt": "2026-05-13T01:58:47.763866+08:00",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-05-06-001",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "meta",
+    "title": "Instagram多图片发送功能正式发布，面向所有账户开放",
+    "titleOriginal": "Sending multiple images is now out of beta and available to all accounts.",
+    "summary": "Instagram Graph API的多图片发送功能结束Beta测试阶段，现已面向所有Instagram账户开放。此功能允许开发者通过Content Publishing API一次性发送多张图片，提升内容发布效率。对于管理多个广告账户或运营多个品牌账号的团队而言，可显著减少API调用次数和发布时间。建议广告投放团队检查现有内容发布流程，确认是否可迁移至多图片发送方式以优化工作流。",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Instagram Platform Changelog",
+    "sourceUrl": "https://developers.facebook.com/docs/instagram-api/guides/content-publishing",
+    "tags": [
+      "Instagram API",
+      "Content Publishing",
+      "多图片发送",
+      "功能发布"
+    ],
+    "fetchedAt": "2026-05-13T01:58:47.763866+08:00",
+    "imageUrl": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2365-6/481244262_1166248521755437_1763081748565619554_n.png?_nc_cat=110&ccb=1-7&_nc_sid=e280be&_nc_ohc=9iZGQdJ0segQ7kNvwEfwvFJ&_nc_oc=AdqUQsXkwkcjJsV1YH7rOB2pxA-HQhjzZX4NVc5BFfurhi2Kv9FVGB4Q3rPg7iqTbTM&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=9dLIA3vs3vxJl64IpvInGw&_nc_ss=7f289&oh=00_Af5hmW1AhEsBVmLm8nFjvfM2FCN99C6MJhzKRwxo6YxZqw&oe=6A1D9F79"
   }
 ]
