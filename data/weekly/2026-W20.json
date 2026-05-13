@@ -198,5 +198,77 @@
     "fetchedAt": "2026-05-13T17:28:03.271353+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ESC_2026_Stage_credit_Roman_Za.max-700x3000.format-webp_KdBQZcw.webp"
+  },
+  {
+    "id": "tiktok-2026-05-13-001",
+    "date": "2026-05-13",
+    "week": "2026-W20",
+    "platform": "tiktok",
+    "title": "TikTok Ads Manager 101: Getting started",
+    "titleOriginal": "TikTok Ads Manager 101: Getting started",
+    "summary": "Follow our step-by-step guide to set up an Ads Manager account and launch your first campaign on TikTok.",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/how-to-get-started-with-tiktok-ads-manager-your-step-by-step-guide",
+    "tags": [],
+    "fetchedAt": "2026-05-14T02:07:12.703203+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "tiktok-2026-05-13-003",
+    "date": "2026-05-13",
+    "week": "2026-W20",
+    "platform": "tiktok",
+    "title": "GMV Max: Your TikTok Shop growth engine",
+    "titleOriginal": "GMV Max: Your TikTok Shop growth engine",
+    "summary": "Maximize holistic ROI from your TikTok Shop with our commerce automation solution.",
+    "category": "automation",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/gmv-max-automate-shop-roi",
+    "tags": [
+      "automation"
+    ],
+    "fetchedAt": "2026-05-14T02:07:12.703203+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "moloco-2026-05-11-001",
+    "date": "2026-05-11",
+    "week": "2026-W20",
+    "platform": "moloco",
+    "title": "... Read more >",
+    "titleOriginal": "... Read more >",
+    "summary": "Nexon Sees Incremental Impact of Moloco Performance CTV, Driving Up to 3x Higher New User Sign-ups",
+    "category": "other",
+    "importance": "medium",
+    "source": "Moloco Blog",
+    "sourceUrl": "https://www.moloco.com/case-studies/nexon-sees-incremental-impact-of-moloco-performance-ctv",
+    "tags": [],
+    "fetchedAt": "2026-05-14T02:07:12.703203+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://cdn.prod.website-files.com/62380f0b5031d40f63f8b4c7/69022a6f304e462833e19c0d_Nexon%201200x628%20(1).avif"
+  },
+  {
+    "id": "meta-2026-05-13-001",
+    "date": "2026-05-13",
+    "week": "2026-W20",
+    "platform": "meta",
+    "title": "Meta AI Developer Assistant now live for  Business Messaging",
+    "titleOriginal": "Meta AI Developer Assistant now live for  Business Messaging",
+    "summary": "Today, we're introducing the Meta AI Developer Assistant for WhatsApp Business developers and tech providers. It's an AI-powered assistant that meets developers exactly where they get stuck, with contextual guidance, troubleshooting, and answers grounded in our official documentation.",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/05/13/meta-ai-developer-assistant-now-live-for-business-messaging/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-05-14T02:07:12.703203+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2365-6/699761436_3618839951588328_6396947667784890132_n.jpg?stp=dst-webp&_nc_cat=110&ccb=1-7&_nc_sid=217208&_nc_ohc=BoM9rE0AXvAQ7kNvwHq-FcZ&_nc_oc=AdrHpTNRGvZTwtxUiTKfMzfraskGpYG3SETldrXr2CoATx5b8hX0P4BCeprvFbpeGFw&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=UZFOnYpc2m0sGkQiDjR1pQ&_nc_ss=7f289&oh=00_Af7VhfFY4nrkiRO56XFftH44-61bu5wEEzzASXxQsUTBdg&oe=6A0A8A6B"
   }
 ]
