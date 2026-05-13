@@ -1,14 +1,18 @@
 import { getUpdates, getAvailableMonths, getAvailableWeeks } from "@/lib/data"
 import { HomeClient } from "./components/home-client"
 
+// Force dynamic rendering to ensure date cutoff is always current
+export const dynamic = 'force-dynamic'
+export const revalidate = 3600 // Revalidate every hour
+
 export default function Home() {
   const allUpdates = getUpdates()
   const months = getAvailableMonths()
   const weeks = getAvailableWeeks()
 
   // Only show articles from the last 30 days on homepage, sorted newest to oldest
-  const oneMonthAgo = new Date()
-  oneMonthAgo.setDate(oneMonthAgo.getDate() - 30)
+  const now = new Date()
+  const oneMonthAgo = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30)
   const oneMonthAgoStr = oneMonthAgo.toISOString().split('T')[0]
 
   const recentUpdates = allUpdates

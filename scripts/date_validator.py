@@ -31,13 +31,14 @@ def validate_article_date(article: dict) -> dict:
         issues.append(f"Invalid date format: {date_str}")
         return {"is_valid": False, "issues": issues, "confidence": "low"}
 
-    # Check if date matches fetchedAt (suspicious - likely AI used default)
-    if fetched_at_str:
+    # Check if date matches fetchedAt AND confidence is low (suspicious - likely AI used default)
+    # Don't flag same-day articles if confidence is high
+    if fetched_at_str and date_confidence == "low":
         try:
             fetched_date = datetime.fromisoformat(fetched_at_str.replace("Z", "+00:00"))
             # Check if dates are on the same day
             if article_date.date() == fetched_date.date():
-                issues.append(f"Date matches fetch date ({date_str}) - AI may have used default")
+                issues.append(f"Date matches fetch date ({date_str}) with low confidence - likely used default")
         except (ValueError, AttributeError):
             pass
 
