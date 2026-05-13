@@ -12,11 +12,12 @@ export default function Home() {
 
   // Only show articles from the last 30 days on homepage, sorted newest to oldest
   const now = new Date()
+  const todayStr = now.toISOString().split('T')[0]
   const oneMonthAgo = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30)
   const oneMonthAgoStr = oneMonthAgo.toISOString().split('T')[0]
 
   const recentUpdates = allUpdates
-    .filter(update => update.date >= oneMonthAgoStr)
+    .filter(update => update.date >= oneMonthAgoStr && update.date <= todayStr)
     .sort((a, b) => b.date.localeCompare(a.date)) // Sort newest to oldest
 
   return <HomeClient updates={recentUpdates} months={months} weeks={weeks} />

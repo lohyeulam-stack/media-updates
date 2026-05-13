@@ -154,6 +154,7 @@ def _extract_for_page(page, week_start, week_end, week_label, now_iso, assign_we
             "sourceUrl": source_url,
             "tags": art.get("tags", []),
             "fetchedAt": now_iso,
+            "dateConfidence": art.get("dateConfidence", "medium"),
         })
     return results
 
@@ -177,6 +178,7 @@ def _extract_for_page_backfill(page, month_start, month_end, now_iso):
             "date": art_date,
             "week": iso_week,
             "platform": page.platform,
+            "dateConfidence": art.get("dateConfidence", "medium"),
             "title": art.get("title", ""),
             "titleOriginal": art.get("titleOriginal", ""),
             "summary": art.get("summary", ""),
