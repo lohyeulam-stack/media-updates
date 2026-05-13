@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from ai_processor import extract_and_summarize, generate_monthly_report
+from rule_processor import extract_and_summarize, generate_monthly_report
 from dedup import deduplicate
 from dedup_similarity import deduplicate_by_similarity
 from date_validator import validate_batch
@@ -156,6 +156,7 @@ def _extract_for_page(page, week_start, week_end, week_label, now_iso, assign_we
         source_name=page.source_name,
         week_start=week_start,
         week_end=week_end,
+        source_url=page.url,
     )
     results = []
     for i, art in enumerate(articles):
@@ -194,6 +195,7 @@ def _extract_for_page_backfill(page, month_start, month_end, now_iso):
         source_name=page.source_name,
         week_start=month_start,
         week_end=month_end,
+        source_url=page.url,
     )
     results = []
     for i, art in enumerate(articles):
@@ -227,7 +229,7 @@ def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = 
     label = "Rolling window" if rolling else "Week"
     print(f"[{label}] {week_label}: {week_start} ~ {week_end}")
 
-    pages = scrape_all(SOURCES)
+    pages = scrape_all(SOURCES, date_start=week_start, date_end=week_end)
     print(f"\n[Scrape] Collected {len(pages)} pages from {len(SOURCES)} sources")
 
     now_iso = now_local().isoformat()
@@ -344,7 +346,7 @@ def run_backfill(year: int, start_month: int, end_month: int) -> None:
         print(f"[Backfill] {month_label}: {month_start} ~ {month_end}")
         print(f"{'='*60}")
 
-        pages = scrape_all(SOURCES)
+        pages = scrape_all(SOURCES, date_start=month_start, date_end=month_end)
         print(f"\n[Scrape] Collected {len(pages)} pages")
 
         now_iso = now_local().isoformat()
