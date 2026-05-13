@@ -215,8 +215,21 @@ def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = 
 
     print(f"\n[Total] {len(all_new)} articles extracted")
 
+    # Filter articles by date range before deduplication
+    filtered = []
+    for art in all_new:
+        art_date = art.get("date", "")
+        if art_date and week_start <= art_date <= week_end:
+            filtered.append(art)
+        elif not art_date:
+            # Keep articles without dates (will be validated later)
+            filtered.append(art)
+
+    if len(filtered) < len(all_new):
+        print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
+
     existing = load_json(UPDATES_FILE)
-    unique = deduplicate(all_new, existing)
+    unique = deduplicate(filtered, existing)
     print(f"[Dedup] {len(unique)} new unique articles")
 
     if unique:
@@ -302,8 +315,21 @@ def run_backfill(year: int, start_month: int, end_month: int) -> None:
 
         print(f"\n[Total] {len(all_new)} articles extracted")
 
+        # Filter articles by date range before deduplication
+        filtered = []
+        for art in all_new:
+            art_date = art.get("date", "")
+            if art_date and month_start <= art_date <= month_end:
+                filtered.append(art)
+            elif not art_date:
+                # Keep articles without dates (will be validated later)
+                filtered.append(art)
+
+        if len(filtered) < len(all_new):
+            print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
+
         existing = load_json(UPDATES_FILE)
-        unique = deduplicate(all_new, existing)
+        unique = deduplicate(filtered, existing)
         print(f"[Dedup] {len(unique)} new unique articles")
 
         if unique:
