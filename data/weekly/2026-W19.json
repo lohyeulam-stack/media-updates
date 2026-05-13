@@ -407,5 +407,113 @@
     ],
     "fetchedAt": "2026-05-13T01:58:47.763866+08:00",
     "imageUrl": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2365-6/481244262_1166248521755437_1763081748565619554_n.png?_nc_cat=110&ccb=1-7&_nc_sid=e280be&_nc_ohc=9iZGQdJ0segQ7kNvwEfwvFJ&_nc_oc=AdqUQsXkwkcjJsV1YH7rOB2pxA-HQhjzZX4NVc5BFfurhi2Kv9FVGB4Q3rPg7iqTbTM&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=9dLIA3vs3vxJl64IpvInGw&_nc_ss=7f289&oh=00_Af5hmW1AhEsBVmLm8nFjvfM2FCN99C6MJhzKRwxo6YxZqw&oe=6A1D9F79"
+  },
+  {
+    "id": "amazon-2026-05-07-001",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "amazon",
+    "title": "LinkedIn CTV Ads are now available through Amazon DSP",
+    "titleOriginal": "LinkedIn CTV Ads are now available through Amazon DSP",
+    "summary": "LinkedIn CTV Ads are now available through Amazon DSP",
+    "category": "other",
+    "importance": "medium",
+    "source": "Amazon Ads Blog",
+    "sourceUrl": "https://advertising.amazon.com/library/news/linkedin-ctv-ads-amazon-dsp?ref_=a20m_us_lbr_df_z2_nws_lnctvdsp",
+    "tags": [],
+    "fetchedAt": "2026-05-13T18:33:34.866719+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/LinkedInNews_1.jpg"
+  },
+  {
+    "id": "youtube-2026-05-08-001",
+    "date": "2026-05-08",
+    "week": "2026-W19",
+    "platform": "youtube",
+    "title": "How Tabitha Brown created a safe space for children with Tab Time",
+    "titleOriginal": "How Tabitha Brown created a safe space for children with Tab Time",
+    "summary": "Learn how Tabitha Brown transitioned from traditional acting to becoming a three-time Emmy winner. She shares the story of her career pivot, the inspiration behind her h…",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/tabitha-brown-tab-time-emmy-wins/",
+    "tags": [],
+    "fetchedAt": "2026-05-13T18:33:34.866719+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Generic_Series_TabTime_KeyArt_.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "youtube-2026-05-06-002",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "youtube",
+    "title": "Creators take the spotlight at White House Correspondents' Weekend",
+    "titleOriginal": "Creators take the spotlight at White House Correspondents' Weekend",
+    "summary": "Independent news creators joined events in Washington D.C. to discuss the evolution of the free press. From advocating for artist rights on Capitol Hill to attending the…",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-creators-white-house-correspondents-weekend/",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-05-13T18:33:34.866719+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/TK4L6677.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "google-2026-05-07-001-341788",
+    "date": "2026-05-07",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "New AI-powered bidding and budgeting innovations in Search and Shopping",
+    "titleOriginal": "New AI-powered bidding and budgeting innovations in Search and Shopping",
+    "summary": "The Road To Google Marketing Live",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/bidding-budgeting-google-marketing-live-2026/",
+    "tags": [
+      "shopping"
+    ],
+    "fetchedAt": "2026-05-13T18:33:34.866719+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Header_hero_image.width-1200.format-webp.webp"
+  },
+  {
+    "id": "google-2026-05-06-002",
+    "date": "2026-05-06",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "5 gardening tips you can try right in Search",
+    "titleOriginal": "5 gardening tips you can try right in Search",
+    "summary": "An abstract background featuring soft, stippled illustrations of flowers and a butterfly in a bright palette of blue, green, and red. In the center of the image is a white circle containing a magnifying glass.",
+    "category": "creative",
+    "importance": "low",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/search/gardening-tips/",
+    "tags": [],
+    "fetchedAt": "2026-05-13T18:33:34.866719+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/01-Google_Gardening_Header.width-1200.format-webp.webp"
+  },
+  {
+    "id": "google-2026-05-05-004",
+    "date": "2026-05-05",
+    "week": "2026-W19",
+    "platform": "google",
+    "title": "Turn your data into decisions: 3 things your business needs for growth in the AI era",
+    "titleOriginal": "Turn your data into decisions: 3 things your business needs for growth in the AI era",
+    "summary": "The Road To Google Marketing Live",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/google-marketing-live-2026-turn-your-data-into-decisions/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-05-13T18:33:34.866719+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MSMT_Hero_-_Measurement_22x.width-1200.format-webp.webp"
   }
 ]
