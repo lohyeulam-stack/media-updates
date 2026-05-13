@@ -204,10 +204,11 @@ jobs:
           from pathlib import Path
 
           allowed_platforms = {
-              'tiktok', 'meta', 'snapchat', 'pinterest', 'x', 'linkedin',
-              'google', 'apple', 'youtube', 'spotify',
-              'kwai', 'line', 'naver', 'kakao',
-              'dv360', 'applovin', 'ironsource', 'mintegral', 'pangle', 'amazon',
+              'tiktok', 'meta', 'snapchat', 'pinterest', 'x', 'linkedin', 'quora',
+              'google', 'apple', 'bing',
+              'youtube', 'spotify', 'netflix', 'uber',
+              'kwai', 'line', 'naver', 'kakao', 'bigo', 'newsbreak', 'smartnews', 'vk', 'yandex', 'mediago',
+              'dv360', 'applovin', 'ironsource', 'mintegral', 'pangle', 'amazon', 'ttd', 'taboola', 'outbrain', 'criteo', 'moloco', 'miq',
               'huawei', 'xiaomi', 'oppo', 'vivo',
           }
           allowed_categories = {

@@ -159,7 +159,12 @@ def _extract_for_page(page, week_start, week_end, week_label, now_iso, assign_we
     )
     results = []
     for i, art in enumerate(articles):
-        art_date = art.get("date", "") or week_end
+        art_date = art.get("date", "") or ""
+        date_confidence = art.get("dateConfidence", "medium")
+        # Only use week_end as fallback if no date at all - mark as low confidence
+        if not art_date:
+            art_date = week_end
+            date_confidence = "low"
         item_week = _date_to_week_label(art_date) if assign_week_from_date else week_label
         source_url = _resolve_source_url(art, page)
         results.append({
