@@ -209,7 +209,7 @@ def _enrich_dates_from_articles(
     links: list[dict],
     date_start: str,
     date_end: str,
-    max_articles: int = 8,
+    max_articles: int = 5,
 ) -> list[dict]:
     """Visit article pages for links without dates to extract publish date.
 
@@ -234,8 +234,8 @@ def _enrich_dates_from_articles(
         url = link["url"]
         pg = context.new_page()
         try:
-            pg.goto(url, timeout=12000, wait_until="domcontentloaded")
-            pg.wait_for_timeout(1000)
+            pg.goto(url, timeout=8000, wait_until="domcontentloaded")
+            pg.wait_for_timeout(500)
             raw = pg.evaluate(_JS_ARTICLE_DATE)
             if raw:
                 parsed = _parse_article_date(str(raw))
