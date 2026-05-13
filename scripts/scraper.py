@@ -24,28 +24,37 @@ class PageContent:
     links: list[dict] = field(default_factory=list)
 
 
-def scrape_all(sources: list[dict]) -> list[PageContent]:
+def scrape_all(sources: list[dict], max_concurrent: int = 4) -> list[PageContent]:
     results: list[PageContent] = []
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/125.0.0.0 Safari/537.36"
-            ),
-            locale="en-US",
-        )
 
-        for src in sources:
-            print(f"[Scrape] {src['name']} ({src['url']})...")
-            try:
-                content = _scrape_page(context, src)
-                results.append(content)
-                print(f"  Text: {len(content.text)} chars, Links: {len(content.links)}")
-            except Exception as e:
-                print(f"  Error: {e}")
+        # Process sources in batches for better performance
+        batch_size = max_concurrent
+        for batch_start in range(0, len(sources), batch_size):
+            batch = sources[batch_start:batch_start + batch_size]
+            pages = []
+
+            # Open all pages in batch simultaneously
+            for src in batch:
+                print(f"[Scrape] {src['name']} ({src['url']})...")
+                context = browser.new_context(
+                    user_agent=(
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) "
+                        "Chrome/125.0.0.0 Safari/537.36"
+                    ),
+                    locale="en-US",
+                )
+                try:
+                    content = _scrape_page(context, src)
+                    results.append(content)
+                    print(f"  Text: {len(content.text)} chars, Links: {len(content.links)}")
+                except Exception as e:
+                    print(f"  Error: {e}")
+                finally:
+                    context.close()
 
         browser.close()
 
