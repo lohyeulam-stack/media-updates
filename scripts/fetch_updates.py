@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from ai_processor import extract_and_summarize, generate_monthly_report
 from dedup import deduplicate
 from dedup_similarity import deduplicate_by_similarity
+from date_validator import validate_batch
 from scraper import scrape_all
 from sources_config import SOURCES
 from validator import validate_weekly, validate_monthly_report, print_report
@@ -229,6 +230,19 @@ def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = 
     if len(filtered) < len(all_new):
         print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
 
+    # Validate dates and automatically filter out suspicious articles
+    validation_result = validate_batch(filtered)
+    if validation_result["suspicious"]:
+        print(f"[Date Validation] Found {len(validation_result['suspicious'])} articles with suspicious dates - removing them:")
+        for item in validation_result["suspicious"][:5]:  # Show first 5
+            print(f"  - {item['platform']}: {item['title']}... ({item['date']})")
+            print(f"    Issues: {', '.join(item['issues'])}")
+
+        # Automatically remove suspicious articles
+        suspicious_ids = {item['id'] for item in validation_result['suspicious']}
+        filtered = [art for art in filtered if art.get('id') not in suspicious_ids]
+        print(f"[Date Validation] {len(filtered)} articles remaining after removing suspicious dates")
+
     # Apply cosine similarity deduplication first
     similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.70)
     if len(similarity_deduped) < len(filtered):
@@ -333,6 +347,19 @@ def run_backfill(year: int, start_month: int, end_month: int) -> None:
 
         if len(filtered) < len(all_new):
             print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
+
+        # Validate dates and automatically filter out suspicious articles
+        validation_result = validate_batch(filtered)
+        if validation_result["suspicious"]:
+            print(f"[Date Validation] Found {len(validation_result['suspicious'])} articles with suspicious dates - removing them:")
+            for item in validation_result["suspicious"][:5]:  # Show first 5
+                print(f"  - {item['platform']}: {item['title']}... ({item['date']})")
+                print(f"    Issues: {', '.join(item['issues'])}")
+
+            # Automatically remove suspicious articles
+            suspicious_ids = {item['id'] for item in validation_result['suspicious']}
+            filtered = [art for art in filtered if art.get('id') not in suspicious_ids]
+            print(f"[Date Validation] {len(filtered)} articles remaining after removing suspicious dates")
 
         # Apply cosine similarity deduplication first
         similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.70)
