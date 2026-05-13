@@ -42,7 +42,7 @@ def _cosine_similarity(text1: str, text2: str) -> float:
 
 def deduplicate_by_similarity(
     articles: list[dict],
-    threshold: float = 0.80,
+    threshold: float = 0.88,
 ) -> list[dict]:
     """
     Remove duplicate articles based on title and summary similarity.
@@ -78,9 +78,14 @@ def deduplicate_by_similarity(
         seen_texts = []
 
         for article in group_articles:
-            title = article.get('title', '') or article.get('titleOriginal', '')
+            # Use titleOriginal for better English similarity matching
+            title_original = article.get('titleOriginal', '')
+            title_chinese = article.get('title', '')
             summary = article.get('summary', '')
-            combined_text = f"{title} {summary}"
+
+            # Prefer original English title for similarity, fallback to Chinese
+            title_for_comparison = title_original if title_original else title_chinese
+            combined_text = f"{title_for_comparison} {summary}"
 
             is_duplicate = False
             best_match_idx = -1

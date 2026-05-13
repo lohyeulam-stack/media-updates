@@ -20,6 +20,28 @@
     "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1503788604506286&version=1774960097&transcode_extension=webp"
   },
   {
+    "id": "meta-2026-03-18-003",
+    "date": "2026-03-18",
+    "week": "2026-W12",
+    "platform": "meta",
+    "title": "Manus x Meta for Business：企业AI代理新时代",
+    "titleOriginal": "Manus x Meta for Businesses",
+    "summary": "Meta宣布与Manus公司合作，在其应用家族（包括Facebook、Instagram、WhatsApp等）中推出Manus自主AI代理的Beta测试。这是首个深度集成到Meta广告和商务工具的企业级AI代理服务，能够帮助企业自动完成复杂的多步骤业务流程，如广告素材生成与优化、跨平台活动管理等。广告投放团队将获得更强大的自动化工作流程支持，提升运营效率。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/manus-joins-meta-accelerating-ai-innovation-for-businesses",
+    "tags": [
+      "Manus",
+      "AI代理",
+      "自动化",
+      "企业工具",
+      "Beta测试"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407",
+    "imageUrl": null
+  },
+  {
     "id": "youtube-2026-05-09-006",
     "date": "2026-05-09",
     "week": "2026-W19",
@@ -39,28 +61,6 @@
     ],
     "fetchedAt": "2026-05-11T13:30:12.046074+08:00",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Image_20251113_201733.max-700x3000.format-webp.webp"
-  },
-  {
-    "id": "tiktok-2026-05-08-001",
-    "date": "2026-05-08",
-    "week": "2026-W19",
-    "platform": "tiktok",
-    "title": "TikTok Pulse广告组新增6秒浏览率(View+)优化目标和视图优化投放策略",
-    "titleOriginal": "Enhanced Pulse Ad Groups with 6s View-Through Rate (View+) Optimization Goal",
-    "summary": "TikTok在Pulse广告组中新增6秒浏览率(View+)优化目标支持。当optimization_goal设为REACH且cpv_video_duration设为SIX_SECONDS时，广告主可通过/adgroup/rf/create/接口使用此功能。同时在/adgroup/rf/create/、/adgroup/rf/update/、/adgroup/get/接口中新增VIEW_OPTIMIZE枚举值作为delivery_mode参数选项，帮助广告主最大化浏览率并获取更多用户注意力。",
-    "category": "ad-product",
-    "importance": "medium",
-    "source": "TikTok Business API Changelog",
-    "sourceUrl": "https://ads.tiktok.com/help/article/tiktok-for-business-api",
-    "tags": [
-      "Pulse广告",
-      "View+优化",
-      "投放策略",
-      "广告管理",
-      "CPV"
-    ],
-    "fetchedAt": "2026-05-13T01:58:47.763866+08:00",
-    "imageUrl": null
   },
   {
     "id": "tiktok-2026-05-08-001-17b1a4",
@@ -1800,28 +1800,6 @@
     ],
     "fetchedAt": "2026-04-27T09:22:47.336801",
     "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQGKchRkpecRVA/croft-frontend-shrinkToFit767/B4DZz9OJe8IcAU-/0/1773774888601?e=2147483647&v=beta&t=anke34JiOj4f9qbb2vQS-my8CtUGloR6zz1u63ELEts"
-  },
-  {
-    "id": "meta-2026-03-18-003",
-    "date": "2026-03-18",
-    "week": "2026-W12",
-    "platform": "meta",
-    "title": "Manus x Meta for Business：企业AI代理新时代",
-    "titleOriginal": "Manus x Meta for Businesses",
-    "summary": "Meta宣布与Manus公司合作，在其应用家族（包括Facebook、Instagram、WhatsApp等）中推出Manus自主AI代理的Beta测试。这是首个深度集成到Meta广告和商务工具的企业级AI代理服务，能够帮助企业自动完成复杂的多步骤业务流程，如广告素材生成与优化、跨平台活动管理等。广告投放团队将获得更强大的自动化工作流程支持，提升运营效率。",
-    "category": "automation",
-    "importance": "high",
-    "source": "Meta for Business News",
-    "sourceUrl": "https://www.facebook.com/business/news/manus-joins-meta-accelerating-ai-innovation-for-businesses",
-    "tags": [
-      "Manus",
-      "AI代理",
-      "自动化",
-      "企业工具",
-      "Beta测试"
-    ],
-    "fetchedAt": "2026-04-26T00:21:56.884407",
-    "imageUrl": null
   },
   {
     "id": "pinterest-2026-03-17-005",
