@@ -112,7 +112,7 @@ def _normalize_date(date_str: str) -> str:
     return date_str
 
 
-
+def _normalize_match_text(text: str) -> str:
     text = re.sub(r"[^\w\s]", " ", (text or "").lower())
     return re.sub(r"\s+", " ", text).strip()
 
