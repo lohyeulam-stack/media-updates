@@ -207,7 +207,7 @@ def _enrich_dates_from_articles(
     links: list[dict],
     date_start: str,
     date_end: str,
-    max_articles: int = 15,
+    max_articles: int = 8,
 ) -> list[dict]:
     """Visit article pages for links without dates to extract publish date.
 
@@ -215,7 +215,12 @@ def _enrich_dates_from_articles(
     left unchanged. Links whose fetched date falls outside [date_start, date_end]
     are kept but with an empty date so downstream filtering can decide.
     """
-    no_date_links = [l for l in links if not l.get("date") and l.get("url")]
+    no_date_links = [
+        l for l in links
+        if not l.get("date") and l.get("url")
+        # Only fetch pages with at least 2 path segments after host (real articles have a slug)
+        and len(l["url"].replace("https://", "").replace("http://", "").split("/")) > 2
+    ]
     if not no_date_links:
         return links
 
@@ -227,8 +232,8 @@ def _enrich_dates_from_articles(
         url = link["url"]
         pg = context.new_page()
         try:
-            pg.goto(url, timeout=20000, wait_until="domcontentloaded")
-            pg.wait_for_timeout(1500)
+            pg.goto(url, timeout=12000, wait_until="domcontentloaded")
+            pg.wait_for_timeout(1000)
             raw = pg.evaluate(_JS_ARTICLE_DATE)
             if raw:
                 parsed = _parse_article_date(str(raw))
