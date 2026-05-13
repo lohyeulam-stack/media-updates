@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from ai_processor import extract_and_summarize, generate_monthly_report
 from dedup import deduplicate
+from dedup_similarity import deduplicate_by_similarity
 from scraper import scrape_all
 from sources_config import SOURCES
 from validator import validate_weekly, validate_monthly_report, print_report
@@ -228,8 +229,13 @@ def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = 
     if len(filtered) < len(all_new):
         print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
 
+    # Apply cosine similarity deduplication first
+    similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.80)
+    if len(similarity_deduped) < len(filtered):
+        print(f"[Similarity Dedup] {len(similarity_deduped)} articles after removing {len(filtered) - len(similarity_deduped)} similar duplicates")
+
     existing = load_json(UPDATES_FILE)
-    unique = deduplicate(filtered, existing)
+    unique = deduplicate(similarity_deduped, existing)
     print(f"[Dedup] {len(unique)} new unique articles")
 
     if unique:
@@ -328,8 +334,13 @@ def run_backfill(year: int, start_month: int, end_month: int) -> None:
         if len(filtered) < len(all_new):
             print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
 
+        # Apply cosine similarity deduplication first
+        similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.80)
+        if len(similarity_deduped) < len(filtered):
+            print(f"[Similarity Dedup] {len(similarity_deduped)} articles after removing {len(filtered) - len(similarity_deduped)} similar duplicates")
+
         existing = load_json(UPDATES_FILE)
-        unique = deduplicate(filtered, existing)
+        unique = deduplicate(similarity_deduped, existing)
         print(f"[Dedup] {len(unique)} new unique articles")
 
         if unique:
