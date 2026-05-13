@@ -197,7 +197,11 @@ def _extract_for_page_backfill(page, month_start, month_end, now_iso):
     )
     results = []
     for i, art in enumerate(articles):
-        art_date = art.get("date", "") or month_end
+        art_date = art.get("date", "") or ""
+        date_confidence = art.get("dateConfidence", "medium")
+        if not art_date:
+            art_date = month_end
+            date_confidence = "low"
         source_url = _resolve_source_url(art, page)
         iso_week = _date_to_week_label(art_date)
         results.append({
@@ -205,7 +209,7 @@ def _extract_for_page_backfill(page, month_start, month_end, now_iso):
             "date": art_date,
             "week": iso_week,
             "platform": page.platform,
-            "dateConfidence": art.get("dateConfidence", "medium"),
+            "dateConfidence": date_confidence,
             "title": art.get("title", ""),
             "titleOriginal": art.get("titleOriginal", ""),
             "summary": art.get("summary", ""),
