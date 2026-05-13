@@ -361,11 +361,11 @@ def run_backfill(year: int, start_month: int, end_month: int) -> None:
         # Filter articles by date range before deduplication
         filtered = []
         for art in all_new:
-            art_date = art.get("date", "")
+            art_date = _normalize_date(art.get("date", ""))
+            art["date"] = art_date  # Ensure normalized date is saved
             if art_date and month_start <= art_date <= month_end:
                 filtered.append(art)
             elif not art_date:
-                # Keep articles without dates (will be validated later)
                 filtered.append(art)
 
         if len(filtered) < len(all_new):
