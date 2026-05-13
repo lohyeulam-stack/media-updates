@@ -92,18 +92,6 @@ def _scrape_page(context, src: dict, date_start: str = "", date_end: str = "") -
                 text = _clean_text(page.inner_text("body"))
                 links = _extract_links(page, src["url"])
 
-                # Enrich dates for links that have none, by visiting article pages.
-                # Skip if this source has an RSS feed (rule_processor handles it directly).
-                if date_start and date_end and not src.get("has_rss"):
-                    with_date = sum(1 for l in links if l.get("date"))
-                    no_date = len(links) - with_date
-                    # Only enrich if most links lack dates (avoids waste when
-                    # scraper already found dates in link text for most articles)
-                    if no_date > with_date and no_date > 0:
-                        links = _enrich_dates_from_articles(
-                            context, links, date_start, date_end
-                        )
-
             return PageContent(
                 url=src["url"],
                 platform=src["platform"],
