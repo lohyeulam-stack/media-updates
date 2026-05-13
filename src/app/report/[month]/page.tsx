@@ -27,7 +27,7 @@ export default async function MonthlyReportPage({
 
   return (
     <PageLayout updates={updates} months={months} weeks={weeks}>
-      <div className="px-6 lg:px-12 py-16">
+      <div className="px-6 lg:px-12 py-16 mx-auto">
         <div className="mb-8">
           <Link
             href="/"
@@ -39,7 +39,7 @@ export default async function MonthlyReportPage({
           <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-foreground">{month}</span>
         </div>
 
-        <article className="max-w-3xl markdown-body">
+        <article className="markdown-body mx-auto">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {report}
           </ReactMarkdown>

@@ -88,7 +88,7 @@ export default async function WeeklyPage({ params }: { params: Promise<{ week: s
 
         <h1 className="swiss-h2 text-foreground mb-12">{week}</h1>
 
-        <div className="space-y-12 max-w-4xl">
+        <div className="space-y-12 max-w-5xl mx-auto">
           {groupOrder.map((gKey) => {
             const platforms = byGroup[gKey]
             if (!platforms) return null
