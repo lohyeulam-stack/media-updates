@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass, field
+
+import requests
 from playwright.sync_api import sync_playwright, Page
 
 
@@ -100,7 +103,7 @@ def _scrape_page(context, src: dict, date_start: str = "", date_end: str = "") -
                     no_date = len(links) - with_date
                     if no_date > with_date and no_date > 0:
                         links = _enrich_dates_from_articles(
-                            context, links, date_start, date_end
+                            links, date_start, date_end
                         )
 
             return PageContent(
@@ -204,54 +207,109 @@ def _parse_article_date(raw: str) -> str:
     return ""
 
 
+_ENRICH_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+}
+
+
+def _extract_date_from_html(html: str) -> str:
+    """Extract publish date from article HTML using JSON-LD and meta tags.
+
+    Fast requests-based alternative to Playwright-based enrichment.
+    """
+    # S1: JSON-LD datePublished
+    for m in re.finditer(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', html, re.I | re.S):
+        try:
+            data = json.loads(m.group(1))
+        except json.JSONDecodeError:
+            continue
+
+        def walk(obj):
+            if not obj or not isinstance(obj, (dict, list)):
+                return None
+            if isinstance(obj, dict):
+                if obj.get("datePublished"):
+                    return obj["datePublished"]
+                if isinstance(obj.get("@graph"), list):
+                    for item in obj["@graph"]:
+                        r = walk(item)
+                        if r:
+                            return r
+                for v in obj.values():
+                    r = walk(v)
+                    if r:
+                        return r
+            else:
+                for item in obj:
+                    r = walk(item)
+                    if r:
+                        return r
+            return None
+
+        found = walk(data)
+        if found:
+            return str(found)
+
+    # S2: meta tags
+    for pat in [
+        r'<meta[^>]*property=["\']article:published_time["\'][^>]*content=["\']([^"\']+)["\']',
+        r'<meta[^>]*name=["\'](?:date|publish_date|pubdate|DC\.date)["\'][^>]*content=["\']([^"\']+)["\']',
+        r'<meta[^>]*itemprop=["\']datePublished["\'][^>]*content=["\']([^"\']+)["\']',
+        r'<meta[^>]*content=["\']([^"\']+)["\'][^>]*itemprop=["\']datePublished["\']',
+    ]:
+        m = re.search(pat, html, re.I)
+        if m:
+            return m.group(1)
+
+    # S3: <time datetime>
+    m = re.search(r'<time[^>]*datetime=["\'](\d{4}-\d{2}-\d{2})["\']', html, re.I)
+    if m:
+        return m.group(1)
+
+    return ""
+
+
 def _enrich_dates_from_articles(
-    context,
     links: list[dict],
     date_start: str,
     date_end: str,
     max_articles: int = 5,
 ) -> list[dict]:
-    """Visit article pages for links without dates to extract publish date.
+    """Fetch article pages with requests to extract publish dates from JSON-LD/meta.
 
-    Only fetches up to max_articles pages. Links that already have a date are
-    left unchanged. Links whose fetched date falls outside [date_start, date_end]
-    are kept but with an empty date so downstream filtering can decide.
+    Much faster than Playwright-based enrichment since it skips JS rendering.
+    Targets article pages whose listing pages don't expose publish dates
+    (e.g. Amazon Ads Blog, Criteo Blog, MiQ Blog — which use JSON-LD).
     """
     no_date_links = [
         l for l in links
         if not l.get("date") and l.get("url")
-        # Only fetch pages with at least 2 path segments after host (real articles have a slug)
         and len(l["url"].replace("https://", "").replace("http://", "").split("/")) > 2
     ]
     if not no_date_links:
         return links
 
     to_fetch = no_date_links[:max_articles]
-    print(f"  [DateEnrich] Fetching dates from {len(to_fetch)} article pages...")
+    print(f"  [DateEnrich] Fetching {len(to_fetch)} article pages via requests...")
 
     date_map: dict[str, str] = {}
     for link in to_fetch:
         url = link["url"]
-        pg = context.new_page()
         try:
-            pg.goto(url, timeout=8000, wait_until="domcontentloaded")
-            pg.wait_for_timeout(500)
-            raw = pg.evaluate(_JS_ARTICLE_DATE)
-            if raw:
-                parsed = _parse_article_date(str(raw))
-                if parsed:
-                    date_map[url] = parsed
-        except Exception as e:
-            pass  # timeout or navigation error — leave date empty
-        finally:
-            try:
-                pg.close()
-            except Exception:
-                pass
+            resp = requests.get(url, headers=_ENRICH_HEADERS, timeout=8)
+            if resp.status_code == 200:
+                raw = _extract_date_from_html(resp.text)
+                if raw:
+                    parsed = _parse_article_date(raw)
+                    if parsed:
+                        date_map[url] = parsed
+        except requests.RequestException:
+            pass
 
     enriched = sum(1 for v in date_map.values() if v)
     in_range = sum(1 for v in date_map.values() if v and date_start <= v <= date_end)
-    print(f"  [DateEnrich] Got dates for {enriched}/{len(to_fetch)} articles, {in_range} in range")
+    if enriched:
+        print(f"  [DateEnrich] Got dates for {enriched}/{len(to_fetch)} articles ({in_range} in range)")
 
     result = []
     for link in links:
