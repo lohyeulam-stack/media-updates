@@ -164,5 +164,39 @@
     "fetchedAt": "2026-05-13T13:41:07.395025+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://images.prismic.io/miq-website/agMTIqYofJOwHH1p_GL-FUNNEL-BUYING-MiQ.jpg?auto=format,compress&rect=0,1,1200,627&w=1200&h=627"
+  },
+  {
+    "id": "snapchat-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "snapchat",
+    "title": "Finding the Balance: How the Next Generation Navigates Relationships, Content, and Technology",
+    "titleOriginal": "Finding the Balance: How the Next Generation Navigates Relationships, Content, and Technology",
+    "summary": "Finding the Balance: How the Next Generation Navigates Relationships, Content, and Technology",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/finding-the-balance-how-the-next-generation-navigates-life",
+    "tags": [],
+    "fetchedAt": "2026-05-13T17:28:03.271353+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/inb32lme5009/3QBH310VD2PPs1HSLFA2O3/53eb3043822f4dc2eec202b961fd1d4f/IMG_1015.JPG?q=40&h=512"
+  },
+  {
+    "id": "youtube-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "youtube",
+    "title": "A double milestone: 70 years of Eurovision and 20 years of the Eurovision YouTube channel!",
+    "titleOriginal": "A double milestone: 70 years of Eurovision and 20 years of the Eurovision YouTube channel!",
+    "summary": "Watch the Eurovision Song Contest 2026 live on YouTube as the competition celebrates 70 years of music. Follow the journey of artists like Look Mum No Computer and enjoy…",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/eurovision-2026-70th-anniversary-youtube-guide/",
+    "tags": [],
+    "fetchedAt": "2026-05-13T17:28:03.271353+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ESC_2026_Stage_credit_Roman_Za.max-700x3000.format-webp_KdBQZcw.webp"
   }
 ]
