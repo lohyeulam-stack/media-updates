@@ -90,7 +90,29 @@ def save_text(path: Path, text: str) -> None:
         f.write(text)
 
 
-def _normalize_match_text(text: str) -> str:
+def _normalize_date(date_str: str) -> str:
+    """Normalize date string to YYYY-MM-DD format."""
+    if not date_str:
+        return ""
+    # Already in correct format
+    if len(date_str) == 10 and date_str[4] == '-' and date_str[7] == '-':
+        return date_str
+    # Handle ISO timestamps like 2026-05-13T10:00:00+08:00
+    if 'T' in date_str:
+        return date_str[:10]
+    # Handle formats like 2026/05/13
+    if '/' in date_str:
+        parts = date_str.split('/')
+        if len(parts) == 3 and len(parts[0]) == 4:
+            return f"{parts[0]}-{parts[1].zfill(2)}-{parts[2].zfill(2)}"
+    # Handle formats like 2026-5-1
+    parts = date_str.split('-')
+    if len(parts) == 3 and len(parts[0]) == 4:
+        return f"{parts[0]}-{parts[1].zfill(2)}-{parts[2].zfill(2)}"
+    return date_str
+
+
+
     text = re.sub(r"[^\w\s]", " ", (text or "").lower())
     return re.sub(r"\s+", " ", text).strip()
 
@@ -222,11 +244,11 @@ def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = 
     # Filter articles by date range before deduplication
     filtered = []
     for art in all_new:
-        art_date = art.get("date", "")
+        art_date = _normalize_date(art.get("date", ""))
+        art["date"] = art_date  # Ensure normalized date is saved
         if art_date and week_start <= art_date <= week_end:
             filtered.append(art)
         elif not art_date:
-            # Keep articles without dates (will be validated later)
             filtered.append(art)
 
     if len(filtered) < len(all_new):
@@ -236,11 +258,10 @@ def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = 
     validation_result = validate_batch(filtered)
     if validation_result["suspicious"]:
         print(f"[Date Validation] Found {len(validation_result['suspicious'])} articles with suspicious dates - removing them:")
-        for item in validation_result["suspicious"][:5]:  # Show first 5
+        for item in validation_result["suspicious"][:5]:
             print(f"  - {item['platform']}: {item['title']}... ({item['date']})")
             print(f"    Issues: {', '.join(item['issues'])}")
 
-        # Automatically remove suspicious articles
         suspicious_ids = {item['id'] for item in validation_result['suspicious']}
         filtered = [art for art in filtered if art.get('id') not in suspicious_ids]
         print(f"[Date Validation] {len(filtered)} articles remaining after removing suspicious dates")
