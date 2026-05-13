@@ -230,7 +230,7 @@ def run_weekly(week_start: str, week_end: str, week_label: str, rolling: bool = 
         print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
 
     # Apply cosine similarity deduplication first
-    similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.80)
+    similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.70)
     if len(similarity_deduped) < len(filtered):
         print(f"[Similarity Dedup] {len(similarity_deduped)} articles after removing {len(filtered) - len(similarity_deduped)} similar duplicates")
 
@@ -335,7 +335,7 @@ def run_backfill(year: int, start_month: int, end_month: int) -> None:
             print(f"[Filter] {len(filtered)} articles within date range (removed {len(all_new) - len(filtered)} out-of-range)")
 
         # Apply cosine similarity deduplication first
-        similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.80)
+        similarity_deduped = deduplicate_by_similarity(filtered, threshold=0.70)
         if len(similarity_deduped) < len(filtered):
             print(f"[Similarity Dedup] {len(similarity_deduped)} articles after removing {len(filtered) - len(similarity_deduped)} similar duplicates")
 

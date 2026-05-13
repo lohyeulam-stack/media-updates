@@ -42,7 +42,7 @@ def _cosine_similarity(text1: str, text2: str) -> float:
 
 def deduplicate_by_similarity(
     articles: list[dict],
-    threshold: float = 0.88,
+    threshold: float = 0.70,
 ) -> list[dict]:
     """
     Remove duplicate articles based on title and summary similarity.
