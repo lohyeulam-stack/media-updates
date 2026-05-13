@@ -98,5 +98,71 @@
     ],
     "fetchedAt": "2026-05-11T12:23:07.551755+08:00",
     "imageUrl": "https://scontent-iad6-1.xx.fbcdn.net/v/t39.8562-6/486397085_3381924685275939_2720501426454541185_n.gif?_nc_cat=109&ccb=1-7&_nc_sid=f537c7&_nc_ohc=wrmHOs2zYn8Q7kNvwGE9pgR&_nc_oc=Adryb2VK_zCaH4KmZe1v2rzTG80REXYdkdtqSxL4BFQafkVoayAMVQV-bEGYVnKVqDQ&_nc_zt=14&_nc_ht=scontent-iad6-1.xx&_nc_gid=TlIxJnYDdLx-lJKNNMOfpQ&_nc_ss=7f289&oh=00_Af4ARfGKmODAjtem4C72U8xMDdapeoTnaI5GUS_R_J2YYQ&oe=6A071584"
+  },
+  {
+    "id": "pinterest-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "pinterest",
+    "title": "更好的决策始于更好的测量",
+    "titleOriginal": "Better decisions start with better measurement",
+    "summary": "Pinterest发布关于广告测量优化的新指南，强调测量不应仅停留在报告性能层面，而应指导实际决策。内容涉及如何利用Pinterest的测量工具获取更深入的消费者洞察，优化广告投放策略。对于广告投放团队而言，需要重新审视测量指标的选择，从被动报告转为主动指导优化方向。",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/measurement-should-do-more-than-report-performance/",
+    "tags": [
+      "测量分析",
+      "最佳实践",
+      "数据驱动",
+      "广告优化"
+    ],
+    "fetchedAt": "2026-05-13T13:41:07.395025+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://images.ctfassets.net/h67z7i6sbjau/5rbhmQckHR2RWK6sR28Lh5/285983879b24e8b436aba6372a06ca99/Blog_header_Measurment_POV_2.0_1216x684.jpg?fm=webp&q=85&w=1680&h=1680"
+  },
+  {
+    "id": "bing-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "bing",
+    "title": "通过Rewarded Portals解锁更深入的参与度",
+    "titleOriginal": "Unlock deeper engagement with Rewarded Portals",
+    "summary": "Microsoft Advertising推出Rewarded Portals，这是一种全新的游戏内广告格式，将用户主动选择参与、沉浸式品牌故事和可验证的品牌提升效果相结合。广告主可通过这一创新格式在游戏中为用户提供有价值的奖励体验，同时实现品牌传播目标。该格式为游戏广告领域带来了全新的变现思路，广告投放团队可关注其在品牌提升和用户互动方面的表现数据。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Microsoft Advertising Blog",
+    "sourceUrl": "https://about.ads.microsoft.com/en-us/blog",
+    "tags": [
+      "gaming",
+      "ad-product",
+      "innovation",
+      "new-format"
+    ],
+    "fetchedAt": "2026-05-13T13:41:07.395025+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://about.ads.microsoft.com/content/dam/sites/msa-about/global/common/content-lib/blog/thumbnail/MSA_BlogWebcastsAndInsights_Thumbnail_01_407x229_2x.jpg"
+  },
+  {
+    "id": "miq-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "miq",
+    "title": "购物：网购从未如此简单",
+    "titleOriginal": "Buying: Shopping online has never been easier",
+    "summary": "探讨消费者网购行为的最新变化与趋势，分析在线购物便利性提升对广告投放策略的影响。文章可能涉及用户购买路径优化、跨渠道归因等与广告投放团队直接相关的话题，帮助团队更好地理解数字化购物行为。",
+    "category": "other",
+    "importance": "medium",
+    "source": "MiQ Blog",
+    "sourceUrl": "https://www.wearemiq.com/us/resources/blog/buying-shopping-online-has-never-been-easier",
+    "tags": [
+      "消费者行为",
+      "电商趋势",
+      "购物路径",
+      "数据分析"
+    ],
+    "fetchedAt": "2026-05-13T13:41:07.395025+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://images.prismic.io/miq-website/agMTIqYofJOwHH1p_GL-FUNNEL-BUYING-MiQ.jpg?auto=format,compress&rect=0,1,1200,627&w=1200&h=627"
   }
 ]

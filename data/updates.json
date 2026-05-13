@@ -1,45 +1,69 @@
 [
   {
-    "id": "meta-2026-05-11-001",
-    "date": "2026-03-18",
-    "week": "2026-W12",
-    "platform": "meta",
-    "title": "Meta 将 Manus 接入商业与创作者工具，扩展自主 AI 代理能力",
-    "titleOriginal": "Unlocking the Power of Manus in Meta’s Business and Creator Tools",
-    "summary": "Meta 在旗下应用中测试 Manus 自主 AI 代理集成，面向商家、创作者和创业者提供内容、业务协作与运营辅助能力。投放团队可关注其对 Meta 商业工具和创作者生态自动化的后续影响。",
-    "category": "automation",
+    "id": "pinterest-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "pinterest",
+    "title": "更好的决策始于更好的测量",
+    "titleOriginal": "Better decisions start with better measurement",
+    "summary": "Pinterest发布关于广告测量优化的新指南，强调测量不应仅停留在报告性能层面，而应指导实际决策。内容涉及如何利用Pinterest的测量工具获取更深入的消费者洞察，优化广告投放策略。对于广告投放团队而言，需要重新审视测量指标的选择，从被动报告转为主动指导优化方向。",
+    "category": "measurement",
     "importance": "medium",
-    "source": "Meta for Business News",
-    "sourceUrl": "https://www.facebook.com/business/news/unlocking-the-power-of-manus-in-metas-business-and-creator-tools",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/measurement-should-do-more-than-report-performance/",
     "tags": [
-      "AI代理",
-      "商业工具",
-      "创作者工具"
+      "测量分析",
+      "最佳实践",
+      "数据驱动",
+      "广告优化"
     ],
-    "fetchedAt": "2026-05-11T12:23:07.551755+08:00",
-    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1503788604506286&version=1774960097&transcode_extension=webp"
+    "fetchedAt": "2026-05-13T13:41:07.395025+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://images.ctfassets.net/h67z7i6sbjau/5rbhmQckHR2RWK6sR28Lh5/285983879b24e8b436aba6372a06ca99/Blog_header_Measurment_POV_2.0_1216x684.jpg?fm=webp&q=85&w=1680&h=1680"
   },
   {
-    "id": "meta-2026-03-18-003",
-    "date": "2026-03-18",
-    "week": "2026-W12",
-    "platform": "meta",
-    "title": "Manus x Meta for Business：企业AI代理新时代",
-    "titleOriginal": "Manus x Meta for Businesses",
-    "summary": "Meta宣布与Manus公司合作，在其应用家族（包括Facebook、Instagram、WhatsApp等）中推出Manus自主AI代理的Beta测试。这是首个深度集成到Meta广告和商务工具的企业级AI代理服务，能够帮助企业自动完成复杂的多步骤业务流程，如广告素材生成与优化、跨平台活动管理等。广告投放团队将获得更强大的自动化工作流程支持，提升运营效率。",
-    "category": "automation",
-    "importance": "high",
-    "source": "Meta for Business News",
-    "sourceUrl": "https://www.facebook.com/business/news/manus-joins-meta-accelerating-ai-innovation-for-businesses",
+    "id": "bing-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "bing",
+    "title": "通过Rewarded Portals解锁更深入的参与度",
+    "titleOriginal": "Unlock deeper engagement with Rewarded Portals",
+    "summary": "Microsoft Advertising推出Rewarded Portals，这是一种全新的游戏内广告格式，将用户主动选择参与、沉浸式品牌故事和可验证的品牌提升效果相结合。广告主可通过这一创新格式在游戏中为用户提供有价值的奖励体验，同时实现品牌传播目标。该格式为游戏广告领域带来了全新的变现思路，广告投放团队可关注其在品牌提升和用户互动方面的表现数据。",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "Microsoft Advertising Blog",
+    "sourceUrl": "https://about.ads.microsoft.com/en-us/blog",
     "tags": [
-      "Manus",
-      "AI代理",
-      "自动化",
-      "企业工具",
-      "Beta测试"
+      "gaming",
+      "ad-product",
+      "innovation",
+      "new-format"
     ],
-    "fetchedAt": "2026-04-26T00:21:56.884407",
-    "imageUrl": null
+    "fetchedAt": "2026-05-13T13:41:07.395025+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://about.ads.microsoft.com/content/dam/sites/msa-about/global/common/content-lib/blog/thumbnail/MSA_BlogWebcastsAndInsights_Thumbnail_01_407x229_2x.jpg"
+  },
+  {
+    "id": "miq-2026-05-12-001",
+    "date": "2026-05-12",
+    "week": "2026-W20",
+    "platform": "miq",
+    "title": "购物：网购从未如此简单",
+    "titleOriginal": "Buying: Shopping online has never been easier",
+    "summary": "探讨消费者网购行为的最新变化与趋势，分析在线购物便利性提升对广告投放策略的影响。文章可能涉及用户购买路径优化、跨渠道归因等与广告投放团队直接相关的话题，帮助团队更好地理解数字化购物行为。",
+    "category": "other",
+    "importance": "medium",
+    "source": "MiQ Blog",
+    "sourceUrl": "https://www.wearemiq.com/us/resources/blog/buying-shopping-online-has-never-been-easier",
+    "tags": [
+      "消费者行为",
+      "电商趋势",
+      "购物路径",
+      "数据分析"
+    ],
+    "fetchedAt": "2026-05-13T13:41:07.395025+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://images.prismic.io/miq-website/agMTIqYofJOwHH1p_GL-FUNNEL-BUYING-MiQ.jpg?auto=format,compress&rect=0,1,1200,627&w=1200&h=627"
   },
   {
     "id": "youtube-2026-05-09-006",
@@ -1757,6 +1781,48 @@
     ],
     "fetchedAt": "2026-04-27T09:22:47.336801",
     "imageUrl": "https://images.ctfassets.net/h67z7i6sbjau/26TAmlbU4Tzgeo3mZc2EG0/c87f6c546fa03b0434914c859fba8f25/og_blog_Performance-Plus-Campaigns-1200x630px.jpg?fm=webp&q=85"
+  },
+  {
+    "id": "meta-2026-05-11-001",
+    "date": "2026-03-18",
+    "week": "2026-W12",
+    "platform": "meta",
+    "title": "Meta 将 Manus 接入商业与创作者工具，扩展自主 AI 代理能力",
+    "titleOriginal": "Unlocking the Power of Manus in Meta’s Business and Creator Tools",
+    "summary": "Meta 在旗下应用中测试 Manus 自主 AI 代理集成，面向商家、创作者和创业者提供内容、业务协作与运营辅助能力。投放团队可关注其对 Meta 商业工具和创作者生态自动化的后续影响。",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/unlocking-the-power-of-manus-in-metas-business-and-creator-tools",
+    "tags": [
+      "AI代理",
+      "商业工具",
+      "创作者工具"
+    ],
+    "fetchedAt": "2026-05-11T12:23:07.551755+08:00",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1503788604506286&version=1774960097&transcode_extension=webp"
+  },
+  {
+    "id": "meta-2026-03-18-003",
+    "date": "2026-03-18",
+    "week": "2026-W12",
+    "platform": "meta",
+    "title": "Manus x Meta for Business：企业AI代理新时代",
+    "titleOriginal": "Manus x Meta for Businesses",
+    "summary": "Meta宣布与Manus公司合作，在其应用家族（包括Facebook、Instagram、WhatsApp等）中推出Manus自主AI代理的Beta测试。这是首个深度集成到Meta广告和商务工具的企业级AI代理服务，能够帮助企业自动完成复杂的多步骤业务流程，如广告素材生成与优化、跨平台活动管理等。广告投放团队将获得更强大的自动化工作流程支持，提升运营效率。",
+    "category": "automation",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/manus-joins-meta-accelerating-ai-innovation-for-businesses",
+    "tags": [
+      "Manus",
+      "AI代理",
+      "自动化",
+      "企业工具",
+      "Beta测试"
+    ],
+    "fetchedAt": "2026-04-26T00:21:56.884407",
+    "imageUrl": null
   },
   {
     "id": "linkedin-2026-03-18-003",
