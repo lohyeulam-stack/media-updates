@@ -1,5 +1,97 @@
 [
   {
+    "id": "youtube-2026-05-15-001",
+    "date": "2026-05-15",
+    "week": "2026-W20",
+    "platform": "youtube",
+    "title": "YouTube auto dubbing, explained",
+    "titleOriginal": "YouTube auto dubbing, explained",
+    "summary": "Auto dubbing brings YouTube content to entirely new audiences, seamlessly translating videos into dozens of languages so people around the world can experience it. In a …",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/youtube-auto-dubbing-explained/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-05-16T01:29:46.987655+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/creator-insider-auto-dubbing-f.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "youtube-2026-05-15-002",
+    "date": "2026-05-15",
+    "week": "2026-W20",
+    "platform": "youtube",
+    "title": "Coming together to unlock creative potential for the UK",
+    "titleOriginal": "Coming together to unlock creative potential for the UK",
+    "summary": "A new partnership between YouTube, the BBC, and the NFTS provides professional training and skills development for digital creators and TV producers across the UK. This …",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-bbc-nfts-skills-program/",
+    "tags": [
+      "creative"
+    ],
+    "fetchedAt": "2026-05-16T01:29:46.987655+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/CREATEXCONNECT-bbc-youtube-nft.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "meta-2026-05-15-001",
+    "date": "2026-05-15",
+    "week": "2026-W20",
+    "platform": "meta",
+    "title": "How to optimize content for social search on Meta technologies",
+    "titleOriginal": "How to optimize content for social search on Meta technologies",
+    "summary": "Social search doesn't just surface products — it creates demand. Learn how to optimize captions, Reels, and creator content to show up where purchase intent begins.",
+    "category": "creative",
+    "importance": "low",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/social-search-series-2",
+    "tags": [],
+    "fetchedAt": "2026-05-16T01:29:46.987655+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=987364320442690&version=1778788087&transcode_extension=webp"
+  },
+  {
+    "id": "meta-2026-05-15-002",
+    "date": "2026-05-15",
+    "week": "2026-W20",
+    "platform": "meta",
+    "title": "The trends reshaping search and the ROI that justifies moving now",
+    "titleOriginal": "The trends reshaping search and the ROI that justifies moving now",
+    "summary": "The search landscape is shifting fast — AI, short-form video, and new discovery behaviors are rewriting the rules. Here's the ROI data that justifies moving budget now.",
+    "category": "api-change",
+    "importance": "low",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/social-search-series-3",
+    "tags": [
+      "api",
+      "video"
+    ],
+    "fetchedAt": "2026-05-16T01:29:46.987655+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=25749592258050569&version=1778850494&transcode_extension=webp"
+  },
+  {
+    "id": "meta-2026-05-14-003",
+    "date": "2026-05-14",
+    "week": "2026-W20",
+    "platform": "meta",
+    "title": "Why Social Search and Traditional Search Aren’t Competing, They’re Coexisting",
+    "titleOriginal": "Why Social Search and Traditional Search Aren’t Competing, They’re Coexisting",
+    "summary": "Social and traditional search aren't competing — they're two modes of the same buyer journey. Here's the content strategy brands need for both.",
+    "category": "other",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/social-search-series-1",
+    "tags": [],
+    "fetchedAt": "2026-05-16T01:29:46.987655+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=2236005420502311&version=1778782357&transcode_extension=webp"
+  },
+  {
     "id": "mintegral-2026-05-14-001",
     "date": "2026-05-14",
     "week": "2026-W20",
