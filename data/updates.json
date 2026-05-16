@@ -1,5 +1,41 @@
 [
   {
+    "id": "snapchat-2026-05-15-001",
+    "date": "2026-05-15",
+    "week": "2026-W20",
+    "platform": "snapchat",
+    "title": "BFF Energy at Scale: Turning Creator Connection into Real Business Results",
+    "titleOriginal": "BFF Energy at Scale: Turning Creator Connection into Real Business Results",
+    "summary": "BFF Energy at Scale: Turning Creator Connection into Real Business Results",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/bff-energy-at-scale",
+    "tags": [],
+    "fetchedAt": "2026-05-17T00:55:46.767793+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-05-15-001",
+    "date": "2026-05-15",
+    "week": "2026-W20",
+    "platform": "google",
+    "title": "Changes to Offline Click Conversion Import Support in the Google Ads API",
+    "titleOriginal": "Changes to Offline Click Conversion Import Support in the Google Ads API",
+    "summary": "Starting on June 15, 2026, the Google Ads API will no longer accept new adopters of offline conversion imports, including enhanced conversions for leads. As with our previous announcements for session attributes and IP address , and Customer Match , Data Manager API is now the primary API for import",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/changes-to-offline-click-conversion.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-05-17T00:55:46.767793+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "youtube-2026-05-15-001",
     "date": "2026-05-15",
     "week": "2026-W20",
