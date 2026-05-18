@@ -1,0 +1,53 @@
+[
+  {
+    "id": "pinterest-2026-05-18-001",
+    "date": "2026-05-18",
+    "week": "2026-W21",
+    "platform": "pinterest",
+    "title": "How an always-on strategy powers peak performance",
+    "titleOriginal": "How an always-on strategy powers peak performance",
+    "summary": "How an always-on strategy powers peak performance",
+    "category": "other",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/always-on-powers-peak-performance/",
+    "tags": [],
+    "fetchedAt": "2026-05-19T02:00:53.845859+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-05-18-001",
+    "date": "2026-05-18",
+    "week": "2026-W21",
+    "platform": "youtube",
+    "title": "How a 30-day NBA arena tour set a world record and met a major charity goal",
+    "titleOriginal": "How a 30-day NBA arena tour set a world record and met a major charity goal",
+    "summary": "Read how a 23-year-old content creator traveled to every NBA arena in one month. Learn about the challenges, the fan encounters, and the final donation that helped raise…",
+    "category": "other",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/nba-arenas-30-days-make-a-wish/",
+    "tags": [],
+    "fetchedAt": "2026-05-19T02:00:53.845859+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-05-18-001",
+    "date": "2026-05-18",
+    "week": "2026-W21",
+    "platform": "meta",
+    "title": "Threads Brand Safety",
+    "titleOriginal": "Threads Brand Safety",
+    "summary": "Today, we are bringing third-party content block lists to Threads Feed. We’re also onboarding brand safety and suitability partners, Channel Factory and Protected by Mediaocean.",
+    "category": "other",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/brandsafety",
+    "tags": [],
+    "fetchedAt": "2026-05-19T02:00:53.845859+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  }
+]
