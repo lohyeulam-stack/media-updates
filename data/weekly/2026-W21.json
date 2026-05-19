@@ -49,5 +49,61 @@
     "fetchedAt": "2026-05-19T02:00:53.845859+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "smartnews-2026-05-19-001",
+    "date": "2026-05-19",
+    "week": "2026-W21",
+    "platform": "smartnews",
+    "title": "Beyond the cookie: Capturing high-intent banking traffic",
+    "titleOriginal": "Beyond the cookie: Capturing high-intent banking traffic",
+    "summary": "Beyond the cookie: Capturing high-intent banking traffic",
+    "category": "other",
+    "importance": "medium",
+    "source": "SmartNews Ads Blog",
+    "sourceUrl": "https://ads.smartnews.com/home/us/en/blog/beyond-the-cookie-capturing-high-intent-banking-traffic/",
+    "tags": [],
+    "fetchedAt": "2026-05-20T02:05:58.330806+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://dliz5qjq2pzic.cloudfront.net/home/wp-content/uploads/2025/06/02113621/ogp.png"
+  },
+  {
+    "id": "google-2026-05-19-001",
+    "date": "2026-05-19",
+    "week": "2026-W21",
+    "platform": "google",
+    "title": "Introducing the Universal Cart and more ways to help you shop",
+    "titleOriginal": "Introducing the Universal Cart and more ways to help you shop",
+    "summary": "The photo shows a shopping cart icon surrounded by a collage of products and shopping queries.",
+    "category": "other",
+    "importance": "high",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/shopping/google-shopping-cart/",
+    "tags": [
+      "shopping"
+    ],
+    "fetchedAt": "2026-05-20T02:05:58.330806+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-05-19-001",
+    "date": "2026-05-19",
+    "week": "2026-W21",
+    "platform": "youtube",
+    "title": "All the YouTube news from today’s Google I/O",
+    "titleOriginal": "All the YouTube news from today’s Google I/O",
+    "summary": "YouTube introduces conversational search and Gemini Omni AI tools to help people find videos and remix Shorts with text prompts.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-news-google-io-2026/",
+    "tags": [
+      "video",
+      "ai"
+    ],
+    "fetchedAt": "2026-05-20T02:05:58.330806+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
