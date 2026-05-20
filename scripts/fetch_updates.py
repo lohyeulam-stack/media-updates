@@ -27,6 +27,8 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 WEEKLY_DIR = DATA_DIR / "weekly"
 MONTHLY_DIR = DATA_DIR / "monthly"
 UPDATES_FILE = DATA_DIR / "updates.json"
+REDDIT_RAW_FILE = DATA_DIR / "reddit_raw.json"
+REDDIT_UPDATES_FILE = DATA_DIR / "reddit_updates.json"
 LOCAL_TZ = ZoneInfo(os.environ.get("MEDIA_UPDATES_TZ", "Asia/Shanghai"))
 
 
@@ -432,9 +434,37 @@ def _date_to_week_label(date_str: str) -> str:
         return "unknown"
 
 
+def run_reddit() -> None:
+    """Reddit aggregation pipeline — scrape + AI summarise. See ADR 0007."""
+    from reddit_scraper import scrape_all as scrape_reddit
+    from reddit_processor import process_reddit_posts
+
+    print(f"\n{'='*60}")
+    print("[Reddit Pipeline] Starting daily Reddit aggregation")
+    print(f"{'='*60}")
+
+    raw = scrape_reddit()
+    if not raw:
+        print("[Reddit Pipeline] No posts met criteria — skipping")
+        return
+
+    save_json(REDDIT_RAW_FILE, raw)
+    print(f"[Reddit Pipeline] Scraped {len(raw)} posts → {REDDIT_RAW_FILE}")
+
+    api_key = os.environ.get("MINIMAX_API_KEY", "").strip()
+    merged = process_reddit_posts(raw, api_key=api_key)
+    if merged:
+        save_json(REDDIT_UPDATES_FILE, merged)
+        print(f"[Reddit Pipeline] {len(merged)} summarised posts → {REDDIT_UPDATES_FILE}")
+    else:
+        print("[Reddit Pipeline] No new posts to save")
+
+    print(f"[Reddit Pipeline] Done\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["weekly", "monthly", "both", "backfill"], default="weekly")
+    parser.add_argument("--mode", choices=["weekly", "monthly", "both", "backfill", "reddit"], default="weekly")
     parser.add_argument("--current-week", action="store_true")
     parser.add_argument("--rolling-days", type=int, default=0, help="Use a rolling date window ending today for weekly sync")
     parser.add_argument("--month", help="Monthly report month override in YYYY-MM format")
@@ -445,7 +475,9 @@ def main() -> None:
 
     print(f"[Start] {now_local().isoformat()} ({LOCAL_TZ.key})")
 
-    if args.mode == "backfill":
+    if args.mode == "reddit":
+        run_reddit()
+    elif args.mode == "backfill":
         run_backfill(args.backfill_year, args.backfill_start, args.backfill_end)
     else:
         if args.mode in ("weekly", "both"):

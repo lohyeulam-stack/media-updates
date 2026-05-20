@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
 import type { MediaUpdate } from "./types"
+import type { RedditPost } from "./reddit-types"
 
 const DATA_DIR = path.join(process.cwd(), "data")
 
@@ -52,6 +53,15 @@ export function getAvailableWeeks(): string[] {
       .map((f) => f.replace(".json", ""))
       .sort()
       .reverse()
+  } catch {
+    return []
+  }
+}
+
+export function getRedditPosts(): RedditPost[] {
+  const file = path.join(DATA_DIR, "reddit_updates.json")
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf-8"))
   } catch {
     return []
   }

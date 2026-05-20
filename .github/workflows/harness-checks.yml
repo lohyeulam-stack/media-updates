@@ -1,0 +1,153 @@
+name: Harness Checks
+
+# Mechanical enforcement of the harness contract — runs alongside ci.yml on
+# every PR and on pushes to main. Fast (≤2 min) so failures land before review.
+#
+# What this gates (each step is documented in docs/adr/):
+#   · Schema contract (ADR 0005) — scripts/check_data_schema.py
+#   · Frontend dependency layers (ADR 0004) — scripts/check_arch_layers.py
+#   · Platform/source registration (ADR 0006) — cross-check sources_config.py vs PLATFORM_META
+#   · Lint / typecheck / build — npm
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: harness-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.12'
+
+jobs:
+  schema:
+    name: Data schema contract (ADR 0005)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Run schema check
+        run: python scripts/check_data_schema.py
+
+  arch-layers:
+    name: Frontend dependency layers (ADR 0004)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Run arch-layer check
+        run: python scripts/check_arch_layers.py
+
+  platform-coverage:
+    name: Platform / source registration (ADR 0006)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Cross-check sources_config.py vs PLATFORM_META
+        run: |
+          python - <<'PY'
+          import ast, re, sys
+          from pathlib import Path
+
+          src = Path('scripts/sources_config.py').read_text(encoding='utf-8')
+          mod = ast.parse(src)
+          sources = None
+          for node in mod.body:
+              if isinstance(node, ast.Assign):
+                  for t in node.targets:
+                      if getattr(t, 'id', None) == 'SOURCES':
+                          sources = ast.literal_eval(node.value)
+          assert sources is not None, 'SOURCES not found in scripts/sources_config.py'
+
+          source_platforms = {s['platform'] for s in sources}
+          source_groups = {s['category'] for s in sources}
+
+          types_text = Path('src/lib/types.ts').read_text(encoding='utf-8')
+          meta_platforms = set(re.findall(r'^\s*([a-z][a-z0-9-]+):\s*\{\s*label:', types_text, re.MULTILINE))
+          group_labels = set(re.findall(r'^\s*"?([a-z-]+)"?:\s*"', types_text, re.MULTILINE))
+
+          missing_platforms = sorted(source_platforms - meta_platforms)
+          stale_platforms = sorted(meta_platforms - source_platforms)
+          missing_groups = sorted(source_groups - group_labels)
+
+          fails = []
+          if missing_platforms:
+              fails.append(f'PLATFORM_META is missing source platforms: {missing_platforms} '
+                          f'— add to src/lib/types.ts (ADR 0006)')
+          if missing_groups:
+              fails.append(f'GROUP_LABELS is missing source groups: {missing_groups} '
+                          f'— a new group requires an ADR; see ADR 0006')
+
+          if stale_platforms:
+              print(f'NOTE: PLATFORM_META has platforms without active sources (advisory): {stale_platforms}')
+
+          for f in fails:
+              print(f, file=sys.stderr)
+          sys.exit(1 if fails else 0)
+          PY
+
+  frontend:
+    name: Lint, typecheck, build (frontend)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+
+  e2e:
+    name: Playwright smoke tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Build site
+        run: npm run build
+      - name: Run smoke tests
+        run: npm test
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+          if-no-files-found: ignore
