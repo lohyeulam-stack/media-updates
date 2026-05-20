@@ -137,7 +137,7 @@ export function SwissFooter({ months }: { months?: string[] }) {
             </div>
             <div className="space-y-3">
               <div className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-bold">Sources</div>
-              <div className="text-sm font-bold">32 Official Feeds<br />MiniMax AI Curated</div>
+              <div className="text-sm font-bold">53 Official Feeds<br />MiniMax AI Curated</div>
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@ export function SwissFooter({ months }: { months?: string[] }) {
               TikTok · Meta · Google<br />
               LinkedIn · X · Snapchat<br />
               Pinterest · YouTube<br />
-              & 12+ more
+              & 30+ more
             </p>
           </div>
           <div>

@@ -129,6 +129,22 @@ export function Sidebar({ updates, months, weeks, onSelect, onClose }: SidebarPr
             </section>
           )}
 
+          {/* Reddit / Community */}
+          <section>
+            <h3 className="text-xs uppercase font-bold tracking-[0.3em] text-brand-blue mb-6">
+              Community Intel
+            </h3>
+            <div className="space-y-3">
+              <Link
+                href="/reddit"
+                onClick={onClose}
+                className="block text-lg font-medium hover:text-brand-blue hover:italic transition-all focus-visible:outline-none focus-visible:text-brand-blue"
+              >
+                Reddit Ad Intel
+              </Link>
+            </div>
+          </section>
+
           {/* Quick links */}
           <section>
             <h3 className="text-xs uppercase font-bold tracking-[0.3em] text-brand-blue mb-6">
