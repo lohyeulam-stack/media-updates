@@ -11,6 +11,10 @@ export interface RedditPost {
   summary: string
   keyInsight?: string
   flair?: string
+  imageUrl?: string
+  postHint?: string
+  isSelf?: boolean
+  domain?: string
   fetchedAt: string
 }
 

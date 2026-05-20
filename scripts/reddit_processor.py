@@ -158,6 +158,10 @@ def process_reddit_posts(
             "summary": sm.get("summary", "") or "（待 AI 总结）",
             "keyInsight": sm.get("keyInsight") or "",
             "flair": post.get("flair") or "",
+            "imageUrl": post.get("imageUrl") or "",
+            "postHint": post.get("postHint") or "",
+            "isSelf": post.get("isSelf", True),
+            "domain": post.get("domain") or "",
             "fetchedAt": post.get("fetchedAt", ""),
         })
     return merged

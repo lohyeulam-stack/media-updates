@@ -8,6 +8,7 @@ See docs/adr/0007-reddit-aggregation.md.
 
 from __future__ import annotations
 
+import html
 import json
 import sys
 import time
@@ -83,6 +84,30 @@ def scrape_all() -> list[dict[str, Any]]:
             url_path = data.get("permalink", "")
             full_url = f"https://reddit.com{url_path}" if url_path else ""
 
+            # Extract image URLs from Reddit API.
+            # thumbnail: "self"|"default"|"nsfw"|URL. Only keep actual URLs.
+            thumbnail_raw = data.get("thumbnail") or ""
+            thumbnail = thumbnail_raw if thumbnail_raw.startswith("http") else ""
+            # preview.images[] — Reddit generates these for link posts.
+            preview_url = ""
+            preview = data.get("preview")
+            if isinstance(preview, dict):
+                images = preview.get("images") or []
+                if images:
+                    src = images[0].get("source", {}).get("url") or ""
+                    if src:
+                        preview_url = html.unescape(src)
+            # media_metadata — for Reddit-hosted gallery images (pick first).
+            gallery_url = ""
+            media_meta = data.get("media_metadata")
+            if isinstance(media_meta, dict):
+                for _k, v in media_meta.items():
+                    if isinstance(v, dict) and v.get("e") == "Image":
+                        src = v.get("s", {}).get("u") or v.get("p", [{}])[0].get("u", "")
+                        if src:
+                            gallery_url = html.unescape(src)
+                            break
+
             posts.append({
                 "post_id": data.get("id", ""),
                 "subreddit": subreddit,
@@ -96,6 +121,10 @@ def scrape_all() -> list[dict[str, Any]]:
                 "flair": data.get("link_flair_text") or "",
                 "flairCss": data.get("link_flair_css_class") or "",
                 "selftext": (data.get("selftext") or "")[:2000],
+                "imageUrl": preview_url or gallery_url or thumbnail or "",
+                "postHint": data.get("post_hint") or "",
+                "isSelf": bool(data.get("is_self")),
+                "domain": data.get("domain") or "",
                 "fetchedAt": datetime.now(timezone.utc).isoformat(),
             })
             count += 1

@@ -37,54 +37,114 @@ function timeAgo(dateStr: string): string {
 
 function RedditEditorialCard({ post, index }: { post: RedditPost; index: number }) {
   const meta = REDDIT_SUBREDDIT_META[post.subreddit]
-  const isLarge = index % 4 === 0 || (post.keyInsight && index % 2 === 0)
-  const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4"
+  const hasImage = Boolean(post.imageUrl)
+  // Images make big visual cards; text posts get a clean editorial layout.
+  const isLarge = hasImage && index % 3 === 0
+  const colSpan = hasImage
+    ? (isLarge ? "md:col-span-8" : "md:col-span-4")
+    : "md:col-span-4"
 
+  // Text-only editorial card
+  if (!hasImage) {
+    return (
+      <motion.article
+        className={`${colSpan} group cursor-pointer`}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.5, delay: (index % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <a
+          href={post.url} target="_blank" rel="noopener noreferrer"
+          className="block h-full border-l-2 pl-5 py-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 transition-colors group-hover:border-l-[3px]"
+          style={{ borderLeftColor: meta?.color || "#888" }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
+              r/{post.subreddit}
+            </span>
+            {post.flair && (
+              <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-brand-blue/60">
+                {post.flair}
+              </span>
+            )}
+          </div>
+
+          <h3 className="text-base lg:text-lg font-bold tracking-tight leading-snug group-hover:text-brand-blue transition-colors mb-2">
+            {post.title}
+          </h3>
+
+          {post.summary && post.summary !== "（待 AI 总结）" && (
+            <p className="text-sm text-foreground/55 leading-relaxed line-clamp-3 mb-3">
+              {post.summary}
+            </p>
+          )}
+
+          {post.keyInsight && (
+            <div className="pl-3 border-l-2 border-yellow-400/60 mb-3">
+              <p className="text-xs text-foreground/70 leading-snug italic">
+                💡 {post.keyInsight}
+              </p>
+            </div>
+          )}
+
+          <div className="flex items-center gap-4 text-[10px] text-muted-foreground/40">
+            <span className="flex items-center gap-1"><ArrowUp size={10} className="text-orange-400" />{formatCount(post.upvotes)}</span>
+            <span className="flex items-center gap-1"><MessageCircle size={10} />{formatCount(post.commentCount)}</span>
+            <span>u/{post.author || "anon"}</span>
+            <span>{timeAgo(post.date)}</span>
+          </div>
+        </a>
+      </motion.article>
+    )
+  }
+
+  // Image-rich card (matches homepage StudioUpdateCard)
   return (
     <motion.article
       className={`${colSpan} group cursor-pointer`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay: (index % 4) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
     >
       <a
-        href={post.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block h-full border-t-2 pt-5 lg:pt-6 pb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 transition-colors"
-        style={{ borderTopColor: meta?.color || "#888" }}
+        href={post.url} target="_blank" rel="noopener noreferrer"
+        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
       >
-        {/* Header: subreddit badge + time + stats */}
-        <div className="flex items-center justify-between gap-4 mb-4 lg:mb-6">
-          <div className="flex items-center gap-2 min-w-0">
-            <div
-              className="w-2 h-2 rounded-full shrink-0"
-              style={{ backgroundColor: meta?.color }}
-              aria-hidden="true"
-            />
-            <h4 className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40 truncate">
-              r/{post.subreddit} {meta?.label && `· ${meta.label}`}
-            </h4>
+        {/* Hero image */}
+        <div className={`${isLarge ? "aspect-[16/9]" : "aspect-[4/3]"} mb-5 lg:mb-6 overflow-hidden relative group/img`}>
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: meta?.color || "#333" }}
+            aria-hidden="true"
+          />
+          <img
+            src={post.imageUrl}
+            alt=""
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/40 pointer-events-none" aria-hidden="true" />
+
+          {/* Top badges */}
+          <div className="absolute top-4 left-4 lg:top-5 lg:left-5 flex items-center gap-2 z-10">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] bg-foreground text-background px-3 py-1">
+              r/{post.subreddit}
+            </span>
+            {post.flair && (
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] bg-background/80 text-foreground px-2.5 py-1 backdrop-blur-sm">
+                {post.flair}
+              </span>
+            )}
           </div>
-          <div className="flex items-center gap-3 text-[10px] font-mono opacity-35 shrink-0">
-            <span className="flex items-center gap-1">
-              <ArrowUp size={12} className="text-orange-500" />
-              {formatCount(post.upvotes)}
-            </span>
-            <span className="flex items-center gap-1">
-              <MessageCircle size={12} />
-              {formatCount(post.commentCount)}
-            </span>
+
+          {/* Bottom stats overlay */}
+          <div className="absolute bottom-4 left-4 lg:bottom-5 lg:left-5 flex items-center gap-4 text-[10px] text-white/80 z-10">
+            <span className="flex items-center gap-1"><ArrowUp size={12} />{formatCount(post.upvotes)}</span>
+            <span className="flex items-center gap-1"><MessageCircle size={12} />{formatCount(post.commentCount)}</span>
           </div>
         </div>
-
-        {/* Flair */}
-        {post.flair && (
-          <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-brand-blue">
-            {post.flair}
-          </div>
-        )}
 
         {/* Title */}
         <h3 className={`font-bold tracking-tight leading-[1.05] group-hover:text-brand-blue transition-colors ${
@@ -93,30 +153,22 @@ function RedditEditorialCard({ post, index }: { post: RedditPost; index: number 
           {post.title}
         </h3>
 
-        {/* Summary */}
         {post.summary && post.summary !== "（待 AI 总结）" && (
-          <p className="mt-4 text-sm lg:text-base text-foreground/60 leading-snug line-clamp-3">
+          <p className="mt-3 text-sm lg:text-base text-foreground/55 leading-snug line-clamp-2">
             {post.summary}
           </p>
         )}
 
-        {/* Key Insight — gold highlight */}
         {post.keyInsight && (
-          <div className="mt-4 pl-4 border-l-2 border-yellow-400/60">
-            <p className="text-sm font-medium text-foreground/75 leading-snug italic">
-              💡 {post.keyInsight}
-            </p>
+          <div className="mt-3 pl-3 border-l-2 border-yellow-400/60">
+            <p className="text-xs text-foreground/70 leading-snug italic">💡 {post.keyInsight}</p>
           </div>
         )}
 
-        {/* Footer */}
-        <div className="flex items-center justify-between mt-5 pt-4 border-t border-foreground/5">
-          <span className="text-[9px] uppercase font-bold tracking-[0.2em] opacity-25">
-            u/{post.author || "anon"} · {timeAgo(post.date)}
-          </span>
-          <span className="text-[9px] uppercase font-bold tracking-[0.2em] opacity-0 group-hover:opacity-25 transition-opacity">
-            Read on Reddit →
-          </span>
+        <div className="flex items-center gap-3 mt-4 text-[10px] text-muted-foreground/35">
+          <span>u/{post.author || "anon"}</span>
+          <span>{timeAgo(post.date)}</span>
+          <span className="opacity-0 group-hover:opacity-35 transition-opacity">→ Reddit</span>
         </div>
       </a>
     </motion.article>
