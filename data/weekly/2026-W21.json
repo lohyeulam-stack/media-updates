@@ -105,5 +105,151 @@
     "fetchedAt": "2026-05-20T02:05:58.330806+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "snapchat-2026-05-20-001",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "snapchat",
+    "title": "Announcing Unified Attribution on Snapchat",
+    "titleOriginal": "Announcing Unified Attribution on Snapchat",
+    "summary": "Announcing Unified Attribution on Snapchat",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/announcing-unified-attribution",
+    "tags": [
+      "attribution"
+    ],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "dv360-2026-05-20-001",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "dv360",
+    "title": "Turn data into decisions with unified measurement.",
+    "titleOriginal": "Turn data into decisions with unified measurement.",
+    "summary": "We’re bringing Meridian, our open-source MMM to Google Analytics and introducing Future Long-Term Conversions.",
+    "category": "measurement",
+    "importance": "high",
+    "source": "Google Marketing Platform Blog",
+    "sourceUrl": "https://blog.google/products/marketingplatform/analytics/meridian-google-analytics-360/",
+    "tags": [
+      "measurement"
+    ],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GML_Measurement_social.max-1440x810.png"
+  },
+  {
+    "id": "google-2026-05-20-001",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "google",
+    "title": "How we’re helping retailers thrive with new Universal Commerce Protocol features and AI tools on Google",
+    "titleOriginal": "How we’re helping retailers thrive with new Universal Commerce Protocol features and AI tools on Google",
+    "summary": "Text \"Google Marketing Live\" surrounded by the YouTube logo, Google G, and a 3-D sparkle",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-05-20-002",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "google",
+    "title": "Google Marketing Live 2026",
+    "titleOriginal": "Google Marketing Live 2026",
+    "summary": "At Google Marketing Live 2026, we announced new AI-powered advertising solutions to help marketers grow across Google and YouTube.",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/google-marketing-live-2026-collection/",
+    "tags": [],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GML_2026_Collection_Header_Ima.max-1440x450.format-webp.webp"
+  },
+  {
+    "id": "google-2026-05-20-004",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "google",
+    "title": "A new generation of ads for the AI era of Search",
+    "titleOriginal": "A new generation of ads for the AI era of Search",
+    "summary": "\"Google Marketing Live\" text with the YouTube logo, Google G, and a 3-D sparkle",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/google-marketing-live-search-ads/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Search_ZAu2ZP1.width-1200.format-webp.webp"
+  },
+  {
+    "id": "google-2026-05-20-005",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "google",
+    "title": "Asset Studio is entering a new era of AI-powered creativity.",
+    "titleOriginal": "Asset Studio is entering a new era of AI-powered creativity.",
+    "summary": "We’re introducing new multimodal capabilities into Google Ads’ Asset Studio — your creative destination to create, build and test your assets.",
+    "category": "creative",
+    "importance": "high",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/asset-studio-updates/",
+    "tags": [
+      "creative"
+    ],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/creative_social.max-1440x810.png"
+  },
+  {
+    "id": "google-2026-05-20-006",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "google",
+    "title": "Meet Ask Advisor, your new AI-powered collaborator",
+    "titleOriginal": "Meet Ask Advisor, your new AI-powered collaborator",
+    "summary": "Text \"Google Marketing Live\" with the YouTube logo and Google G, all above a rainbow gradient",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/ask-advisor/",
+    "tags": [],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Agentic_dSt93vM.width-1200.format-webp.webp"
+  },
+  {
+    "id": "google-2026-05-20-007",
+    "date": "2026-05-20",
+    "week": "2026-W21",
+    "platform": "google",
+    "title": "Fuel your next wave of growth on YouTube with Demand Gen",
+    "titleOriginal": "Fuel your next wave of growth on YouTube with Demand Gen",
+    "summary": "Google Marketing Live logo next to the YouTube and Google G icons",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/youtube/youtube-demand-gen-updates/",
+    "tags": [],
+    "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Demand_Gen.width-1200.format-webp.webp"
   }
 ]
