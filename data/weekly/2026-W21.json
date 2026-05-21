@@ -251,5 +251,41 @@
     "fetchedAt": "2026-05-21T02:19:16.150165+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Demand_Gen.width-1200.format-webp.webp"
+  },
+  {
+    "id": "linkedin-2026-05-21-001",
+    "date": "2026-05-21",
+    "week": "2026-W21",
+    "platform": "linkedin",
+    "title": "[New research] AI Search & LinkedIn: 5 Takeaways from 9.5 Mill...",
+    "titleOriginal": "[New research] AI Search & LinkedIn: 5 Takeaways from 9.5 Mill...",
+    "summary": "Get inspiration, insight and innovative ideas",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/ai-search/new-meltwater-research-shares-5-insights-from-9-million-citations",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-05-22T02:00:46.812283+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQF7lTueliT1Hw/croft-frontend-shrinkToFit767/B4DZ5CTd0oHIAQ-/0/1779228871776?e=2147483647&v=beta&t=OspqJlBMAPuBG6RG4BJbTWj1CW2HmfQS-sP4Sn9LH3U"
+  },
+  {
+    "id": "line-2026-05-21-001",
+    "date": "2026-05-21",
+    "week": "2026-W21",
+    "platform": "line",
+    "title": "Webマーケティング入門",
+    "titleOriginal": "Webマーケティング入門",
+    "summary": "Web広告を始めるべきか迷っている方へ｜判断のポイントを整理",
+    "category": "other",
+    "importance": "medium",
+    "source": "LINE for Business",
+    "sourceUrl": "https://www.lycbiz.com/jp/column/ly-ads/marketing/how-to-decide-on-web-advertising/",
+    "tags": [],
+    "fetchedAt": "2026-05-22T02:00:46.812283+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://www.lycbiz.com/sites/default/files/media/jp/column/ly-ads/marketing/how-to-decide-on-web-advertising/how-to-decide-on-web-advertising_thumbnail.png"
   }
 ]
