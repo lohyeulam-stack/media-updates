@@ -1,5 +1,24 @@
 [
   {
+    "id": "youtube-2026-05-27-001",
+    "date": "2026-05-27",
+    "week": "2026-W22",
+    "platform": "youtube",
+    "title": "Improving AI labels for viewers and creators",
+    "titleOriginal": "Improving AI labels for viewers and creators",
+    "summary": "We've heard consistently from our community that they value transparency when it comes to generative AI content. Today we're making two updates that will make this proce…",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-05-28T02:28:12.210130+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/en_HowThisWasMade_WithPopout.max-700x3000.format-webp.webp"
+  },
+  {
     "id": "pinterest-2026-05-26-001",
     "date": "2026-05-26",
     "week": "2026-W22",
