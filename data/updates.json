@@ -17,6 +17,43 @@
     "imageUrl": "https://dliz5qjq2pzic.cloudfront.net/home/wp-content/uploads/2025/06/02113621/ogp.png"
   },
   {
+    "id": "google-2026-05-28-001",
+    "date": "2026-05-28",
+    "week": "2026-W22",
+    "platform": "google",
+    "title": "Data Manager API now supports sending events to Google Marketing Platform destinations and IP ingestion for Google Ads Customer Match",
+    "titleOriginal": "Data Manager API now supports sending events to Google Marketing Platform destinations and IP ingestion for Google Ads Customer Match",
+    "summary": "Google Marketing Platform event ingestion The Data Manager API has introduced support for sending offline conversion events to Google Marketing Platform products, including Campaign Manager 360, Search Ads 360, and Display & Video 360. The AdIdentifiers object now includes dclid , impressionId , mat",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/data-manager-api-now-supports-sending.html",
+    "tags": [
+      "api",
+      "video"
+    ],
+    "fetchedAt": "2026-06-01T00:09:05.780379+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-05-28-002",
+    "date": "2026-05-28",
+    "week": "2026-W22",
+    "platform": "google",
+    "title": "The “What” and “Why” on Meridian: Ads DevCast E6",
+    "titleOriginal": "The “What” and “Why” on Meridian: Ads DevCast E6",
+    "summary": "Measuring the true impact of your marketing spend is complex, especially when you look across channels and mediums. In Episode 6 of Google’s Ads DevCast, \"The 'What' and 'Why' on Meridian,\" we sit down with Product Manager Katie Munro and Developer Relations Engineer Jeff Li to explore Meridian, Goo",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/the-what-and-why-on-meridian-ads.html",
+    "tags": [],
+    "fetchedAt": "2026-06-01T00:09:05.780379+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "linkedin-2026-05-28-001",
     "date": "2026-05-28",
     "week": "2026-W22",
@@ -55,7 +92,7 @@
     "imageUrl": "https://cdn.prod.website-files.com/62380f0b5031d40f63f8b4c7/6a179f1d119cab63a7f1d483_mau-blog.png"
   },
   {
-    "id": "google-2026-05-28-001",
+    "id": "google-2026-05-28-001-80a008",
     "date": "2026-05-28",
     "week": "2026-W22",
     "platform": "google",
@@ -72,7 +109,7 @@
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/KW_KNH.width-1200.format-webp.webp"
   },
   {
-    "id": "google-2026-05-28-002",
+    "id": "google-2026-05-28-002-a234cb",
     "date": "2026-05-28",
     "week": "2026-W22",
     "platform": "google",
@@ -106,6 +143,46 @@
     "fetchedAt": "2026-05-29T02:07:48.702959+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-premium-on-the-go-inte.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "google-2026-05-27-003",
+    "date": "2026-05-27",
+    "week": "2026-W22",
+    "platform": "google",
+    "title": "Display & Video 360 API will start supporting Demand Gen resources on June 10, 2026",
+    "titleOriginal": "Display & Video 360 API will start supporting Demand Gen resources on June 10, 2026",
+    "summary": "Today we’re announcing the upcoming rollout of Demand Gen resource support to all Display & Video 360 API users starting on June 10, 2026 . This feature will be rolled out to Display & Video 360 partners over two weeks. By June 24, the feature will be available to all partners. Ahead of June 10, ver",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/display-video-360-api-will-start.html",
+    "tags": [
+      "api",
+      "video"
+    ],
+    "fetchedAt": "2026-06-01T00:09:05.780379+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-05-27-004",
+    "date": "2026-05-27",
+    "week": "2026-W22",
+    "platform": "google",
+    "title": "Standardizing Reach Metrics with Total Co-view in the Google Ads API",
+    "titleOriginal": "Standardizing Reach Metrics with Total Co-view in the Google Ads API",
+    "summary": "Starting on June 2nd, 2026, the Google Ads API will transition reach metrics to a \"Total Co-view\" definition. This update aligns Google Ads reporting with offline media and third-party measurement standards, ensuring consistency across all reporting surfaces, including the Google Ads UI and Editor. ",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/05/standardizing-reach-metrics-with-total.html",
+    "tags": [
+      "api",
+      "measurement"
+    ],
+    "fetchedAt": "2026-06-01T00:09:05.780379+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   },
   {
     "id": "tiktok-2026-05-27-001",
