@@ -123,5 +123,118 @@
     "fetchedAt": "2026-06-02T04:19:00.749157+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/primetime-channels-expansion-f.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "google-2026-06-03-001",
+    "date": "2026-06-03",
+    "week": "2026-W23",
+    "platform": "google",
+    "title": "YouTube earns industry's first MRC accreditation for short-form video.",
+    "titleOriginal": "YouTube earns industry's first MRC accreditation for short-form video.",
+    "summary": "YouTube achieves its sixth consecutive MRC brand safety accreditation, and becomes the first platform certified for short-form video.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/youtube-mrc-accreditation-shorts/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-06-04T03:50:58.822534+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Youtube_Safety_social.max-1440x810.png"
+  },
+  {
+    "id": "google-2026-06-03-002",
+    "date": "2026-06-03",
+    "week": "2026-W23",
+    "platform": "google",
+    "title": "5 ways Google Search can level up your thrift and vintage shopping",
+    "titleOriginal": "5 ways Google Search can level up your thrift and vintage shopping",
+    "summary": "A colorful, grain-textured collage of various items scattered across a light blue background. The items include a green bucket hat, a wooden clothes hanger, a blue-and-red striped collar, blue sunglasses, denim shorts, a yellow price tag, a red high-heele",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
+    "tags": [
+      "shopping"
+    ],
+    "fetchedAt": "2026-06-04T03:50:58.822534+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Thrifting_Header.width-1200.format-webp.webp"
+  },
+  {
+    "id": "youtube-2026-06-03-001",
+    "date": "2026-06-03",
+    "week": "2026-W23",
+    "platform": "youtube",
+    "title": "Meet the 24 artists in YouTube Music’s Foundry Class of 2026",
+    "titleOriginal": "Meet the 24 artists in YouTube Music’s Foundry Class of 2026",
+    "summary": "Meet the 24 independent artists from around the world joining the Foundry Class of 2026, YouTube Music's global artist development program.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/youtube-music-foundry-class-2026/",
+    "tags": [],
+    "fetchedAt": "2026-06-04T03:50:58.822534+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/YTM_Foundry_Class_Announcement.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "youtube-2026-06-03-002",
+    "date": "2026-06-03",
+    "week": "2026-W23",
+    "platform": "youtube",
+    "title": "YouTube launches landmark creator consultation across 27 EU countries",
+    "titleOriginal": "YouTube launches landmark creator consultation across 27 EU countries",
+    "summary": "YouTube is launching a survey across all 27 EU member states to understand the barriers people face in the creative industries. The findings will provide European policy…",
+    "category": "policy",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-european-creator-consultation-survey/",
+    "tags": [
+      "creative",
+      "policy"
+    ],
+    "fetchedAt": "2026-06-04T03:50:58.822534+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/EXT_Creator_Consultation_Task-.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "meta-2026-06-03-001",
+    "date": "2026-06-03",
+    "week": "2026-W23",
+    "platform": "meta",
+    "title": "Small to Scale: How a Thai beauty clinic improved its lead conversion with Business AI",
+    "titleOriginal": "Small to Scale: How a Thai beauty clinic improved its lead conversion with Business AI",
+    "summary": "Thai beauty clinic LABX captured 10.3% more leads and cut cost per lead 9.4% using Meta's Business AI to instantly handle Messenger queries and qualify customers before handoff.",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/how-labx-clinic-improved-lead-conversion",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-06-04T03:50:58.822534+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1037017595562699&version=1780513074&transcode_extension=webp"
+  },
+  {
+    "id": "meta-2026-06-03-002",
+    "date": "2026-06-03",
+    "week": "2026-W23",
+    "platform": "meta",
+    "title": "Conversations 2026: Introducing Meta Business Agent",
+    "titleOriginal": "Conversations 2026: Introducing Meta Business Agent",
+    "summary": "We're introducing Meta Business Agent – AI that lets every business show up for every customer, in every moment.",
+    "category": "other",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/conversations-2026-introducing-meta-business-agent",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-06-04T03:50:58.822534+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1394547976053417&version=1780493975&transcode_extension=webp"
   }
 ]
