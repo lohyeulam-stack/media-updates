@@ -236,5 +236,41 @@
     "fetchedAt": "2026-06-04T03:50:58.822534+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1394547976053417&version=1780493975&transcode_extension=webp"
+  },
+  {
+    "id": "pinterest-2026-06-04-001",
+    "date": "2026-06-04",
+    "week": "2026-W23",
+    "platform": "pinterest",
+    "title": "Pinterest works with AWS to power next chapter of AI-driven visual search discovery",
+    "titleOriginal": "Pinterest works with AWS to power next chapter of AI-driven visual search discovery",
+    "summary": "Pinterest works with AWS to power next chapter of AI-driven visual search discovery",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/pinterest-aws-power-ai-visual-search-discovery/",
+    "tags": [],
+    "fetchedAt": "2026-06-05T02:17:55.582768+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/2pyx8rwuvz6x/HIaisA9JKpZl92k5MuJiX/bb2204634250b8cbd87b5244ddc69134/AWS_Newsroom.jpeg?fm=webp&q=85&w=1680&h=1680"
+  },
+  {
+    "id": "linkedin-2026-06-03-001",
+    "date": "2026-06-03",
+    "week": "2026-W23",
+    "platform": "linkedin",
+    "title": "A New Guide: How to Prove The Value of B2B Marketing",
+    "titleOriginal": "A New Guide: How to Prove The Value of B2B Marketing",
+    "summary": "Conversations with global B2B marketing leaders about what’s next in the evolution of measurement revealed five key trends.",
+    "category": "measurement",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/linkedin-ads/a-new-guide-how-top-prove-the-value-of-b2b-marketing",
+    "tags": [
+      "measurement"
+    ],
+    "fetchedAt": "2026-06-05T02:17:55.582768+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQHFR_rDXNqrKg/croft-frontend-shrinkToFit1024/croft-frontend-shrinkToFit1024/0/1738274076506?e=2147483647&v=beta&t=-fWW1BEAKFTbSqYzaqKC2kVLzqjAeGLsgznCPhwIa9g"
   }
 ]
