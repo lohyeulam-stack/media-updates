@@ -272,5 +272,41 @@
     "fetchedAt": "2026-06-05T02:17:55.582768+08:00",
     "dateConfidence": "medium",
     "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQHFR_rDXNqrKg/croft-frontend-shrinkToFit1024/croft-frontend-shrinkToFit1024/0/1738274076506?e=2147483647&v=beta&t=-fWW1BEAKFTbSqYzaqKC2kVLzqjAeGLsgznCPhwIa9g"
+  },
+  {
+    "id": "smartnews-2026-06-05-001",
+    "date": "2026-06-05",
+    "week": "2026-W23",
+    "platform": "smartnews",
+    "title": "7 Metrics That Matter for Measuring SmartNews Ad Success",
+    "titleOriginal": "7 Metrics That Matter for Measuring SmartNews Ad Success",
+    "summary": "7 Metrics That Matter for Measuring SmartNews Ad Success",
+    "category": "automation",
+    "importance": "medium",
+    "source": "SmartNews Ads Blog",
+    "sourceUrl": "https://ads.smartnews.com/home/us/en/blog/7-metrics-that-matter-for-measuring-smartnews-ad-success/",
+    "tags": [],
+    "fetchedAt": "2026-06-06T01:56:48.758552+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://dliz5qjq2pzic.cloudfront.net/home/wp-content/uploads/2025/06/02113621/ogp.png"
+  },
+  {
+    "id": "google-2026-06-05-001",
+    "date": "2026-06-05",
+    "week": "2026-W23",
+    "platform": "google",
+    "title": "The latest AI news we announced in May 2026",
+    "titleOriginal": "The latest AI news we announced in May 2026",
+    "summary": "May AI recap",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-06-06T01:56:48.758552+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
