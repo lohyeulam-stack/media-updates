@@ -308,5 +308,25 @@
     "fetchedAt": "2026-06-06T01:56:48.758552+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-06-05-001",
+    "date": "2026-06-05",
+    "week": "2026-W23",
+    "platform": "youtube",
+    "title": "Three ways creators use YouTube tools to build full-time careers",
+    "titleOriginal": "Three ways creators use YouTube tools to build full-time careers",
+    "summary": "Learn how independent creators use YouTube Shopping, Channel Memberships, and multi-format video strategies to fund their teams, launch product lines, and transition pas…",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/youtube-creators-full-time-business-tools/",
+    "tags": [
+      "video",
+      "shopping"
+    ],
+    "fetchedAt": "2026-06-07T01:10:00.879281+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Sign.max-700x3000.format-webp.webp"
   }
 ]
