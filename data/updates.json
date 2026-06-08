@@ -1,5 +1,24 @@
 [
   {
+    "id": "youtube-2026-06-08-001",
+    "date": "2026-06-08",
+    "week": "2026-W24",
+    "platform": "youtube",
+    "title": "The ultimate YouTube watchlist for 'Backrooms,' 'Obsession,' and 'Iron Lung' fans",
+    "titleOriginal": "The ultimate YouTube watchlist for 'Backrooms,' 'Obsession,' and 'Iron Lung' fans",
+    "summary": "Explore the early videos of Curry Barker, Markiplier, and Kane Parsons before seeing their horror hits Obsession, Iron Lung, and Backrooms.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/youtube-horror-directors-barker-markiplier-parsons/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-06-09T02:28:46.755191+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://i.ytimg.com/vi_webp/BjRndcTYqJo/maxresdefault.webp"
+  },
+  {
     "id": "youtube-2026-06-05-001",
     "date": "2026-06-05",
     "week": "2026-W23",
