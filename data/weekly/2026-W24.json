@@ -210,5 +210,58 @@
     "fetchedAt": "2026-06-12T02:49:35.648271+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1088205817718451&version=1781189605&transcode_extension=webp"
+  },
+  {
+    "id": "youtube-2026-06-12-001",
+    "date": "2026-06-12",
+    "week": "2026-W24",
+    "platform": "youtube",
+    "title": "500 million and counting! MrBeast makes history as the first individual creator to hit half a billion subscribers",
+    "titleOriginal": "500 million and counting! MrBeast makes history as the first individual creator to hit half a billion subscribers",
+    "summary": "MrBeast makes YouTube history as the first creator to hit 500 million subscribers. Discover his journey from viral videos to global charity work like Team Water.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/mrbeast-500-million-youtube-subscribers/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-06-13T02:07:50.658007+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/mrbeast-500m-announce.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "youtube-2026-06-12-002",
+    "date": "2026-06-12",
+    "week": "2026-W24",
+    "platform": "youtube",
+    "title": "ICC and YouTube Expand Global Access to ICC Women’s T20 World Cup 2026",
+    "titleOriginal": "ICC and YouTube Expand Global Access to ICC Women’s T20 World Cup 2026",
+    "summary": "YouTube partners with the International Cricket Council for the upcoming ICC Women’s T20 World Cup to bring the tournament to more viewers across the world.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/watch-womens-cricket-t20-world-cup-youtube/",
+    "tags": [],
+    "fetchedAt": "2026-06-13T02:07:50.658007+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/ICC_Womens_T20_World_Cup.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "youtube-2026-06-12-003",
+    "date": "2026-06-12",
+    "week": "2026-W24",
+    "platform": "youtube",
+    "title": "Get closer to the stage with YouTube Music Nights",
+    "titleOriginal": "Get closer to the stage with YouTube Music Nights",
+    "summary": "YouTube Music Nights features exclusive concert performances and behind-the-scenes Shorts from Kacey Musgraves, Isaiah Rashad, and Bleachers. Watch full live sets from h…",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-music-nights-exclusive-live-concerts/",
+    "tags": [],
+    "fetchedAt": "2026-06-13T02:07:50.658007+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-music-x-bleachers.max-700x3000.format-webp.webp"
   }
 ]
