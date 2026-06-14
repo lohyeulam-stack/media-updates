@@ -263,5 +263,83 @@
     "fetchedAt": "2026-06-13T02:07:50.658007+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-music-x-bleachers.max-700x3000.format-webp.webp"
+  },
+  {
+    "id": "google-2026-06-11-001-7c0e00",
+    "date": "2026-06-11",
+    "week": "2026-W24",
+    "platform": "google",
+    "title": "Dynamic Search Ads (DSA) Automigration Delayed to February 2027 and Campaign Creation Restored",
+    "titleOriginal": "Dynamic Search Ads (DSA) Automigration Delayed to February 2027 and Campaign Creation Restored",
+    "summary": "What is changing? Google is extending the timeline for the transition of Dynamic Search Ads (DSA) to AI Max for Search campaigns and restoring campaign creation functionality. Automigration Delayed: The automatic upgrade of DSA campaigns to AI Max (or Search campaigns with broad match and Smart Bidd",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/dynamic-search-ads-dsa-automigration.html",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-06-15T01:19:23.513909+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-10-002",
+    "date": "2026-06-10",
+    "week": "2026-W24",
+    "platform": "google",
+    "title": "Introducing the Google Ads API Developer Assistant v3.0.0",
+    "titleOriginal": "Introducing the Google Ads API Developer Assistant v3.0.0",
+    "summary": "We are pleased to announce the release of v3.0.0 of the Google Ads API Developer Assistant . This major release marks a significant milestone in the evolution of the Assistant, focusing on architectural modernization, improved reliability, and a more modular design. With this release, we are migrati",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/introducing-google-ads-api-developer.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-06-15T01:19:23.513909+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-10-003",
+    "date": "2026-06-10",
+    "week": "2026-W24",
+    "platform": "google",
+    "title": "June 2026 update to the Display & Video 360 API",
+    "titleOriginal": "June 2026 update to the Display & Video 360 API",
+    "summary": "Today we’re launching the June 2026 update to the Display & Video 360 API. This update includes the following: Support for Structured Data Files v10 . Introduction of new AudioContentType , Exchange , and GeoRegionType values. Support for YouTube Channel Pack targeting, available only to Demand Gen ",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/june-2026-update-to-display-video-360.html",
+    "tags": [
+      "api",
+      "video",
+      "targeting"
+    ],
+    "fetchedAt": "2026-06-15T01:19:23.513909+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-08-004",
+    "date": "2026-06-08",
+    "week": "2026-W24",
+    "platform": "google",
+    "title": "Toggle on the Google Mobile Ads Next-Gen SDK in your Unity apps",
+    "titleOriginal": "Toggle on the Google Mobile Ads Next-Gen SDK in your Unity apps",
+    "summary": "We are thrilled to announce the Google Mobile Ads (GMA) Next-Gen SDK for Android is now officially available for Unity developers. Upgrading to GMA Next-Gen SDK for Android offers the following benefits: Faster performance : Up to 27% faster ad request latency for banner ads than the previous versio",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/toggle-on-google-mobile-ads-next-gen.html",
+    "tags": [
+      "sdk"
+    ],
+    "fetchedAt": "2026-06-15T01:19:23.513909+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmSh_3qdRGF2KI3Z-ueZ2f0FzHfx-ouq5Hicup_yuRk-on9A3MpqAhgFhcrIP2FDqI_FO6TW2Gmgt9KVqXggccY_UJTSUozskgBVx2cqK0Y7hcip7PJ6BglZbRTyGVo-x6X5N00zBEEwGe54K52nfeNurZHTHjISkGxIOj5gAyJbqDg1RJHUbJQpmpbBo/s600/unity_toggle.png"
   }
 ]
