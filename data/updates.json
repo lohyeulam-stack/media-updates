@@ -1,5 +1,58 @@
 [
   {
+    "id": "pinterest-2026-06-15-001",
+    "date": "2026-06-15",
+    "week": "2026-W25",
+    "platform": "pinterest",
+    "title": "Grow your business faster: How Pinterest Performance+ automates success for SMBs",
+    "titleOriginal": "Grow your business faster: How Pinterest Performance+ automates success for SMBs",
+    "summary": "Grow your business faster: How Pinterest Performance+ automates success for SMBs",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/smb-automate-success-with-performance-plus/",
+    "tags": [],
+    "fetchedAt": "2026-06-16T03:45:27.386806+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/h67z7i6sbjau/1v1QMGm5cvGXDG7f2P1T8Z/f31c9c40f7e2de7733e6370eec478a66/SMBBestPractices_header_1216x684__1___1_.png?fm=webp&q=85&w=1680&h=1680"
+  },
+  {
+    "id": "linkedin-2026-06-15-001",
+    "date": "2026-06-15",
+    "week": "2026-W25",
+    "platform": "linkedin",
+    "title": "Fear of Messing Up: The Hidden Emotion Driving B2B Decisions",
+    "titleOriginal": "Fear of Messing Up: The Hidden Emotion Driving B2B Decisions",
+    "summary": "Research and insights",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/research-and-insights/fear-of-messing-up-the-hidden-emotion-driving-b2b-decisions",
+    "tags": [],
+    "fetchedAt": "2026-06-16T03:45:27.386806+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQGnMSAjYG1wBg/croft-frontend-shrinkToFit1920/B4DZ6856JuI0AM-/0/1781285758014?e=2147483647&v=beta&t=PTLO09iDfq3bgrETkquPyau30__UVDlkwmFn36ykub0"
+  },
+  {
+    "id": "meta-2026-06-15-001",
+    "date": "2026-06-15",
+    "week": "2026-W25",
+    "platform": "meta",
+    "title": "Introducing Tokenless Access to Meta oEmbed APIs",
+    "titleOriginal": "Introducing Tokenless Access to Meta oEmbed APIs",
+    "summary": "You can now call Meta oEmbed APIs to embed public Facebook, Threads, and Instagram content without an access token. App Review will no longer be required to embed basic technical functionality only.",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/06/15/tokenless-access-to-meta-oembed-apis/",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-06-16T03:45:27.386806+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://scontent-ams2-1.xx.fbcdn.net/v/t39.2365-6/719099819_1371343834911061_6982344814258684891_n.jpg?stp=dst-webp&_nc_cat=106&ccb=1-7&_nc_sid=217208&_nc_ohc=WwMC8_kVfFUQ7kNvwFmXY_4&_nc_oc=AdpwJvI9_pL9csBL-bOpc8oOiqOZCOb-tezsfiCYaT4qPB-CHVMLWg9SxCXvMgg7rcQ&_nc_zt=14&_nc_ht=scontent-ams2-1.xx&_nc_gid=cQJ4DGdWwq3tJrRGQ-B33w&_nc_ss=7f289&oh=00_Af-Ely_Uk_iQFT5Do7ED8GGVaXZ05RxktIRPl-BEvJsHgw&oe=6A363145"
+  },
+  {
     "id": "youtube-2026-06-12-001",
     "date": "2026-06-12",
     "week": "2026-W24",
