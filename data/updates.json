@@ -1,5 +1,61 @@
 [
   {
+    "id": "pinterest-2026-06-17-001",
+    "date": "2026-06-17",
+    "week": "2026-W25",
+    "platform": "pinterest",
+    "title": "Pinterest’s new AI tools for the discovery era: from ads to personalized shopping",
+    "titleOriginal": "Pinterest’s new AI tools for the discovery era: from ads to personalized shopping",
+    "summary": "Pinterest’s new AI tools for the discovery era: from ads to personalized shopping",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/cannes-2026/",
+    "tags": [
+      "ai",
+      "shopping"
+    ],
+    "fetchedAt": "2026-06-18T02:17:01.333868+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/2pyx8rwuvz6x/6H6j9ujeQulTyljZUQWRAP/023b4457f7e1f147be55330caa6553bc/MCP.jpg?fm=webp&q=85&w=1680&h=1680"
+  },
+  {
+    "id": "linkedin-2026-06-17-001",
+    "date": "2026-06-17",
+    "week": "2026-W25",
+    "platform": "linkedin",
+    "title": "How LinkedIn Advertising Boosts Search, Content and Pipeline",
+    "titleOriginal": "How LinkedIn Advertising Boosts Search, Content and Pipeline",
+    "summary": "Get inspiration, insight and innovative ideas",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/lead-generation/linkedin-conversions-multiplier",
+    "tags": [],
+    "fetchedAt": "2026-06-18T02:17:01.333868+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQFJW17TPFkvQg/croft-frontend-shrinkToFit767/B4DZ7MXGkEIIAI-/0/1781545070288?e=2147483647&v=beta&t=dncAlH0xLi7HgVQT9gesCyS6TDNzI3vE4H_nz3TfO_g"
+  },
+  {
+    "id": "meta-2026-06-16-001",
+    "date": "2026-06-16",
+    "week": "2026-W25",
+    "platform": "meta",
+    "title": "Cannes 2026: New Ways to Turn Discovery Into Purchase on Meta",
+    "titleOriginal": "Cannes 2026: New Ways to Turn Discovery Into Purchase on Meta",
+    "summary": "Meta unveils new commerce tools at Cannes 2026: Live Video Ads, expanded affiliate partnerships, and virtual cards for faster, more secure checkout.",
+    "category": "other",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/cannes-2026-discovery-into-purchase",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-06-18T02:17:01.333868+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=1499114574651539&version=1781710614"
+  },
+  {
     "id": "pinterest-2026-06-15-001",
     "date": "2026-06-15",
     "week": "2026-W25",
