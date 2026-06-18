@@ -1,5 +1,77 @@
 [
   {
+    "id": "snapchat-2026-06-18-001",
+    "date": "2026-06-18",
+    "week": "2026-W25",
+    "platform": "snapchat",
+    "title": "Human-First, AI-Enabled: Snap’s Latest Ads Innovations",
+    "titleOriginal": "Human-First, AI-Enabled: Snap’s Latest Ads Innovations",
+    "summary": "Human-First, AI-Enabled: Snap’s Latest Ads Innovations",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/human-first-ai-enabled-snaps-latest-ads-innovations",
+    "tags": [],
+    "fetchedAt": "2026-06-19T02:30:49.132675+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/inb32lme5009/45BJO9DDtoaPn63aqLibiR/1c76206bb42f334014fe6a84a2cf877e/16x9Meta_CannesAI_Hero.jpg?q=40&h=512"
+  },
+  {
+    "id": "snapchat-2026-06-18-002",
+    "date": "2026-06-18",
+    "week": "2026-W25",
+    "platform": "snapchat",
+    "title": "The Brand Reset: How Snapchat Video Formats Drive Long-Term Sales",
+    "titleOriginal": "The Brand Reset: How Snapchat Video Formats Drive Long-Term Sales",
+    "summary": "Human-First, AI-Enabled: Snap’s Latest Ads Innovations",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/brand-reset-how-snapchat-video-drives-sales",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-06-19T02:30:49.132675+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "linkedin-2026-06-18-001",
+    "date": "2026-06-18",
+    "week": "2026-W25",
+    "platform": "linkedin",
+    "title": "How to prove incremental marketing impact with LinkedIn's new ...",
+    "titleOriginal": "How to prove incremental marketing impact with LinkedIn's new ...",
+    "summary": "Get inspiration, insight and innovative ideas",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/linkedin-ads/prove-marketing-roi-with-linkedins-new-measurement-tools",
+    "tags": [],
+    "fetchedAt": "2026-06-19T02:30:49.132675+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQGLYdhLo7j0-w/croft-frontend-shrinkToFit767/B4DZ7OKjrfI0AI-/0/1781575336579?e=2147483647&v=beta&t=0p-6EQczWzU8Z0_q0tWT4bu9dtfBDJLR0tCUETOWCCI"
+  },
+  {
+    "id": "youtube-2026-06-18-001",
+    "date": "2026-06-18",
+    "week": "2026-W25",
+    "platform": "youtube",
+    "title": "Go behind-the scenes of the premiere of ‘Outside Tonight’ with Julian Shapiro-Barnum",
+    "titleOriginal": "Go behind-the scenes of the premiere of ‘Outside Tonight’ with Julian Shapiro-Barnum",
+    "summary": "Go behind the scenes of Julian Shapiro-Barnum’s new late-night YouTube show, Outside Tonight, at its historic NYC premiere.",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/julian-shapiro-barnum-outside-tonight-youtube-premiere/",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-06-19T02:30:49.132675+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://i.ytimg.com/vi_webp/6P014zR50eM/maxresdefault.webp"
+  },
+  {
     "id": "pinterest-2026-06-17-001",
     "date": "2026-06-17",
     "week": "2026-W25",
