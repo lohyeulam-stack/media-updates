@@ -1,5 +1,24 @@
 [
   {
+    "id": "linkedin-2026-06-19-001",
+    "date": "2026-06-19",
+    "week": "2026-W25",
+    "platform": "linkedin",
+    "title": "The B2B navigation system is broken: why AI is forcing a shift...",
+    "titleOriginal": "The B2B navigation system is broken: why AI is forcing a shift...",
+    "summary": "Research and insights",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/research-and-insights/why-ai-is-forcing-a-b2b-marketing-shift-from-visibility-to-buyability",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-06-20T01:56:00.018798+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://media.licdn.com/dms/image/v2/D4D08AQEKFETWITlPbA/croft-frontend-shrinkToFit600/B4DZ7cB3u8HgAQ-/0/1781807939660?e=2147483647&v=beta&t=GB--wQ6HNuxAf_YyDVwU3gtZq__8iXMFyGyNb_8wm1Y"
+  },
+  {
     "id": "snapchat-2026-06-18-001",
     "date": "2026-06-18",
     "week": "2026-W25",
