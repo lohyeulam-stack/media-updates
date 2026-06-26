@@ -212,5 +212,22 @@
     "fetchedAt": "2026-06-26T02:12:00.763686+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/YOUTUBE_BLOG_-_NEAL_S_LETTER_SQ.max-900x600.format-webp.webp"
+  },
+  {
+    "id": "youtube-2026-06-25-002",
+    "date": "2026-06-25",
+    "week": "2026-W26",
+    "platform": "youtube",
+    "title": "These YouTube creators are capturing the energy of the FIFA World Cup 2026™",
+    "titleOriginal": "These YouTube creators are capturing the energy of the FIFA World Cup 2026™",
+    "summary": "Top YouTube creators offer an unfiltered look at the FIFA World Cup 2026 with unique match takes, behind-the-scenes access, and global soccer culture.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-creators-fifa-world-cup/",
+    "tags": [],
+    "fetchedAt": "2026-06-27T01:49:07.373952+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/SnapInsta.to_722520446_1860819.max-700x3000.format-webp.webp"
   }
 ]
