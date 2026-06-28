@@ -1,5 +1,121 @@
 [
   {
+    "id": "google-2026-06-26-001",
+    "date": "2026-06-26",
+    "week": "2026-W26",
+    "platform": "google",
+    "title": "July 2026 changes for Display & Video 360 API and Structured Data Files",
+    "titleOriginal": "July 2026 changes for Display & Video 360 API and Structured Data Files",
+    "summary": "Today we’re announcing two unversioned changes to the Display & Video 360 API and Structured Data Files that will take effect on July 13, 2026 and may impact your existing integrations. The following changes have been fully detailed on our Announced Deprecations page: The third-party vendor Nielsen ",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/july-2026-changes-for-display-video-360.html",
+    "tags": [
+      "api",
+      "video"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-26-002",
+    "date": "2026-06-26",
+    "week": "2026-W26",
+    "platform": "google",
+    "title": "Unlocking Data Strength with Data Manager API: Ads DevCast E7",
+    "titleOriginal": "Unlocking Data Strength with Data Manager API: Ads DevCast E7",
+    "summary": "We are thrilled to share the newest episode of Ads DevCast , the podcast series brought to you by Google’s Ads Developer Relations team. This episode features a conversation with Data Manager PMs Xuezhu Li and Stephen Chang on unlocking data strength using the Data Manager API . Watch it: goo.gle/wa",
+    "category": "api-change",
+    "importance": "low",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/unlocking-data-strength-with-data.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijPIUSUhvT_GEvIKTc-opFKMky5-YCXNWb9GDugn2R1RLcWjRb0OnTGJFQ_rgYCc6UqQGVCk1PlQmhU6O0BZtRVK-o_hsRv8x2R5dRNHADDyyfQef9yy3nA36s9_K0f23OW5rB87xOzg7nd4wTQb5zNnqhOoqfvJSX7VRLpvgZdny_Hx_xUtdteASptL8/s1600/Screenshot%202026-06-24%20at%2010.10.49%E2%80%AFPM.png"
+  },
+  {
+    "id": "google-2026-06-26-003",
+    "date": "2026-06-26",
+    "week": "2026-W26",
+    "platform": "google",
+    "title": "Google Ads API v21 sunset reminder",
+    "titleOriginal": "Google Ads API v21 sunset reminder",
+    "summary": "Google Ads API v21 will sunset on August 5, 2026. Starting on this date, all v21 API requests will begin to fail. Migrate to a newer version prior to August 5, 2026 to ensure your API access is unaffected. Here are some resources to help you with the migration: Upgrade to the newest version Release ",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/google-ads-api-v21-sunset-reminder.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "pinterest-2026-06-25-001",
+    "date": "2026-06-25",
+    "week": "2026-W26",
+    "platform": "pinterest",
+    "title": "Your starter guide to Pinterest shopping ads",
+    "titleOriginal": "Your starter guide to Pinterest shopping ads",
+    "summary": "Your starter guide to Pinterest shopping ads",
+    "category": "targeting",
+    "importance": "low",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/your-starter-guide-to-pinterest-shopping-ads-june-2026/",
+    "tags": [
+      "shopping"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/h67z7i6sbjau/4jFbA70g348PDTLB2msgtI/70e7a50f54590ba0ffdf27f1a1a111c2/2605-q2-newsletter_US-CA_blog-header_1216x684.jpg?fm=webp&q=85&w=1680&h=1680"
+  },
+  {
+    "id": "google-2026-06-25-004",
+    "date": "2026-06-25",
+    "week": "2026-W26",
+    "platform": "google",
+    "title": "Multi-party approvals in the Google Ads API",
+    "titleOriginal": "Multi-party approvals in the Google Ads API",
+    "summary": "As part of improving security for Google Ads accounts, the Google Ads API will start requiring multi-party approvals when performing sensitive API actions. This is part of a broader change in Google Ads that requires multi-party approvals to perform sensitive actions in your Google Ads account. Thes",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/multi-party-approvals-in-google-ads-api.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-25-005",
+    "date": "2026-06-25",
+    "week": "2026-W26",
+    "platform": "google",
+    "title": "Announcing v24.2 of the Google Ads API",
+    "titleOriginal": "Announcing v24.2 of the Google Ads API",
+    "summary": "Today, we’re announcing the v24.2 release of the Google Ads API . This minor release brings critical security updates, new AI transparency features, reporting enhancements, and powerful planning insights. To use these new capabilities, you must upgrade your client libraries and client code. All the ",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/announcing-v242-of-google-ads-api.html",
+    "tags": [
+      "api",
+      "ai"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "youtube-2026-06-25-002",
     "date": "2026-06-25",
     "week": "2026-W26",
@@ -49,6 +165,45 @@
     "fetchedAt": "2026-06-26T02:12:00.763686+08:00",
     "dateConfidence": "high",
     "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/YOUTUBE_BLOG_-_NEAL_S_LETTER_SQ.max-900x600.format-webp.webp"
+  },
+  {
+    "id": "google-2026-06-24-006",
+    "date": "2026-06-24",
+    "week": "2026-W26",
+    "platform": "google",
+    "title": "More autonomy, less context: Introducing Agent Skills for Google Advertising and Measurement",
+    "titleOriginal": "More autonomy, less context: Introducing Agent Skills for Google Advertising and Measurement",
+    "summary": "The way developers build and integrate software is changing. With the rapid adoption of AI-powered coding assistants, we are launching a dedicated set of Google Advertising and Measurement agent skills in the Google skills repository to empower your integration with products. These skills transform ",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/more-autonomy-less-context-introducing.html",
+    "tags": [
+      "api",
+      "measurement"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-23-007",
+    "date": "2026-06-23",
+    "week": "2026-W26",
+    "platform": "google",
+    "title": "Changes to Support for Smart Campaigns in the Google Ads API",
+    "titleOriginal": "Changes to Support for Smart Campaigns in the Google Ads API",
+    "summary": "Starting on August 3, 2026 you will no longer be able to create new Smart Campaigns using the Google Ads API. You will still be able to update your existing Smart Campaigns, and they will continue to serve ads. In lieu of new Smart Campaigns, we recommend exploring other campaign types, such as Perf",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/changes-to-support-for-smart-campaigns.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   },
   {
     "id": "snapchat-2026-06-23-001",
