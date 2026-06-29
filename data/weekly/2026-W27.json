@@ -49,5 +49,62 @@
     "fetchedAt": "2026-06-30T01:40:17.218996+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "pinterest-2026-06-29-001",
+    "date": "2026-06-29",
+    "week": "2026-W27",
+    "platform": "pinterest",
+    "title": "5 best practices for better shopping performance on Pinterest",
+    "titleOriginal": "5 best practices for better shopping performance on Pinterest",
+    "summary": "5 best practices for better shopping performance on Pinterest",
+    "category": "targeting",
+    "importance": "low",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-shopping-ads-guide/",
+    "tags": [
+      "shopping"
+    ],
+    "fetchedAt": "2026-06-30T02:11:53.922359+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "pinterest-2026-06-29-002",
+    "date": "2026-06-29",
+    "week": "2026-W27",
+    "platform": "pinterest",
+    "title": "Smarter decisions, faster results: Pinterest AI",
+    "titleOriginal": "Smarter decisions, faster results: Pinterest AI",
+    "summary": "Smarter decisions, faster results: Pinterest AI",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/pinterest-ai-for-marketers/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-06-30T02:11:53.922359+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "pinterest-2026-06-29-003",
+    "date": "2026-06-29",
+    "week": "2026-W27",
+    "platform": "pinterest",
+    "title": "Scale your international shopping campaigns on Pinterest",
+    "titleOriginal": "Scale your international shopping campaigns on Pinterest",
+    "summary": "Scale your international shopping campaigns on Pinterest",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Pinterest Business Blog",
+    "sourceUrl": "https://business.pinterest.com/blog/international-shopping-pinterest/",
+    "tags": [
+      "shopping"
+    ],
+    "fetchedAt": "2026-06-30T02:11:53.922359+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
   }
 ]
