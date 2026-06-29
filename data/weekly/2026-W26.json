@@ -384,5 +384,22 @@
     "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "meta-2026-06-25-001",
+    "date": "2026-06-25",
+    "week": "2026-W26",
+    "platform": "meta",
+    "title": "Building an AI-Native Business: Southeast Asia's Next Growth Chapter",
+    "titleOriginal": "Building an AI-Native Business: Southeast Asia's Next Growth Chapter",
+    "summary": "Discover how Southeast Asian businesses are building AI-native operations with conversational commerce, Meta Business Agent, and messaging-first strategies to drive cross-border growth.",
+    "category": "other",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/building-an-ai-native-business",
+    "tags": [],
+    "fetchedAt": "2026-06-30T01:40:17.218996+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]

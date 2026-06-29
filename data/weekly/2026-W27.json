@@ -1,0 +1,53 @@
+[
+  {
+    "id": "tiktok-2026-06-29-001",
+    "date": "2026-06-29",
+    "week": "2026-W27",
+    "platform": "tiktok",
+    "title": "Create and scale episodic content with TikTok Growth Max for Mini Dramas",
+    "titleOriginal": "Create and scale episodic content with TikTok Growth Max for Mini Dramas",
+    "summary": "Transform episodic storytelling into incremental growth on TikTok through a unified content and ads approach.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-growth-max-mini-series",
+    "tags": [],
+    "fetchedAt": "2026-06-30T01:40:17.218996+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-29-001",
+    "date": "2026-06-29",
+    "week": "2026-W27",
+    "platform": "google",
+    "title": "Unlock deeper insights for YouTube brand campaigns.",
+    "titleOriginal": "Unlock deeper insights for YouTube brand campaigns.",
+    "summary": "New features will help prove how YouTube brand campaigns are driving the results advertisers care about.",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/youtube-brand-campaign-updates/",
+    "tags": [],
+    "fetchedAt": "2026-06-30T01:40:17.218996+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-06-29-001-1c0f9d",
+    "date": "2026-06-29",
+    "week": "2026-W27",
+    "platform": "google",
+    "title": "Deprecating Structured Data Files v9, v9.1, and v9.2",
+    "titleOriginal": "Deprecating Structured Data Files v9, v9.1, and v9.2",
+    "summary": "Today we’re announcing the deprecation of Structured Data Files v9 , v9.1 , and v9.2 . These three versions will all sunset on January 28, 2027 . Migrate to v10 or higher before the sunset date to avoid any interruption of service. Follow the steps in the SDF v10 Migration Guide to update your setti",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/06/deprecating-structured-data-files-v9.html",
+    "tags": [],
+    "fetchedAt": "2026-06-30T01:40:17.218996+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  }
+]
