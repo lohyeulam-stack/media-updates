@@ -1,5 +1,61 @@
 [
   {
+    "id": "tiktok-2026-06-30-001",
+    "date": "2026-06-30",
+    "week": "2026-W27",
+    "platform": "tiktok",
+    "title": "Introducing TikTok Agentic Hub: AI Skills to Create, Manage, and Optimize Ads",
+    "titleOriginal": "Introducing TikTok Agentic Hub: AI Skills to Create, Manage, and Optimize Ads",
+    "summary": "Access ready-to-use AI Skills powered by MCP from TikTok and partners to build campaigns, improve creative, analyze performance, understand audiences, and manage product catalogs—with less manual work.",
+    "category": "targeting",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/tiktok-agentic-hub-ai-agents-skills-mcp",
+    "tags": [
+      "creative",
+      "ai"
+    ],
+    "fetchedAt": "2026-07-01T01:09:09.281146+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-06-30-001",
+    "date": "2026-06-30",
+    "week": "2026-W27",
+    "platform": "youtube",
+    "title": "How to celebrate America’s 250th birthday on YouTube",
+    "titleOriginal": "How to celebrate America’s 250th birthday on YouTube",
+    "summary": "Celebrate America's 250th birthday with July 4th party inspiration, regional recipes, and local firework streams on YouTube.",
+    "category": "other",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-celebrate-america-250-july-4-holiday/",
+    "tags": [],
+    "fetchedAt": "2026-07-01T01:09:09.281146+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-06-30-002",
+    "date": "2026-06-30",
+    "week": "2026-W27",
+    "platform": "youtube",
+    "title": "Five ways to find inspiration for your first YouTube Short",
+    "titleOriginal": "Five ways to find inspiration for your first YouTube Short",
+    "summary": "Come up with ideas for your very first YouTube Short. Learn how to use built-in tools like Remix, trending audio, and templates to start making videos.",
+    "category": "creative",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/youtube-shorts-inspiration-tips-beginners/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-07-01T01:09:09.281146+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "pinterest-2026-06-29-001",
     "date": "2026-06-29",
     "week": "2026-W27",
@@ -164,6 +220,23 @@
     "fetchedAt": "2026-06-29T00:12:54.189678+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "amazon-2026-06-25-001",
+    "date": "2026-06-25",
+    "week": "2026-W26",
+    "platform": "amazon",
+    "title": "Read the recap",
+    "titleOriginal": "Read the recap",
+    "summary": "The sharpest minds in brand building, creativity, and ad tech came together at Amazon Port to share where this industry is headed next. Here are six takeaways that defined the week.",
+    "category": "other",
+    "importance": "medium",
+    "source": "Amazon Ads Blog",
+    "sourceUrl": "https://advertising.amazon.com/library/news/cannes-lions-2026-news-advertising?ref_=a20m_us_lbr_df_z2_nws_cnns26",
+    "tags": [],
+    "fetchedAt": "2026-07-01T01:09:09.281146+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/cannes-2026-recap-thumbnail-image_1.jpg"
   },
   {
     "id": "meta-2026-06-25-001",

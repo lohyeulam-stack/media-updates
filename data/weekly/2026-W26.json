@@ -401,5 +401,22 @@
     "fetchedAt": "2026-06-30T01:40:17.218996+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "amazon-2026-06-25-001",
+    "date": "2026-06-25",
+    "week": "2026-W26",
+    "platform": "amazon",
+    "title": "Read the recap",
+    "titleOriginal": "Read the recap",
+    "summary": "The sharpest minds in brand building, creativity, and ad tech came together at Amazon Port to share where this industry is headed next. Here are six takeaways that defined the week.",
+    "category": "other",
+    "importance": "medium",
+    "source": "Amazon Ads Blog",
+    "sourceUrl": "https://advertising.amazon.com/library/news/cannes-lions-2026-news-advertising?ref_=a20m_us_lbr_df_z2_nws_cnns26",
+    "tags": [],
+    "fetchedAt": "2026-07-01T01:09:09.281146+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/cannes-2026-recap-thumbnail-image_1.jpg"
   }
 ]
