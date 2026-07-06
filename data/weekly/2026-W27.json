@@ -337,5 +337,24 @@
     "fetchedAt": "2026-07-03T01:39:12.756785+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "moloco-2026-07-02-001",
+    "date": "2026-07-02",
+    "week": "2026-W27",
+    "platform": "moloco",
+    "title": "How sports apps are preparing for the next wave of fan engagement",
+    "titleOriginal": "How sports apps are preparing for the next wave of fan engagement",
+    "summary": "A growing number of football-focused publishers are turning to advanced monetization technology. Apps and platforms such as LiveScore, Sofascore, BeSoccer, 365Scores, and OneFootball are leveraging the Moloco SDK to help maximize ad revenue opportunities while maintaining positive experiences for mi",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Moloco Blog",
+    "sourceUrl": "https://www.moloco.com/blog/how-sports-apps-are-preparing-for-the-next-wave-of-fan-engagement",
+    "tags": [
+      "sdk"
+    ],
+    "fetchedAt": "2026-07-07T02:13:07.984304+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://cdn.prod.website-files.com/62380f0b5031d40f63f8b4c7/6a467b3d6e732dfd89f3ecc1_Meta%20Banner%201200x600%20(1).png"
   }
 ]
