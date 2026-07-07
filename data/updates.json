@@ -1,5 +1,96 @@
 [
   {
+    "id": "youtube-2026-07-07-001",
+    "date": "2026-07-07",
+    "week": "2026-W28",
+    "platform": "youtube",
+    "title": "IShowSpeed to lead first-ever YouTube FIFA Creator Cup",
+    "titleOriginal": "IShowSpeed to lead first-ever YouTube FIFA Creator Cup",
+    "summary": "Live streaming globally on FIFA’s Official YouTube Channel and simulcast on IShowSpeed’s YouTube channel",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-fifa-creator-cup-central-park/",
+    "tags": [],
+    "fetchedAt": "2026-07-08T02:00:25.552930+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-07-002",
+    "date": "2026-07-07",
+    "week": "2026-W28",
+    "platform": "youtube",
+    "title": "Five ways to use YouTube Shorts to grow your channel",
+    "titleOriginal": "Five ways to use YouTube Shorts to grow your channel",
+    "summary": "Discover how to transform casual viewers into an active community. Learn how to use interactive stickers and video replies on YouTube Shorts to build meaningful audience…",
+    "category": "targeting",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/grow-youtube-channel-interactive-shorts/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-07-08T02:00:25.552930+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-07-07-001",
+    "date": "2026-07-07",
+    "week": "2026-W28",
+    "platform": "google",
+    "title": "Accelerate Google Ads API Basic Access reviews with brand verification",
+    "titleOriginal": "Accelerate Google Ads API Basic Access reviews with brand verification",
+    "summary": "Today, we are launching a pilot process to expedite the Basic Access application review process. If you have a pending Basic Access application for your Google Ads API developer token, then you can complete brand verification for your Google Cloud project to expedite the reviews for your pending app",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/07/accelerate-google-ads-api-basic-access.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-07-08T02:00:25.552930+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "tiktok-2026-07-06-001",
+    "date": "2026-07-06",
+    "week": "2026-W28",
+    "platform": "tiktok",
+    "title": "Introducing Streaming Ads on TikTok",
+    "titleOriginal": "Introducing Streaming Ads on TikTok",
+    "summary": "Convert audiences into new subscribers with TikTok Streaming Ads.",
+    "category": "targeting",
+    "importance": "high",
+    "source": "TikTok for Business Blog",
+    "sourceUrl": "https://ads.tiktok.com/business/en-US/blog/streaming-ads",
+    "tags": [],
+    "fetchedAt": "2026-07-08T02:00:25.552930+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-07-06-002",
+    "date": "2026-07-06",
+    "week": "2026-W28",
+    "platform": "google",
+    "title": "Announcing Google Mobile Ads Next-Gen SDK as the preferred SDK for Android",
+    "titleOriginal": "Announcing Google Mobile Ads Next-Gen SDK as the preferred SDK for Android",
+    "summary": "Google Mobile Ads (GMA) Next-Gen SDK is now the preferred SDK for Android development with Google AdMob and Google Ad Manager. GMA Next-Gen SDK is a significant rewrite of Google Mobile Ads SDK that improves speed, stability, and the developer experience. Google Mobile Ads SDK for Android is now leg",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/07/announcing-google-mobile-ads-next-gen.html",
+    "tags": [
+      "sdk"
+    ],
+    "fetchedAt": "2026-07-08T02:00:25.552930+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "moloco-2026-07-02-001",
     "date": "2026-07-02",
     "week": "2026-W27",
