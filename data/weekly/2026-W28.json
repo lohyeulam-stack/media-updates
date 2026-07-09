@@ -109,5 +109,41 @@
     "fetchedAt": "2026-07-09T01:29:04.529386+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "mintegral-2026-07-09-001",
+    "date": "2026-07-09",
+    "week": "2026-W28",
+    "platform": "mintegral",
+    "title": "The Next (Agentic) Phase Of Media Buying Is Coming",
+    "titleOriginal": "The Next (Agentic) Phase Of Media Buying Is Coming",
+    "summary": "Browse Mintegral's mobile marketing blog",
+    "category": "other",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/agentic-media-buying-is-coming",
+    "tags": [],
+    "fetchedAt": "2026-07-10T01:56:29.094013+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://assets-official-v2.mintegral.com/v3/blog-cover/2026/07/09/MTG banner 236 20260703.png"
+  },
+  {
+    "id": "google-2026-07-09-001",
+    "date": "2026-07-09",
+    "week": "2026-W28",
+    "platform": "google",
+    "title": "Expanding AI transparency in ads",
+    "titleOriginal": "Expanding AI transparency in ads",
+    "summary": "Search windows",
+    "category": "other",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/google-ads-ai-transparency-labels/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-07-10T01:56:29.094013+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
