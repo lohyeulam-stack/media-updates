@@ -145,5 +145,22 @@
     "fetchedAt": "2026-07-10T01:56:29.094013+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-10-001",
+    "date": "2026-07-10",
+    "week": "2026-W28",
+    "platform": "youtube",
+    "title": "How to watch YouTube FIFA Creator Cup",
+    "titleOriginal": "How to watch YouTube FIFA Creator Cup",
+    "summary": "Stream the historic YouTube FIFA Creator Cup live from Central Park this Sunday. Get the creator roster, kickoff times, and official streaming channels to watch the matc…",
+    "category": "other",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-fifa-creator-cup-how-to-watch/",
+    "tags": [],
+    "fetchedAt": "2026-07-11T01:49:33.699425+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
