@@ -88,5 +88,41 @@
     "fetchedAt": "2026-07-15T01:12:52.429161+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-14-001-6ea8df",
+    "date": "2026-07-14",
+    "week": "2026-W29",
+    "platform": "youtube",
+    "title": "How to convert YouTube Shorts views into long-form channel growth",
+    "titleOriginal": "How to convert YouTube Shorts views into long-form channel growth",
+    "summary": "Learn how to turn casual Shorts views into lasting channel growth. This step-by-step guide covers Related Videos links, dual streaming setup, and vertical live stream op…",
+    "category": "creative",
+    "importance": "low",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/youtube-related-videos-traffic-guide/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-07-16T01:16:03.704556+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-07-15-001",
+    "date": "2026-07-15",
+    "week": "2026-W29",
+    "platform": "meta",
+    "title": "Small to Scale: How ROBINMAY Used Reels to Unlock a New Audience and a New Market",
+    "titleOriginal": "Small to Scale: How ROBINMAY Used Reels to Unlock a New Audience and a New Market",
+    "summary": "Discover how Taiwanese brand ROBINMAY used Meta Reels and AI-powered optimization to reach male shoppers, cut cost per purchase by 38%, and expand into Southeast Asia.",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/how-robinmay-used-reels",
+    "tags": [],
+    "fetchedAt": "2026-07-16T01:16:03.704556+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
