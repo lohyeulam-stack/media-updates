@@ -1,5 +1,42 @@
 [
   {
+    "id": "google-2026-07-16-001",
+    "date": "2026-07-16",
+    "week": "2026-W29",
+    "platform": "google",
+    "title": "6 back-to-school shopping tricks every student should know",
+    "titleOriginal": "6 back-to-school shopping tricks every student should know",
+    "summary": "Four mobile phone screens illustrating Google Shopping features: personalized AI search results, a Google Lens visual search of a shoe, a product listing with a price-tracking button, and a virtual try-on feature showing a shirt on an avatar.",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/shopping/6-back-to-school-shopping-tricks-every-student-should-know/",
+    "tags": [
+      "ai",
+      "shopping"
+    ],
+    "fetchedAt": "2026-07-17T01:14:01.531037+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-15-001",
+    "date": "2026-07-15",
+    "week": "2026-W29",
+    "platform": "youtube",
+    "title": "The YouTube creators bringing the hype of FIFA World Cup 2026™ straight to your feed",
+    "titleOriginal": "The YouTube creators bringing the hype of FIFA World Cup 2026™ straight to your feed",
+    "summary": "Stepping past the sidelines, these international YouTube creators offer an exclusive look at the tournament.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/creators-covering-world-cup-2026/",
+    "tags": [],
+    "fetchedAt": "2026-07-17T01:14:01.531037+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "meta-2026-07-15-001",
     "date": "2026-07-15",
     "week": "2026-W29",
