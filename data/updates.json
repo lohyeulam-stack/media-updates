@@ -1,6 +1,78 @@
 [
   {
+    "id": "linkedin-2026-07-16-001",
+    "date": "2026-07-16",
+    "week": "2026-W29",
+    "platform": "linkedin",
+    "title": "Pipeline beats attendance: measuring your event success",
+    "titleOriginal": "Pipeline beats attendance: measuring your event success",
+    "summary": "Registrations and badge scans don’t move deals. Learn the three-layer measurement framework that connects your events to real pipeline, and the tools that make it possible.",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/events/pipeline-beats-showrates-measuring-event-success",
+    "tags": [
+      "measurement"
+    ],
+    "fetchedAt": "2026-07-18T01:11:29.895188+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
     "id": "google-2026-07-16-001",
+    "date": "2026-07-16",
+    "week": "2026-W29",
+    "platform": "google",
+    "title": "Beach vibes and temporary wallpaper are trending for back-to-school season.",
+    "titleOriginal": "Beach vibes and temporary wallpaper are trending for back-to-school season.",
+    "summary": "College students are eager to turn their dull dorm rooms into cozy spaces. Here are the Google Search trends we’re seeing.",
+    "category": "other",
+    "importance": "low",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products-and-platforms/products/shopping/back-to-school-trends/",
+    "tags": [],
+    "fetchedAt": "2026-07-18T01:11:29.895188+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-16-001",
+    "date": "2026-07-16",
+    "week": "2026-W29",
+    "platform": "youtube",
+    "title": "Exploring YouTube's U.S. impact in 2025",
+    "titleOriginal": "Exploring YouTube's U.S. impact in 2025",
+    "summary": "Read findings from the 2025 US YouTube Impact Report, produced with Oxford Economics, showcasing how creator businesses support over 540,000 jobs and contribute $60 bill…",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/2025-us-youtube-impact-report/",
+    "tags": [],
+    "fetchedAt": "2026-07-18T01:11:29.895188+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-07-16-001",
+    "date": "2026-07-16",
+    "week": "2026-W29",
+    "platform": "meta",
+    "title": "Meta’s ads MCP server is now available for developers",
+    "titleOriginal": "Meta’s ads MCP server is now available for developers",
+    "summary": "You can now connect your AI application directly to Meta's advertising capabilities, enabling your users to create and optimize campaigns, pull performance insights, manage product catalogs, and more through natural language.",
+    "category": "api-change",
+    "importance": "low",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-07-18T01:11:29.895188+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-07-16-001-44a786",
     "date": "2026-07-16",
     "week": "2026-W29",
     "platform": "google",
