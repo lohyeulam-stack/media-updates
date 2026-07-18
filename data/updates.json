@@ -1,5 +1,22 @@
 [
   {
+    "id": "youtube-2026-07-17-001",
+    "date": "2026-07-17",
+    "week": "2026-W29",
+    "platform": "youtube",
+    "title": "One nation, infinite celebrations: How YouTube brought America’s 250th birthday to life",
+    "titleOriginal": "One nation, infinite celebrations: How YouTube brought America’s 250th birthday to life",
+    "summary": "Relive all the ways people used YouTube to engage with American history, stream the historic Artemis II lunar mission, and share backyard celebrations for the nation's 2…",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-america-250-celebration-recap/",
+    "tags": [],
+    "fetchedAt": "2026-07-19T00:54:31.221158+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "linkedin-2026-07-16-001",
     "date": "2026-07-16",
     "week": "2026-W29",
