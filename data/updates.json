@@ -1,5 +1,43 @@
 [
   {
+    "id": "mintegral-2026-07-21-001",
+    "date": "2026-07-21",
+    "week": "2026-W30",
+    "platform": "mintegral",
+    "title": "Making Playables And Video Ads Work In India",
+    "titleOriginal": "Making Playables And Video Ads Work In India",
+    "summary": "Browse Mintegral's mobile marketing blog",
+    "category": "other",
+    "importance": "medium",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/india-market-playables-videos",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-07-21T01:36:34.014082+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://assets-official-v2.mintegral.com/v3/blog-cover/2026/07/20/MTG banner India Blog Post.png"
+  },
+  {
+    "id": "google-2026-07-20-001",
+    "date": "2026-07-20",
+    "week": "2026-W30",
+    "platform": "google",
+    "title": "Enabling Local Inventory Ads by Default for Shopping Campaigns starting on August 31, 2026",
+    "titleOriginal": "Enabling Local Inventory Ads by Default for Shopping Campaigns starting on August 31, 2026",
+    "summary": "What is changing? On August 31, 2026, we are aligning Shopping campaigns with Performance Max for Retail campaigns by enabling Local Inventory Ads (LIA) by default. Previously, developers and advertisers had to explicitly set the enable_local field to true within a campaign's ShoppingSetting in orde",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/07/enabling-local-inventory-ads-by-default.html",
+    "tags": [
+      "shopping"
+    ],
+    "fetchedAt": "2026-07-21T01:36:34.014082+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "youtube-2026-07-17-001",
     "date": "2026-07-17",
     "week": "2026-W29",
