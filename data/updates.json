@@ -1,5 +1,58 @@
 [
   {
+    "id": "meta-2026-07-21-002",
+    "date": "2026-07-21",
+    "week": "2026-W30",
+    "platform": "meta",
+    "title": "Stop Polling, Start Pushing: The Case for Webhooks",
+    "titleOriginal": "Stop Polling, Start Pushing: The Case for Webhooks",
+    "summary": "Today, API users set up “polling” to frequently request updates to ensure they have the most current data. While common, this process is inefficient and chips away at rate limits.",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/07/21/the-case-for-webhooks/",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-07-23T01:15:38.752775+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-21-001",
+    "date": "2026-07-21",
+    "week": "2026-W30",
+    "platform": "youtube",
+    "title": "How the world experienced the FIFA World Cup 2026™ on YouTube",
+    "titleOriginal": "How the world experienced the FIFA World Cup 2026™ on YouTube",
+    "summary": "Explore how over 1.7 billion viewers tuned into YouTube for FIFA World Cup 2026 coverage, creator vlogs, and the first YouTube FIFA Creator Cup.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/culture-and-trends/youtube-fifa-world-cup-2026-viewership-stats/",
+    "tags": [],
+    "fetchedAt": "2026-07-23T01:15:38.752775+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-21-002",
+    "date": "2026-07-21",
+    "week": "2026-W30",
+    "platform": "youtube",
+    "title": "Dr. Becky and YouTube partner on digital parenting series",
+    "titleOriginal": "Dr. Becky and YouTube partner on digital parenting series",
+    "summary": "The founder of Good Inside shares how parents can set tech boundaries, build connection and lead with authority.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/youtube-dr-becky-good-inside-parenting-series/",
+    "tags": [],
+    "fetchedAt": "2026-07-23T01:15:38.752775+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "mintegral-2026-07-21-001",
     "date": "2026-07-21",
     "week": "2026-W30",
