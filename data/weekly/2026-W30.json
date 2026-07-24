@@ -142,5 +142,81 @@
     "fetchedAt": "2026-07-24T01:21:17.894916+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "linkedin-2026-07-24-001",
+    "date": "2026-07-24",
+    "week": "2026-W30",
+    "platform": "linkedin",
+    "title": "The Top 5 Takeaways From Cannes Lions International Festival o...",
+    "titleOriginal": "The Top 5 Takeaways From Cannes Lions International Festival o...",
+    "summary": "Get inspiration, insight and innovative ideas",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/events/top-5-b2b-takeaways-from-cannes-lions-2026",
+    "tags": [],
+    "fetchedAt": "2026-07-25T01:28:26.715281+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "linkedin-2026-07-24-002",
+    "date": "2026-07-24",
+    "week": "2026-W30",
+    "platform": "linkedin",
+    "title": "What Does the AI Era Mean for Marketers? 10 Lessons from the C...",
+    "titleOriginal": "What Does the AI Era Mean for Marketers? 10 Lessons from the C...",
+    "summary": "Get inspiration, insight and innovative ideas",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/ai-search/what-does-the-ai-era-mean-for-marketers",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-07-25T01:28:26.715281+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-24-001",
+    "date": "2026-07-24",
+    "week": "2026-W30",
+    "platform": "youtube",
+    "title": "Making thumbnails easier on YouTube",
+    "titleOriginal": "Making thumbnails easier on YouTube",
+    "summary": "New YouTube tools give creators control over Shorts thumbnails with custom uploads, desktop frame selection, and AI generation in Ask Studio.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-studio-custom-thumbnail-updates/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-07-25T01:28:26.715281+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-07-23-001",
+    "date": "2026-07-23",
+    "week": "2026-W30",
+    "platform": "google",
+    "title": "July 2026 update to the Display & Video 360 API",
+    "titleOriginal": "July 2026 update to the Display & Video 360 API",
+    "summary": "Today we’re launching the July 2026 update to the Display & Video 360 API. This update includes the following: Added a new syntheticContentAttestationStatus field to Creative and AdAsset resources. This field lets you specify whether a creative or ad asset contains content that was created or edited",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/07/july-2026-update-to-display-video-360.html",
+    "tags": [
+      "api",
+      "video",
+      "creative"
+    ],
+    "fetchedAt": "2026-07-25T01:28:26.715281+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
