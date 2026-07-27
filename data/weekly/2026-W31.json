@@ -1,0 +1,55 @@
+[
+  {
+    "id": "snapchat-2026-07-27-001",
+    "date": "2026-07-27",
+    "week": "2026-W31",
+    "platform": "snapchat",
+    "title": "Where Should I Advertise My Small Business Online?",
+    "titleOriginal": "Where Should I Advertise My Small Business Online?",
+    "summary": "Where Should I Advertise My Small Business Online?",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/where-to-advertise-small-business-online",
+    "tags": [],
+    "fetchedAt": "2026-07-28T01:44:55.377321+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-07-27-001",
+    "date": "2026-07-27",
+    "week": "2026-W31",
+    "platform": "google",
+    "title": "Passkey authentication requirement for the Google Ads API",
+    "titleOriginal": "Passkey authentication requirement for the Google Ads API",
+    "summary": "As part of improving security for Google Ads accounts, the Google Ads API will start requiring passkeys for Google Ads API users . This is part of a broader change in Google Ads that requires passkeys to authorize sensitive actions in your Google Ads account. These important security updates will st",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/07/passkey-authentication-requirement-for.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-07-28T01:44:55.377321+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-07-28-001",
+    "date": "2026-07-28",
+    "week": "2026-W31",
+    "platform": "meta",
+    "title": "2026 Holiday Small Business",
+    "titleOriginal": "2026 Holiday Small Business",
+    "summary": "We're sharing the Meta Holiday Insights Center: a free hub with new consumer research and platform benchmarks to help you understand how your customers plan to shop this season.",
+    "category": "other",
+    "importance": "low",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/2026-holiday-small-business",
+    "tags": [],
+    "fetchedAt": "2026-07-28T01:44:55.377321+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  }
+]
