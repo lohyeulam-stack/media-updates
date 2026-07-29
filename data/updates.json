@@ -1,5 +1,82 @@
 [
   {
+    "id": "youtube-2026-07-29-001",
+    "date": "2026-07-29",
+    "week": "2026-W31",
+    "platform": "youtube",
+    "title": "YouTube & Kids: Therapist Georgia Dow",
+    "titleOriginal": "YouTube & Kids: Therapist Georgia Dow",
+    "summary": "Learn how psychotherapist Georgia Dow uses YouTube parental controls and active co-watching to teach children crucial media literacy skills while maintaining healthy scr…",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/media-literacy-tips-parents-georgia-dow/",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-07-30T00:24:41.425617+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-07-29-001",
+    "date": "2026-07-29",
+    "week": "2026-W31",
+    "platform": "google",
+    "title": "Prepare for the holiday season with July’s Demand Gen Drop.",
+    "titleOriginal": "Prepare for the holiday season with July’s Demand Gen Drop.",
+    "summary": "Prepare for the holiday season with upgraded tROAS bidding, Checkout Links, and more from YouTube’s July Demand Gen Drop.",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/demand-gen-drop-july-2026/",
+    "tags": [],
+    "fetchedAt": "2026-07-30T00:24:41.425617+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "linkedin-2026-07-28-001",
+    "date": "2026-07-28",
+    "week": "2026-W31",
+    "platform": "linkedin",
+    "title": "How Adobe's Marketing Team Treats AI as Infrastructure, Not a ...",
+    "titleOriginal": "How Adobe's Marketing Team Treats AI as Infrastructure, Not a ...",
+    "summary": "Adobe's Patrick Brown on why AI pilots aren't enough — and how his team rebuilt marketing operations around AI as infrastructure, not a campaign.",
+    "category": "ad-product",
+    "importance": "medium",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/ai-search/how-adobes-marketing-team-treats-ai-as-infrastructure-not-a-campaign",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-07-30T00:24:41.425617+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-07-28-001",
+    "date": "2026-07-28",
+    "week": "2026-W31",
+    "platform": "google",
+    "title": "Support for AI Content Labeling using the Campaign Manager and Display & Video 360 APIs",
+    "titleOriginal": "Support for AI Content Labeling using the Campaign Manager and Display & Video 360 APIs",
+    "summary": "As the use of AI becomes more prevalent, transparency is key. In the last week, we have launched updates in both the Campaign Manager 360 API and Display & Video 360 API that add new optional fields to resources in both APIs, which allow you to label a creative or creative asset as having been creat",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/07/support-for-ai-content-labeling-using.html",
+    "tags": [
+      "api",
+      "video",
+      "creative",
+      "ai"
+    ],
+    "fetchedAt": "2026-07-30T00:24:41.425617+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "snapchat-2026-07-28-001",
     "date": "2026-07-28",
     "week": "2026-W31",
@@ -30,6 +107,23 @@
     "sourceUrl": "https://www.facebook.com/business/news/2026-holiday-small-business",
     "tags": [],
     "fetchedAt": "2026-07-28T01:44:55.377321+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-07-27-002",
+    "date": "2026-07-27",
+    "week": "2026-W31",
+    "platform": "youtube",
+    "title": "Hank Green has the freedom of old age (and he’s using it)",
+    "titleOriginal": "Hank Green has the freedom of old age (and he’s using it)",
+    "summary": "At nearly 20 years old, Vlogbrothers has proven its longevity. Hank Green is using it to take risks and keep things weird.",
+    "category": "other",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/hank-green-interview-vlogbrothers-youtube/",
+    "tags": [],
+    "fetchedAt": "2026-07-30T00:24:41.425617+08:00",
     "dateConfidence": "high",
     "imageUrl": null
   },
