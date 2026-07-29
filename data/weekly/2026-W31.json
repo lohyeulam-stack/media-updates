@@ -162,5 +162,24 @@
     "fetchedAt": "2026-07-30T00:24:41.425617+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "meta-2026-07-29-001",
+    "date": "2026-07-29",
+    "week": "2026-W31",
+    "platform": "meta",
+    "title": "Introducing Graph API v26.0 and Marketing API v26.0",
+    "titleOriginal": "Introducing Graph API v26.0 and Marketing API v26.0",
+    "summary": "Graph API v26.0 and Marketing API v26.0 include new capabilities, deprecations, and breaking changes. Review the highlights below and visit the V26.0 changelog for the complete list of changes and details.",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/07/29/introducing-graph-api-v26-and-marketing-api-v26/",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-07-30T01:13:32.318571+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
