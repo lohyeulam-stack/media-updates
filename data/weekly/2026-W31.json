@@ -268,5 +268,22 @@
     "fetchedAt": "2026-07-31T00:30:32.292234+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "snapchat-2026-07-30-001",
+    "date": "2026-07-30",
+    "week": "2026-W31",
+    "platform": "snapchat",
+    "title": "Snapchat and HubSpot Partner to Help Businesses Turn Leads into Lifelong New Customers",
+    "titleOriginal": "Snapchat and HubSpot Partner to Help Businesses Turn Leads into Lifelong New Customers",
+    "summary": "Snapchat and HubSpot Partner to Help Businesses Turn Leads into Lifelong New Customers",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/snapchat-hubspot-integration",
+    "tags": [],
+    "fetchedAt": "2026-07-31T01:25:39.169197+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/inb32lme5009/7KyQPjP33VHHirNuChANXz/f51bc5d4f715e770d881254fe150a329/Hubspot_9x16_2.png?q=40&h=512"
   }
 ]
