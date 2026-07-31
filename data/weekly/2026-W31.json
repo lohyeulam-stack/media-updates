@@ -285,5 +285,24 @@
     "fetchedAt": "2026-07-31T01:25:39.169197+08:00",
     "dateConfidence": "medium",
     "imageUrl": "https://images.ctfassets.net/inb32lme5009/7KyQPjP33VHHirNuChANXz/f51bc5d4f715e770d881254fe150a329/Hubspot_9x16_2.png?q=40&h=512"
+  },
+  {
+    "id": "google-2026-07-30-001",
+    "date": "2026-07-30",
+    "week": "2026-W31",
+    "platform": "google",
+    "title": "Data Manager API updates: RemoveAllAudienceMembers method, ingestion field warnings, expanded address data",
+    "titleOriginal": "Data Manager API updates: RemoveAllAudienceMembers method, ingestion field warnings, expanded address data",
+    "summary": "The latest release of the Data Manager API introduces features that simplify audience management, enhance ingestion workflows with field-level warnings, and enable more granular user-provided data for Google Analytics. Remove all audience members Use the new RemoveAllAudienceMembers method to clear ",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/07/data-manager-api-updates.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-08-01T00:48:34.277760+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
