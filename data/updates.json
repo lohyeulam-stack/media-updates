@@ -1,5 +1,60 @@
 [
   {
+    "id": "meta-2026-08-04-001",
+    "date": "2026-08-04",
+    "week": "2026-W32",
+    "platform": "meta",
+    "title": "Meta AI Developer Assistant Now Available for Developer Support",
+    "titleOriginal": "Meta AI Developer Assistant Now Available for Developer Support",
+    "summary": "Get AI-powered answers to your product and compliance questions directly on developers.facebook.com/support/",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Meta Developers Blog",
+    "sourceUrl": "https://developers.facebook.com/blog/post/2026/08/04/meta-ai-developer-assistant-now-available/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-08-05T01:43:26.136004+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "snapchat-2026-08-03-001",
+    "date": "2026-08-03",
+    "week": "2026-W32",
+    "platform": "snapchat",
+    "title": "The Snap Ads MCP Server Is Now Live",
+    "titleOriginal": "The Snap Ads MCP Server Is Now Live",
+    "summary": "The Snap Ads MCP Server Is Now Live",
+    "category": "other",
+    "importance": "medium",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/snapchat-ads-mcp",
+    "tags": [],
+    "fetchedAt": "2026-08-05T01:43:26.136004+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-08-03-001",
+    "date": "2026-08-03",
+    "week": "2026-W32",
+    "platform": "google",
+    "title": "Google Ads API pilot: Secure API Access to your Manager Accounts",
+    "titleOriginal": "Google Ads API pilot: Secure API Access to your Manager Accounts",
+    "summary": "The Google Ads API is piloting a security feature designed for securing API access to Google Ads manager accounts. We are seeking developers who would like to participate in this pilot project and provide us with feedback. What are we offering? The new pilot program protects accounts under a Google ",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/08/google-ads-api-pilot-secure-api-access.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-08-05T01:43:26.136004+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "google-2026-07-30-001",
     "date": "2026-07-30",
     "week": "2026-W31",
