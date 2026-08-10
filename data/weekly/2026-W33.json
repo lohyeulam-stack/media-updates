@@ -1,0 +1,38 @@
+[
+  {
+    "id": "dv360-2026-08-10-001",
+    "date": "2026-08-10",
+    "week": "2026-W33",
+    "platform": "dv360",
+    "title": "Evolve your marketing with new AI tools",
+    "titleOriginal": "Evolve your marketing with new AI tools",
+    "summary": "Advisor UI in Google Ads and Google Analytics",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Google Marketing Platform Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-08-11T00:53:01.195397+08:00",
+    "dateConfidence": "high",
+    "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Advisor_Header.width-1300.jpg"
+  },
+  {
+    "id": "youtube-2026-08-10-001",
+    "date": "2026-08-10",
+    "week": "2026-W33",
+    "platform": "youtube",
+    "title": "New opportunities to earn and changes to the YouTube Partner Program",
+    "titleOriginal": "New opportunities to earn and changes to the YouTube Partner Program",
+    "summary": "We’re making important changes to help the YouTube Partner Program remain the leader in the creator economy.",
+    "category": "other",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/",
+    "tags": [],
+    "fetchedAt": "2026-08-11T00:53:01.195397+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  }
+]
