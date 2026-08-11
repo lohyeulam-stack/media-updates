@@ -34,5 +34,41 @@
     "fetchedAt": "2026-08-11T00:53:01.195397+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "snapchat-2026-08-11-001",
+    "date": "2026-08-11",
+    "week": "2026-W33",
+    "platform": "snapchat",
+    "title": "Introducing a New Pharma Ad Solution with Multi-CTA Attachments",
+    "titleOriginal": "Introducing a New Pharma Ad Solution with Multi-CTA Attachments",
+    "summary": "Introducing a New Pharma Ad Solution with Multi-CTA Attachments",
+    "category": "other",
+    "importance": "high",
+    "source": "Snapchat for Business Blog",
+    "sourceUrl": "https://forbusiness.snapchat.com/blog/multi-cta-attachments",
+    "tags": [],
+    "fetchedAt": "2026-08-12T00:57:59.207730+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://images.ctfassets.net/inb32lme5009/3SYWO5Y2sL5Iob1jATCmsS/99cfdb5953a342c2116061551e020494/19485495-09ed-4a3d-9fc3-3597efcf1366.png?q=40&h=512"
+  },
+  {
+    "id": "linkedin-2026-08-11-001",
+    "date": "2026-08-11",
+    "week": "2026-W33",
+    "platform": "linkedin",
+    "title": "A new guide to AI search visibility on LinkedIn",
+    "titleOriginal": "A new guide to AI search visibility on LinkedIn",
+    "summary": "Get inspiration, insight and innovative ideas",
+    "category": "other",
+    "importance": "low",
+    "source": "LinkedIn Marketing Blog",
+    "sourceUrl": "https://www.linkedin.com/business/marketing/blog/ai-search/how-b2b-marketers-can-dominate-ai-search-on-linkedin-2026",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-08-12T00:57:59.207730+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
   }
 ]
