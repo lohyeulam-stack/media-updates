@@ -140,5 +140,24 @@
     "fetchedAt": "2026-08-08T00:51:59.506769+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "moloco-2026-08-06-001",
+    "date": "2026-08-06",
+    "week": "2026-W32",
+    "platform": "moloco",
+    "title": "Discovery is shifting fast: New insights on AI, apps, and the fight for attention",
+    "titleOriginal": "Discovery is shifting fast: New insights on AI, apps, and the fight for attention",
+    "summary": "Moloco has been building AI for performance advertising since 2013 and today we’re sharing more about our approach. We call our AI system CARA, short for Compound Ad Recommendation Architecture.",
+    "category": "creative",
+    "importance": "low",
+    "source": "Moloco Blog",
+    "sourceUrl": "https://www.moloco.com/blog/new-insights-on-ai-apps",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-08-13T00:57:47.699833+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://cdn.prod.website-files.com/62380f0b5031d40f63f8b4c7/6a736c3698c780be34ccb79d_Blog%20Banner_%201200%20x%20600.png"
   }
 ]

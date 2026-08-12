@@ -70,5 +70,41 @@
     "fetchedAt": "2026-08-12T00:57:59.207730+08:00",
     "dateConfidence": "medium",
     "imageUrl": null
+  },
+  {
+    "id": "smartnews-2026-08-12-001",
+    "date": "2026-08-12",
+    "week": "2026-W33",
+    "platform": "smartnews",
+    "title": "How Deep Reader Engagement Drives Higher ROI for Mobile Advertisers",
+    "titleOriginal": "How Deep Reader Engagement Drives Higher ROI for Mobile Advertisers",
+    "summary": "How Deep Reader Engagement Drives Higher ROI for Mobile Advertisers",
+    "category": "other",
+    "importance": "medium",
+    "source": "SmartNews Ads Blog",
+    "sourceUrl": "https://ads.smartnews.com/home/us/en/blog/how-deep-reader-engagement-drives-higher-roi-for-mobile-advertisers/",
+    "tags": [],
+    "fetchedAt": "2026-08-13T00:57:47.699833+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://dliz5qjq2pzic.cloudfront.net/home/wp-content/uploads/2025/06/02113621/ogp.png"
+  },
+  {
+    "id": "google-2026-08-12-001",
+    "date": "2026-08-12",
+    "week": "2026-W33",
+    "platform": "google",
+    "title": "Query report data with the Campaign Manager 360 API",
+    "titleOriginal": "Query report data with the Campaign Manager 360 API",
+    "summary": "You can now use the reportData.query endpoint in the Campaign Manager 360 API to synchronously query your campaign performance data and retrieve structured JSON data directly in the response. The new reportData.query endpoint offers a simplified option for report data retrieval compared to the stand",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/08/query-report-data-with-campaign-manager.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-08-13T00:57:47.699833+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
