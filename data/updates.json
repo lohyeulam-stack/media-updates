@@ -1,5 +1,60 @@
 [
   {
+    "id": "moloco-2026-08-13-001",
+    "date": "2026-08-13",
+    "week": "2026-W33",
+    "platform": "moloco",
+    "title": "Moloco launches Agency Partner Program with more than a dozen founding partners",
+    "titleOriginal": "Moloco launches Agency Partner Program with more than a dozen founding partners",
+    "summary": "As advertisers push beyond search and social, it falls to agencies to find the next channel and turn it into measurable, incremental growth.",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Moloco Blog",
+    "sourceUrl": "https://www.moloco.com/blog/moloco-launches-agency-partner-program",
+    "tags": [],
+    "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://cdn.prod.website-files.com/62380f0b5031d40f63f8b4c7/6a7cd0f6aa3d5f9a49fc3a76_Updated_Agency%20Partner%20Program%20Launch_Social_1200x628.png"
+  },
+  {
+    "id": "youtube-2026-08-13-001",
+    "date": "2026-08-13",
+    "week": "2026-W33",
+    "platform": "youtube",
+    "title": "5 design principles we use to put creators center stage",
+    "titleOriginal": "5 design principles we use to put creators center stage",
+    "summary": "See the five design principles behind YouTube's latest interface updates, built to reduce visual clutter and keep creator videos front and center.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/inside-youtube/design-principles-use-put-creators-center-stage/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-08-12-001",
+    "date": "2026-08-12",
+    "week": "2026-W33",
+    "platform": "google",
+    "title": "Migrate Campaign-level Broad Match and Automatically Created Assets to AI Max",
+    "titleOriginal": "Migrate Campaign-level Broad Match and Automatically Created Assets to AI Max",
+    "summary": "The legacy automigrations are divided into two separate phases: Phase 1 ( Campaign-level Broad Match and Automatically Created Assets ), which starts September 1, 2026. Phase 2 (Dynamic Search Ads), which has been rescheduled to February 2027. 1. Campaign broad and ACA auto-migration: September 1 – ",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/08/migrate-campaign-level-broad-match-and.html",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "smartnews-2026-08-12-001",
     "date": "2026-08-12",
     "week": "2026-W33",
@@ -17,7 +72,7 @@
     "imageUrl": "https://dliz5qjq2pzic.cloudfront.net/home/wp-content/uploads/2025/06/02113621/ogp.png"
   },
   {
-    "id": "google-2026-08-12-001",
+    "id": "google-2026-08-12-001-f32f47",
     "date": "2026-08-12",
     "week": "2026-W33",
     "platform": "google",
@@ -32,6 +87,79 @@
       "api"
     ],
     "fetchedAt": "2026-08-13T00:57:47.699833+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-08-11-001",
+    "date": "2026-08-11",
+    "week": "2026-W33",
+    "platform": "meta",
+    "title": "Performance Spotlight: How Laura Geller Turned Creative Volume and AI Into a Competitive Edge",
+    "titleOriginal": "Performance Spotlight: How Laura Geller Turned Creative Volume and AI Into a Competitive Edge",
+    "summary": "Learn how beauty brand Laura Geller uses Meta's Advantage+ AI tools, a robust creative pipeline, and cross-channel strategy to drive growth across DTC, retail, and e-commerce.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/laura-geller-creative-volume",
+    "tags": [
+      "creative",
+      "ai"
+    ],
+    "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-08-11-002",
+    "date": "2026-08-11",
+    "week": "2026-W33",
+    "platform": "meta",
+    "title": "How do advertisers increase holiday ad budgets?",
+    "titleOriginal": "How do advertisers increase holiday ad budgets?",
+    "summary": "Your CFO will ask how you know those sales would not have happened anyway. Conversion Lift gives you the answer. Start the study before peak season.",
+    "category": "measurement",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/holiday-measurement-strategies",
+    "tags": [],
+    "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-08-11-003",
+    "date": "2026-08-11",
+    "week": "2026-W33",
+    "platform": "meta",
+    "title": "Win over shoppers with ad formats they're engaging with",
+    "titleOriginal": "Win over shoppers with ad formats they're engaging with",
+    "summary": "Discovery. Deals. Gifting. Fresh start. Four holiday seasons, four shopper mindsets, four creative playbooks. Here is how to show up in all of them.",
+    "category": "creative",
+    "importance": "low",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/holiday-advantage-is-creative-advantage",
+    "tags": [
+      "creative"
+    ],
+    "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-08-11-004",
+    "date": "2026-08-11",
+    "week": "2026-W33",
+    "platform": "meta",
+    "title": "Get your holiday ads in front of high-intent shoppers",
+    "titleOriginal": "Get your holiday ads in front of high-intent shoppers",
+    "summary": "Reels in October. Feed in November. Stories on Black Friday. Your shoppers are everywhere this holiday. Advantage+ placements make sure your ads are too.",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/skip-the-single-surface-holiday-strategy",
+    "tags": [],
+    "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
     "dateConfidence": "high",
     "imageUrl": null
   },
