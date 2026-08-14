@@ -234,5 +234,25 @@
     "fetchedAt": "2026-08-14T00:55:55.955482+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "google-2026-08-14-001",
+    "date": "2026-08-14",
+    "week": "2026-W33",
+    "platform": "google",
+    "title": "Google Ads language targeting changes starting September 2026",
+    "titleOriginal": "Google Ads language targeting changes starting September 2026",
+    "summary": "We're making changes to language targeting for Search, AI Max for Search, and Performance Max campaigns in Google Ads, simplifying campaign management while maintaining a high-quality ad experience. Effective late September 2026: For Search and AI Max for Search campaigns, the campaign-level languag",
+    "category": "targeting",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/08/google-ads-language-targeting-changes.html",
+    "tags": [
+      "targeting",
+      "ai"
+    ],
+    "fetchedAt": "2026-08-15T00:50:41.556647+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
