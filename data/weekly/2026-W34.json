@@ -1,0 +1,36 @@
+[
+  {
+    "id": "mintegral-2026-08-17-001",
+    "date": "2026-08-17",
+    "week": "2026-W34",
+    "platform": "mintegral",
+    "title": "Global Non-Gaming App Trends Report",
+    "titleOriginal": "Global Non-Gaming App Trends Report",
+    "summary": "Browse Mintegral's mobile marketing blog",
+    "category": "other",
+    "importance": "low",
+    "source": "Mintegral Blog",
+    "sourceUrl": "https://www.mintegral.com/en/blog/non-gaming-apps-report-H2-2026",
+    "tags": [],
+    "fetchedAt": "2026-08-18T00:25:46.015381+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": "https://assets-official-v2.mintegral.com/v3/blog-cover/2026/08/14/MTG H2 2026 Report _Social Banner (English).jpg"
+  },
+  {
+    "id": "youtube-2026-08-17-001",
+    "date": "2026-08-17",
+    "week": "2026-W34",
+    "platform": "youtube",
+    "title": "LeBron James launches Official YouTube Channel chronicling his love of golf",
+    "titleOriginal": "LeBron James launches Official YouTube Channel chronicling his love of golf",
+    "summary": "LeBron James debuts his official YouTube channel with a Scotland golf trip alongside 2016 Cavaliers teammates, kicking off a monthly series exploring iconic courses worl…",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/lebron-james-youtube-golf-channel-launch/",
+    "tags": [],
+    "fetchedAt": "2026-08-18T00:25:46.015381+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  }
+]
