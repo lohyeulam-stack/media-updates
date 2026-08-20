@@ -1,5 +1,98 @@
 [
   {
+    "id": "google-2026-08-20-001",
+    "date": "2026-08-20",
+    "week": "2026-W34",
+    "platform": "google",
+    "title": "Make AI Max work for your business with new testing and planning tools.",
+    "titleOriginal": "Make AI Max work for your business with new testing and planning tools.",
+    "summary": "Use new AI Max tools — like A/B tests and performance planners for budget and bidding changes — to maximize your Search campaigns.",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/ai-max-testing-planning-tools/",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-08-21T00:32:47.019549+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-08-19-002",
+    "date": "2026-08-19",
+    "week": "2026-W34",
+    "platform": "google",
+    "title": "What 3 creatives built with unlimited access to Google Flow",
+    "titleOriginal": "What 3 creatives built with unlimited access to Google Flow",
+    "summary": "Text \"Google Presents The Small Brief\", above photos of Susan Credle, Jayanta Jenkins, and Tiffany Rolfe",
+    "category": "creative",
+    "importance": "medium",
+    "source": "Google Ads & Commerce Blog",
+    "sourceUrl": "https://blog.google/products/ads-commerce/the-small-brief/",
+    "tags": [
+      "creative"
+    ],
+    "fetchedAt": "2026-08-21T00:32:47.019549+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "google-2026-08-19-001",
+    "date": "2026-08-19",
+    "week": "2026-W34",
+    "platform": "google",
+    "title": "Announcing v25.1 of the Google Ads API",
+    "titleOriginal": "Announcing v25.1 of the Google Ads API",
+    "summary": "Today we are announcing the release of v25.1 of the Google Ads API . To use the new capabilities, you must upgrade your client libraries and client code. All the updated client libraries and code examples have been published. Come join us for a live walkthrough of this release in our \"Google Ads API",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/08/announcing-v251-of-google-ads-api.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-08-21T00:32:47.019549+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-08-19-001",
+    "date": "2026-08-19",
+    "week": "2026-W34",
+    "platform": "meta",
+    "title": "New Meta AI Features for Small Businesses",
+    "titleOriginal": "New Meta AI Features for Small Businesses",
+    "summary": "Today, we're starting to introduce new features in Meta AI designed to help small businesses get more done and grow faster.",
+    "category": "ad-product",
+    "importance": "high",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/meta-ai-for-small-businesses",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-08-21T00:32:47.019549+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-08-19-002",
+    "date": "2026-08-19",
+    "week": "2026-W34",
+    "platform": "meta",
+    "title": "Game Changers",
+    "titleOriginal": "Game Changers",
+    "summary": "Women's sports is the fastest-growing audience in media. In Meta's Game Changers series, three leaders break down the growth and how brands can win it.",
+    "category": "targeting",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/game-changers-series-1",
+    "tags": [],
+    "fetchedAt": "2026-08-21T00:32:47.019549+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "mintegral-2026-08-18-001",
     "date": "2026-08-18",
     "week": "2026-W34",
