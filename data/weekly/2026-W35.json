@@ -15,5 +15,41 @@
     "fetchedAt": "2026-08-25T00:34:46.849127+08:00",
     "dateConfidence": "medium",
     "imageUrl": "https://assets-official-v2.mintegral.com/v3/blog-cover/2026/08/24/MTG banner 320 20260824.png"
+  },
+  {
+    "id": "pinterest-2026-08-25-001",
+    "date": "2026-08-25",
+    "week": "2026-W35",
+    "platform": "pinterest",
+    "title": "Pinterest Hobbies Trend Report 2026: Find your joy",
+    "titleOriginal": "Pinterest Hobbies Trend Report 2026: Find your joy",
+    "summary": "Pinterest Hobbies Trend Report 2026: Find your joy",
+    "category": "targeting",
+    "importance": "low",
+    "source": "Pinterest Newsroom",
+    "sourceUrl": "https://newsroom.pinterest.com/news/2026-pinterest-hobbies-trend-report/",
+    "tags": [],
+    "fetchedAt": "2026-08-26T00:35:07.243984+08:00",
+    "dateConfidence": "medium",
+    "imageUrl": null
+  },
+  {
+    "id": "youtube-2026-08-24-001",
+    "date": "2026-08-24",
+    "week": "2026-W35",
+    "platform": "youtube",
+    "title": "How SubwayTakes turned vertical video into Emmy-nominated television",
+    "titleOriginal": "How SubwayTakes turned vertical video into Emmy-nominated television",
+    "summary": "Shot entirely inside moving subway cars, Kareem Rahma's “Subway Takes” just earned a Primetime Emmy nomination for Outstanding Short Form Series — a landmark recognition…",
+    "category": "creative",
+    "importance": "medium",
+    "source": "YouTube Official Blog",
+    "sourceUrl": "https://blog.youtube/creator-and-artist-stories/kareem-rahma-subwaytakes-emmy-nomination-interview/",
+    "tags": [
+      "video"
+    ],
+    "fetchedAt": "2026-08-26T00:35:07.243984+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
