@@ -1,5 +1,26 @@
 [
   {
+    "id": "google-2026-08-31-001",
+    "date": "2026-08-31",
+    "week": "2026-W36",
+    "platform": "google",
+    "title": "Making Google Ads More Secure with Updates to Developer Policies",
+    "titleOriginal": "Making Google Ads More Secure with Updates to Developer Policies",
+    "summary": "We are updating our Google Ads Developer Policies formerly the “Google Ads API Policy”, to support developers in building robust, high-quality integrations as new AI capabilities continue to shape the advertising industry. These updates establish clear frameworks for emerging technologies that are m",
+    "category": "api-change",
+    "importance": "medium",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/08/making-google-ads-more-secure-with.html",
+    "tags": [
+      "api",
+      "policy",
+      "ai"
+    ],
+    "fetchedAt": "2026-09-02T03:11:55.709462+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
     "id": "snapchat-2026-08-31-001",
     "date": "2026-08-31",
     "week": "2026-W36",
