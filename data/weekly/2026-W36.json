@@ -92,5 +92,43 @@
     "fetchedAt": "2026-09-03T03:15:53.188302+08:00",
     "dateConfidence": "high",
     "imageUrl": null
+  },
+  {
+    "id": "google-2026-09-02-001-31c452",
+    "date": "2026-09-02",
+    "week": "2026-W36",
+    "platform": "google",
+    "title": "Google Ads API v22 sunset reminder",
+    "titleOriginal": "Google Ads API v22 sunset reminder",
+    "summary": "Google Ads API v22 will sunset on October 7, 2026. Starting on this date, all v22 API requests will begin to fail. Migrate to a newer version prior to October 7, 2026 to ensure your API access is unaffected. Here are some resources to help you with the migration: Upgrade to the newest version Releas",
+    "category": "api-change",
+    "importance": "high",
+    "source": "Google Ads Developer Blog",
+    "sourceUrl": "http://ads-developers.googleblog.com/2026/09/google-ads-api-v22-sunset-reminder.html",
+    "tags": [
+      "api"
+    ],
+    "fetchedAt": "2026-09-04T03:07:51.105435+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
+  },
+  {
+    "id": "meta-2026-09-03-001",
+    "date": "2026-09-03",
+    "week": "2026-W36",
+    "platform": "meta",
+    "title": "How Businesses Are Driving Results with Meta's AI-Powered Ads",
+    "titleOriginal": "How Businesses Are Driving Results with Meta's AI-Powered Ads",
+    "summary": "Five advertisers share results from Meta's AI tools — Advantage+, partnership ads, Business Agent, and Omni for Auto — driving more purchases at lower cost.",
+    "category": "automation",
+    "importance": "medium",
+    "source": "Meta for Business News",
+    "sourceUrl": "https://www.facebook.com/business/news/businesses-driving-results-with-meta-ai-ads",
+    "tags": [
+      "ai"
+    ],
+    "fetchedAt": "2026-09-04T03:07:51.105435+08:00",
+    "dateConfidence": "high",
+    "imageUrl": null
   }
 ]
